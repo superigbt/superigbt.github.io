@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>我的笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Termux,Linux学习笔记，为了记笔记，又顺便学习了点hexo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="我的笔记">
+<meta property="og:url" content="https://superigbt.github.io/page/3/index.html">
+<meta property="og:site_name" content="我的笔记">
+<meta property="og:description" content="Termux,Linux学习笔记，为了记笔记，又顺便学习了点hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Frank.Li">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="我的笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我的笔记</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">按时间</a>
+        
+          <a class="main-nav-link" href="/about">关于我</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="superigbt.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main">
+  
+    <article id="post-ubuntu-start-console" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/07/ubuntu-start-console/" class="article-date">
+  <time datetime="2020-06-07T04:38:00.000Z" itemprop="datePublished">2020-06-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/07/ubuntu-start-console/">ubuntu开机默认控制台</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一-启动为控制台。"><a href="#一-启动为控制台。" class="headerlink" title="一 启动为控制台。"></a>一 启动为控制台。</h4><h6 id="1-修改-etc-default-grub文件"><a href="#1-修改-etc-default-grub文件" class="headerlink" title="1. 修改 /etc/default/grub文件"></a>1. 修改 /etc/default/grub文件</h6><p>   把GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash “ 改为 GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash text”<br>   GRUB_TERMINAL=console前的注释取消掉</p>
+<h6 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-grub</span><br><span class="line">$ sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
+<pre><code>重启电脑就直接进入控制台了，可是字体为毛这么小？</code></pre>
+<blockquote>
+<p>如果想要恢复启动默认进入图形界面，把/etc/default/grub文件改回后，还要执行<br>$ sudo update-grub<br>$ sudo systemctl set-default graphical.target<br>$ reboot</p>
+</blockquote>
+<h4 id="二-修改控制台字体，最好在GUI环境修改好。"><a href="#二-修改控制台字体，最好在GUI环境修改好。" class="headerlink" title="二. 修改控制台字体，最好在GUI环境修改好。"></a>二. 修改控制台字体，最好在GUI环境修改好。</h4><pre><code>执行 sudo dpkg -reconfigure console-setup
+然后一步一步设置吧，重启电脑。可是为毛显示文件名，中文文件夹是菱形？</code></pre>
+<h4 id="三-中文控制台"><a href="#三-中文控制台" class="headerlink" title="三. 中文控制台"></a>三. 中文控制台</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install fbterm   <span class="comment"># 中文终端 fbterm</span></span><br><span class="line">$ sudo apt install fcitx-frontend-fbterm <span class="comment"># fbterm下的中文输入法</span></span><br><span class="line">$ sudo fbterm <span class="comment"># 会生产 .fbtermrc文件。</span></span><br><span class="line">$ <span class="built_in">exit</span> 退出 fbtermrc</span><br><span class="line">$ vim .fbtermrc</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>font-names=sans<br>font-size=14<br>text-encodings=utf8<br>input-method=fcitx-fbterm</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo fbterm</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/06/07/ubuntu-start-console/" data-id="ckfnbf2j1003644s6bd8j5v9d" class="article-share-link" data-share="baidu" data-title="ubuntu开机默认控制台">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E9%BB%98%E8%AE%A4%E6%8E%A7%E5%88%B6%E5%8F%B0/" rel="tag">ubuntu默认控制台</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux-anlinux-vscode1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/07/termux-anlinux-vscode1/" class="article-date">
+  <time datetime="2020-05-07T12:00:00.000Z" itemprop="datePublished">2020-05-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/07/termux-anlinux-vscode1/">termux下的ubuntu安装vscode</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​</p>
+<h5 id="首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift-箭头选择，ctrl-v-ctrl-p之类的习惯还是改不了，方便啊。"><a href="#首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift-箭头选择，ctrl-v-ctrl-p之类的习惯还是改不了，方便啊。" class="headerlink" title="首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift+箭头选择，ctrl+v ctrl+p之类的习惯还是改不了，方便啊。"></a>首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift+箭头选择，ctrl+v ctrl+p之类的习惯还是改不了，方便啊。</h5><h5 id="开始是如何失败的"><a href="#开始是如何失败的" class="headerlink" title="开始是如何失败的"></a>开始是如何失败的</h5><pre><code>首先在贴吧有人说可以在github.com中搜索arm版的vscode，果然是搜索到了，下了两天没下载下来，后来狠心定个闹钟凌晨四点半叫醒我，一下子不下载下来了。可是一安装是armhf版的，为了能安装armhf，又折腾，直到把我的ubuntu弄了好多个补丁，然后装不了软件了。只好干掉重新装anlinux，不过重新装时，又发现了许多新经验，也算是有收获吧。</code></pre>
+<p>在vscode的主页上也有arm版的安装方法，悲惨的是试用了后也是armhf版的。</p>
+<h5 id="成功在现有手机的arm64版上安装"><a href="#成功在现有手机的arm64版上安装" class="headerlink" title="成功在现有手机的arm64版上安装"></a>成功在现有手机的arm64版上安装</h5><ol>
+<li>进入<a target="_blank" rel="noopener" href="https://packagecloud.io/headmelted/codebuilds">https://packagecloud.io/headmelted/codebuilds</a> 网站下载vscode arm64版的deb安装文件。</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg i code***.deb</span><br></pre></td></tr></table></figure>
+3, 接着会报出错信息，什么NO_PUBKEY 0CC××××，然后安装失败，不要怕。</li>
+<li>执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0CCxxxxx</span><br></pre></td></tr></table></figure></li>
+<li>继续安装<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i code***.deb，安装成功</span><br></pre></td></tr></table></figure>
+当然只能在图形桌面上用了。进入startxfce4后，有个叫code-oss就是。我其实一直用的是sublimetext3的，对这个vscode并不熟，要用的网友们自己用吧。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/05/07/termux-anlinux-vscode1/" data-id="ckfnbf2b8001e44s6dbg2h4j4" class="article-share-link" data-share="baidu" data-title="termux下的ubuntu安装vscode">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anlinux-vscode-x11/" rel="tag">anlinux-vscode-x11</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux-anlinux-vscode2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/07/termux-anlinux-vscode2/" class="article-date">
+  <time datetime="2020-05-07T12:00:00.000Z" itemprop="datePublished">2020-05-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/07/termux-anlinux-vscode2/">termux下的ubuntu下，不进入桌面使用vscode</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​</p>
+<h5 id="前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲-不进入桌面，能不能用vscode呢。"><a href="#前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲-不进入桌面，能不能用vscode呢。" class="headerlink" title="前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲,不进入桌面，能不能用vscode呢。"></a>前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲,不进入桌面，能不能用vscode呢。</h5><h5 id="万能的github啊。竟然有code-server这个好东东"><a href="#万能的github啊。竟然有code-server这个好东东" class="headerlink" title="万能的github啊。竟然有code-server这个好东东"></a>万能的github啊。竟然有code-server这个好东东</h5><pre><code>首先进入https://github.com/cdr/code-server ，然后点击下载版本，再进入了https://github.com/cdr/code-server/releases，
+当然选择ARM64版本的，请注意，可别先成amd64了。</code></pre>
+<h5 id="把下载的code-server-3-2-0-linux-arm64-tar-gz-想办法搬移到手机的-ubuntu-fs-home-目录下。并执行"><a href="#把下载的code-server-3-2-0-linux-arm64-tar-gz-想办法搬移到手机的-ubuntu-fs-home-目录下。并执行" class="headerlink" title="把下载的code-server-3.2.0-linux-arm64.tar.gz 想办法搬移到手机的~/ubuntu-fs/home/目录下。并执行"></a>把下载的code-server-3.2.0-linux-arm64.tar.gz 想办法搬移到手机的~/ubuntu-fs/home/目录下。并执行</h5><ol>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf  code-server-3.2.0-linux-arm64.tar.gz</span><br></pre></td></tr></table></figure>
+会生成code-server-3.2.0-linux-arm64目录，最好把目录名改为code-server，减少输入错误</li>
+<li>进入code-server目录，并执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> PASSWORD=123456  <span class="comment">#先设置密码，不然下一步会随机生成密码</span></span><br><span class="line">$ ./code-server --auth password --port 8080</span><br></pre></td></tr></table></figure>
+这里候在本机的浏览器输入 //127.0.0.1:8080就能进入vscode了。还能进入目录，并且也有终端。</li>
+<li>如果想用大屏的电脑也编辑本手机的文件，则<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ifconig  <span class="comment">#获取本机的IP地址，比如192.168.1.26</span></span><br><span class="line">$ ./code-server --auth password --port 8080 --host 0.0.0.0</span><br></pre></td></tr></table></figure>
+在电脑上打开浏览器，输入192.168.1.26:9999 。利用内网穿透，远程调试也行啊。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/05/07/termux-anlinux-vscode2/" data-id="ckfnbf2c0001i44s64wn6ceoc" class="article-share-link" data-share="baidu" data-title="termux下的ubuntu下，不进入桌面使用vscode">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anlinux-vscode-console/" rel="tag">anlinux-vscode-console</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-caddy-php" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/24/caddy-php/" class="article-date">
+  <time datetime="2020-04-24T04:38:00.000Z" itemprop="datePublished">2020-04-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/caddy/">caddy</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/24/caddy-php/">caddy配置php的两种办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一-php-fpm方法"><a href="#一-php-fpm方法" class="headerlink" title="一. php-fpm方法"></a>一. php-fpm方法</h4><h5 id="1-在linux下配置php-fpm"><a href="#1-在linux下配置php-fpm" class="headerlink" title="1. 在linux下配置php-fpm"></a>1. 在linux下配置php-fpm</h5><p>编辑Caddyfile，在中间加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fastcgi &#x2F; &#x2F;var&#x2F;run&#x2F;php&#x2F;php-fpm.sock &#123;   # 不同版本的linux，目录有可能不同</span><br><span class="line">    ext .php</span><br><span class="line">    split .php</span><br><span class="line">    index index.php</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-在termux下"><a href="#2-在termux下" class="headerlink" title="2. 在termux下"></a>2. 在termux下</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install php-fpm</span><br><span class="line">$ termux-chroot   <span class="comment">#注，必须在chroot下。</span></span><br><span class="line">$ vim /etc/php-fpm.d/www.conf</span><br><span class="line">   把 listen=/data/data/com.termux/files/usr/var/run/php-fpm.sock修改为</span><br><span class="line">      listen=127.0.0.1:9000</span><br><span class="line">$ vim Caddyfile 增加</span><br><span class="line">   fastcgi / 127.0.0.1:9000 php</span><br><span class="line">$ php-fpm</span><br><span class="line">$ caddy</span><br></pre></td></tr></table></figure>
+<p>成功</p>
+<h5 id="3-windows10下，windows不支持sock-所以此法不可用"><a href="#3-windows10下，windows不支持sock-所以此法不可用" class="headerlink" title="3. windows10下，windows不支持sock, 所以此法不可用"></a>3. windows10下，windows不支持sock, 所以此法不可用</h5><h4 id="二-php-cgi方法"><a href="#二-php-cgi方法" class="headerlink" title="二. php-cgi方法"></a>二. php-cgi方法</h4><h5 id="1-linux与termux下用法相同，并且termux不用进入chroot"><a href="#1-linux与termux下用法相同，并且termux不用进入chroot" class="headerlink" title="1 linux与termux下用法相同，并且termux不用进入chroot"></a>1 linux与termux下用法相同，并且termux不用进入chroot</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ vim Caddyfile 增加</span><br><span class="line">   fastcgi / 127.0.0.1:9000 php</span><br><span class="line">$ php-cgi -b 9000 &amp;</span><br><span class="line">$ caddy</span><br></pre></td></tr></table></figure>
+<h5 id="2-win10下，我采用的是cygwin"><a href="#2-win10下，我采用的是cygwin" class="headerlink" title="2.win10下，我采用的是cygwin"></a>2.win10下，我采用的是cygwin</h5><p>下载php-7.<em>.</em>.zip，并解压到c:\mytools\php-7.*.*目录，进入cygwin终端</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /cygdrive/c/mytools/php-7.*.*</span><br><span class="line">$ ./php-cgi.exe -b 9000 &amp;</span><br><span class="line">后面相同</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/04/24/caddy-php/" data-id="ckfnbf28s000b44s6d33z0d52" class="article-share-link" data-share="baidu" data-title="caddy配置php的两种办法">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/caddy-php/" rel="tag">caddy+php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-win10ltsc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/01/win10ltsc/" class="article-date">
+  <time datetime="2020-04-01T02:57:24.000Z" itemprop="datePublished">2020-04-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/win10/">win10</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/01/win10ltsc/">win10企业版LTSC激活方式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-win10企业版LTSC激活方式–亲测有效-2020-02-21-16-52-03-转载▼"><a href="#一-win10企业版LTSC激活方式–亲测有效-2020-02-21-16-52-03-转载▼" class="headerlink" title="一. win10企业版LTSC激活方式–亲测有效 (2020-02-21 16:52:03)转载▼"></a>一. win10企业版LTSC激活方式–亲测有效 (2020-02-21 16:52:03)转载▼</h5><p>首先以管理员身份打开CMD命令行窗口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\system32&gt;slmgr -ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D</span><br><span class="line"></span><br><span class="line">C:\Windows\system32&gt;slmgr -skms kms.03k.org</span><br><span class="line"></span><br><span class="line">C:\Windows\system32&gt;slmgr -ato</span><br><span class="line"></span><br><span class="line">C:\Windows\system32&gt;slmgr -dlv</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="二-Windows-10-LTSB安装完毕后，首先以管理员身份打开CMD命令行窗口。"><a href="#二-Windows-10-LTSB安装完毕后，首先以管理员身份打开CMD命令行窗口。" class="headerlink" title="二. Windows 10 LTSB安装完毕后，首先以管理员身份打开CMD命令行窗口。"></a>二. Windows 10 LTSB安装完毕后，首先以管理员身份打开CMD命令行窗口。</h5><p>　　依次输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">　　slmgr /ipk WNMTR-4C88C-JK8YV-HQ7T2-76DF9</span><br><span class="line"></span><br><span class="line">　　slmgr /skms skms.ddns.net</span><br><span class="line"></span><br><span class="line">　　slmgr /ato</span><br></pre></td></tr></table></figure>
+<h5 id="什么是Win10企业版LTSB与LTSC"><a href="#什么是Win10企业版LTSB与LTSC" class="headerlink" title="什么是Win10企业版LTSB与LTSC"></a>什么是Win10企业版LTSB与LTSC</h5><p>　　1、Win10企业版LTSB分支不会有Edge浏览器</p>
+<p>　　2、在系统更新方面，用户能完全手动控制更新，选择和决定自己要的更新和驱动，更新内容和更新时间可以随意控制，但不能无限期推迟。</p>
+<p>　　3、无Cortana</p>
+<p>　　4、无任何系统自带磁贴程序</p>
+<p>　　5、无应用商店</p>
+<p>　　后来微软把LTSB改成了LTSC</p>
+<h5 id="Windows10-企业版长期服务支持分支版本激活码"><a href="#Windows10-企业版长期服务支持分支版本激活码" class="headerlink" title="Windows10 企业版长期服务支持分支版本激活码"></a>Windows10 企业版长期服务支持分支版本激活码</h5><p>Windows 10 LTSC 2019</p>
+<p>Windows 10 企业版 LTSC 2019：M7XTQ-FN8P6-TTKYV-9D4CC-J462D</p>
+<p>Windows 10 企业版 N LTSC 2019：2NFX-8DJQP-P6BBQ-THF9C-7CG2H</p>
+<p>Windows 10 LTSB 2016</p>
+<p>Windows 10 企业版 LTSB 2016：DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ</p>
+<p>Windows 10 企业版 N LTSB 2016：FFDN-GRT3P-VKWWX-X7T3R-8B639</p>
+<p>Windows 10 LTSB 2015</p>
+<p>Windows 10 企业版 2015 长期服务：WNMTR-4C88C-JK8YV-HQ7T2-76DF9</p>
+<p>Windows 10 企业版 2015 长期服务 N：2F77B-TNFGY-69QQF-B8YKP-D69TJ</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/04/01/win10ltsc/" data-id="ckfnbf2lq003v44s68htmgzb1" class="article-share-link" data-share="baidu" data-title="win10企业版LTSC激活方式">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/win10%E5%AE%89%E8%A3%85/" rel="tag">win10安装</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-about-gitee" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/27/hexo-about-gitee/" class="article-date">
+  <time datetime="2020-03-27T12:56:00.000Z" itemprop="datePublished">2020-03-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/27/hexo-about-gitee/">Hexo布署到gitee</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="hexo己经部署到了github成功了，可是太慢啦！怎么办？"><a href="#hexo己经部署到了github成功了，可是太慢啦！怎么办？" class="headerlink" title="hexo己经部署到了github成功了，可是太慢啦！怎么办？"></a>hexo己经部署到了github成功了，可是太慢啦！怎么办？</h3><h4 id="国内有https-gitee-com-，号称码云。双称中国的github，速度快。先去注册账户吧"><a href="#国内有https-gitee-com-，号称码云。双称中国的github，速度快。先去注册账户吧" class="headerlink" title="国内有https://gitee.com/，号称码云。双称中国的github，速度快。先去注册账户吧"></a>国内有<a target="_blank" rel="noopener" href="https://gitee.com/%EF%BC%8C%E5%8F%B7%E7%A7%B0%E7%A0%81%E4%BA%91%E3%80%82%E5%8F%8C%E7%A7%B0%E4%B8%AD%E5%9B%BD%E7%9A%84github%EF%BC%8C%E9%80%9F%E5%BA%A6%E5%BF%AB%E3%80%82%E5%85%88%E5%8E%BB%E6%B3%A8%E5%86%8C%E8%B4%A6%E6%88%B7%E5%90%A7">https://gitee.com/，号称码云。双称中国的github，速度快。先去注册账户吧</a></h4><ol>
+<li>如同github一样，建立仓库。注意，仓库名必须与你的gitee用户名相同，不然全出错。</li>
+</ol>
+<p>修改myblog目录下的_config.yml文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;gitee.com&#x2F;你的用户名&#x2F;你的仓库名&#x2F;</span><br><span class="line">root: &#x2F;</span><br><span class="line">----------</span><br><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: https:&#x2F;&#x2F;gitee.com&#x2F;你的用户名&#x2F;你的仓库名&#x2F;.git</span><br><span class="line">	branch: master </span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>在gitee上一样，setting—&gt;SSH and GPG keys—-&gt;New SSH key中，然后把刚才id_rsa.pub文件中的内容copy放在此框中</p>
+</li>
+<li><p>动行hexo并用git上传</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ sudo hexo g</span><br><span class="line">$ sudo hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="然面出错啦！"><a href="#然面出错啦！" class="headerlink" title="然面出错啦！##"></a>然面出错啦！##</h2><ol start="4">
+<li>原来是以前建立github时的设置要重新设。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name 注册gitee的用户名</span><br><span class="line">$ git config --global user.email 注册gitee的邮箱名</span><br></pre></td></tr></table></figure>
+<p>再次执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>上传成功了，然而…..<br>#######  我的页面呢？为啥子显示不了呢？</p>
+<ol start="5">
+<li>进入到你的gitee页，然后选择（服务-gitee pages）。顺利话的你的个人站点就已经完成了</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/03/27/hexo-about-gitee/" data-id="ckfnbf29h000p44s68qdz3hv8" class="article-share-link" data-share="baidu" data-title="Hexo布署到gitee">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo%E5%B8%83%E7%BD%B2/" rel="tag">hexo布署</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux-ftp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/15/termux-ftp/" class="article-date">
+  <time datetime="2020-03-15T02:56:00.000Z" itemprop="datePublished">2020-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/15/termux-ftp/">termux下的ftp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Termux启用ftp功能"><a href="#Termux启用ftp功能" class="headerlink" title="Termux启用ftp功能"></a>Termux启用ftp功能</h4><p>Termux安装之后，在里面运行passwd配置密码，运行whoami查看用户名，然后安装openssh软件包，自带sftp-server，连接方法:Filezilla，新建链接，选择sftp协议，询问用户名和密码，注意端口选择8022，即可连接sftp服务，亲测可删写服务器内容，简单极致，无需安装和启动pure-ftpd软件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/03/15/termux-ftp/" data-id="ckfnbf2dg001t44s6a9oa4l6f" class="article-share-link" data-share="baidu" data-title="termux下的ftp">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux-editor-micro" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/07/termux-editor-micro/" class="article-date">
+  <time datetime="2020-03-07T14:56:00.000Z" itemprop="datePublished">2020-03-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/07/termux-editor-micro/">termux下的最佳文本编辑器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="命令行下看脚本，编辑脚本好难啊！"><a href="#命令行下看脚本，编辑脚本好难啊！" class="headerlink" title="命令行下看脚本，编辑脚本好难啊！"></a>命令行下看脚本，编辑脚本好难啊！</h4><p>大家都说vim好，可是在图形界面下的习惯改不过了。用了辣么多年的Ctr+c, Ctr+v，非要记什么yy,p，还要ESC先到命令栏，稍微一下就错了。喔，我又习惯性的用Crl+v了，我的VIM咋不动了？</p>
+<h4 id="强烈推荐-micro-编辑器。"><a href="#强烈推荐-micro-编辑器。" class="headerlink" title="强烈推荐 micro 编辑器。"></a>强烈推荐 micro 编辑器。</h4><p>还是要多看看wiki啊，不要以为是老手就不回顾，今天无意中再看了termux的wiki，然后发现termux的作者都喜欢用的micro，于是试装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install micro   <span class="comment">#安装</span></span><br><span class="line">$ micro   <span class="comment"># 运行</span></span><br></pre></td></tr></table></figure>
+<h4 id="TMD终于有一个编辑器可以照抄Win下面的操作逻辑了"><a href="#TMD终于有一个编辑器可以照抄Win下面的操作逻辑了" class="headerlink" title="TMD终于有一个编辑器可以照抄Win下面的操作逻辑了"></a>TMD终于有一个编辑器可以照抄Win下面的操作逻辑了</h4><p>打开micro后按Alt-G键即可打开快捷键列表。</p>
+<p>Ctrl-Q退出，Ctrl-S存储，Ctrl-O打开文件，Ctrl-F查找，Ctrl-Z撤销操作，Ctrl-Y重新操作，Ctrl-A全选，Ctrl-T新开标签页。<br>没有列出的快捷键还有：<br>Shift加箭头选择文本，Ctrl-C拷贝，Ctrl-V粘贴，Ctrl-X剪切，PageUp上翻页，PageDown下翻页，Home行首，End行尾。</p>
+<p>还支持鼠标拖动选择！牛</p>
+<h4 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h4><p><a target="_blank" rel="noopener" href="https://github.com/zyedidia/micro/blob/master/runtime/help/help.md">https://github.com/zyedidia/micro/blob/master/runtime/help/help.md</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/03/07/termux-editor-micro/" data-id="ckfnbf2d9001p44s60i0y6190" class="article-share-link" data-share="baidu" data-title="termux下的最佳文本编辑器">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ternux-editor/" rel="tag">ternux-editor</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux-add-sudo-user" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/07/linux-add-sudo-user/" class="article-date">
+  <time datetime="2020-03-07T13:18:00.000Z" itemprop="datePublished">2020-03-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/07/linux-add-sudo-user/">ubuntu增加sudo用户</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="为ubuntu增加一个sudo用户"><a href="#为ubuntu增加一个sudo用户" class="headerlink" title="为ubuntu增加一个sudo用户"></a>为ubuntu增加一个sudo用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ adduser laoshiren   <span class="comment"># 添加用户名叫laoshiren</span></span><br><span class="line">   依次输入密码，全名等用户信息。</span><br><span class="line">$ usermod laoshiren -aG udo ami <span class="comment">#把用户laoshiren加入sudo admin用户组</span></span><br><span class="line">$ apt install sudo <span class="comment">#有的没有这个命令，要安装，如果有就跳过这一步</span></span><br><span class="line">$ sudo vim /etc/sudoers</span><br><span class="line">   添加 laoshiren ALL=(ALL:ALL) ALL</span><br><span class="line">保存退出。   </span><br></pre></td></tr></table></figure>
+<p>要切换到laoshiren用户，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ su - laoshiren</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/03/07/linux-add-sudo-user/" data-id="ckfnbf2a0000t44s6bea4cmd1" class="article-share-link" data-share="baidu" data-title="ubuntu增加sudo用户">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu-add-sudo/" rel="tag">ubuntu add sudo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-anlinux-sdcard" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/28/anlinux-sdcard/" class="article-date">
+  <time datetime="2020-02-28T04:38:00.000Z" itemprop="datePublished">2020-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/28/anlinux-sdcard/">Anlinux读取外部存储</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Anlinux读取外部存储，以ubuntu-arm版为例"><a href="#Anlinux读取外部存储，以ubuntu-arm版为例" class="headerlink" title="Anlinux读取外部存储，以ubuntu arm版为例"></a>Anlinux读取外部存储，以ubuntu arm版为例</h4><p>其实anlinux的作者己经写此功能了，要结合temux与anlinux的wiki可得出结论。</p>
+<h5 id="一-termux终端下设置"><a href="#一-termux终端下设置" class="headerlink" title="一. termux终端下设置"></a>一. termux终端下设置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ termux-setup-storage</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后会在”～/“目录下生成storage目录，“～/storage/shared/“目录就是你的手机存储的别的App的目录，请记住这个目录</p>
+<h5 id="二-修改ubuntu启动文件，以支持外部存储"><a href="#二-修改ubuntu启动文件，以支持外部存储" class="headerlink" title="二. 修改ubuntu启动文件，以支持外部存储"></a>二. 修改ubuntu启动文件，以支持外部存储</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ vim start-ubuntu.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>大约在21行，</p>
+<blockquote>
+<p>#command+=” b /sdcard”<br>请把注释去掉，改为<br>command+=” b /sdcard”</p>
+</blockquote>
+<h5 id="三-执行-start-ubuntu-sh进入ubuntu"><a href="#三-执行-start-ubuntu-sh进入ubuntu" class="headerlink" title="三. 执行 ./start-ubuntu.sh进入ubuntu"></a>三. 执行 ./start-ubuntu.sh进入ubuntu</h5><p>在你的根目下有一个sdcard目录，”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~ <span class="built_in">cd</span> /sdcard</span><br><span class="line">root@localhost:/sdcard<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>这个目录其实就是termux下的“～/storage/shared/“目录.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/02/28/anlinux-sdcard/" data-id="ckfnbf270000044s6g5krbrr1" class="article-share-link" data-share="baidu" data-title="Anlinux读取外部存储">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux-anlinux/" rel="tag">termux-anlinux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页 &amp;raquo;</a>
+  </nav>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/caddy/">caddy</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cygwin/">cygwin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/termux/">termux</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tmux/">tmux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vitualbox/">vitualbox</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/win10/">win10</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/">远程桌面</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox%E4%B8%8B%E7%9A%84linux%E6%8C%82%E8%BD%BD%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/" rel="tag">VirtualBox下的linux挂载共享目录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox%E6%89%BE%E5%88%B0USB%E5%A4%96%E8%AE%BE/" rel="tag">VirtualBox找到USB外设</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anlinux-vscode-console/" rel="tag">anlinux-vscode-console</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anlinux-vscode-x11/" rel="tag">anlinux-vscode-x11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caddy-php/" rel="tag">caddy+php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caddy%E4%B8%8B%E5%AE%89%E8%A3%85VtigerCRM/" rel="tag">caddy下安装VtigerCRM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cygwin%E5%AE%89%E8%A3%85mysql/" rel="tag">cygwin安装mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E5%B8%83%E7%BD%B2/" rel="tag">hexo布署</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E7%9A%84%E4%B8%BB%E9%A2%98/" rel="tag">hexo的主题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lsb-release%E5%91%BD%E4%BB%A4/" rel="tag">lsb_release命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs-hexo%E5%AE%89%E8%A3%85/" rel="tag">nodejs,hexo安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux/" rel="tag">termux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux-termux-anlinux/" rel="tag">termux termux-anlinux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux-anlinux/" rel="tag">termux-anlinux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux-linux-VNC/" rel="tag">termux-linux-VNC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux-proot-distro/" rel="tag">termux-proot-distro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux%E5%88%9D%E5%A7%8B%E5%8C%96/" rel="tag">termux初始化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux%E5%AE%89%E8%A3%85wcode/" rel="tag">termux安装wcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ternux-editor/" rel="tag">ternux-editor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">tmux快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu-add-sudo/" rel="tag">ubuntu add sudo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu%E5%AE%89%E8%A3%85mysql/" rel="tag">ubuntu安装mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8freerdp/" rel="tag">ubuntu安装使用freerdp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu%E9%BB%98%E8%AE%A4%E6%8E%A7%E5%88%B6%E5%8F%B0/" rel="tag">ubuntu默认控制台</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">vim快捷键</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vxbox%E6%9B%B4%E6%94%B9%E8%99%9A%E4%BB%A5%E7%A1%AC%E7%9B%98%E5%A4%A7%E5%B0%8F/" rel="tag">vxbox更改虚以硬盘大小</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10%E5%AE%89%E8%A3%85/" rel="tag">win10安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%AF%E5%81%9CVirtualBox/" rel="tag">命令行启停VirtualBox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4mysql/" rel="tag">彻底删除mysql</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/VirtualBox%E4%B8%8B%E7%9A%84linux%E6%8C%82%E8%BD%BD%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">VirtualBox下的linux挂载共享目录</a> <a href="/tags/VirtualBox%E6%89%BE%E5%88%B0USB%E5%A4%96%E8%AE%BE/" style="font-size: 10px;">VirtualBox找到USB外设</a> <a href="/tags/anlinux-vscode-console/" style="font-size: 10px;">anlinux-vscode-console</a> <a href="/tags/anlinux-vscode-x11/" style="font-size: 10px;">anlinux-vscode-x11</a> <a href="/tags/caddy-php/" style="font-size: 10px;">caddy+php</a> <a href="/tags/caddy%E4%B8%8B%E5%AE%89%E8%A3%85VtigerCRM/" style="font-size: 10px;">caddy下安装VtigerCRM</a> <a href="/tags/cygwin%E5%AE%89%E8%A3%85mysql/" style="font-size: 10px;">cygwin安装mysql</a> <a href="/tags/hexo%E5%B8%83%E7%BD%B2/" style="font-size: 13.33px;">hexo布署</a> <a href="/tags/hexo%E7%9A%84%E4%B8%BB%E9%A2%98/" style="font-size: 10px;">hexo的主题</a> <a href="/tags/lsb-release%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">lsb_release命令</a> <a href="/tags/nodejs-hexo%E5%AE%89%E8%A3%85/" style="font-size: 10px;">nodejs,hexo安装</a> <a href="/tags/termux/" style="font-size: 16.67px;">termux</a> <a href="/tags/termux-termux-anlinux/" style="font-size: 10px;">termux termux-anlinux</a> <a href="/tags/termux-anlinux/" style="font-size: 20px;">termux-anlinux</a> <a href="/tags/termux-linux-VNC/" style="font-size: 10px;">termux-linux-VNC</a> <a href="/tags/termux-proot-distro/" style="font-size: 10px;">termux-proot-distro</a> <a href="/tags/termux%E5%88%9D%E5%A7%8B%E5%8C%96/" style="font-size: 10px;">termux初始化</a> <a href="/tags/termux%E5%AE%89%E8%A3%85wcode/" style="font-size: 10px;">termux安装wcode</a> <a href="/tags/ternux-editor/" style="font-size: 10px;">ternux-editor</a> <a href="/tags/tmux%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 10px;">tmux快捷键</a> <a href="/tags/ubuntu-add-sudo/" style="font-size: 10px;">ubuntu add sudo</a> <a href="/tags/ubuntu%E5%AE%89%E8%A3%85mysql/" style="font-size: 10px;">ubuntu安装mysql</a> <a href="/tags/ubuntu%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8freerdp/" style="font-size: 10px;">ubuntu安装使用freerdp</a> <a href="/tags/ubuntu%E9%BB%98%E8%AE%A4%E6%8E%A7%E5%88%B6%E5%8F%B0/" style="font-size: 10px;">ubuntu默认控制台</a> <a href="/tags/vim%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 10px;">vim快捷键</a> <a href="/tags/vxbox%E6%9B%B4%E6%94%B9%E8%99%9A%E4%BB%A5%E7%A1%AC%E7%9B%98%E5%A4%A7%E5%B0%8F/" style="font-size: 10px;">vxbox更改虚以硬盘大小</a> <a href="/tags/win10%E5%AE%89%E8%A3%85/" style="font-size: 10px;">win10安装</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%AF%E5%81%9CVirtualBox/" style="font-size: 10px;">命令行启停VirtualBox</a> <a href="/tags/%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4mysql/" style="font-size: 10px;">彻底删除mysql</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/28/termux-install-wcode/">给termux增加vscode功能</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/28/ubuntu-freerdp-win7/">ubuntu利用远程桌面连接win7</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/28/index/">termux</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/28/termux-proot-distro/">termux利用工作proot-distro安装linux</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/27/termux-anlinux-sourcelist/">termux 与 Anlinux换源</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://superigbt_superigbt.gitee.io/" target="_blank">My-gitee</a>
+          </li>
+        
+          <li>
+            <a href="https://superigbt.github.io/" target="_blank">My-github</a>
+          </li>
+        
+          <li>
+            <a href="https://hexo.io/themes/" target="_blank">Hexo主题</a>
+          </li>
+        
+          <li>
+            <a href="https://github.com/termux/termux-app/releases" target="_blank">Texmux神器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Frank.Li<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">按时间</a>
+  
+    <a href="/about" class="mobile-nav-link">关于我</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+</body>
+</html>
