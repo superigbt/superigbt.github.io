@@ -6,15 +6,15 @@
   
   <title>ubuntu安装Wine | 我的学习笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一 安装wine 开启32位架构的支持 1sudo dpkg --add-architecture i386  下载添加wine的仓库密钥 12sudo wget -nc -O &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;winehq-archive.key https:&#x2F;&#x2F;dl.winehq.org&#x2F;wine-builds&#x2F;winehq.key (https:&#x2F;&#x2F;dl.winehq.org&#x2F;wine">
+  <meta name="description" content="一 安装wine 开启32位架构的支持 123sudo dpkg --add-architecture i386  #必须先执行这一个sudo update   # 这一点很重要sudo upgrade -y   # 这一点很重要  下载添加wine的仓库密钥 12sudo wget -nc -O &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;winehq-archive.key https:&#x2F;&#x2F;dl.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu安装Wine">
 <meta property="og:url" content="https://superigbt.github.io/2022/10/06/linux/ubuntu-install-wine/index.html">
 <meta property="og:site_name" content="我的学习笔记">
-<meta property="og:description" content="一 安装wine 开启32位架构的支持 1sudo dpkg --add-architecture i386  下载添加wine的仓库密钥 12sudo wget -nc -O &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;winehq-archive.key https:&#x2F;&#x2F;dl.winehq.org&#x2F;wine-builds&#x2F;winehq.key (https:&#x2F;&#x2F;dl.winehq.org&#x2F;wine">
+<meta property="og:description" content="一 安装wine 开启32位架构的支持 123sudo dpkg --add-architecture i386  #必须先执行这一个sudo update   # 这一点很重要sudo upgrade -y   # 这一点很重要  下载添加wine的仓库密钥 12sudo wget -nc -O &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;winehq-archive.key https:&#x2F;&#x2F;dl.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-06T03:30:24.000Z">
-<meta property="article:modified_time" content="2024-01-18T08:36:31.741Z">
+<meta property="article:modified_time" content="2024-02-04T12:04:30.875Z">
 <meta property="article:author" content="Frank.Li">
 <meta property="article:tag" content="模拟器&#x2F;虚拟机">
 <meta property="article:tag" content="linux">
@@ -114,7 +114,7 @@
       
         <h4 id="一-安装wine"><a href="#一-安装wine" class="headerlink" title="一 安装wine"></a>一 安装wine</h4><ol>
 <li><p>开启32位架构的支持</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --add-architecture i386</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --add-architecture i386  <span class="comment">#必须先执行这一个</span></span><br><span class="line">sudo update   <span class="comment"># 这一点很重要</span></span><br><span class="line">sudo upgrade -y   <span class="comment"># 这一点很重要</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>下载添加wine的仓库密钥</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo wget -nc -O /usr/share/keyrings/winehq-archive.key https://dl.winehq.org/wine-build</span><br><span class="line">s/winehq.key (https://dl.winehq.org/wine-builds/winehq.key)</span><br></pre></td></tr></table></figure>
@@ -127,13 +127,13 @@
 </ol>
 <h4 id="二-安装wine依赖环境-很重要"><a href="#二-安装wine依赖环境-很重要" class="headerlink" title="二 安装wine依赖环境(很重要)"></a>二 安装wine依赖环境(很重要)</h4><ol>
 <li><p>安装winetricks，Wine的辅助配置工具，超级便利</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install --install-recommends winetricks</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install --install-recommends winetricks <span class="comment"># debian得到wine网站上下了 </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装字体，解决Wine及初始配置界面乱码</p>
 <p>将以下 simfang.ttf 、 simhei.ttf 、 simkai.ttf 、simsun.ttc 字体文件复制到 Wine 安装路径下的字体目录 &#x2F;opt&#x2F;wine-stable&#x2F;share&#x2F;wine&#x2F;fonts 即可。如果有别的需求，也可以将更多字体复制到该目录下，比如微软雅黑字体文件 msyh.ttf 、 msyhbd.ttf。</p>
 </li>
 <li><p>安装Wine依赖，终端下执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ winetricks</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ winetricks</span><br><span class="line">如果因网络原因winetricks无法安装与执行，则运行</span><br><span class="line">$ winecfg  <span class="comment"># 进行配置</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>初始执行 winecfg或 wine 或 winetricks ,会要求下载安装 wine-mono 和 wine-gecko ,这是一个相对漫长的过程,并且中途还可能出错,有可能需要反复多次才能下载安装成功。这些依赖文件是下载安装在: ~&#x2F;.cache&#x2F;wine 目录下的。</p>
 <p>然后会出现界面，选择默认容器，安装配置，用鼠标选择</p>
@@ -161,7 +161,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/06/linux/ubuntu-install-wine/" data-id="clrizod9x009bkrs6d9zz0jq7" class="article-share-link" data-share="baidu" data-title="ubuntu安装Wine">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/06/linux/ubuntu-install-wine/" data-id="cls8oa031009b3ds6c9yme3tu" class="article-share-link" data-share="baidu" data-title="ubuntu安装Wine">分享到</a>
       
 
       

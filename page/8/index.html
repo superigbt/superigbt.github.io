@@ -145,7 +145,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/25/blog/hexo-redeployment-github/" data-id="clrizod7t001tkrs6bfxabfos" class="article-share-link" data-share="baidu" data-title="Hexo重新布置到github出错">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/25/blog/hexo-redeployment-github/" data-id="cls8oa00x001t3ds6a2xbbrdi" class="article-share-link" data-share="baidu" data-title="Hexo重新布置到github出错">分享到</a>
       
 
       
@@ -222,7 +222,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/12/linux/ubuntu-install-Docker/" data-id="clrizod9v0090krs62s730ul7" class="article-share-link" data-share="baidu" data-title="在Ubuntu系统中安装Docker">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/12/linux/ubuntu-install-Docker/" data-id="cls8oa02z00903ds60ipub4bm" class="article-share-link" data-share="baidu" data-title="在Ubuntu系统中安装Docker">分享到</a>
       
 
       
@@ -268,7 +268,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/08/linux/linux-calibrate-screen-colors/" data-id="clrizod9m007zkrs6h9xh7hmx" class="article-share-link" data-share="baidu" data-title="Ubuntu 屏幕颜色校准">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/08/linux/linux-calibrate-screen-colors/" data-id="cls8oa02q007z3ds6gnco029s" class="article-share-link" data-share="baidu" data-title="Ubuntu 屏幕颜色校准">分享到</a>
       
 
       
@@ -330,7 +330,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/07/linux/debootstrap2/" data-id="clrizod9i007ikrs6dtu6azol" class="article-share-link" data-share="baidu" data-title="debootstrap学习笔记2">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/07/linux/debootstrap2/" data-id="cls8oa02l007i3ds62ygz56r2" class="article-share-link" data-share="baidu" data-title="debootstrap学习笔记2">分享到</a>
       
 
       
@@ -387,7 +387,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/06/linux/debootstrap1/" data-id="clrizod9h007dkrs67h9ufusg" class="article-share-link" data-share="baidu" data-title="debootstrap学习笔记1">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/06/linux/debootstrap1/" data-id="cls8oa02k007d3ds6bbu4645f" class="article-share-link" data-share="baidu" data-title="debootstrap学习笔记1">分享到</a>
       
 
       
@@ -430,7 +430,7 @@
       
         <h4 id="一-安装wine"><a href="#一-安装wine" class="headerlink" title="一 安装wine"></a>一 安装wine</h4><ol>
 <li><p>开启32位架构的支持</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --add-architecture i386</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --add-architecture i386  <span class="comment">#必须先执行这一个</span></span><br><span class="line">sudo update   <span class="comment"># 这一点很重要</span></span><br><span class="line">sudo upgrade -y   <span class="comment"># 这一点很重要</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>下载添加wine的仓库密钥</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo wget -nc -O /usr/share/keyrings/winehq-archive.key https://dl.winehq.org/wine-build</span><br><span class="line">s/winehq.key (https://dl.winehq.org/wine-builds/winehq.key)</span><br></pre></td></tr></table></figure>
@@ -443,13 +443,13 @@
 </ol>
 <h4 id="二-安装wine依赖环境-很重要"><a href="#二-安装wine依赖环境-很重要" class="headerlink" title="二 安装wine依赖环境(很重要)"></a>二 安装wine依赖环境(很重要)</h4><ol>
 <li><p>安装winetricks，Wine的辅助配置工具，超级便利</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install --install-recommends winetricks</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install --install-recommends winetricks <span class="comment"># debian得到wine网站上下了 </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装字体，解决Wine及初始配置界面乱码</p>
 <p>将以下 simfang.ttf 、 simhei.ttf 、 simkai.ttf 、simsun.ttc 字体文件复制到 Wine 安装路径下的字体目录 &#x2F;opt&#x2F;wine-stable&#x2F;share&#x2F;wine&#x2F;fonts 即可。如果有别的需求，也可以将更多字体复制到该目录下，比如微软雅黑字体文件 msyh.ttf 、 msyhbd.ttf。</p>
 </li>
 <li><p>安装Wine依赖，终端下执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ winetricks</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ winetricks</span><br><span class="line">如果因网络原因winetricks无法安装与执行，则运行</span><br><span class="line">$ winecfg  <span class="comment"># 进行配置</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>初始执行 winecfg或 wine 或 winetricks ,会要求下载安装 wine-mono 和 wine-gecko ,这是一个相对漫长的过程,并且中途还可能出错,有可能需要反复多次才能下载安装成功。这些依赖文件是下载安装在: ~&#x2F;.cache&#x2F;wine 目录下的。</p>
 <p>然后会出现界面，选择默认容器，安装配置，用鼠标选择</p>
@@ -477,7 +477,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/06/linux/ubuntu-install-wine/" data-id="clrizod9x009bkrs6d9zz0jq7" class="article-share-link" data-share="baidu" data-title="ubuntu安装Wine">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/06/linux/ubuntu-install-wine/" data-id="cls8oa031009b3ds6c9yme3tu" class="article-share-link" data-share="baidu" data-title="ubuntu安装Wine">分享到</a>
       
 
       
@@ -529,7 +529,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/09/13/essay/excerpt6/" data-id="clrizod8d003pkrs68dg948s5" class="article-share-link" data-share="baidu" data-title="摘抄2---中国真心不容易">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/09/13/essay/excerpt6/" data-id="cls8oa01h003p3ds6cwvhgp5b" class="article-share-link" data-share="baidu" data-title="摘抄2---中国真心不容易">分享到</a>
       
 
       
@@ -602,7 +602,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/06/06/SMPS/SMPS-primary%20-filter-capacitor/" data-id="clrizod7e000hkrs6em533hk2" class="article-share-link" data-share="baidu" data-title="开关电源初级侧滤波高压电容计算">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/06/06/SMPS/SMPS-primary%20-filter-capacitor/" data-id="cls8oa00i000h3ds60aq1c0dd" class="article-share-link" data-share="baidu" data-title="开关电源初级侧滤波高压电容计算">分享到</a>
       
 
       
@@ -674,7 +674,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/06/05/python/streamlit-7/" data-id="clrizodal00c3krs6h9grbfzj" class="article-share-link" data-share="baidu" data-title="streamlit学习笔记七-----与AG Grid的结合">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/06/05/python/streamlit-7/" data-id="cls8oa03s00c33ds6e8z75d9i" class="article-share-link" data-share="baidu" data-title="streamlit学习笔记七-----与AG Grid的结合">分享到</a>
       
 
       
@@ -732,7 +732,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/06/05/python/streamlit-6/" data-id="clrizodal00c0krs6dinx7wxs" class="article-share-link" data-share="baidu" data-title="streamlit学习笔记六-----streamlit新版支持原生多页面">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/06/05/python/streamlit-6/" data-id="cls8oa03s00c03ds6fmh5bpoz" class="article-share-link" data-share="baidu" data-title="streamlit学习笔记六-----streamlit新版支持原生多页面">分享到</a>
       
 
       
