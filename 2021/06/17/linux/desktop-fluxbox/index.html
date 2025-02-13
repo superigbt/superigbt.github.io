@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ubuntu安装fluxbox总结 | 我的学习笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一 安装12$ sudo apt install fluxbox* -y$ exec startfluxbox  #启动桌面 系统自带的 Fluxbox 主题文件在 &#x2F;usr&#x2F;share&#x2F;fluxbox&#x2F;styles 中，缺省的 Fluxbox 配置文件在 &#x2F;etc&#x2F;X11&#x2F;fluxbox&#x2F;目录中用户个人配置文件在 ~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu安装fluxbox总结">
+<meta property="og:url" content="https://superigbt.github.io/2021/06/17/linux/desktop-fluxbox/index.html">
+<meta property="og:site_name" content="我的学习笔记">
+<meta property="og:description" content="一 安装12$ sudo apt install fluxbox* -y$ exec startfluxbox  #启动桌面 系统自带的 Fluxbox 主题文件在 &#x2F;usr&#x2F;share&#x2F;fluxbox&#x2F;styles 中，缺省的 Fluxbox 配置文件在 &#x2F;etc&#x2F;X11&#x2F;fluxbox&#x2F;目录中用户个人配置文件在 ~">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-17T07:01:00.000Z">
+<meta property="article:modified_time" content="2021-06-17T07:01:00.000Z">
+<meta property="article:author" content="Frank.Li">
+<meta property="article:tag" content="linux桌面">
+<meta property="article:tag" content="fluxbox">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="我的学习笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我的学习笔记</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">按时间</a>
+        
+          <a class="main-nav-link" href="/categories/%E6%91%98%E6%8A%84%E4%B8%8E%E9%9A%8F%E7%AC%94">摘抄，随笔</a>
+        
+          <a class="main-nav-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF">开关电源</a>
+        
+          <a class="main-nav-link" href="/categories/termux">Termux</a>
+        
+          <a class="main-nav-link" href="/categories/python%E5%AD%A6%E4%B9%A0">python学习</a>
+        
+          <a class="main-nav-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99">建站</a>
+        
+          <a class="main-nav-link" href="/categories/linux">Linux</a>
+        
+          <a class="main-nav-link" href="/about">关于我</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="superigbt.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-linux/desktop-fluxbox" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/17/linux/desktop-fluxbox/" class="article-date">
+  <time datetime="2021-06-17T07:01:00.000Z" itemprop="datePublished">2021-06-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ubuntu安装fluxbox总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一-安装"><a href="#一-安装" class="headerlink" title="一 安装"></a>一 安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install fluxbox* -y</span><br><span class="line">$ <span class="built_in">exec</span> startfluxbox  <span class="comment">#启动桌面</span></span><br></pre></td></tr></table></figure>
+<p>系统自带的 Fluxbox 主题文件在 &#x2F;usr&#x2F;share&#x2F;fluxbox&#x2F;styles 中，<br>缺省的 Fluxbox 配置文件在 &#x2F;etc&#x2F;X11&#x2F;fluxbox&#x2F;目录中<br>用户个人配置文件在 ~&#x2F;.fluxbox 中，配置文件如下：</p>
+<p>init - 主要的 Fluxbox 资源配置文件。参阅 编辑init文件。</p>
+<p>menu - Fluxbox 菜单配置文件。参阅下文和 编辑menu文件。</p>
+<p>keys - Fluxbox 键盘快捷键(热键)配置文件。参阅下文和 这里。</p>
+<p>startup - 编辑开机启动程序，参阅下文中关于 .xinitrc 的部分和 这里。</p>
+<p>overlay - 重载主题元素的配置文件。如果改一次主题，有的无法显示中文，可在这里重点设置字体，就不用在每一个主题目录下修改了</p>
+<p>apps - 记忆具体应用程序窗口配置的文件。参阅 这里。</p>
+<p>windowmenu - 配置窗口菜单自身的文件。看这里。</p>
+<p>文件夹中有很多不太重要的配置文件。需要注意的有 </p>
+<h5 id="init，menu，keys-和-startup。"><a href="#init，menu，keys-和-startup。" class="headerlink" title="init，menu，keys 和 startup。"></a>init，menu，keys 和 startup。</h5><h4 id="二-轻松切换多个壁纸-进入后，太难看啦，什么也元。先换个好看的壁纸吧。"><a href="#二-轻松切换多个壁纸-进入后，太难看啦，什么也元。先换个好看的壁纸吧。" class="headerlink" title="二 轻松切换多个壁纸,  进入后，太难看啦，什么也元。先换个好看的壁纸吧。"></a>二 轻松切换多个壁纸,  进入后，太难看啦，什么也元。先换个好看的壁纸吧。</h4><ol>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ fbsetbg -f 你的壁纸文件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后，会在你的<del>&#x2F;.fluxbox&#x2F;lastwallpaper文件中记录下这次设置的壁纸。<br>修改</del>&#x2F;.fluxbox&#x2F;init文件, 并添加，或修改<br>session.screen0.rootCommand fbsetbg -l<br>则下次启动，就会记住你上次修改的壁纸了。</p>
+</li>
+<li><p>在 Fluxbox 菜单中添加子菜单如下：</p>
+</li>
+</ol>
+<p>[submenu] (Backgrounds)</p>
+<h1 id="wallpapers-壁纸目录-feh-–bg-scale"><a href="#wallpapers-壁纸目录-feh-–bg-scale" class="headerlink" title="[wallpapers] (~&#x2F;壁纸目录) {feh –bg-scale}"></a>[wallpapers] (~&#x2F;壁纸目录) {feh –bg-scale}</h1><p>[wallpapers] (&#x2F;sdcard&#x2F;Domuments&#x2F;wallpapers) {feh –bg-scale}</p>
+<p>[end]<br>然后在fluxbox的桌面，右健弹出的菜单中有一个Backgrounds选项。</p>
+<h4 id="三-菜单管理-和其他轻量窗口管理器一样，Fluxbox-在安装新程序的时候并不自动升级其程序菜单。因此推荐先在系统上安装需要的应用程序，然后再生成或编辑程序菜单。有四种基本方法来添加-编辑项目和增强菜单，这里讲三种："><a href="#三-菜单管理-和其他轻量窗口管理器一样，Fluxbox-在安装新程序的时候并不自动升级其程序菜单。因此推荐先在系统上安装需要的应用程序，然后再生成或编辑程序菜单。有四种基本方法来添加-编辑项目和增强菜单，这里讲三种：" class="headerlink" title="三 菜单管理, 和其他轻量窗口管理器一样，Fluxbox 在安装新程序的时候并不自动升级其程序菜单。因此推荐先在系统上安装需要的应用程序，然后再生成或编辑程序菜单。有四种基本方法来添加&#x2F;编辑项目和增强菜单，这里讲三种："></a>三 菜单管理, 和其他轻量窗口管理器一样，Fluxbox 在安装新程序的时候并不自动升级其程序菜单。因此推荐先在系统上安装需要的应用程序，然后再生成或编辑程序菜单。有四种基本方法来添加&#x2F;编辑项目和增强菜单，这里讲三种：</h4><ol>
+<li>fluxbox内置的工具<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fluxbox-generate_menu</span><br></pre></td></tr></table></figure></li>
+<li>使用mmake命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt instlal mmake</span><br><span class="line">$ <span class="built_in">sudo</span> mmaker -f FluxBox</span><br></pre></td></tr></table></figure></li>
+<li>手功编辑,vim大法</li>
+</ol>
+<p>3.1 可执行的语法<br>[exec] (name) {command} “name” 是想要在菜单项目上显示的文字，”command” 是程序所在的位置。<br>  单项的类型都是用”[]”定义的，所有菜单项的名称都是用”()”定义的，所有的命令都是用”{}”定义的，所有的图标都是用 “&lt;&gt;”定义的，在&#x2F;usr&#x2F;share&#x2F;pixmaps&#x2F;里找到N多程序的图标<br>3.2  include] (文件或目录名), 这个表示插入一个外部的菜单文件，可以写就对路径，也可以 ~&#x2F; 来指代你的主目录。如果给出的是一个目录的话，那目录里所有的文件都会被包含。通过这种方法，你可以在自己的菜单里将自动生成的菜单包含进来，这样，你既 不需要修改自动生成的菜单(自动生成的菜单开头都会有一句话，让你不要去修改它，因为你新装一个程序，它是会更新的)，也不怕自己的菜单被破坏。<br>3.3 [nop] (label), 这表示插入一个空白项目，如果在”()”中指定了名称，那么就会显示这个名称，显示效果和和普通菜单项是有区别的。如果没指定名称，那么就是一个空出来的位置，什么都没有<br>3.4 [separator]  这表示插入一条分界线，与上面的”[nop]”一样，有助于菜单的格式化。<br>3.5 [stylesdir] (label) {目录}   该标签用于创建一个名为label的子菜单，并且在子菜单中插入目录中所有的样式，这样可以方便地切换样式，例如你可以把 ~&#x2F;.fluxbox&#x2F;styles 目录加进去。<br>3.6 [wallpapers] (目录)  这个标签会将目录下的所有图片列出来，方便你切换壁纸。有一点要注意的是，目录里面的目录是被忽略的，也就是它不会递归的，所以你最好将壁纸全部放在一个目录下<br>3.7 [config] (label) 弹出一个fluxbox的配置菜单，省却手工编辑的麻烦。</p>
+<p>例子：<br>    [exec] (浏览器) {&#x2F;usr&#x2F;bin&#x2F;firefox}<br>    [exec] (终端) {xfce4-terminal}<br>    [separator] # 分隔线<br>3.2创建子菜单的语法如下：</p>
+<p>[submenu] (Name)<br>…<br>…<br>[end]<br>编辑完成后，保存退出，不需要重启 Fluxbox。</p>
+<h4 id="四-主题"><a href="#四-主题" class="headerlink" title="四 主题"></a>四 主题</h4><p>要安装 Fluxbox 主题，将主题文件解压缩到主题文件夹，默认的主题文件夹是</p>
+<p>全局 - &#x2F;usr&#x2F;share&#x2F;fluxbox&#x2F;styles</p>
+<p>仅用户 - ~&#x2F;.fluxbox&#x2F;styles</p>
+<p>主题选择菜单。</p>
+<p>将下面几行添加到 ~&#x2F;.fluxbox&#x2F;menu 文件中的重启菜单选项后来修正。</p>
+<p>[submenu] (System Styles) {Choose a style…}</p>
+<p>[stylesdir] (&#x2F;usr&#x2F;share&#x2F;fluxbox&#x2F;styles)</p>
+<p>[end]</p>
+<p>[submenu] (User Styles) {Choose a style…}</p>
+<p>[stylesdir] (~&#x2F;.fluxbox&#x2F;styles)</p>
+<p>[end]</p>
+<h4 id="五-一些系统用菜单，在-etc-X11-fluxbox-fluxbox-menu中有"><a href="#五-一些系统用菜单，在-etc-X11-fluxbox-fluxbox-menu中有" class="headerlink" title="五 一些系统用菜单，在&#x2F;etc&#x2F;X11&#x2F;fluxbox&#x2F;fluxbox-menu中有"></a>五 一些系统用菜单，在&#x2F;etc&#x2F;X11&#x2F;fluxbox&#x2F;fluxbox-menu中有</h4><ol>
+<li>更改窗口管理器或工作环境</li>
+</ol>
+<p>[config] (Configuration)<br> [submenu] (styles) {}<br>  [stylesdir] (&#x2F;usr&#x2F;share&#x2F;fluxbox&#x2F;styles)<br>  [stylesdir] (~&#x2F;.fluxbox&#x2F;styles)<br> [end]<br> [workspaes] (workspaces)<br> [recofig] (Reconfigure)  # 配置重新启动<br> [restart] (Restart)  # 生启动<br> [exit] (Exit)        # 退出系统</p>
+<h4 id="六-一些字体的修改，改了主题后，发现汉字显示不出来，得在主题文件下改字全，可是不能每次改一次主题，都要跑到主题目录中改吧？-这时-fluxbox-overlay文件的作用就体现出来了。在其中指明定体文件，不可以覆盖掉一些主题中的设置。"><a href="#六-一些字体的修改，改了主题后，发现汉字显示不出来，得在主题文件下改字全，可是不能每次改一次主题，都要跑到主题目录中改吧？-这时-fluxbox-overlay文件的作用就体现出来了。在其中指明定体文件，不可以覆盖掉一些主题中的设置。" class="headerlink" title="六 一些字体的修改，改了主题后，发现汉字显示不出来，得在主题文件下改字全，可是不能每次改一次主题，都要跑到主题目录中改吧？ 这时 ~&#x2F;.fluxbox&#x2F;overlay文件的作用就体现出来了。在其中指明定体文件，不可以覆盖掉一些主题中的设置。"></a>六 一些字体的修改，改了主题后，发现汉字显示不出来，得在主题文件下改字全，可是不能每次改一次主题，都要跑到主题目录中改吧？ 这时 ~&#x2F;.fluxbox&#x2F;overlay文件的作用就体现出来了。在其中指明定体文件，不可以覆盖掉一些主题中的设置。</h4><ol>
+<li>字体的设置主要有<br> menu.title.font:     # 这个是菜单标题的字体<br> menu.frame.font:     # 这个是菜单项目的字体<br> window.font:         # 这个是窗口标题栏的字体window (the font of the title of every window)<br> toolbar.clock.font:  # 这个是fluxbox时钟的字体<br> toolbar.workspace.font:   # 这个是工作区名称的字体，就是工具栏最左边的那个<br> toolbar.iconbar.focused.font:  # 图标栏的字体，就是工具栏中间的用来切换程序的那个。<br> toolbar.iconbar.unfocused.font:  # focused就是聚焦窗口，unfocused就是非聚焦窗口<br>通常把菜单的字体设置一下就好了，其他的留给style</li>
+</ol>
+<h1 id="菜单标题的字体"><a href="#菜单标题的字体" class="headerlink" title="菜单标题的字体"></a>菜单标题的字体</h1><p>menu.title.font: Simsun-10</p>
+<h1 id="菜单组标题的对齐方式"><a href="#菜单组标题的对齐方式" class="headerlink" title="菜单组标题的对齐方式"></a>菜单组标题的对齐方式</h1><p>menu.title.justify: center</p>
+<h1 id="菜单项目的字体"><a href="#菜单项目的字体" class="headerlink" title="菜单项目的字体"></a>菜单项目的字体</h1><p>menu.frame.font: Simsun-10</p>
+<h1 id="菜单项目的对齐方式"><a href="#菜单项目的对齐方式" class="headerlink" title="菜单项目的对齐方式"></a>菜单项目的对齐方式</h1><p>menu.frame.justify: left</p>
+<h1 id="窗口标题栏文字的字体"><a href="#窗口标题栏文字的字体" class="headerlink" title="窗口标题栏文字的字体"></a>窗口标题栏文字的字体</h1><p>window.font: Simsun-10</p>
+<h1 id="窗口标题栏文字的对齐方式"><a href="#窗口标题栏文字的对齐方式" class="headerlink" title="窗口标题栏文字的对齐方式"></a>窗口标题栏文字的对齐方式</h1><p>window.justify: center</p>
+<h1 id="窗口标题聚焦时的背景颜色-5-5-f"><a href="#窗口标题聚焦时的背景颜色-5-5-f" class="headerlink" title="窗口标题聚焦时的背景颜色|5&#x2F;5&#x2F;f"></a>窗口标题聚焦时的背景颜色|5&#x2F;5&#x2F;f</h1><p>window.label.focus.color: rgb:4e&#x2F;8f&#x2F;cf<br>window.label.focus.colorTo: rgb:4e&#x2F;8f&#x2F;cf</p>
+<h1 id="时钟的字体"><a href="#时钟的字体" class="headerlink" title="时钟的字体"></a>时钟的字体</h1><p>toolbar.clock.font: Simsun-10</p>
+<h1 id="工作区名称的字体"><a href="#工作区名称的字体" class="headerlink" title="工作区名称的字体"></a>工作区名称的字体</h1><p>#toolbar.workspace.font: Simsun</p>
+<h1 id="图标栏的字体"><a href="#图标栏的字体" class="headerlink" title="图标栏的字体"></a>图标栏的字体</h1><p>toolbar.iconbar.focused.font: Simsun-10<br>toolbar.iconbar.unfocused.font: Simsun-10<br>字体名称后面-11为字体大小，再后面跟:bold表示黑体显示，中间都没有空格。 </p>
+<ol start="2">
+<li>如何更改文泉字体？ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install gtk-theme-switch</span><br><span class="line">$ gtk-theme-switch  <span class="comment">#  运行之</span></span><br></pre></td></tr></table></figure>
+运行gtk-theme-switch2，会弹出一个gtk主题切换器，顺便在这里选一下gtk程序的主题。点击右边那个加号图标，还会出来一个字体选 项，没的说，当然是选文泉驿了。呵呵，现在知道fontname叫什么了吧，字体选择框那里写着呢。赶紧把WenQuanYi Bitmap Song写进overlay里去。你还可以设置字号，甚至还可以加点阴影或光晕特效。完整地写应该是这样的：</li>
+</ol>
+<p>CODE:<br>menu.title.font: WenQuanYi Bitmap Song<br>menu.title.font.effect: shadow<br>menu.title.font.shadow.color: #ffffff<br>menu.title.font.shadow.x: 2<br>menu.title.font.shadow.y: 5</p>
+<p>menu.frame.font: WenQuanYi Bitmap Song-12<br>menu.frame.font.effect: halo<br>menu.frame.font.halo.color: #ffffff</p>
+<p>toolbar.iconbar.focused.font: WenQuanYi Bitmap Song-12:bold<br>toolbar.iconbar.unfocused.font: WenQuanYi Bitmap Song-12</p>
+<h4 id="七-windowmenu-有编写"><a href="#七-windowmenu-有编写" class="headerlink" title="七 windowmenu 有编写"></a>七 windowmenu 有编写</h4><p>窗口菜单的写法和主菜单的写法几乎一样，就是多了几个特有的标签而已，所以，有了上面的知识，这里你可以轻松搞定。这些标签有：</p>
+<p>[shade] (label) # 这个表示卷起窗口<br>[close] (label)# 这个自然是关闭<br>[kill] (label)<br>[killwindow] (label) # 如果它停止响应，就杀死它<br>[stick] (label) # 粘住，就是在所有工作区都出现<br>[maximize] (label) # 最大化<br>[iconify] (label) # 最小化<br>[raise] (label)   #抬高，就是把窗口抬高一级，例如原来有窗口压在它上面，那么这样它就会跑上来<br>[lower] (label) #降低，抬高和降低你试一下就全明白了<br>[sendto] (label) # 弹出一个发送到的子菜单<br>[layer] (label)  # 弹出一个改变层次的子菜单<br>[extramenus] (label)  # 弹出一个记住的子菜单，让fluxbox记住窗口状态</p>
+<h5 id="八-配置apps文件"><a href="#八-配置apps文件" class="headerlink" title="八 配置apps文件"></a>八 配置apps文件</h5><p>书写格式是“[startup] {application}”的形式，方括号加startup即告诉系统在启动的时候加载后面大括号中的程序或命令。例如：<br>[startup] {tilda}<br>[startup] {xbindkeys}<br>[startup] {conky}<br>[startup] {fbsetbg -f &#x2F;home&#x2F;lost&#x2F;.wp.jpg}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2021/06/17/linux/desktop-fluxbox/" data-id="cm6mfdp790088qes6b6wbe306" class="article-share-link" data-share="baidu" data-title="ubuntu安装fluxbox总结">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fluxbox/" rel="tag">fluxbox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux%E6%A1%8C%E9%9D%A2/" rel="tag">linux桌面</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/06/21/linux/desktop-lumina/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          lumina桌面学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/10/linux/desktop-icewm/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">icewm教程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/caddy/">caddy</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nocobase/">nocobase</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E5%AD%A6%E4%B9%A0/">python学习</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/termux/">termux</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/win10/">win10</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/win11/">win11</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%98%E6%8A%84%E4%B8%8E%E9%9A%8F%E7%AC%94/">摘抄与随笔</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%89%E8%B6%A3%E7%9A%84%E9%A1%B9%E7%9B%AE/">有趣的项目</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C%E8%AF%8D/">歌词</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a><span class="category-list-count">16</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag"> 建站</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DC-DC/" rel="tag">DC-DC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KVM-qemu/" rel="tag">KVM&#x2F;qemu</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LAMP/" rel="tag">LAMP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LDO/" rel="tag">LDO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux%E8%AE%BE%E7%BD%AE/" rel="tag">Linux设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH%E7%BB%8F%E9%AA%8C/" rel="tag">SSH经验</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/" rel="tag">VirtualBox</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anlinux/" rel="tag">anlinux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caddy/" rel="tag">caddy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caddy-PHP/" rel="tag">caddy+PHP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caddy-Vtiger/" rel="tag">caddy+Vtiger </a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caddyV2/" rel="tag">caddyV2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code-server/" rel="tag">code-server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cygwin/" rel="tag">cygwin</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian%E7%BB%8F%E9%AA%8C/" rel="tag">debian经验</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/everthing-I-do-I-do-for-you/" rel="tag">everthing I do,I do for you</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flask%E6%A1%86%E6%9E%B6/" rel="tag">flask框架</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fluxbox/" rel="tag">fluxbox</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E4%B8%BB%E9%A2%98/" rel="tag">hexo主题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E9%83%A8%E7%BD%B2/" rel="tag">hexo部署</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo-meta/" rel="tag">hugo-meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icewm/" rel="tag">icewm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lamp-phpmyadmin/" rel="tag">lamp+phpmyadmin </a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-rootfs/" rel="tag">linux-rootfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux%E6%A1%8C%E9%9D%A2/" rel="tag">linux桌面</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux%E7%BB%8F%E9%AA%8C/" rel="tag">linux经验</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux%E8%AE%BE%E7%BD%AEDNS/" rel="tag">linux设置DNS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lumina%E6%A1%8C%E9%9D%A2/" rel="tag">lumina桌面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown%E8%A1%A8%E6%A0%BC/" rel="tag">markdown表格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mermaid/" rel="tag">mermaid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nocobase/" rel="tag">nocobase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/olly-murs/" rel="tag">olly murs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openbox/" rel="tag">openbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas%E5%AD%A6%E4%B9%A0/" rel="tag">pandas学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qemu/" rel="tag">qemu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sftp/" rel="tag">sftp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/streamlit-%E6%A1%86%E6%9E%B6/" rel="tag">streamlit 框架</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux/" rel="tag">termux</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux-proot-distro/" rel="tag">termux-proot-distro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux%E6%A1%8C%E9%9D%A2/" rel="tag">termux桌面</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/termux%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%90%AF%E5%8A%A8/" rel="tag">termux程序自启动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/that-girl/" rel="tag">that girl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubtunu%E7%89%88%E6%9C%AC/" rel="tag">ubtunu版本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu-reWifi/" rel="tag">ubuntu-reWifi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu%E4%BF%AE%E6%94%B9DNS/" rel="tag">ubuntu修改DNS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wcode/" rel="tag">wcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webbrowser-termux/" rel="tag">webbrowser termux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8D%E8%A6%81%E9%97%AE%E6%88%91%E8%BF%87%E5%BE%97%E5%A5%BD%E4%B8%8D%E5%A5%BD/" rel="tag">不要问我过得好不好</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%9C%89%E5%85%B3%E7%9A%84%E5%B7%A5%E5%85%B7/" rel="tag">与工作有关的工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%98%E5%BE%B7%E5%8D%8E/" rel="tag">刘德华</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E7%81%AB%E7%BA%BF/" rel="tag">单火线</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%AA%E8%A6%81%E5%B9%B3%E5%87%A1%E6%AD%8C%E8%AF%8D/" rel="tag">只要平凡歌词</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%AF%E6%8E%A7%E7%A1%85%E8%B0%83%E5%85%89/" rel="tag">可控硅调光</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%A8%E4%BC%A0%E9%9B%84/" rel="tag">周传雄</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%A8%E6%9D%B0%E4%BC%A6/" rel="tag">周杰伦</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BD%E8%AF%AD%E7%BB%8F%E5%85%B8/" rel="tag">国语经典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A7%9C%E8%82%B2%E6%81%92/" rel="tag">姜育恒</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93/" rel="tag">字体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%8B%E5%86%AC%E9%87%8E/" rel="tag">宋冬野</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80/" rel="tag">家国情怀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87%E7%9B%B8%E5%85%B3/" rel="tag">工作效率相关</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%83%E8%8E%B1%E6%81%A9-%E4%BA%9A%E5%BD%93%E6%96%AF/" rel="tag">布莱恩.亚当斯</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" rel="tag">平凡之路</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90/" rel="tag">开关电源</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90%E5%9F%BA%E7%A1%80/" rel="tag">开关电源基础</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%A0%E5%AD%A6%E5%8F%8B/" rel="tag">张学友</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1/" rel="tag">微信</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/" rel="tag">总线协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6scrcpy/" rel="tag">手机投屏软件scrcpy</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8D%A2%E6%BA%90/" rel="tag">换源</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/" rel="tag">控制台</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" rel="tag">旅游攻略</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%B6%E9%97%B4%E7%BA%BF/" rel="tag">时间线</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%98%A5%E6%9A%96%E8%8A%B1%E5%BC%80/" rel="tag">春暖花开</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E9%A1%B9%E7%9B%AE/" rel="tag">有趣的项目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%B4%E6%A0%91/" rel="tag">朴树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%8E%E5%81%A5/" rel="tag">李健</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%81%E7%AE%80%E6%A1%8C%E9%9D%A2/" rel="tag">极简桌面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8-%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">模拟器&#x2F;虚拟机</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%8C%E8%AF%8D/" rel="tag">歌词</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%9B%E4%B8%8D%E6%98%93/" rel="tag">毛不易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%AA%E5%B3%B0/" rel="tag">汪峰</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%8B%E6%9D%B0/" rel="tag">王杰</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E6%9C%BA%E9%A9%B1%E5%8A%A8/" rel="tag">电机驱动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AA%A6%E5%94%AF/" rel="tag">窦唯</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="tag">系统安装</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%97%E5%A4%A7%E4%BD%91/" rel="tag">罗大佑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%81%E9%B9%B0%E4%B9%90%E9%98%9F/" rel="tag">老鹰乐队</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E6%96%87%E6%AD%8C/" rel="tag">英文歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B8%E5%B7%8D/" rel="tag">许巍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B6%A3%E8%A8%80/" rel="tag">趣言</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/" rel="tag">远程桌面</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%86%E5%8F%98%E5%99%A8/" rel="tag">逆变器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%83%91%E6%99%BA%E5%8C%96/" rel="tag">郑智化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%99%88%E5%A5%95%E8%BF%85/" rel="tag">陈奕迅</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BD%90%E7%A7%A6/" rel="tag">齐秦</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 17.14px;"> 建站</a> <a href="/tags/Anlinux/" style="font-size: 15.71px;">Anlinux</a> <a href="/tags/DC-DC/" style="font-size: 10px;">DC-DC</a> <a href="/tags/KVM-qemu/" style="font-size: 11.43px;">KVM/qemu</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/LDO/" style="font-size: 10px;">LDO</a> <a href="/tags/Linux%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">Linux设置</a> <a href="/tags/SSH%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">SSH经验</a> <a href="/tags/VirtualBox/" style="font-size: 13.57px;">VirtualBox</a> <a href="/tags/anlinux/" style="font-size: 10px;">anlinux</a> <a href="/tags/caddy/" style="font-size: 10.71px;">caddy</a> <a href="/tags/caddy-PHP/" style="font-size: 10px;">caddy+PHP</a> <a href="/tags/caddy-Vtiger/" style="font-size: 10px;">caddy+Vtiger </a> <a href="/tags/caddyV2/" style="font-size: 10px;">caddyV2</a> <a href="/tags/code-server/" style="font-size: 10px;">code-server</a> <a href="/tags/cygwin/" style="font-size: 10.71px;">cygwin</a> <a href="/tags/debian/" style="font-size: 11.43px;">debian</a> <a href="/tags/debian%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">debian经验</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/everthing-I-do-I-do-for-you/" style="font-size: 10px;">everthing I do,I do for you</a> <a href="/tags/flask%E6%A1%86%E6%9E%B6/" style="font-size: 15.71px;">flask框架</a> <a href="/tags/fluxbox/" style="font-size: 10.71px;">fluxbox</a> <a href="/tags/github/" style="font-size: 14.29px;">github</a> <a href="/tags/hexo/" style="font-size: 12.14px;">hexo</a> <a href="/tags/hexo%E4%B8%BB%E9%A2%98/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo%E9%83%A8%E7%BD%B2/" style="font-size: 10.71px;">hexo部署</a> <a href="/tags/hugo/" style="font-size: 15px;">hugo</a> <a href="/tags/hugo-meta/" style="font-size: 10px;">hugo-meta</a> <a href="/tags/icewm/" style="font-size: 10px;">icewm</a> <a href="/tags/lamp-phpmyadmin/" style="font-size: 10.71px;">lamp+phpmyadmin </a> <a href="/tags/linux/" style="font-size: 12.86px;">linux</a> <a href="/tags/linux-rootfs/" style="font-size: 10px;">linux-rootfs</a> <a href="/tags/linux%E6%A1%8C%E9%9D%A2/" style="font-size: 13.57px;">linux桌面</a> <a href="/tags/linux%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">linux经验</a> <a href="/tags/linux%E8%AE%BE%E7%BD%AEDNS/" style="font-size: 10px;">linux设置DNS</a> <a href="/tags/lumina%E6%A1%8C%E9%9D%A2/" style="font-size: 10px;">lumina桌面</a> <a href="/tags/markdown%E8%A1%A8%E6%A0%BC/" style="font-size: 10px;">markdown表格</a> <a href="/tags/mermaid/" style="font-size: 12.86px;">mermaid</a> <a href="/tags/mysql/" style="font-size: 10.71px;">mysql</a> <a href="/tags/nocobase/" style="font-size: 10px;">nocobase</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/olly-murs/" style="font-size: 10px;">olly murs</a> <a href="/tags/openbox/" style="font-size: 10px;">openbox</a> <a href="/tags/pandas%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">pandas学习</a> <a href="/tags/qemu/" style="font-size: 10px;">qemu</a> <a href="/tags/sftp/" style="font-size: 10px;">sftp</a> <a href="/tags/ssh/" style="font-size: 10.71px;">ssh</a> <a href="/tags/streamlit-%E6%A1%86%E6%9E%B6/" style="font-size: 15.71px;">streamlit 框架</a> <a href="/tags/termux/" style="font-size: 18.57px;">termux</a> <a href="/tags/termux-proot-distro/" style="font-size: 10px;">termux-proot-distro</a> <a href="/tags/termux%E6%A1%8C%E9%9D%A2/" style="font-size: 11.43px;">termux桌面</a> <a href="/tags/termux%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">termux程序自启动</a> <a href="/tags/that-girl/" style="font-size: 10px;">that girl</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/ubtunu%E7%89%88%E6%9C%AC/" style="font-size: 10px;">ubtunu版本</a> <a href="/tags/ubuntu-reWifi/" style="font-size: 10px;">ubuntu-reWifi</a> <a href="/tags/ubuntu%E4%BF%AE%E6%94%B9DNS/" style="font-size: 10px;">ubuntu修改DNS</a> <a href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" style="font-size: 20px;">ubuntu经验</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vscode/" style="font-size: 10.71px;">vscode</a> <a href="/tags/wcode/" style="font-size: 10px;">wcode</a> <a href="/tags/webbrowser-termux/" style="font-size: 10px;">webbrowser termux</a> <a href="/tags/%E4%B8%8D%E8%A6%81%E9%97%AE%E6%88%91%E8%BF%87%E5%BE%97%E5%A5%BD%E4%B8%8D%E5%A5%BD/" style="font-size: 10px;">不要问我过得好不好</a> <a href="/tags/%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%9C%89%E5%85%B3%E7%9A%84%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">与工作有关的工具</a> <a href="/tags/%E5%88%98%E5%BE%B7%E5%8D%8E/" style="font-size: 10px;">刘德华</a> <a href="/tags/%E5%8D%95%E7%81%AB%E7%BA%BF/" style="font-size: 10.71px;">单火线</a> <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 10px;">单片机</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 19.29px;">博客</a> <a href="/tags/%E5%8F%AA%E8%A6%81%E5%B9%B3%E5%87%A1%E6%AD%8C%E8%AF%8D/" style="font-size: 10px;">只要平凡歌词</a> <a href="/tags/%E5%8F%AF%E6%8E%A7%E7%A1%85%E8%B0%83%E5%85%89/" style="font-size: 10px;">可控硅调光</a> <a href="/tags/%E5%91%A8%E4%BC%A0%E9%9B%84/" style="font-size: 10px;">周传雄</a> <a href="/tags/%E5%91%A8%E6%9D%B0%E4%BC%A6/" style="font-size: 10px;">周杰伦</a> <a href="/tags/%E5%9B%BD%E8%AF%AD%E7%BB%8F%E5%85%B8/" style="font-size: 10px;">国语经典</a> <a href="/tags/%E5%A7%9C%E8%82%B2%E6%81%92/" style="font-size: 10px;">姜育恒</a> <a href="/tags/%E5%AD%97%E4%BD%93/" style="font-size: 10px;">字体</a> <a href="/tags/%E5%AE%8B%E5%86%AC%E9%87%8E/" style="font-size: 10px;">宋冬野</a> <a href="/tags/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80/" style="font-size: 10px;">家国情怀</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87%E7%9B%B8%E5%85%B3/" style="font-size: 10.71px;">工作效率相关</a> <a href="/tags/%E5%B8%83%E8%8E%B1%E6%81%A9-%E4%BA%9A%E5%BD%93%E6%96%AF/" style="font-size: 10px;">布莱恩.亚当斯</a> <a href="/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">平凡之路</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 13.57px;">建站</a> <a href="/tags/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90/" style="font-size: 10.71px;">开关电源</a> <a href="/tags/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90%E5%9F%BA%E7%A1%80/" style="font-size: 16.43px;">开关电源基础</a> <a href="/tags/%E5%BC%A0%E5%AD%A6%E5%8F%8B/" style="font-size: 10px;">张学友</a> <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="font-size: 10px;">微信</a> <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11.43px;">快捷键</a> <a href="/tags/%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">总线协议</a> <a href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6scrcpy/" style="font-size: 11.43px;">手机投屏软件scrcpy</a> <a href="/tags/%E6%8D%A2%E6%BA%90/" style="font-size: 10.71px;">换源</a> <a href="/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/" style="font-size: 10px;">控制台</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" style="font-size: 12.14px;">旅游攻略</a> <a href="/tags/%E6%97%B6%E9%97%B4%E7%BA%BF/" style="font-size: 10.71px;">时间线</a> <a href="/tags/%E6%98%A5%E6%9A%96%E8%8A%B1%E5%BC%80/" style="font-size: 10px;">春暖花开</a> <a href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">有趣的项目</a> <a href="/tags/%E6%9C%B4%E6%A0%91/" style="font-size: 10px;">朴树</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 15.71px;">机器学习</a> <a href="/tags/%E6%9D%8E%E5%81%A5/" style="font-size: 10px;">李健</a> <a href="/tags/%E6%9E%81%E7%AE%80%E6%A1%8C%E9%9D%A2/" style="font-size: 10px;">极简桌面</a> <a href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8-%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 17.86px;">模拟器/虚拟机</a> <a href="/tags/%E6%AD%8C%E8%AF%8D/" style="font-size: 12.86px;">歌词</a> <a href="/tags/%E6%AF%9B%E4%B8%8D%E6%98%93/" style="font-size: 10px;">毛不易</a> <a href="/tags/%E6%B1%AA%E5%B3%B0/" style="font-size: 10px;">汪峰</a> <a href="/tags/%E7%8E%8B%E6%9D%B0/" style="font-size: 10px;">王杰</a> <a href="/tags/%E7%94%B5%E6%9C%BA%E9%A9%B1%E5%8A%A8/" style="font-size: 10px;">电机驱动</a> <a href="/tags/%E7%AA%A6%E5%94%AF/" style="font-size: 10px;">窦唯</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 12.86px;">系统安装</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 12.86px;">编辑器</a> <a href="/tags/%E7%BD%97%E5%A4%A7%E4%BD%91/" style="font-size: 10px;">罗大佑</a> <a href="/tags/%E8%80%81%E9%B9%B0%E4%B9%90%E9%98%9F/" style="font-size: 10px;">老鹰乐队</a> <a href="/tags/%E8%8B%B1%E6%96%87%E6%AD%8C/" style="font-size: 10px;">英文歌</a> <a href="/tags/%E8%AE%B8%E5%B7%8D/" style="font-size: 10px;">许巍</a> <a href="/tags/%E8%B6%A3%E8%A8%80/" style="font-size: 14.29px;">趣言</a> <a href="/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/" style="font-size: 10.71px;">远程桌面</a> <a href="/tags/%E9%80%86%E5%8F%98%E5%99%A8/" style="font-size: 10px;">逆变器</a> <a href="/tags/%E9%83%91%E6%99%BA%E5%8C%96/" style="font-size: 10px;">郑智化</a> <a href="/tags/%E9%99%88%E5%A5%95%E8%BF%85/" style="font-size: 10px;">陈奕迅</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 13.57px;">随笔</a> <a href="/tags/%E9%BD%90%E7%A7%A6/" style="font-size: 10px;">齐秦</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">十二月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">十一月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/01/30/python/streamlit-9/">streamlit学习笔记九-----streamlit新版支持原生多页面二</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/30/python/streamlit-8/">streamlit学习笔记八-----一些特别的插件</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/22/fun-item/winapps/">winapps笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/13/linux/KVM_start_net_error/">KVM虚拟机启动时显示网络 &#39;default&#39; 未激活”的错误</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/13/linux/KVM_access_host_folder/">KVM虚拟机挂载linux下的共享目录方法一</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://superigbt_superigbt.gitee.io/" target="_blank">My-gitee</a>
+          </li>
+        
+          <li>
+            <a href="https://superigbt.github.io/" target="_blank">My-github</a>
+          </li>
+        
+          <li>
+            <a href="https://hexo.io/themes/" target="_blank">Hexo主题</a>
+          </li>
+        
+          <li>
+            <a href="https://github.com/termux/termux-app/releases" target="_blank">Texmux神器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 Frank.Li<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">按时间</a>
+  
+    <a href="/categories/%E6%91%98%E6%8A%84%E4%B8%8E%E9%9A%8F%E7%AC%94" class="mobile-nav-link">摘抄，随笔</a>
+  
+    <a href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF" class="mobile-nav-link">开关电源</a>
+  
+    <a href="/categories/termux" class="mobile-nav-link">Termux</a>
+  
+    <a href="/categories/python%E5%AD%A6%E4%B9%A0" class="mobile-nav-link">python学习</a>
+  
+    <a href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99" class="mobile-nav-link">建站</a>
+  
+    <a href="/categories/linux" class="mobile-nav-link">Linux</a>
+  
+    <a href="/about" class="mobile-nav-link">关于我</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+</body>
+</html>
