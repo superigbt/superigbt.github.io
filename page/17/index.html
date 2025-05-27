@@ -84,10 +84,10 @@
     <div class="outer">
       <section id="main">
   
-    <article id="post-linux/vbox-load-folder" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux/ubuntu-freerdp-win7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/16/linux/vbox-load-folder/" class="article-date">
-  <time datetime="2020-07-16T05:38:00.000Z" itemprop="datePublished">2020-07-16</time>
+    <a href="/2020/09/28/linux/ubuntu-freerdp-win7/" class="article-date">
+  <time datetime="2020-09-27T16:00:00.000Z" itemprop="datePublished">2020-09-28</time>
 </a>
     
   <div class="article-category">
@@ -102,7 +102,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/16/linux/vbox-load-folder/">VirtualBox下的linux挂载共享目录</a>
+      <a class="article-title" href="/2020/09/28/linux/ubuntu-freerdp-win7/">ubuntu利用远程桌面连接win7</a>
     </h1>
   
 
@@ -110,13 +110,235 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="VirtualBox下的linux挂载共享目录"><a href="#VirtualBox下的linux挂载共享目录" class="headerlink" title="VirtualBox下的linux挂载共享目录"></a>VirtualBox下的linux挂载共享目录</h2><ol>
-<li><p>启动虚拟机之前先设置好共享目录，比如目录名为’temp’</p>
+        <h2 id="利用远程桌面工具连接win7"><a href="#利用远程桌面工具连接win7" class="headerlink" title="利用远程桌面工具连接win7"></a>利用远程桌面工具连接win7</h2><h3 id="win7的设置"><a href="#win7的设置" class="headerlink" title="win7的设置"></a>win7的设置</h3><ol>
+<li><p>开始菜单 &gt; 右键点击“我的电脑” &gt; 属性 &gt; 远程</p>
 </li>
-<li><p>启动虚以主机的linux</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~</span><br><span class="line">$ <span class="built_in">mkdir</span> win7</span><br><span class="line">$ <span class="built_in">sudo</span> mount -t vboxsf temp win7</span><br></pre></td></tr></table></figure>
+<li><p>选择-&gt;”允许远程协助连接这台计算机(R)</p>
 </li>
-<li><p>在 ~&#x2F;win7 目录下就是主机共享的文件了</p>
+<li><p>选择-&gt;允许运行任意版本远程桌面的计算机连接</p>
+<blockquote>
+<p>第3步如果选“仅允许运行使用网络级别身份验证的远程桌面的计算机连接（更安全）”,验证失败</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="ubuntu端"><a href="#ubuntu端" class="headerlink" title="ubuntu端"></a>ubuntu端</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install freerdp2</span><br><span class="line">$ <span class="built_in">sudo</span> apt install freerdp2-x11</span><br><span class="line">$ <span class="built_in">sudo</span> xfreerdp /v 192.168.1.123:3389 /u:frank /sec:tls</span><br></pre></td></tr></table></figure>
+
+<h3 id="本次验证说明"><a href="#本次验证说明" class="headerlink" title="本次验证说明"></a>本次验证说明</h3><h4 id="本次验证主机为ubuntu20-04，win7为Vbox下的虚拟机，网卡NAT，并做端口转发"><a href="#本次验证主机为ubuntu20-04，win7为Vbox下的虚拟机，网卡NAT，并做端口转发" class="headerlink" title="本次验证主机为ubuntu20.04，win7为Vbox下的虚拟机，网卡NAT，并做端口转发"></a>本次验证主机为ubuntu20.04，win7为Vbox下的虚拟机，网卡NAT，并做端口转发</h4><h4 id="windows端有个工具-RemoteApp-Tool-据说可以把提定的程序共享，并融合到客户机，看起来不象是远程一样，但是在linux客户端实验没有成功"><a href="#windows端有个工具-RemoteApp-Tool-据说可以把提定的程序共享，并融合到客户机，看起来不象是远程一样，但是在linux客户端实验没有成功" class="headerlink" title="windows端有个工具 RemoteApp Tool ,据说可以把提定的程序共享，并融合到客户机，看起来不象是远程一样，但是在linux客户端实验没有成功"></a>windows端有个工具 RemoteApp Tool ,据说可以把提定的程序共享，并融合到客户机，看起来不象是远程一样，但是在linux客户端实验没有成功</h4><h3 id="2025年1月，实验github上的winapps的项目，就是利用这个原理。我实现在把windows下的文件管理品，融合到客户机。"><a href="#2025年1月，实验github上的winapps的项目，就是利用这个原理。我实现在把windows下的文件管理品，融合到客户机。" class="headerlink" title="2025年1月，实验github上的winapps的项目，就是利用这个原理。我实现在把windows下的文件管理品，融合到客户机。"></a>2025年1月，实验github上的winapps的项目，就是利用这个原理。我实现在把windows下的文件管理品，融合到客户机。</h3>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/09/28/linux/ubuntu-freerdp-win7/" data-id="cmb6oa6hi007sdts68ryqdap4" class="article-share-link" data-share="baidu" data-title="ubuntu利用远程桌面连接win7">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/" rel="tag">远程桌面</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux/termux-proot-distro" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/28/termux/termux-proot-distro/" class="article-date">
+  <time datetime="2020-09-27T16:00:00.000Z" itemprop="datePublished">2020-09-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/28/termux/termux-proot-distro/">termux利用工作proot-distro安装linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="termux神器新的工具proot-distro，是一个Bash脚本，用于在Termux中管理与安装proot下Linux发行版。"><a href="#termux神器新的工具proot-distro，是一个Bash脚本，用于在Termux中管理与安装proot下Linux发行版。" class="headerlink" title="termux神器新的工具proot-distro，是一个Bash脚本，用于在Termux中管理与安装proot下Linux发行版。"></a>termux神器新的工具proot-distro，是一个Bash脚本，用于在Termux中管理与安装proot下Linux发行版。</h4><h5 id="目前，它支持安装以下发行版："><a href="#目前，它支持安装以下发行版：" class="headerlink" title="目前，它支持安装以下发行版："></a>目前，它支持安装以下发行版：</h5><ol>
+<li>Alpine Linux</li>
+<li>Arch Linux</li>
+<li>Kali Nethunter (rootless)</li>
+<li>Ubuntu (18.04 &#x2F; 20.04)</li>
+</ol>
+<h5 id="一-安装如下："><a href="#一-安装如下：" class="headerlink" title="一. 安装如下："></a>一. 安装如下：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install proot-distro</span><br></pre></td></tr></table></figure>
+<h5 id="二-然后利和其安装与运行ubuntu的例子如下："><a href="#二-然后利和其安装与运行ubuntu的例子如下：" class="headerlink" title="二. 然后利和其安装与运行ubuntu的例子如下："></a>二. 然后利和其安装与运行ubuntu的例子如下：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proot-distro install ubuntu-20.04  <span class="comment"># 安装ubuntu20.04或ubuntu-18.04</span></span><br><span class="line">proot-distro login ubuntu-20.04   <span class="comment"># 运行ubnuntu</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="本人新测安装动行ubtuntu-net-tools-vim己安装，-storage目录下是外置sdcard的文件，-sdcard下的目录是内置存储器的文件。"><a href="#本人新测安装动行ubtuntu-net-tools-vim己安装，-storage目录下是外置sdcard的文件，-sdcard下的目录是内置存储器的文件。" class="headerlink" title="本人新测安装动行ubtuntu, net-tools vim己安装，&#x2F;storage目录下是外置sdcard的文件，&#x2F;sdcard下的目录是内置存储器的文件。"></a>本人新测安装动行ubtuntu, net-tools vim己安装，&#x2F;storage目录下是外置sdcard的文件，&#x2F;sdcard下的目录是内置存储器的文件。</h6><h6 id="安装位置在-data-data-com-termux-files-usr-var-lib-proot-distro"><a href="#安装位置在-data-data-com-termux-files-usr-var-lib-proot-distro" class="headerlink" title="安装位置在 &#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;var&#x2F;lib&#x2F;proot-distro"></a>安装位置在 &#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;var&#x2F;lib&#x2F;proot-distro</h6><h5 id="三-进入本ubuntu20-04后，安装软件报错，比如上面的xfe，出错信怎如下："><a href="#三-进入本ubuntu20-04后，安装软件报错，比如上面的xfe，出错信怎如下：" class="headerlink" title="三. 进入本ubuntu20.04后，安装软件报错，比如上面的xfe，出错信怎如下："></a>三. 进入本ubuntu20.04后，安装软件报错，比如上面的xfe，出错信怎如下：</h5><pre><code>dpkg: error processing package xxx (--configure)
+</code></pre>
+<p>并且也无法升级 apt update出错。<br>    如何解决呢？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> /var/lib/dpkg/info/ /var/lib/dpkg/info_old/</span><br><span class="line"><span class="built_in">mkdir</span> /var/lib/dpkg/info/</span><br><span class="line">apt-get update</span><br><span class="line">apt-get -f install</span><br><span class="line"><span class="built_in">cp</span> /var/lib/dpkg/info_old/* /var/lib/dpkg/info/</span><br><span class="line"><span class="built_in">rm</span> -rf /var/lib/dpkg/info_old</span><br></pre></td></tr></table></figure>
+<p>然后就能正常安装了。<br><del>以上在升级为termux0.99版后，不会出错，所以不用以上(第三)步骤了。</del></p>
+<h3 id="最好先建立sudo客户，并以sudo客户登录后，再执行以下步骤"><a href="#最好先建立sudo客户，并以sudo客户登录后，再执行以下步骤" class="headerlink" title="最好先建立sudo客户，并以sudo客户登录后，再执行以下步骤"></a>最好先建立sudo客户，并以sudo客户登录后，再执行以下步骤</h3><h5 id="四-中文语言设置"><a href="#四-中文语言设置" class="headerlink" title="四.中文语言设置"></a>四.中文语言设置</h5> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ apt install language-pack-zh-hans* 安装中文包</span><br><span class="line">$ apt install language-pack-gnome-zh-hans* 安装中文包</span><br><span class="line">$ apt install fonts-wqy-*</span><br><span class="line">    <span class="comment"># $ apt install fonts-wqy-microhei 安装中文字体</span></span><br><span class="line">    <span class="comment"># $ apt install fronts-wqy-zenhei 另一个中文字体</span></span><br><span class="line">$ vim /etc/default/locale</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>更改内容如下：<br>LANG&#x3D;”zh_CN.UTF-8”<br>LANGUAGE&#x3D;”zh_CN:en_US:en”<br>LC_NUMERIC&#x3D;”zh_CN.UTF-8”<br>LC_TIME&#x3D;”zh_CN.UTF-8”<br>LC_MONETARY&#x3D;”zh_CN.UTF-8”<br>LC_PAPER&#x3D;”zh_CN.UTF-8”<br>LC_IDENTIFICATION&#x3D;”zh_CN.UTF-8”<br>LC_NAME&#x3D;”zh_CN.UTF-8”<br>LC_ADDRESS&#x3D;”zh_CN.UTF-8”<br>LC_TELEPHONE&#x3D;”zh_CN.UTF-8”<br>LC_MEASUREMENT&#x3D;”zh_CN.UTF-8”</p>
+</blockquote>
+<p>保存后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fc-cache -fv  <span class="comment">#最好进行这一步后再安装fcitx，否则有可能输入法不起做用。</span></span><br></pre></td></tr></table></figure>
+<p>则控制台终端己经会出现中文了</p>
+<h5 id="五-然后可安装xfce4桌面"><a href="#五-然后可安装xfce4桌面" class="headerlink" title="五. 然后可安装xfce4桌面"></a>五. 然后可安装xfce4桌面</h5><p>&#x3D;&#x3D;记得更改阿里源再安装，不然真的是时间太长了。&#x3D;&#x3D;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ apt install dbus</span><br><span class="line">$ apt install python3</span><br><span class="line">$ apt install xfce4 xfce4-terminal  <span class="comment"># 真是花了好长时间</span></span><br><span class="line">$ apt install tightvncserver <span class="comment"># vncserver软件</span></span><br><span class="line">$ apt install xfe  <span class="comment"># 一个优秀的文件管理器，带文件查找功能</span></span><br><span class="line">$ <span class="built_in">export</span> DISPLAY=127.0.0.1:0</span><br><span class="line">$ <span class="built_in">export</span> PULSE_SERVER=tcp:127.0.0.1:4713</span><br><span class="line">打开xdsl的APP，然后回到termux下的linux</span><br><span class="line">$ startxfce4</span><br></pre></td></tr></table></figure>
+<h5 id="六-安装过程中发现一些缺失的东东"><a href="#六-安装过程中发现一些缺失的东东" class="headerlink" title="六. 安装过程中发现一些缺失的东东"></a>六. 安装过程中发现一些缺失的东东</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt install dialog</span><br><span class="line">$ apt install apt-utils</span><br></pre></td></tr></table></figure>
+<h5 id="七-关于中文输入法"><a href="#七-关于中文输入法" class="headerlink" title="七. 关于中文输入法"></a>七. 关于中文输入法</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install fcitx</span><br><span class="line">$ apt install fcitx-config-*</span><br><span class="line">$ apt install fcitx-table-wbpy <span class="comment"># 五笔拼音</span></span><br></pre></td></tr></table></figure>
+<p>*** 然面通过VNC或别的XDSL进入XFCE，有fcitx图标，也能看到拼音，五笔输入法，但是却输入不了中文 ***<br>vim ~&#x2F;.profile，在结尾加入</p>
+<blockquote>
+<p>#fcitx<br>export GTK_IM_MODULE&#x3D;fcitx<br>export QT_IM_MODULE&#x3D;fcitx<br>export XMODIFIERS&#x3D;”@im&#x3D;fcitx”<br>然后退出图形界面后，重启动。中文输入法可用了。</p>
+</blockquote>
+<h6 id="如果要一进入桌面就有fcitx，则可"><a href="#如果要一进入桌面就有fcitx，则可" class="headerlink" title="如果要一进入桌面就有fcitx，则可"></a>如果要一进入桌面就有fcitx，则可</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cp</span> /usr/share/applications/fcitx.desktop /etc/xdg/autostart/</span><br></pre></td></tr></table></figure>
+<p><strong>采用VNC时，五笔可以用，可是采用xdsl却无法切换中文输入。后来发现是xdsl把Ctrl&#x2F;Alt&#x2F;Shift三个键占用了。进系统把中文输入法切换键换为F12可解决</strong></p>
+<h6 id="进入桌面后，浏览器浏览国内网站好慢，一直不知道神马原因，开始还以为是手机CPU太差了，后来无意中想到可能是DNS的问题"><a href="#进入桌面后，浏览器浏览国内网站好慢，一直不知道神马原因，开始还以为是手机CPU太差了，后来无意中想到可能是DNS的问题" class="headerlink" title="进入桌面后，浏览器浏览国内网站好慢，一直不知道神马原因，开始还以为是手机CPU太差了，后来无意中想到可能是DNS的问题"></a>进入桌面后，浏览器浏览国内网站好慢，一直不知道神马原因，开始还以为是手机CPU太差了，后来无意中想到可能是DNS的问题</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/resolv.conf </span><br><span class="line">增加一行 nameserver=114.114.114.114</span><br></pre></td></tr></table></figure>
+
+<h4 id="Arm64-版的ubuntu-镜像下载地址"><a href="#Arm64-版的ubuntu-镜像下载地址" class="headerlink" title="Arm64 版的ubuntu 镜像下载地址"></a>Arm64 版的ubuntu 镜像下载地址</h4><p><a target="_blank" rel="noopener" href="https://partner-images.canonical.com/core/">https://partner-images.canonical.com/core/</a><br>注意这个地址是有许多版本的linux的，比如ubuntu20.10没有，可是我们想装咋办呢？因为proot-distro当前是装不了的。</p>
+<ol>
+<li>先下载 ubuntu20.10的镜像，<a target="_blank" rel="noopener" href="https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-arm64-root.tar.gz">https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-arm64-root.tar.gz</a></li>
+<li>进入termux的 &#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;etc&#x2F;proot-distro目录。</li>
+<li>cp ubuntu-20.04.sh ubuntu-20.10.sh</li>
+<li>vim ubuntu-20.10.sh，把对应的 bonic改为groovy就行了。</li>
+<li>执行 proot-distro install ubuntu-20.10来安装</li>
+<li>ubuntu-20.10.sh的内容如下：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## Plug-in for installing Ubuntu groovy.</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"></span><br><span class="line">DISTRO_NAME=<span class="string">&quot;Ubuntu 20.10&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns download URL.</span></span><br><span class="line"><span class="function"><span class="title">get_download_url</span></span>() &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="string">&quot;<span class="subst">$(uname -m)</span>&quot;</span> <span class="keyword">in</span></span><br><span class="line">		aarch64)</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">&quot;https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-arm64-root.tar.gz&quot;</span></span><br><span class="line">			;;</span><br><span class="line">		armv7l|armv8l)</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">&quot;https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-armhf-root.tar.gz&quot;</span></span><br><span class="line">			;;</span><br><span class="line">		i686)</span><br><span class="line">			<span class="comment"># Ubuntu groovy does not provide tarballs for x86 32bit.</span></span><br><span class="line">			;;</span><br><span class="line">		x86_64)</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">&quot;https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-amd64-root.tar.gz&quot;</span></span><br><span class="line">			;;</span><br><span class="line">	<span class="keyword">esac</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define here additional steps which should be executed</span></span><br><span class="line"><span class="comment"># for configuration.</span></span><br><span class="line"><span class="function"><span class="title">distro_setup</span></span>() &#123;</span><br><span class="line">	<span class="comment"># Hint: $PWD is the distribution rootfs directory.</span></span><br><span class="line">	<span class="comment">#echo &quot;hello world&quot; &gt; ./etc/motd</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># Run command within proot&#x27;ed environment with</span></span><br><span class="line">	<span class="comment"># run_proot_cmd function.</span></span><br><span class="line">	<span class="comment"># Uncomment this to do system upgrade during installation.</span></span><br><span class="line">	<span class="comment">#run_proot_cmd apt update</span></span><br><span class="line">	<span class="comment">#run_proot_cmd apt upgrade -yq</span></span><br><span class="line">	:</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/09/28/termux/termux-proot-distro/" data-id="cmb6oa6j000ffdts60ru5bzax" class="article-share-link" data-share="baidu" data-title="termux利用工作proot-distro安装linux">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux-proot-distro/" rel="tag">termux-proot-distro</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="tag">系统安装</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux/termux-anlinux-sourcelist" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/27/termux/termux-anlinux-sourcelist/" class="article-date">
+  <time datetime="2020-09-26T16:00:00.000Z" itemprop="datePublished">2020-09-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/27/termux/termux-anlinux-sourcelist/">termux 与 Anlinux换源</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一-termux换源"><a href="#一-termux换源" class="headerlink" title="一. termux换源"></a>一. termux换源</h4><p>新版termux采用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ termux-change-repo</span><br></pre></td></tr></table></figure>
+
+<p>老版本termux采用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ termux-change-repo</span><br><span class="line">$ termux-chroot</span><br><span class="line">$ vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>deb <a target="_blank" rel="noopener" href="https://termux.org/packages/">https://termux.org/packages/</a> stable main<br>改为:</p>
+<h2 id="deb-https-termux-org-packages-stable-main"><a href="#deb-https-termux-org-packages-stable-main" class="headerlink" title="deb https://termux.org/packages/ stable main"></a>deb <a target="_blank" rel="noopener" href="https://termux.org/packages/">https://termux.org/packages/</a> stable main</h2><p>deb [arch&#x3D;all,aarch64] <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/termux">https://mirrors.tuna.tsinghua.edu.cn/termux</a> stable main</p>
+</blockquote>
+<h4 id="二-termu下的ubutnu换源，可是arm64版的linux哦"><a href="#二-termu下的ubutnu换源，可是arm64版的linux哦" class="headerlink" title="二. termu下的ubutnu换源，可是arm64版的linux哦"></a>二. termu下的ubutnu换源，可是arm64版的linux哦</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ./start-ubuntu.sh</span><br><span class="line">root@localhost:~# vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>deb <a target="_blank" rel="noopener" href="http://ports.ubuntu.com/ubuntu-ports">http://ports.ubuntu.com/ubuntu-ports</a> bionic main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://ports.ubuntu.com/ubuntu-ports">http://ports.ubuntu.com/ubuntu-ports</a> bionic main restricted universe multiverse<br>改为：</p>
+<h2 id="deb-http-ports-ubuntu-com-ubuntu-ports-bionic-main-restricted-universe-multiverse"><a href="#deb-http-ports-ubuntu-com-ubuntu-ports-bionic-main-restricted-universe-multiverse" class="headerlink" title="deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse"></a>deb <a target="_blank" rel="noopener" href="http://ports.ubuntu.com/ubuntu-ports">http://ports.ubuntu.com/ubuntu-ports</a> bionic main restricted universe multiverse</h2><h2 id="deb-src-http-ports-ubuntu-com-ubuntu-ports-bionic-main-restricted-universe-multiverse"><a href="#deb-src-http-ports-ubuntu-com-ubuntu-ports-bionic-main-restricted-universe-multiverse" class="headerlink" title="deb-src http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse"></a>deb-src <a target="_blank" rel="noopener" href="http://ports.ubuntu.com/ubuntu-ports">http://ports.ubuntu.com/ubuntu-ports</a> bionic main restricted universe multiverse</h2><h1 id="阿里源"><a href="#阿里源" class="headerlink" title="阿里源"></a>阿里源</h1><p>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu-ports">http://mirrors.aliyun.com/ubuntu-ports</a> bionic main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu-ports">http://mirrors.aliyun.com/ubuntu-ports</a> bionic main restricted universe multiverse</p>
+<h1 id="科大源"><a href="#科大源" class="headerlink" title="科大源"></a>科大源</h1><p>deb <a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/ubuntu-ports">http://mirrors.ustc.edu.cn/ubuntu-ports</a> bionic main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/ubuntu-ports">http://mirrors.ustc.edu.cn/ubuntu-ports</a> bionic main restricted universe multiverse</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/09/27/termux/termux-anlinux-sourcelist/" data-id="cmb6oa6is00e9dts6632j2fkj" class="article-share-link" data-share="baidu" data-title="termux 与 Anlinux换源">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8D%A2%E6%BA%90/" rel="tag">换源</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux/termux-anlinux-ssh-server" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/24/termux/termux-anlinux-ssh-server/" class="article-date">
+  <time datetime="2020-09-23T16:00:00.000Z" itemprop="datePublished">2020-09-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/24/termux/termux-anlinux-ssh-server/">termux中anlinux的ssh server安装与启动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="termux中anlinux的ssh-server安装与启动"><a href="#termux中anlinux的ssh-server安装与启动" class="headerlink" title="termux中anlinux的ssh server安装与启动"></a>termux中anlinux的ssh server安装与启动</h1><ol>
+<li><p>apt install openssh-server</p>
+</li>
+<li><p>如果这时候启动ssh后，显示OK，可是查看状态，显示SSH服务并没有运行。开始以为与termux的ssh有冲突，今天网上baidu并学习了一下。成功步骤如下。**<br>3.vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config文件。</p>
+<blockquote>
+<ol>
+<li>把Port 22改为 9022，注意不能是22，也不能是8022</li>
+<li>把PermitRootLogin那一行，注释去掉，改为PermiRootLogin yes</li>
+<li>保存退出。</li>
+</ol>
+</blockquote>
+</li>
+<li><p>&#x2F;etc&#x2F;init.d&#x2F;ssh start 启动</p>
+<blockquote>
+<h3 id="在proot-distro安装ubuntu18-04上，找到的是-etc-init-d-ssh-采用的是-service-ssh-start-启动成功"><a href="#在proot-distro安装ubuntu18-04上，找到的是-etc-init-d-ssh-采用的是-service-ssh-start-启动成功" class="headerlink" title="在proot-distro安装ubuntu18.04上，找到的是&#x2F;etc&#x2F;init.d&#x2F;ssh 采用的是 service ssh start 启动成功"></a>在proot-distro安装ubuntu18.04上，找到的是&#x2F;etc&#x2F;init.d&#x2F;ssh 采用的是 service ssh start 启动成功</h3></blockquote>
+</li>
+<li><p>&#x2F;etc&#x2F;init.d&#x2F;ssh status查看状态，己经运行。</p>
+</li>
+<li><p>在pc上执行 ssh -p 9022 <a href="mailto:&#x72;&#x6f;&#111;&#x74;&#x40;&#49;&#x39;&#x32;&#x2e;&#49;&#x36;&#56;">&#x72;&#x6f;&#111;&#x74;&#x40;&#49;&#x39;&#x32;&#x2e;&#49;&#x36;&#56;</a>.你的IP地址，成功</p>
 </li>
 </ol>
 
@@ -124,13 +346,13 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/07/16/linux/vbox-load-folder/" data-id="cmawg7tu500b8h3s6hgbz3jn7" class="article-share-link" data-share="baidu" data-title="VirtualBox下的linux挂载共享目录">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/09/24/termux/termux-anlinux-ssh-server/" data-id="cmb6oa6it00ecdts6bykq41ug" class="article-share-link" data-share="baidu" data-title="termux中anlinux的ssh server安装与启动">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VirtualBox/" rel="tag">VirtualBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8-%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">模拟器&#x2F;虚拟机</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li></ul>
 
     </footer>
   </div>
@@ -142,7 +364,7 @@
     <article id="post-website/caddy-vtigerCRM" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/27/website/caddy-vtigerCRM/" class="article-date">
-  <time datetime="2020-06-27T15:22:00.000Z" itemprop="datePublished">2020-06-27</time>
+  <time datetime="2020-06-26T16:00:00.000Z" itemprop="datePublished">2020-06-27</time>
 </a>
     
   <div class="article-category">
@@ -210,7 +432,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/06/27/website/caddy-vtigerCRM/" data-id="cmawg7tv000fih3s6023mgh5g" class="article-share-link" data-share="baidu" data-title="在caddy安装VtigerCRM7.2">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/06/27/website/caddy-vtigerCRM/" data-id="cmb6oa6im00dfdts66bxq2udq" class="article-share-link" data-share="baidu" data-title="在caddy安装VtigerCRM7.2">分享到</a>
       
 
       
@@ -228,7 +450,7 @@
     <article id="post-website/reinstall-mysql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/27/website/reinstall-mysql/" class="article-date">
-  <time datetime="2020-06-27T15:22:00.000Z" itemprop="datePublished">2020-06-27</time>
+  <time datetime="2020-06-26T16:00:00.000Z" itemprop="datePublished">2020-06-27</time>
 </a>
     
   <div class="article-category">
@@ -258,7 +480,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/06/27/website/reinstall-mysql/" data-id="cmawg7tv200fth3s6he457yd3" class="article-share-link" data-share="baidu" data-title="彻底清除mysql">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/06/27/website/reinstall-mysql/" data-id="cmb6oa6io00drdts68h7j2610" class="article-share-link" data-share="baidu" data-title="彻底清除mysql">分享到</a>
       
 
       
@@ -276,7 +498,7 @@
     <article id="post-termux/termux-init" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/18/termux/termux-init/" class="article-date">
-  <time datetime="2020-06-18T13:56:00.000Z" itemprop="datePublished">2020-06-18</time>
+  <time datetime="2020-06-17T16:00:00.000Z" itemprop="datePublished">2020-06-18</time>
 </a>
     
   <div class="article-category">
@@ -353,7 +575,7 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/06/18/termux/termux-init/" data-id="cmawg7tut00eih3s614sh5ztj" class="article-share-link" data-share="baidu" data-title="安装termux后的初始化">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/06/18/termux/termux-init/" data-id="cmb6oa6iy00f5dts66d6d4bpg" class="article-share-link" data-share="baidu" data-title="安装termux后的初始化">分享到</a>
       
 
       
@@ -368,14 +590,14 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
 
 
   
-    <article id="post-linux/vbox-console" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-website/caddy-php" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/06/18/linux/vbox-console/" class="article-date">
-  <time datetime="2020-06-18T01:38:00.000Z" itemprop="datePublished">2020-06-18</time>
+    <a href="/2020/04/24/website/caddy-php/" class="article-date">
+  <time datetime="2020-04-23T16:00:00.000Z" itemprop="datePublished">2020-04-24</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
   </div>
 
   </div>
@@ -386,7 +608,7 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/18/linux/vbox-console/">命令行启停VirtualBox</a>
+      <a class="article-title" href="/2020/04/24/website/caddy-php/">caddy配置php的两种办法</a>
     </h1>
   
 
@@ -394,32 +616,83 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>列出运行的vbox虚拟机</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ VBoxManage list runningvms <span class="comment">#列出正在运行的虚拟机，例如名字为&quot;winxp&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>正常关机</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ VBoxManage controlvm <span class="string">&quot;winxp&quot;</span> acpipowerbutton </span><br></pre></td></tr></table></figure>
+        <h4 id="一-php-fpm方法"><a href="#一-php-fpm方法" class="headerlink" title="一. php-fpm方法"></a>一. php-fpm方法</h4><h5 id="1-在linux下配置php-fpm"><a href="#1-在linux下配置php-fpm" class="headerlink" title="1. 在linux下配置php-fpm"></a>1. 在linux下配置php-fpm</h5><p>编辑Caddyfile，在中间加入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fastcgi / /var/run/php/php-fpm.sock &#123;   # 不同版本的linux，目录有可能不同</span><br><span class="line">    ext .php</span><br><span class="line">    split .php</span><br><span class="line">    index index.php</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-在termux下"><a href="#2-在termux下" class="headerlink" title="2. 在termux下"></a>2. 在termux下</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install php-fpm</span><br><span class="line">$ termux-chroot   <span class="comment">#注，必须在chroot下。测试termux0.84以前版本</span></span><br><span class="line">$ vim /etc/php-fpm.d/www.conf</span><br><span class="line">   把 listen=/data/data/com.termux/files/usr/var/run/php-fpm.sock修改为</span><br><span class="line">      listen=127.0.0.1:9000</span><br><span class="line">$ vim Caddyfile 增加</span><br><span class="line">   fastcgi / 127.0.0.1:9000 php</span><br><span class="line">$ php-fpm</span><br><span class="line">$ caddy</span><br></pre></td></tr></table></figure>
+<p>成功<br><strong>termux 0.99版测试发现，不用进入chroot下，也能成功了。</strong></p>
+<h5 id="3-windows10下，windows不支持sock-所以此法不可用"><a href="#3-windows10下，windows不支持sock-所以此法不可用" class="headerlink" title="3. windows10下，windows不支持sock, 所以此法不可用"></a>3. windows10下，windows不支持sock, 所以此法不可用</h5><h4 id="二-php-cgi方法"><a href="#二-php-cgi方法" class="headerlink" title="二. php-cgi方法"></a>二. php-cgi方法</h4><h5 id="1-linux与termux下用法相同，并且termux不用进入chroot"><a href="#1-linux与termux下用法相同，并且termux不用进入chroot" class="headerlink" title="1 linux与termux下用法相同，并且termux不用进入chroot"></a>1 linux与termux下用法相同，并且termux不用进入chroot</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ vim Caddyfile 增加</span><br><span class="line">   fastcgi / 127.0.0.1:9000 php</span><br><span class="line">$ php-cgi -b 9000 &amp;</span><br><span class="line">$ caddy</span><br></pre></td></tr></table></figure>
+<h5 id="2-win10下，我采用的是cygwin"><a href="#2-win10下，我采用的是cygwin" class="headerlink" title="2.win10下，我采用的是cygwin"></a>2.win10下，我采用的是cygwin</h5><p>下载php-7.<em>.</em>.zip，并解压到c:\mytools\php-7.*.*目录，进入cygwin终端</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /cygdrive/c/mytools/php-7.*.*</span><br><span class="line">$ ./php-cgi.exe -b 9000 &amp;</span><br><span class="line">后面相同</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/04/24/website/caddy-php/" data-id="cmb6oa6il00d9dts60of17daq" class="article-share-link" data-share="baidu" data-title="caddy配置php的两种办法">分享到</a>
+      
 
-<blockquote>
-<p>要在虚拟机中的windowsXP中设置，“选择电源按钮功能—》按电源按钮时—-》关机“</p>
-</blockquote>
-</li>
-<li><p>强制关机（非正常关机）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ VBoxManage controlvm <span class="string">&quot;winxp&quot;</span> poweroff <span class="comment">#列出正在运行的虚拟机，例如名字为&quot;winxp&quot;</span></span><br></pre></td></tr></table></figure></li>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag"> 建站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/caddy-PHP/" rel="tag">caddy+PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-website/lamp-and-flask" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/09/website/lamp-and-flask/" class="article-date">
+  <time datetime="2021-06-08T16:00:00.000Z" itemprop="datePublished">2021-06-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/09/website/lamp-and-flask/"> LAMP-SERVER 与 flask结合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="结合php与python二者的优点，哈哈。咱菜鸟就是有奇葩的想法"><a href="#结合php与python二者的优点，哈哈。咱菜鸟就是有奇葩的想法" class="headerlink" title="结合php与python二者的优点，哈哈。咱菜鸟就是有奇葩的想法"></a>结合php与python二者的优点，哈哈。咱菜鸟就是有奇葩的想法</h3><h5 id="一-安装-lamp-server-与-phpmyamdin"><a href="#一-安装-lamp-server-与-phpmyamdin" class="headerlink" title="一 安装 lamp-server 与 phpmyamdin"></a>一 安装 lamp-server 与 phpmyamdin</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install lamp-server^ -y</span><br><span class="line">$ <span class="built_in">sudo</span> apt install phpmyadmin -y</span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">ln</span> -s /usr/share/phpmyadmin  /home/me/mywww</span><br></pre></td></tr></table></figure>
+<h5 id="二-安装-flask-并验证其"><a href="#二-安装-flask-并验证其" class="headerlink" title="二 安装 flask, 并验证其"></a>二 安装 flask, 并验证其</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install python3</span><br><span class="line">$ python3 -m venv myflask3  <span class="comment">#建立虚环境</span></span><br><span class="line">$ <span class="built_in">cd</span> myflask3</span><br><span class="line">$ <span class="built_in">source</span> bin/activate   <span class="comment">#进入虚环境</span></span><br><span class="line">$ pip install flask</span><br><span class="line"><span class="comment"># 编写 app.py，并验证。此处不多说</span></span><br></pre></td></tr></table></figure>
+<h5 id="三-安装-wsgi"><a href="#三-安装-wsgi" class="headerlink" title="三 安装 wsgi"></a>三 安装 wsgi</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install libapache2-mod-wsgi </span><br><span class="line"><span class="comment"># 安装后会自动在/etc/apache2/mods-available/目录下生成 wsgi.conf wsgi.loadg两个文件</span></span><br><span class="line"><span class="comment"># /usr/lib/apache2/moudules/在wsgi两个文件</span></span><br></pre></td></tr></table></figure>
+<h5 id="四-试验-wsgi-是否可用"><a href="#四-试验-wsgi-是否可用" class="headerlink" title="四 试验 wsgi 是否可用"></a>四 试验 wsgi 是否可用</h5><ol>
+<li>在&#x2F;var&#x2F;www&#x2F;目录下编写test.wsgi文件，内容为<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">application</span>(<span class="params">environ,start-response</span>)</span><br><span class="line">    status=<span class="string">&quot;200 OK&quot;</span></span><br><span class="line">    output=<span class="string">&quot;Hellow,apache2+wsgi&quot;</span></span><br><span class="line">    response_headers=[(<span class="string">&#x27;content-type&#x27;</span>,<span class="string">&#x27;text/plain&#x27;</span>),(<span class="string">&#x27;contnet-type&#x27;</span>,<span class="built_in">str</span>(<span class="built_in">len</span>(output)))]</span><br><span class="line">    start_response(status,response_headers)</span><br><span class="line">    <span class="keyword">return</span>[output]</span><br></pre></td></tr></table></figure></li>
+<li>修改&#x2F;etc&#x2F;apache2&#x2F;apache2.conf 在末尾加上<br>WSGIScriptAlias &#x2F;test &#x2F;var&#x2F;www&#x2F;test.wsgi</li>
+<li>重启动apache2<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> service apache2 restart </span><br></pre></td></tr></table></figure>
+  浏览器输入 localhost&#x2F;test，如果网页上能看到 Hello,apache2+wsgi，则说明成功</li>
 </ol>
+<h5 id="五-把第二步的app-py改名为app-wsgi，并编辑"><a href="#五-把第二步的app-py改名为app-wsgi，并编辑" class="headerlink" title="五 把第二步的app.py改名为app.wsgi，并编辑"></a>五 把第二步的app.py改名为app.wsgi，并编辑</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf8  必须加，否则网页无法显示中文</span></span><br><span class="line"></span><br><span class="line">activate_this = <span class="string">&quot;/home/me/myflask/bin/activate_this.py&quot;</span> <span class="comment">#让wsgi知道启动脚本的环境</span></span><br><span class="line">exfile(activate_this,<span class="built_in">dict</span>(__file__=activate_this))</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">application=Flask(__name__) <span class="comment"># wsgi的应用对象必须命名为application,所以不是app</span></span><br><span class="line"><span class="meta">@application.rout(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">  <span class="keyword">return</span>( <span class="string">&quot; &lt;H2&gt;你好，apache2+flask! &lt;/H2&gt;&quot;</span> )</span><br></pre></td></tr></table></figure>
+<h5 id="六，再次编辑-etc-apache2-apache2-conf，在末尾"><a href="#六，再次编辑-etc-apache2-apache2-conf，在末尾" class="headerlink" title="六，再次编辑&#x2F;etc&#x2F;apache2&#x2F;apache2.conf，在末尾"></a>六，再次编辑&#x2F;etc&#x2F;apache2&#x2F;apache2.conf，在末尾</h5><p>WSGIScriptAlias app &#x2F;home&#x2F;me&#x2F;myflask&#x2F;app.wsgi<br>重启apache服务，浏览器输入 localhost&#x2F;app ，发现失败了。<br>查看apache2的错误信息 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">tail</span> -f /var/log/apache2/error.log <span class="comment"># 发现是存取目录失败。于是再次 </span></span><br><span class="line">$ <span class="built_in">sudo</span> vim /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure>
+<p>在末尾添加<br>| &lt;Directory &#x2F;home&#x2F;me&#x2F;myflask&gt;<br>|   require all granted<br>|   require host ip<br>|   Allow from all<br>| </Directory><br>保存退出，重启apache, 然后浏览器，成功得到flash的信息。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/06/18/linux/vbox-console/" data-id="cmawg7tu300ayh3s69rnp9y8u" class="article-share-link" data-share="baidu" data-title="命令行启停VirtualBox">分享到</a>
+        <a data-url="https://superigbt.github.io/2021/06/09/website/lamp-and-flask/" data-id="cmb6oa6in00didts6h0uidbe0" class="article-share-link" data-share="baidu" data-title=" LAMP-SERVER 与 flask结合">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VirtualBox/" rel="tag">VirtualBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8-%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">模拟器&#x2F;虚拟机</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LAMP/" rel="tag">LAMP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask%E6%A1%86%E6%9E%B6/" rel="tag">flask框架</a></li></ul>
 
     </footer>
   </div>
@@ -428,14 +701,14 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
 
 
   
-    <article id="post-linux/vbox-find-usbdevice" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-website/lamp-server-install1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/06/18/linux/vbox-find-usbdevice/" class="article-date">
-  <time datetime="2020-06-18T01:38:00.000Z" itemprop="datePublished">2020-06-18</time>
+    <a href="/2021/06/08/website/lamp-server-install1/" class="article-date">
+  <time datetime="2021-06-07T16:00:00.000Z" itemprop="datePublished">2021-06-08</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
   </div>
 
   </div>
@@ -446,7 +719,7 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/18/linux/vbox-find-usbdevice/">VirtualBox找到USB外设</a>
+      <a class="article-title" href="/2021/06/08/website/lamp-server-install1/">LAMP安装后，phpmyadmin无法空密码登录</a>
     </h1>
   
 
@@ -454,269 +727,26 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>$ whoami 比如返回当前用户名为 laoli</li>
-<li>$ cat &#x2F;etc&#x2F;group|grep vboxusers 查看组vboxusers<br> 比如会返回 vboxusers:x:127</li>
-<li>&#x2F;usr&#x2F;sbin&#x2F;usermod -G vboxusers -a laoli</li>
-<li>再次执行第二步看看<br> 如果返回 vboxusers:x:127:laoli，则表示成功了。<br> 然后重新在vbox的菜单上加载USB外设</li>
-</ol>
+        <h3 id="LAMP刚安装完后，mysql的用户root密码是空的，导致phpmyadmin无法登录，该如何解决呢？"><a href="#LAMP刚安装完后，mysql的用户root密码是空的，导致phpmyadmin无法登录，该如何解决呢？" class="headerlink" title="LAMP刚安装完后，mysql的用户root密码是空的，导致phpmyadmin无法登录，该如何解决呢？"></a>LAMP刚安装完后，mysql的用户root密码是空的，导致phpmyadmin无法登录，该如何解决呢？</h3><h5 id="一-安装-lamp-server-与-phpmyamdin"><a href="#一-安装-lamp-server-与-phpmyamdin" class="headerlink" title="一 安装 lamp-server 与 phpmyamdin"></a>一 安装 lamp-server 与 phpmyamdin</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install lamp-server^ -y</span><br><span class="line">$ <span class="built_in">sudo</span> apt install phpmyadmin -y</span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">ln</span> -s /usr/share/phpmyadmin  /home/me/mywww</span><br></pre></td></tr></table></figure>
 
+<h5 id="二-修改-phpmyadmin配置"><a href="#二-修改-phpmyadmin配置" class="headerlink" title="二 修改 phpmyadmin配置"></a>二 修改 phpmyadmin配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /usr/share/phpmyadmin/libraries</span><br><span class="line">$ vim config.default.php</span><br><span class="line"><span class="comment"># 305行 $cfg[&#x27;Servers&#x27;][$i][&#x27;nopassword&#x27;]=false;</span></span><br><span class="line"><span class="comment"># 538行 $cfg[&#x27;Servers&#x27;][$i][&#x27;AllowNopassword&#x27;]=false;</span></span><br><span class="line"><span class="comment"># 把以上的false 改为 true</span></span><br><span class="line"><span class="comment"># 大约270行 $cfg[&#x27;Servers][$i][&#x27;password&#x27;]=&#x27;&#x27;;</span></span><br></pre></td></tr></table></figure>
+<p>保存后，则phpmyadmin允许空密码登录了。然而用root用户名依然不能登录！！！</p>
+<h4 id="四-查原因"><a href="#四-查原因" class="headerlink" title="四 查原因"></a>四 查原因</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> mysql</span><br><span class="line">mysql&gt; use mysql</span><br><span class="line">mysql&gt; <span class="keyword">select</span> user,plugin from user;</span><br><span class="line">+--------------------+-------------------------+</span><br><span class="line">| user               | plugin                  |</span><br><span class="line">+--------------------+-------------------------+</span><br><span class="line">| debian-sys-maint   | mysql_native_password   |</span><br><span class="line">| mysql.infoschema   | mysql_native_password   |</span><br><span class="line">| mysql.session      | mysql_native_password   |</span><br><span class="line">| mysql.sys          | mysql_native_password   |</span><br><span class="line">| phpmyadmin         | mysql_native_password   |</span><br><span class="line">| root               | auth_socket             |</span><br><span class="line">+--------------------+-------------------------+</span><br><span class="line"><span class="comment"># plugin=auth_socket则表示不允许ph登录, 所认必须把 root的plugin属性改为mysql_native_password</span></span><br></pre></td></tr></table></figure>
+<p>但是可以用phpmyadmin的用户名来登录</p>
+<h4 id="修改-root的plugin属性"><a href="#修改-root的plugin属性" class="headerlink" title="修改 root的plugin属性"></a>修改 root的plugin属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; update user SET plugin=<span class="string">&#x27;mysql_native_password&#x27;</span> WHERE user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">mysql&gt; quit;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改-root的密码"><a href="#修改-root的密码" class="headerlink" title="修改 root的密码"></a>修改 root的密码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="built_in">set</span> password <span class="keyword">for</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> = password(<span class="string">&#x27;你设置的密码&#x27;</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/06/18/linux/vbox-find-usbdevice/" data-id="cmawg7tu300b1h3s60q1s3xrq" class="article-share-link" data-share="baidu" data-title="VirtualBox找到USB外设">分享到</a>
+        <a data-url="https://superigbt.github.io/2021/06/08/website/lamp-server-install1/" data-id="cmb6oa6in00dldts65i3s6vqr" class="article-share-link" data-share="baidu" data-title="LAMP安装后，phpmyadmin无法空密码登录">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VirtualBox/" rel="tag">VirtualBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8-%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">模拟器&#x2F;虚拟机</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux/vim-hotkey" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/14/linux/vim-hotkey/" class="article-date">
-  <time datetime="2020-06-14T13:24:00.000Z" itemprop="datePublished">2020-06-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/14/linux/vim-hotkey/">vim快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一-快速移动到行尾或行首"><a href="#一-快速移动到行尾或行首" class="headerlink" title="一 快速移动到行尾或行首"></a>一 快速移动到行尾或行首</h3><ol>
-<li><p>简单粗暴行<br> home键—-行首， end键—–行尾</p>
-</li>
-<li><p>组合键</p>
-<blockquote>
-<p>shift+6 也是 快捷键”^”——行道<br>shift+4 也是 快捷键”$”——行尾</p>
-</blockquote>
-</li>
-<li><p>直接到编辑状态</p>
-<blockquote>
-<p>I—–跳到行首，并进入编辑状态<br>A—–跳到行尾，并进入编辑状态</p>
-</blockquote>
-<h3 id="二-移动光标"><a href="#二-移动光标" class="headerlink" title="二 移动光标"></a>二 移动光标</h3><blockquote>
-<p>h: 左移<br>j: 下移<br>k: 上移<br>l: 右移<br>M: 光标移动到中间行<br>L: 光标移动到屏幕最后一行行首<br>G: 移动到指定行,行号 -G<br>w: 向后一次移动一个字<br>b: 向前一次移动一个字<br>{: 按段移动,上移<br>}: 按段移动,下移<br>Ctr-d: 向下翻半屏<br>Ctr-u: 向上翻半屏<br>Ctr-f: 向下翻一屏<br>Ctr-b: 向上翻一屏<br>gg: 光标移动文件开头<br>G: 光标移动到文件末尾</p>
-</blockquote>
-<h3 id="三-删除命令"><a href="#三-删除命令" class="headerlink" title="三 删除命令"></a>三 删除命令</h3><blockquote>
-<p>x: 删除光标后一个字符,相当于 Del<br>X: 删除光标前一个字符,相当于 Backspace<br>dd: 删除光标所在行,n dd 删除指定的行数 D: 删除光标后本行所有内容,包含光标所在字符<br>d0: 删除光标前本行所有内容,不包含光标所在字符<br>dw: 删除光标开始位置的字,包含光标所在字符</p>
-</blockquote>
-<h3 id="四-撤销命令"><a href="#四-撤销命令" class="headerlink" title="四 撤销命令:"></a>四 撤销命令:</h3><blockquote>
-<p>u: 一步一步撤销，也称为后悔键<br>Ctr-r: 反撤销</p>
-</blockquote>
-<h3 id="五-查找命令"><a href="#五-查找命令" class="headerlink" title="五 查找命令:&gt;"></a>五 查找命令:&gt;</h3><blockquote>
-<p>&#x2F;: str查找<br>n: 下一个<br>N：上一个</p>
-</blockquote>
-<h3 id="六-编辑键"><a href="#六-编辑键" class="headerlink" title="六 编辑键"></a>六 编辑键</h3><blockquote>
-<p>yy: 复制一行    nyy： 复制n行<br>dd: 删除一行    12dd:  删除12行<br>p:  黏贴        3p:   黏贴三次</p>
-</blockquote>
-<h3 id="七-替换字符串"><a href="#七-替换字符串" class="headerlink" title="七 替换字符串"></a>七 替换字符串</h3><p>例如： 把文档中所有的 ports.ubuntu.org替换为阿里源 mirrors.aliyun.com<br>:%s&#x2F;ports.ubuntu.org&#x2F;mirrors.aliyun.com&#x2F;g</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/06/14/linux/vim-hotkey/" data-id="cmawg7tu600bhh3s637si9geu" class="article-share-link" data-share="baidu" data-title="vim快捷键">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-termux/tmux-hotkey" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/14/termux/tmux-hotkey/" class="article-date">
-  <time datetime="2020-06-14T04:24:00.000Z" itemprop="datePublished">2020-06-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/14/termux/tmux-hotkey/">tmux快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="注意是-tmux，终端分屏神器。可别看成termux了！！"><a href="#注意是-tmux，终端分屏神器。可别看成termux了！！" class="headerlink" title="注意是 tmux，终端分屏神器。可别看成termux了！！"></a>注意是 tmux，终端分屏神器。可别看成termux了！！</h3><p>所有的操作都是从Ctrl+b开始的，先按下Ctrl+b，松开，再按后面的键。<br>Ctrl+b %：划分左右两个窗格。<br>Ctrl+b “：划分上下两个窗格。<br>Ctrl+b 然后方向键：光标切换到其他窗格。方向键是指向要切换到的窗格的方向键，比如切换到下方窗格，就按方向键↓。<br>Ctrl+b ;：光标切换到上一个窗格。<br>Ctrl+b o：光标切换到下一个窗格。<br>Ctrl+b {：当前窗格左移。<br>Ctrl+b }：当前窗格右移。<br>Ctrl+b Ctrl+o：当前窗格上移。<br>Ctrl+b Alt+o：当前窗格下移。<br>Ctrl+b x：关闭当前窗格。<br>Ctrl+b !：将当前窗格拆分为一个独立窗口。<br>Ctrl+b z：当前窗格全屏显示，再使用一次会变回原来大小。<br>Ctrl+b 然后 Crt+方向键：按箭头方向调整窗格大小，一次一个单元格<br>Ctrl+b 然后 Alt+方向键：按箭头方向调整窗格大小，一次五个单元格<br>Ctrl+b q：显示窗格编号。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/06/14/termux/tmux-hotkey/" data-id="cmawg7tuy00f9h3s67o6ugbih" class="article-share-link" data-share="baidu" data-title="tmux快捷键">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux/cygwin-mysql" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/13/linux/cygwin-mysql/" class="article-date">
-  <time datetime="2020-06-13T02:57:24.000Z" itemprop="datePublished">2020-06-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/win10/">win10</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/13/linux/cygwin-mysql/">cygwin安装MySQL并作为windows服务启动</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="cygwin安装MySQL并作为windows服务启动"><a href="#cygwin安装MySQL并作为windows服务启动" class="headerlink" title="cygwin安装MySQL并作为windows服务启动"></a>cygwin安装MySQL并作为windows服务启动</h4><h5 id="一-安装-MariaDB-MySQL"><a href="#一-安装-MariaDB-MySQL" class="headerlink" title="一 安装 MariaDB (MySQL)#"></a>一 安装 MariaDB (MySQL)#</h5><p>注意 在Cygwin中，安装的是MariaDB（貌似是个开源的分支？以下就用MySQL代替MariaDB）并不是MySQL</p>
-<p>以管理员身份运行cygwin，执行以下命令安装MySQL</p>
-<p>mysql_install_db</p>
-<p>以守护进程方式启动MySQL服务器</p>
-<p>mysqld_safe &amp;</p>
-<p>然后运行以下命令设置密码，此时密码为空，直接回车登录</p>
-<p>mysql_secure_installation</p>
-<p>然后既可以正常登录了</p>
-<p>mysql -u root -p</p>
-<h5 id="二-将MySQL安装为Windows服务"><a href="#二-将MySQL安装为Windows服务" class="headerlink" title="二 将MySQL安装为Windows服务#"></a>二 将MySQL安装为Windows服务#</h5><p>以管理员身份运行以下命令停止MySQL服务，密码是你刚才更新的密码</p>
-<p>mysqladmin.exe -u root -p shutdown</p>
-<p>使用cygrunsrv</p>
-<p>cygrunsrv.exe -I mysqld -d “CYGWIN MariaDB server” -p &#x2F;usr&#x2F;bin&#x2F;mysqld_safe</p>
-<p>启动服务</p>
-<p>cygrunsrv -S mysqld</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/06/13/linux/cygwin-mysql/" data-id="cmawg7ttf007wh3s6f8b0hj96" class="article-share-link" data-share="baidu" data-title="cygwin安装MySQL并作为windows服务启动">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cygwin/" rel="tag">cygwin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux/ubuntu-start-console" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/07/linux/ubuntu-start-console/" class="article-date">
-  <time datetime="2020-06-07T04:38:00.000Z" itemprop="datePublished">2020-06-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/07/linux/ubuntu-start-console/">ubuntu开机默认控制台</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一-启动为控制台。"><a href="#一-启动为控制台。" class="headerlink" title="一 启动为控制台。"></a>一 启动为控制台。</h4><h6 id="1-修改-etc-default-grub文件"><a href="#1-修改-etc-default-grub文件" class="headerlink" title="1. 修改 &#x2F;etc&#x2F;default&#x2F;grub文件"></a>1. 修改 &#x2F;etc&#x2F;default&#x2F;grub文件</h6><p>   把GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet splash “ 改为 GRUB_CMDLINE_LINUX_DEFAULT&#x3D;”quiet splash text”<br>   GRUB_TERMINAL&#x3D;console前的注释取消掉</p>
-<h6 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> update-grub</span><br><span class="line">$ <span class="built_in">sudo</span> systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
-<pre><code>重启电脑就直接进入控制台了，可是字体为毛这么小？
-</code></pre>
-<blockquote>
-<p>如果想要恢复启动默认进入图形界面，把&#x2F;etc&#x2F;default&#x2F;grub文件改回后，还要执行<br>$ sudo update-grub<br>$ sudo systemctl set-default graphical.target<br>$ reboot</p>
-</blockquote>
-<h4 id="二-修改控制台字体，最好在GUI环境修改好。"><a href="#二-修改控制台字体，最好在GUI环境修改好。" class="headerlink" title="二. 修改控制台字体，最好在GUI环境修改好。"></a>二. 修改控制台字体，最好在GUI环境修改好。</h4><pre><code>执行 sudo dpkg-reconfigure console-setup
-然后一步一步设置吧，重启电脑。可是为毛显示文件名，中文文件夹是菱形？
-</code></pre>
-<h4 id="三-中文控制台"><a href="#三-中文控制台" class="headerlink" title="三. 中文控制台"></a>三. 中文控制台</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install fbterm   <span class="comment"># 中文终端 fbterm</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt install fcitx-frontend-fbterm <span class="comment"># fbterm下的中文输入法</span></span><br><span class="line">$ <span class="built_in">sudo</span> fbterm <span class="comment"># 会生产 .fbtermrc文件。</span></span><br><span class="line">$ <span class="built_in">exit</span> 退出 fbtermrc</span><br><span class="line">$ vim .fbtermrc</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>font-names&#x3D;sans<br>font-size&#x3D;14<br>text-encodings&#x3D;utf8<br>input-method&#x3D;fcitx-fbterm</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> fbterm</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/06/07/linux/ubuntu-start-console/" data-id="cmawg7tu100aph3s6fh7r4xxf" class="article-share-link" data-share="baidu" data-title="ubuntu开机默认控制台">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/" rel="tag">控制台</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lamp-phpmyadmin/" rel="tag">lamp+phpmyadmin </a></li></ul>
 
     </footer>
   </div>
@@ -793,7 +823,7 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
           </li>
         
           <li>
-            <a href="/2025/01/30/python/streamlit-9/">streamlit学习笔记九-----streamlit新版支持原生多页面二</a>
+            <a href="/2025/01/30/python/streamlit-8/">streamlit学习笔记八-----一些特别的插件</a>
           </li>
         
       </ul>

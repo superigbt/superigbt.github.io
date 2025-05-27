@@ -84,10 +84,109 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-termux/tmux-hotkey" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/14/termux/tmux-hotkey/" class="article-date">
+  <time datetime="2020-06-13T16:00:00.000Z" itemprop="datePublished">2020-06-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/14/termux/tmux-hotkey/">tmux快捷键</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="注意是-tmux，终端分屏神器。可别看成termux了！！"><a href="#注意是-tmux，终端分屏神器。可别看成termux了！！" class="headerlink" title="注意是 tmux，终端分屏神器。可别看成termux了！！"></a>注意是 tmux，终端分屏神器。可别看成termux了！！</h3><p>所有的操作都是从Ctrl+b开始的，先按下Ctrl+b，松开，再按后面的键。<br>Ctrl+b %：划分左右两个窗格。<br>Ctrl+b “：划分上下两个窗格。<br>Ctrl+b 然后方向键：光标切换到其他窗格。方向键是指向要切换到的窗格的方向键，比如切换到下方窗格，就按方向键↓。<br>Ctrl+b ;：光标切换到上一个窗格。<br>Ctrl+b o：光标切换到下一个窗格。<br>Ctrl+b {：当前窗格左移。<br>Ctrl+b }：当前窗格右移。<br>Ctrl+b Ctrl+o：当前窗格上移。<br>Ctrl+b Alt+o：当前窗格下移。<br>Ctrl+b x：关闭当前窗格。<br>Ctrl+b !：将当前窗格拆分为一个独立窗口。<br>Ctrl+b z：当前窗格全屏显示，再使用一次会变回原来大小。<br>Ctrl+b 然后 Crt+方向键：按箭头方向调整窗格大小，一次一个单元格<br>Ctrl+b 然后 Alt+方向键：按箭头方向调整窗格大小，一次五个单元格<br>Ctrl+b q：显示窗格编号。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/06/14/termux/tmux-hotkey/" data-id="cmb6oa6j300fvdts65k7l3mxx" class="article-share-link" data-share="baidu" data-title="tmux快捷键">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux/ubuntu-add-sudo-user" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/07/linux/ubuntu-add-sudo-user/" class="article-date">
+  <time datetime="2020-03-06T16:00:00.000Z" itemprop="datePublished">2020-03-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/07/linux/ubuntu-add-sudo-user/">ubuntu增加sudo用户</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="为ubuntu增加一个sudo用户"><a href="#为ubuntu增加一个sudo用户" class="headerlink" title="为ubuntu增加一个sudo用户"></a>为ubuntu增加一个sudo用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ addgroup laoshiren <span class="comment"># 添加laoshiren的组名,20.04不用这一条。会自动增加组名</span></span><br><span class="line">$ adduser username groupname <span class="comment"># 添加用户名叫laoshiren到laoshiren组 20.04不用这一条。会自动增加组名</span></span><br><span class="line">$ adduser laoshiren   <span class="comment"># 添加用户名叫laoshiren</span></span><br><span class="line">   依次输入密码，全名等用户信息。</span><br><span class="line">$ usermod laoshiren -a -G <span class="built_in">sudo</span> <span class="comment">#把用户laoshiren加入sudo 用户组</span></span><br><span class="line">$ usermod loahshiren -a -G adm <span class="comment">#把用户laoshiren加入admin用户组</span></span><br><span class="line">$ apt install <span class="built_in">sudo</span> <span class="comment">#有的没有这个命令，要安装，如果有就跳过这一步</span></span><br><span class="line">$ <span class="built_in">sudo</span> vim /etc/sudoers</span><br><span class="line">   ~~添加 laoshiren ALL=(ALL:ALL) ALL~~</span><br><span class="line">   添加 **%<span class="built_in">sudo</span> ALL=(ALL:ALL) ALL~~**</span><br><span class="line">保存退出。   </span><br></pre></td></tr></table></figure>
+
+<p>要切换到laoshiren用户，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su - laoshiren</span><br><span class="line">$ <span class="built_in">groups</span> <span class="comment">#查看当前用户所在的组</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除用户与组采用："><a href="#删除用户与组采用：" class="headerlink" title="删除用户与组采用："></a>删除用户与组采用：</h4><p>sudo userdel -r username<br>sudo groupdel username</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/03/07/linux/ubuntu-add-sudo-user/" data-id="cmb6oa6hh007ndts6adnhh4pz" class="article-share-link" data-share="baidu" data-title="ubuntu增加sudo用户">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-termux/termux-anlinux-xdsl" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/28/termux/termux-anlinux-xdsl/" class="article-date">
-  <time datetime="2020-02-28T02:00:00.000Z" itemprop="datePublished">2020-02-28</time>
+  <time datetime="2020-02-27T16:00:00.000Z" itemprop="datePublished">2020-02-28</time>
 </a>
     
   <div class="article-category">
@@ -130,7 +229,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-anlinux-xdsl/" data-id="cmawg7tuq00e5h3s6ap3z8g51" class="article-share-link" data-share="baidu" data-title="termux+anlinux安装linux图形界面，采用XDSL大法">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-anlinux-xdsl/" data-id="cmb6oa6iv00eodts65necg1ak" class="article-share-link" data-share="baidu" data-title="termux+anlinux安装linux图形界面，采用XDSL大法">分享到</a>
       
 
       
@@ -148,7 +247,7 @@
     <article id="post-termux/termux-qemu-winXP" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/28/termux/termux-qemu-winXP/" class="article-date">
-  <time datetime="2020-02-28T02:00:00.000Z" itemprop="datePublished">2020-02-28</time>
+  <time datetime="2020-02-27T16:00:00.000Z" itemprop="datePublished">2020-02-28</time>
 </a>
     
   <div class="article-category">
@@ -200,7 +299,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-qemu-winXP/" data-id="cmawg7tuw00exh3s6co2bcp63" class="article-share-link" data-share="baidu" data-title="termux+qemu+winXP实验">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-qemu-winXP/" data-id="cmb6oa6j100fjdts6cttrhmfy" class="article-share-link" data-share="baidu" data-title="termux+qemu+winXP实验">分享到</a>
       
 
       
@@ -218,7 +317,7 @@
     <article id="post-termux/termux-xfce4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/28/termux/termux-xfce4/" class="article-date">
-  <time datetime="2020-02-28T02:00:00.000Z" itemprop="datePublished">2020-02-28</time>
+  <time datetime="2020-02-27T16:00:00.000Z" itemprop="datePublished">2020-02-28</time>
 </a>
     
   <div class="article-category">
@@ -281,143 +380,13 @@ pkg install otter-browser -y # 另一个图形浏览器
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-xfce4/" data-id="cmawg7tuy00f7h3s66v9r2kim" class="article-share-link" data-share="baidu" data-title="termux的图形界面以及窗口的启动总结">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-xfce4/" data-id="cmb6oa6j200frdts6hdprhtlx" class="article-share-link" data-share="baidu" data-title="termux的图形界面以及窗口的启动总结">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux%E6%A1%8C%E9%9D%A2/" rel="tag">termux桌面</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-blog/butterfly-install" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/27/blog/butterfly-install/" class="article-date">
-  <time datetime="2020-02-27T05:57:24.000Z" itemprop="datePublished">2020-02-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/27/blog/butterfly-install/">安装Butterfly出错</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="安装butterfly"><a href="#安装butterfly" class="headerlink" title="安装butterfly"></a>安装butterfly</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/jerryc127/hexo-theme-butterfly.git  themes/Butterfly  #不错。就是顶部图片必须换，吓死个人</span><br><span class="line">npm install cheerio@0.22.0 --save</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>然后，修改用Butterfly主题，hexo s 也正确。</p>
-<h6 id="然后浏览器时，出错了。"><a href="#然后浏览器时，出错了。" class="headerlink" title="然后浏览器时，出错了。"></a>然后浏览器时，出错了。</h6><p>浏览器报错信息如下：  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extends includes/layout.pug block content include includes/recent-posts.pug include includes/partial</span><br></pre></td></tr></table></figure>
-<h6 id="出错的解决的办法"><a href="#出错的解决的办法" class="headerlink" title="出错的解决的办法"></a>出错的解决的办法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive</span><br><span class="line">hexo clean</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h6 id="修改可怕的主页图片"><a href="#修改可怕的主页图片" class="headerlink" title="修改可怕的主页图片"></a>修改可怕的主页图片</h6><ol>
-<li>把自己的图片copy进入myblog&#x2F;themes&#x2F;Butterfly&#x2F;source&#x2F;img&#x2F;目录，比如名字为index.jpg</li>
-<li>修改myblog&#x2F;themes&#x2F;Butterfly&#x2F;_config.yml，把<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index_img:     https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/index.jpg</span><br></pre></td></tr></table></figure>
-修改为<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index_img: /img/index.jpg</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/02/27/blog/butterfly-install/" data-id="cmawg7trv001eh3s60lyufx8o" class="article-share-link" data-share="baidu" data-title="安装Butterfly出错">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-blog/Hexo-about-github" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/24/blog/Hexo-about-github/" class="article-date">
-  <time datetime="2020-02-24T14:14:17.000Z" itemprop="datePublished">2020-02-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/24/blog/Hexo-about-github/">Hexo 布署到 github</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Hexo部署到github"><a href="#Hexo部署到github" class="headerlink" title="Hexo部署到github"></a>Hexo部署到github</h3><h5 id="注册github"><a href="#注册github" class="headerlink" title="注册github"></a>注册github</h5><p>进入<a target="_blank" rel="noopener" href="https://www.github.com/">github网站</a>，并注册账号。然后登录后，创建仓库，仓库名要为域名方式,比如 frank.github.io  公开，并初始化readme。然后浏览器访问<a target="_blank" rel="noopener" href="http://frank.github.io/">你刚才创建的域名frank.github.io</a>，如果可以则表示成功。</p>
-<h5 id="PC机的github设置"><a href="#PC机的github设置" class="headerlink" title="PC机的github设置"></a>PC机的github设置</h5><h6 id="1-安装必要的软件"><a href="#1-安装必要的软件" class="headerlink" title="1.安装必要的软件"></a>1.安装必要的软件</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install git  <span class="comment">#安装git</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt install openssh-server openssh-client <span class="comment">#安装ssh工具，可自行百度</span></span><br></pre></td></tr></table></figure>
-<h6 id="2-设置github"><a href="#2-设置github" class="headerlink" title="2.设置github"></a>2.设置github</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;frankli&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;frankli@21cn.com&quot;</span></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;frankli@21cn.com&quot;</span>  <span class="comment"># 生成ssh key</span></span><br></pre></td></tr></table></figure>
-<p>会在主目录下的 .ssh目录中生成两个文件，打开id_rsa.pub文件，copy其中的内容。</p>
-<h6 id="3-去github-com你的账户下"><a href="#3-去github-com你的账户下" class="headerlink" title="3.去github.com你的账户下"></a>3.去github.com你的账户下</h6><p>setting—&gt;SSH and GPG keys—-&gt;New SSH key中，然后把刚才id_rsa.pub文件中的内容copy放在此框中</p>
-<h6 id="4-验证，注意，由于网络原因，最好过一分钟再验证。"><a href="#4-验证，注意，由于网络原因，最好过一分钟再验证。" class="headerlink" title="4.验证，注意，由于网络原因，最好过一分钟再验证。"></a>4.验证，注意，由于网络原因，最好过一分钟再验证。</h6><pre><code>$ ssh -T git@github.com
-</code></pre>
-<h5 id="Hexo的设置"><a href="#Hexo的设置" class="headerlink" title="Hexo的设置"></a>Hexo的设置</h5><ol>
-<li><code>npm install hexo-deployer-git --save </code></li>
-<li>编辑 blog 目录下的* _config.yml * 文件中，找到 <em>Deployment</em> ，然后按照如下修改<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">##  Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line"> type: git</span><br><span class="line"> repo: git@github.com:frankli/franli.github.io.git</span><br><span class="line"> branch: master </span><br></pre></td></tr></table></figure>
- 注意在_config.yml中<strong>不要乱用Tab，表示下一级的话，要用空格键</strong>，不然会出错的。</li>
-</ol>
-<h6 id="通过hexo命令部署"><a href="#通过hexo命令部署" class="headerlink" title="通过hexo命令部署"></a>通过hexo命令部署</h6><pre><code>$ sudo hexo clean  
-$ sudo hexo g  
-$ sudo hexo d  
-</code></pre>
-<p>应该就会部署成功了。然而，我竟然<del>失败了！失败了！失败了！</del>，出现如下错误</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>Error: <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>: Permission denied (publickey).<br>fatal: 无法读取远程仓库。<br>请确认您有正确的访问权限并且仓库存在。    </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>感谢在CSDN的<em>“总想玩世不恭”</em>的贴子上看到了原因，原来刚才生成的.ssh在用户目录下，可是执行hexo时，用的是sudo，而sudo是要到&#x2F;root目录下查到.ssh中的文件的。解决办法如下：  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span>   <span class="built_in">cp</span>   -r   .ssh   /root/  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>然后再执行：<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> hexo d </span><br><span class="line"></span><br></pre></td></tr></table></figure><br> 成功了！，由于网络原因，可能你需要个几分钟到浏览器查看<a href="">https://frank.github.io</a><br>应该会浏览到你的贴子了。</p>
-<p>作者: 老李<br>鏈接: <a target="_blank" rel="noopener" href="https://bosway.natapp300.top/">https://bosway.natapp300.top/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/02/24/blog/Hexo-about-github/" data-id="cmawg7tru001bh3s60q1abevv" class="article-share-link" data-share="baidu" data-title="Hexo 布署到 github">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo%E9%83%A8%E7%BD%B2/" rel="tag">hexo部署</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
 
     </footer>
   </div>
@@ -494,7 +463,7 @@ $ sudo hexo d
           </li>
         
           <li>
-            <a href="/2025/01/30/python/streamlit-9/">streamlit学习笔记九-----streamlit新版支持原生多页面二</a>
+            <a href="/2025/01/30/python/streamlit-8/">streamlit学习笔记八-----一些特别的插件</a>
           </li>
         
       </ul>

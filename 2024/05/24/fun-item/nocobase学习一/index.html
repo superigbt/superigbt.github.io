@@ -13,8 +13,8 @@
 <meta property="og:site_name" content="我的学习笔记">
 <meta property="og:description" content="NocoBase 是什么NocoBase 是一个极易扩展的开源无代码开发平台。 不必投入几年时间、数百万资金研发，花几分钟时间部署 NocoBase，马上拥有一个私有、可控、极易扩展的无代码开发平台， Nocobase文档 特点1. 数据模型驱动多数以表单、表格或者流程驱动的无代码产品都是在使用界面上直接创建数据结构，比如 Airtable 在表格里新增一列就是新增一个字段。这样的好处是使用简单，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-24T09:13:08.000Z">
-<meta property="article:modified_time" content="2024-05-24T09:13:08.000Z">
+<meta property="article:published_time" content="2024-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-05-23T16:00:00.000Z">
 <meta property="article:author" content="Frank.Li">
 <meta property="article:tag" content="github">
 <meta property="article:tag" content="工作效率相关">
@@ -90,7 +90,7 @@
       <section id="main"><article id="post-fun-item/nocobase学习一" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2024/05/24/fun-item/nocobase%E5%AD%A6%E4%B9%A0%E4%B8%80/" class="article-date">
-  <time datetime="2024-05-24T09:13:08.000Z" itemprop="datePublished">2024-05-24</time>
+  <time datetime="2024-05-23T16:00:00.000Z" itemprop="datePublished">2024-05-24</time>
 </a>
     
   <div class="article-category">
@@ -120,7 +120,7 @@
 <h4 id="本地安装试验"><a href="#本地安装试验" class="headerlink" title="本地安装试验"></a>本地安装试验</h4><h5 id="1-首先必须安装了-Node-js-18-、Yarn-1-22-x-以上版本"><a href="#1-首先必须安装了-Node-js-18-、Yarn-1-22-x-以上版本" class="headerlink" title="1. 首先必须安装了 Node.js 18+、Yarn 1.22.x 以上版本"></a>1. 首先必须安装了 Node.js 18+、Yarn 1.22.x 以上版本</h5><pre><code>配置并启动了所需数据库 SQLite 3.x、MySQL 8.0.17+、MariaDB 10.9+、PostgreSQL 10+ 任选其一
 </code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global yarn  <span class="comment"># 在ubnntu下，有可能要用到sudo</span></span><br><span class="line">$ yarn config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br><span class="line">$ yarn config <span class="built_in">set</span> sqlite3_binary_host_mirror https://npmmirror.com/mirrors/sqlite3/</span><br><span class="line"><span class="comment"># 配置SQLite,并生成目录</span></span><br><span class="line">$ yarn create nocobase-app my-nocobase-app -d sqlite <span class="comment">#会生成 my-nocobase-app目录</span></span><br><span class="line">$ <span class="built_in">cd</span> my-nocobase-app</span><br><span class="line">$ yarn install</span><br><span class="line">$ yarn install --production <span class="comment"># 生产环境部署时，为了减少体积，可以只安装必要的依赖</span></span><br><span class="line">$ yarn nocobase install --lang=zh-CN  <span class="comment"># 安装 NocoBase</span></span><br><span class="line">$ yarn dev <span class="comment"># 启动nocobase开发环境，或者 yarn start 启动生产环境</span></span><br><span class="line">$ yarn build <span class="comment"># 如果是生产环境时，代码有改变，要先执行这一步。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="2-登录-NocoBase"><a href="#2-登录-NocoBase" class="headerlink" title="2. 登录 NocoBase"></a>2. 登录 NocoBase</h5><p>使用浏览器打开 <a target="_blank" rel="noopener" href="http://localhost:13000/">http://localhost:13000/</a> 初始化账号和密码是 <a href="mailto:&#97;&#x64;&#109;&#x69;&#110;&#64;&#x6e;&#111;&#99;&#x6f;&#x62;&#x61;&#115;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#97;&#x64;&#109;&#x69;&#110;&#64;&#x6e;&#111;&#99;&#x6f;&#x62;&#x61;&#115;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a> 和 admin123</p>
+<h5 id="2-登录-NocoBase"><a href="#2-登录-NocoBase" class="headerlink" title="2. 登录 NocoBase"></a>2. 登录 NocoBase</h5><p>使用浏览器打开 <a target="_blank" rel="noopener" href="http://localhost:13000/">http://localhost:13000/</a> 初始化账号和密码是 <a href="mailto:&#97;&#100;&#109;&#x69;&#110;&#64;&#x6e;&#x6f;&#x63;&#111;&#98;&#x61;&#x73;&#x65;&#46;&#x63;&#x6f;&#109;">&#97;&#100;&#109;&#x69;&#110;&#64;&#x6e;&#x6f;&#x63;&#111;&#98;&#x61;&#x73;&#x65;&#46;&#x63;&#x6f;&#109;</a> 和 admin123</p>
 <hr>
 <h2 id="我的天，在anlinux下，-用npm安半yarn，-太难了。最终一个办法解决了。"><a href="#我的天，在anlinux下，-用npm安半yarn，-太难了。最终一个办法解决了。" class="headerlink" title="我的天，在anlinux下， 用npm安半yarn， 太难了。最终一个办法解决了。"></a>我的天，在anlinux下， 用npm安半yarn， 太难了。最终一个办法解决了。</h2><ol>
 <li>上 github 搜索yarn后，进入yarn</li>
@@ -141,7 +141,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/05/24/fun-item/nocobase%E5%AD%A6%E4%B9%A0%E4%B8%80/" data-id="cmawg7tsn004gh3s60g6tekuo" class="article-share-link" data-share="baidu" data-title="nocobase学习一，安装，并初步运行">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/05/24/fun-item/nocobase%E5%AD%A6%E4%B9%A0%E4%B8%80/" data-id="cmb6oa6gv004hdts62023cg85" class="article-share-link" data-share="baidu" data-title="nocobase学习一，安装，并初步运行">分享到</a>
       
 
       
@@ -238,7 +238,7 @@
           </li>
         
           <li>
-            <a href="/2025/01/30/python/streamlit-9/">streamlit学习笔记九-----streamlit新版支持原生多页面二</a>
+            <a href="/2025/01/30/python/streamlit-8/">streamlit学习笔记八-----一些特别的插件</a>
           </li>
         
       </ul>

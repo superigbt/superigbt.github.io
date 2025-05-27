@@ -84,14 +84,14 @@
     <div class="outer">
       <section id="main">
   
-    <article id="post-blog/hugo-learn-notebook6" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux/scrcpy2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/05/01/blog/hugo-learn-notebook6/" class="article-date">
-  <time datetime="2023-05-01T12:56:00.000Z" itemprop="datePublished">2023-05-01</time>
+    <a href="/2023/10/13/linux/scrcpy2/" class="article-date">
+  <time datetime="2023-10-12T16:00:00.000Z" itemprop="datePublished">2023-10-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
+    <a class="article-category-link" href="/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
   </div>
 
   </div>
@@ -102,7 +102,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/01/blog/hugo-learn-notebook6/">Hugo学习笔记六，serif主题下配置mermaid</a>
+      <a class="article-title" href="/2023/10/13/linux/scrcpy2/">scrcpy 快捷键</a>
     </h1>
   
 
@@ -110,25 +110,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="采用LoviIt主题己经配置好了mermaid，看甘特图了。可是采用serif没有配置过肿么办？百度有教程，总结如下："><a href="#采用LoviIt主题己经配置好了mermaid，看甘特图了。可是采用serif没有配置过肿么办？百度有教程，总结如下：" class="headerlink" title="采用LoviIt主题己经配置好了mermaid，看甘特图了。可是采用serif没有配置过肿么办？百度有教程，总结如下："></a>采用LoviIt主题己经配置好了mermaid，看甘特图了。可是采用serif没有配置过肿么办？百度有教程，总结如下：</h3><ol>
-<li>在 themes&#x2F;serif&#x2F;layouts&#x2F;目录下新建shortcodes目录，并在 themes&#x2F;serif&#x2F;layouts&#x2F;shortcodes&#x2F;目录下新建文件 mermaid.html, 内容如下<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mermaid&quot;</span>&gt;</span></span><br><span class="line"> &#123;&#123;.Inner&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>更改 themes&#x2F;serif&#x2F;layouts&#x2F;partials&#x2F;header.html文件，在文件末尾加入以下代码<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; if (.Params.mermaid) &#125;&#125;</span><br><span class="line">&lt;!-&quot;mermaid&quot;,JS support --&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;&#123; end &#125;&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h2 id="很重要，在md文件头上加入-mermaid-true"><a href="#很重要，在md文件头上加入-mermaid-true" class="headerlink" title="很重要，在md文件头上加入 mermaid: true"></a>很重要，在md文件头上加入 mermaid: true</h2></li>
-<li>实验甘特图，代码如下：</li>
-</ol>
-<h5 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h5><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&lt; mermaid &gt;&#125;&#125;gantt</span><br><span class="line">   dateFormat  YYYY-MM-DD</span><br><span class="line">   title 利用mermaid功能，增加一个甘特图</span><br><span class="line">   section 第一节</span><br><span class="line">   己完成任务           :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">   正在进行的任务               :active,  des2, 2014-01-09, 3d</span><br><span class="line">   未来任务1               :         des3, after des2, 5d</span><br><span class="line">   未来任务2               :         des4, after des3, 5d</span><br><span class="line">   section Critical tasks</span><br><span class="line">   Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">   Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">   Create tests for parser             :crit, active, 3d</span><br><span class="line">   Future task in critical line        :crit, 5d</span><br><span class="line">   Create tests for renderer           :2d</span><br><span class="line">   Add to mermaid                      :1d</span><br><span class="line">&#123;&#123;&lt; /mermaid &gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="或在md文件中加入"><a href="#或在md文件中加入" class="headerlink" title="或在md文件中加入"></a>或在md文件中加入</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mermaid&quot;</span>&gt;</span></span><br><span class="line">graph LR</span><br><span class="line">    A --- B</span><br><span class="line">    B--&gt;C[fa:fa-ban forbidden]</span><br><span class="line">    B--&gt;D(fa:fa-spinner);</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        scrcpy快捷键，利于控制....
+        
+          <p class="article-more-link">
+            <a href="/2023/10/13/linux/scrcpy2/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/05/01/blog/hugo-learn-notebook6/" data-id="cmawg7ts3002eh3s6gs913tas" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记六，serif主题下配置mermaid">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/10/13/linux/scrcpy2/" data-id="cmb6oa6he0077dts6323c1e93" class="article-share-link" data-share="baidu" data-title="scrcpy 快捷键">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mermaid/" rel="tag">mermaid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6scrcpy/" rel="tag">手机投屏软件scrcpy</a></li></ul>
 
     </footer>
   </div>
@@ -137,14 +135,14 @@
 
 
   
-    <article id="post-blog/hugo-learn-notebook5" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux/debian-mode-resolv" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/04/27/blog/hugo-learn-notebook5/" class="article-date">
-  <time datetime="2023-04-27T11:00:00.000Z" itemprop="datePublished">2023-04-27</time>
+    <a href="/2023/09/09/linux/debian-mode-resolv/" class="article-date">
+  <time datetime="2023-09-08T16:00:00.000Z" itemprop="datePublished">2023-09-09</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
   </div>
 
   </div>
@@ -155,7 +153,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/27/blog/hugo-learn-notebook5/">Hugo学习笔记五，文章头部(meta)，以DoIt为例</a>
+      <a class="article-title" href="/2023/09/09/linux/debian-mode-resolv/">Debian12 更改完resolv.conf,重启电脑后又自动恢复了？</a>
     </h1>
   
 
@@ -163,60 +161,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: 文章标题.</p>
-<p>subtitle: DoIt 新增 | 0.2.0 文章副标题.</p>
-<p>date: 这篇文章创建的日期时间. 它通常是从文章的前置参数中的 date 字段获取的, 但是也可以在 网站配置 中设置.</p>
-<p>lastmod: 上次修改内容的日期时间.</p>
-<p>draft: 如果设为 true, 除非 hugo 命令使用了 –buildDrafts&#x2F;-D 参数, 这篇文章不会被渲染.</p>
-<p>authors: DoIt 更改 | 0.2.12 文章作者.</p>
-<p>description: 文章内容的描述.</p>
-<p>license: 这篇文章特殊的许可.</p>
-<p>images: 页面图片, 用于 Open Graph 和 Twitter Cards.</p>
-<p>tags: 文章的标签.</p>
-<p>categories: 文章所属的类别.</p>
-<p>series: DoIt 新增 | 0.2.12 文章所属的系列.</p>
-<p>series_weight: DoIt 新增 | 0.2.13 自定义文章在系列中的位置.</p>
-<p>seriesNavigation: DoIt 新增 | 0.2.13 是否使用系列导航.</p>
-<p>featuredImage: 文章的特色图片.</p>
-<p>featuredImagePreview: 用在主页预览的文章特色图片.</p>
-<p>hiddenFromHomePage: 如果设为 true, 这篇文章将不会显示在主页上.</p>
-<p>hiddenFromSearch: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章将不会显示在搜索结果中.</p>
-<p>twemoji: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章会使用 twemoji.</p>
-<p>lightgallery: 如果设为 true, 文章中的图片将可以按照画廊形式呈现.</p>
-<p>ruby: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章会使用 上标注释扩展语法.</p>
-<p>fraction: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章会使用 分数扩展语法.</p>
-<p>fontawesome: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章会使用 Font Awesome 扩展语法.</p>
-<p>linkToMarkdown: 如果设为 true, 内容的页脚将显示指向原始 Markdown 文件的链接.</p>
-<p>linkToSource: DoIt 新增 | 0.2.14 如果设为 false, 则关闭页脚 view source 的链接. 你可以将其设置为一个指向文章原始文件的链接. 使用魔法变量 {path} 来获取文章的相对路径, 这篇文章的 {path} 是 posts&#x2F;theme-documentation-content&#x2F;index.en.md.</p>
-<p>linkToEdit:DoIt 新增 | 0.2.13 如果设为 false, 则关闭页脚 编辑此页 的链接. 你可以将其设置为一个用于编辑这个页面的链接. 使用魔法变量 {path} 来获取这篇文章的相对路径, 这篇文章的 {path} 是 posts&#x2F;theme-documentation-content&#x2F;index.zh-cn.md.</p>
-<p>linkToReport: DoIt 新增 | 0.2.14 如果设为 false, 则关闭页脚 报告问题 的链接. 你可以将其设置为一个用于报告此页面中错误的链接. 使用魔法变量 {path} 来获取文章的相对路径, 这篇文章的 {path} 是 posts&#x2F;theme-documentation-content&#x2F;index.en.md, 使用 {title} 来获取文章的标题, 这篇文章的 {title} 为 Theme Documentation - Content, 使用 {url} 来获取文章的链接, 这篇文章的 {url} 为 <a target="_blank" rel="noopener" href="https://hugodoit.pages.dev/theme-documentation-content/">https://hugodoit.pages.dev/theme-documentation-content/</a>.</p>
-<p>rssFullText: DoIt 新增 | 0.2.4 如果设为 true, 在 RSS 中将会显示全文内容.</p>
-<p>pageStyle: DoIt 新增 | 0.2.11 调整页面样式, 可选择”normal”或”wide”.</p>
-<p>license: DoIt 新增 | 0.2.14 许可协议信息 (支持 HTML 格式).</p>
-<p>toc: DoIt 更改 | 0.2.9 和 网站配置 中的 params.page.toc 部分相同.</p>
-<p>code: DoIt 新增 | 0.2.0 和 网站配置 中的 params.page.code 部分相同.</p>
-<p>table: DoIt 新增 | 0.2.14 和 网站配置 中的 params.page.table 部分相同.</p>
-<p>math: DoIt 更改 | 0.2.0 和 网站配置 中的 params.page.math 部分相同.</p>
-<p>mapbox: DoIt 新增 | 0.2.0 和 网站配置 中的 params.page.mapbox 部分相同.</p>
-<p>share: 和 网站配置 中的 params.page.share 部分相同.</p>
-<p>comment: DoIt 更改 | 0.2.0 和 网站配置 中的 params.page.comment 部分相同.</p>
-<p>library: DoIt 新增 | 0.2.7 和 网站配置 中的 params.page.library 部分相同.</p>
-<p>seo: DoIt 新增 | 0.2.10 和 网站配置 中的 params.page.seo 部分相同.</p>
-<p>outdatedArticleReminder: DoIt 新增 | 0.2.13 和 网站配置 中的 params.page.outdatedArticleReminder 部分相同.</p>
-<p>sponsor: DoIt 新增 | 0.2.13 和 网站配置 中的 params.sponsor 部分相同.</p>
-<p>related: DoIt 新增 | 0.2.14 和 网站配置 中的 params.page.related 部分相同.</p>
-
+        linux, debian12....
+        
+          <p class="article-more-link">
+            <a href="/2023/09/09/linux/debian-mode-resolv/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/04/27/blog/hugo-learn-notebook5/" data-id="cmawg7ts3002bh3s69hdsal6j" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记五，文章头部(meta)，以DoIt为例">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/09/09/linux/debian-mode-resolv/" data-id="cmb6oa6h60061dts63zjwexjk" class="article-share-link" data-share="baidu" data-title="Debian12 更改完resolv.conf,重启电脑后又自动恢复了？">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hugo-meta/" rel="tag">hugo-meta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux%E7%BB%8F%E9%AA%8C/" rel="tag">linux经验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux%E8%AE%BE%E7%BD%AEDNS/" rel="tag">linux设置DNS</a></li></ul>
 
     </footer>
   </div>
@@ -225,14 +186,14 @@
 
 
   
-    <article id="post-SMPS/LDO-VS-buckDCDC" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux/debian-install-desktop" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/04/27/SMPS/LDO-VS-buckDCDC/" class="article-date">
-  <time datetime="2023-04-27T03:13:08.000Z" itemprop="datePublished">2023-04-27</time>
+    <a href="/2023/09/08/linux/debian-install-desktop/" class="article-date">
+  <time datetime="2023-09-07T16:00:00.000Z" itemprop="datePublished">2023-09-08</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
   </div>
 
   </div>
@@ -243,7 +204,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/27/SMPS/LDO-VS-buckDCDC/">LDO 与 降压DCDC的区别(转发自微信朋友圈的文章)</a>
+      <a class="article-title" href="/2023/09/08/linux/debian-install-desktop/">安装完成debian后，需要重新再加装一个桌面 </a>
     </h1>
   
 
@@ -251,38 +212,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="LDO和降压DCDC都是常见的电源管理器件，用于提供稳定的直流电压输出。LDO是线性稳压器，而降压DCDC是开关稳压器，它们的工作原理、应用场景、优缺点等方面有很大的不同，下面是LDO和降压DCDC的对比："><a href="#LDO和降压DCDC都是常见的电源管理器件，用于提供稳定的直流电压输出。LDO是线性稳压器，而降压DCDC是开关稳压器，它们的工作原理、应用场景、优缺点等方面有很大的不同，下面是LDO和降压DCDC的对比：" class="headerlink" title="LDO和降压DCDC都是常见的电源管理器件，用于提供稳定的直流电压输出。LDO是线性稳压器，而降压DCDC是开关稳压器，它们的工作原理、应用场景、优缺点等方面有很大的不同，下面是LDO和降压DCDC的对比："></a>LDO和降压DCDC都是常见的电源管理器件，用于提供稳定的直流电压输出。LDO是线性稳压器，而降压DCDC是开关稳压器，它们的工作原理、应用场景、优缺点等方面有很大的不同，下面是LDO和降压DCDC的对比：</h3><h5 id="一-工作原理"><a href="#一-工作原理" class="headerlink" title="一. 工作原理"></a>一. 工作原理</h5><ol>
-<li>LDO：基于电阻调节，通过调节管的输出电阻，将输入电压降压到所需的输出电压。</li>
-<li>降压DCDC：基于电感和开关管，通过周期性地切断电感上的电流，将输入电压降压到所需的输出电压。</li>
-</ol>
-<h5 id="二-效率"><a href="#二-效率" class="headerlink" title="二. 效率"></a>二. 效率</h5><ol>
-<li>LDO：由于是线性调节，会有一定的电流损耗，效率一般不高，通常在20%-60%之间。</li>
-<li>降压DCDC：由于是开关调节，可以实现高效率，效率可以达到80%以上。</li>
-</ol>
-<h5 id="三-输出噪声"><a href="#三-输出噪声" class="headerlink" title="三. 输出噪声"></a>三. 输出噪声</h5><ol>
-<li>LDO：由于线性调节的特性，输出噪声较低，适合对输出电压稳定性要求较高的应用场景。</li>
-<li>降压DCDC：由于开关调节的特性，输出噪声较高，适合对输出电压稳定性要求不高的应用场景。</li>
-</ol>
-<h5 id="四-成本"><a href="#四-成本" class="headerlink" title="四. 成本"></a>四. 成本</h5><ol>
-<li>LDO：由于线性调节的简单性，LDO芯片较为简单，成本相对较低。</li>
-<li>降压DCDC：由于开关调节需要较多的元件和控制电路，降压DCDC芯片较为复杂，成本相对较高。</li>
-</ol>
-<h5 id="五-应用场景"><a href="#五-应用场景" class="headerlink" title="五. 应用场景"></a>五. 应用场景</h5><ol>
-<li>LDO：适用于对输出电压稳定性要求较高，输出电流较小（几百毫安以下）的应用场景，如精密仪器、传感器、低功耗设备等。</li>
-<li>降压DCDC：适用于对输出电压稳定性要求不高，但输出电流较大（几安及以上）的应用场景，如计算机、通讯设备、消费电子等。</li>
-</ol>
-
+        linux, debian12, ....
+        
+          <p class="article-more-link">
+            <a href="/2023/09/08/linux/debian-install-desktop/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/04/27/SMPS/LDO-VS-buckDCDC/" data-id="cmawg7trf0005h3s65tbvcv6u" class="article-share-link" data-share="baidu" data-title="LDO 与 降压DCDC的区别(转发自微信朋友圈的文章)">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/09/08/linux/debian-install-desktop/" data-id="cmb6oa6h5005xdts6ejqwb2o3" class="article-share-link" data-share="baidu" data-title="安装完成debian后，需要重新再加装一个桌面 ">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DC-DC/" rel="tag">DC-DC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LDO/" rel="tag">LDO</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux%E6%A1%8C%E9%9D%A2/" rel="tag">linux桌面</a></li></ul>
 
     </footer>
   </div>
@@ -291,14 +237,14 @@
 
 
   
-    <article id="post-SMPS/SMPS-control-mode1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux/debian_install_vbox_vmware" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/04/27/SMPS/SMPS-control-mode1/" class="article-date">
-  <time datetime="2023-04-27T03:13:08.000Z" itemprop="datePublished">2023-04-27</time>
+    <a href="/2023/09/08/linux/debian_install_vbox_vmware/" class="article-date">
+  <time datetime="2023-09-07T16:00:00.000Z" itemprop="datePublished">2023-09-08</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
   </div>
 
   </div>
@@ -309,7 +255,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/27/SMPS/SMPS-control-mode1/">电源的调制方式PWM/PFM/PSM</a>
+      <a class="article-title" href="/2023/09/08/linux/debian_install_vbox_vmware/">debian12安装vbox7.0与vmware17.02遇到的坑</a>
     </h1>
   
 
@@ -317,34 +263,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="调制通常是指如何调节MOS管的开通关断。控制方式往往指环路控制。电源芯片主要的调制方式有两种，PWM-定频调宽，PFM-定宽调频。"><a href="#调制通常是指如何调节MOS管的开通关断。控制方式往往指环路控制。电源芯片主要的调制方式有两种，PWM-定频调宽，PFM-定宽调频。" class="headerlink" title="调制通常是指如何调节MOS管的开通关断。控制方式往往指环路控制。电源芯片主要的调制方式有两种，PWM-定频调宽，PFM-定宽调频。"></a>调制通常是指如何调节MOS管的开通关断。控制方式往往指环路控制。电源芯片主要的调制方式有两种，PWM-定频调宽，PFM-定宽调频。</h3><ol>
-<li><p>PWM，Pulse Width Modulation</p>
-<p>电压控制模式、电流控制模式都属于PWM调制。<br>设定好固定频率不变，通过电压反馈调整其占空比，从而达到稳定输出电压的目的。</p>
-</li>
-<li><p>PFM，Pulse Frequency Modulation</p>
-<p>调制信号的频率随输入信号幅值或负载大小而变化，其占空比不变，通过环路调整时改变内部场效应管的开关频率来实现系统控制。</p>
-</li>
-<li><p>PWM vs PFM ：</p>
-<p> 与PWM 模式相比，优点在于轻载模式下效率高，但在重在模式下效率低于PWM模式。很多电源芯片为了提高整体的效率，设计采用PWM,PFM两种工作模式相结合。</p>
-</li>
-<li><p>PSM，Pulse Skip Mode</p>
-<p> 有些数据手册上也叫 Power Save Mode 或者 Sleep Mode，重载时驱动信号以满频工作，轻载下驱动信号会几个开关周期才skip一下，从这两个名字来看，PSM模式通过轻载skip可达到更高的效率。同时，由于开关频率的降低会使得输出电压纹波变大。</p>
-<p> 实际上，PSM和PFM都是在轻载下减小开关频率来减小开关损耗，而PSM 额外还在检测到负载小于设定的阈值时，关闭一些block，进一步减少损耗，因此在进入PSM模式的时候，从打开block 到打开内部MOS管整体的响应比单纯的PFM更慢，因此输出电压纹波相对较大。</p>
-<p> 如果是长期工作在轻载模式下，对功耗要求高，对输出电压纹波要求不大的场景可以选择PSM。</p>
-</li>
-</ol>
-
+        单火线，零火线....
+        
+          <p class="article-more-link">
+            <a href="/2023/09/08/linux/debian_install_vbox_vmware/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/04/27/SMPS/SMPS-control-mode1/" data-id="cmawg7trj000ah3s62u9w8aig" class="article-share-link" data-share="baidu" data-title="电源的调制方式PWM/PFM/PSM">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/09/08/linux/debian_install_vbox_vmware/" data-id="cmb6oa6h70065dts6h8rgg3vm" class="article-share-link" data-share="baidu" data-title="debian12安装vbox7.0与vmware17.02遇到的坑">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90%E5%9F%BA%E7%A1%80/" rel="tag">开关电源基础</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8-%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">模拟器&#x2F;虚拟机</a></li></ul>
 
     </footer>
   </div>
@@ -353,14 +288,14 @@
 
 
   
-    <article id="post-blog/hexo-add-mermaid" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux/ubuntu-install-weixin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/04/10/blog/hexo-add-mermaid/" class="article-date">
-  <time datetime="2023-04-10T11:17:01.000Z" itemprop="datePublished">2023-04-10</time>
+    <a href="/2023/07/06/linux/ubuntu-install-weixin/" class="article-date">
+  <time datetime="2023-07-05T16:00:00.000Z" itemprop="datePublished">2023-07-06</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
   </div>
 
   </div>
@@ -371,7 +306,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/10/blog/hexo-add-mermaid/">Hexo结合mermaid增加甘特图功能，在lanscape-plus主题现实现</a>
+      <a class="article-title" href="/2023/07/06/linux/ubuntu-install-weixin/">ubuntu安装原生版微信2022版</a>
     </h1>
   
 
@@ -379,27 +314,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="给hexo增加绘甘特图的功能，采用mermaid插件"><a href="#给hexo增加绘甘特图的功能，采用mermaid插件" class="headerlink" title="给hexo增加绘甘特图的功能，采用mermaid插件"></a>给hexo增加绘甘特图的功能，采用mermaid插件</h3><h5 id="一-安装加mermaid插件"><a href="#一-安装加mermaid插件" class="headerlink" title="一 安装加mermaid插件"></a>一 安装加mermaid插件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## https://github.com/webappdevelp/hexo-filter-mermaid-diagrams</span></span><br><span class="line"> $ npm install hexo-filter-mermaid-diagrams --save</span><br></pre></td></tr></table></figure>
-<h5 id="二-修改博客根目录下的-config-yml文件，增加"><a href="#二-修改博客根目录下的-config-yml文件，增加" class="headerlink" title="二 修改博客根目录下的 _config.yml文件，增加"></a>二 修改博客根目录下的 _config.yml文件，增加</h5><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 这个己验证</span></span><br><span class="line"><span class="comment"># mermaid chart</span></span><br><span class="line"><span class="attr">mermaid:</span> <span class="comment">## mermaid url https://github.com/knsv/mermaid</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>  <span class="comment"># default true</span></span><br><span class="line">  <span class="attr">version:</span> <span class="string">&quot;9.4.3&quot;</span> <span class="comment"># default v9.0.0</span></span><br><span class="line">  <span class="attr">options:</span>  <span class="comment"># find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js</span></span><br><span class="line">    <span class="comment">#startOnload: true  // default true</span></span><br><span class="line"><span class="comment">### 有的教程说增加如下，</span></span><br><span class="line"><span class="comment"># Mermaid tag</span></span><br><span class="line"><span class="attr">mermaid:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available themes: default | dark | forest | neutral</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">default</span>    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="三-修改脚本"><a href="#三-修改脚本" class="headerlink" title="三 修改脚本"></a>三 修改脚本</h5><ol>
-<li>修改 blog&#x2F;themes&#x2F;landcape-plus&#x2F;layout&#x2F;_partial&#x2F;footer.ejs文件，最后一行增加<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 增加mermaid 配置 --&gt;</span><br><span class="line">&#123;% if theme.mermaid.enable %&#125;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot; src=&#x27;https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js&#x27;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">  if (window.mermaid) &#123;</span><br><span class="line">        var mermaid_config = &#123;</span><br><span class="line">            startOnLoad: true,</span><br><span class="line">            theme: &#x27;&#123;&#123;theme.mermaid.theme&#125;&#125;&#x27;,</span><br><span class="line">            flowchart:&#123;</span><br><span class="line">                useMaxWidth: false,</span><br><span class="line">                htmlLabels: true</span><br><span class="line">            &#125;                </span><br><span class="line">        &#125;</span><br><span class="line">        mermaid.initialize(mermaid_config);</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br></pre></td></tr></table></figure></li>
-<li>修改 blog&#x2F;themes&#x2F;next&#x2F;_partial&#x2F;footer.swig文件 增加<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.mermaid.enable %&#125;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot; src=&#x27;https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js&#x27;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">  if (window.mermaid) &#123;</span><br><span class="line">        var mermaid_config = &#123;</span><br><span class="line">            startOnLoad: true,</span><br><span class="line">            theme: &#x27;&#123;&#123;theme.mermaid.theme&#125;&#125;&#x27;,</span><br><span class="line">            flowchart:&#123;</span><br><span class="line">                useMaxWidth: false,</span><br><span class="line">                htmlLabels: true</span><br><span class="line">            &#125;                </span><br><span class="line">        &#125;</span><br><span class="line">        mermaid.initialize(mermaid_config);</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h5 id="四-验证，增加-md文件，语句写"><a href="#四-验证，增加-md文件，语句写" class="headerlink" title="四 验证，增加.md文件，语句写"></a>四 验证，增加.md文件，语句写</h5><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> ```mermaid</span><br><span class="line">gantt</span><br><span class="line">   dateFormat  YYYY-MM-DD</span><br><span class="line">   title 利用mermaid功能，增加一个甘特图</span><br><span class="line">   section 第一节</span><br><span class="line">   己完成任务           :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">   正在进行的任务               :active,  des2, 2014-01-09, 3d</span><br><span class="line">   未来任务1               :         des3, after des2, 5d</span><br><span class="line">   未来任务2               :         des4, after des3, 5d</span><br><span class="line">   section Critical tasks</span><br><span class="line">   Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">   Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">   Create tests for parser             :crit, active, 3d</span><br><span class="line">   Future task in critical line        :crit, 5d</span><br><span class="line">   Create tests for renderer           :2d</span><br><span class="line">   Add to mermaid                      :1d</span><br></pre></td></tr></table></figure>
-<pre><code>
-</code></pre>
-
+        linux, 微信，....
+        
+          <p class="article-more-link">
+            <a href="/2023/07/06/linux/ubuntu-install-weixin/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/04/10/blog/hexo-add-mermaid/" data-id="cmawg7try001th3s69v93fu57" class="article-share-link" data-share="baidu" data-title="Hexo结合mermaid增加甘特图功能，在lanscape-plus主题现实现">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/07/06/linux/ubuntu-install-weixin/" data-id="cmb6oa6hk0085dts62kgj3m57" class="article-share-link" data-share="baidu" data-title="ubuntu安装原生版微信2022版">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mermaid/" rel="tag">mermaid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1/" rel="tag">微信</a></li></ul>
 
     </footer>
   </div>
@@ -408,14 +339,14 @@
 
 
   
-    <article id="post-blog/mermaid-gannt1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-essay/excerpt9" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/04/06/blog/mermaid-gannt1/" class="article-date">
-  <time datetime="2023-04-06T09:19:00.000Z" itemprop="datePublished">2023-04-06</time>
+    <a href="/2023/05/24/essay/excerpt9/" class="article-date">
+  <time datetime="2023-05-23T16:00:00.000Z" itemprop="datePublished">2023-05-24</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
+    <a class="article-category-link" href="/categories/%E6%91%98%E6%8A%84%E4%B8%8E%E9%9A%8F%E7%AC%94/">摘抄与随笔</a>
   </div>
 
   </div>
@@ -426,7 +357,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/06/blog/mermaid-gannt1/">mermaid写甘特图的语法汇总</a>
+      <a class="article-title" href="/2023/05/24/essay/excerpt9/">中国限制美光，美国国务院发言人马修·米勒的答记者问</a>
     </h1>
   
 
@@ -434,84 +365,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="一-例子"><a href="#一-例子" class="headerlink" title="一 例子"></a>一 例子</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">    title 项目进度</span><br><span class="line">    dateFormat  YYYY-MM-DD</span><br><span class="line">    axisFormat  %m-%d</span><br><span class="line">    excludes sunday,monday,tuesday,friday,2014-03-01</span><br><span class="line">    section 第一阶段</span><br><span class="line">    需求分析           :crit, a1, 2014-01-01, 30d</span><br><span class="line">    设计评审           :after a1, 20d</span><br><span class="line"></span><br><span class="line">    section 第二阶段</span><br><span class="line">    第一批测试      :done, 2014-01-12  , 12d</span><br><span class="line">    第二批测试      :24d</span><br><span class="line">    客户验收        :milestone,2h</span><br></pre></td></tr></table></figure>
-<h5 id="二-语法解释"><a href="#二-语法解释" class="headerlink" title="二 语法解释"></a>二 语法解释</h5><ol>
-<li>gantt 表示这是一个甘特图</li>
-<li>title 定义甘特图的标题</li>
-<li>dateFormat 定义甘特图中日期显示的格式，更多格式可以参考 <a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/gantt?id=input-date-format">https://mermaid-js.github.io/mermaid/#/gantt?id=input-date-format</a></li>
-<li>section 定义一个一个的区域，可以包含一个或多个任务，以section关键字开始一行，并给予命名</li>
-<li>任务定义语法： 任务名称:别名,开始日期,天数</li>
-<li>状态的修饰语法 active（表示还没有完成，会显示为蓝色）, done(表示已完成, 会显示为灰色)，crit（表示关键任务，会显示为红色）</li>
-<li>任务时长：d（天）,w（周）,h(小时)，m（分钟）</li>
-<li>任务可以有一个别名，例如上面的 a1 ，然后在其他任务中可以引用依赖，例如 after a1</li>
-<li>如果某个任务没有写开始日期，默认就是在上一个任务之后</li>
-<li>excludes 是指要排除哪些日期，可以写具体的日期，也可以写 weekends(周末)，或具体的工作日，如 sunday,monday 这样的语法，可以写多种的组合</li>
-<li>milestone 表示里程碑，程碑的确切位置是由里程碑的初始日期和任务的“持续时间”确定的：初始日期+持续时间&#x2F;2</li>
-<li>输入注释，解析器将忽略注释。注释必须在单独的行上，并且必须以%%（双百分号）开头。注释开始后到下一个换行符的任何文本都将被视为注释，包括任何图表语法。</li>
-</ol>
+        <p>看了下美国国务院发言人马修·米勒的答记者问，我真的是绷不住了。<br>美国发言人：我们对中国限制采购美光产品的消息表示严重关切，这一做法与中国过往商业开放的说辞明显不符。<br>现场记者：你们有没有阻止中国企业在美国或其他国家开展业务呢？为什么不允许中国做同样的事情？<br>美国发言人：我们禁用华为是出于国家安全的担忧。<br>现场记者：那么中国应不应该有国家安全方面的担忧？<br>美国发言人：的确也该有，但中国明确表示过他们商业开放。<br>现场记者：可美国也明确表示过商业开放啊。<br>发言人：我们这里有监管框架，中国没有。<br>现场记者：Emm……<br>美国人这说话办事儿的双标逻辑也是没谁了，我在本国禁用你和号令盟友禁用你通通都是天经地义，你在本土严格审查限购我一律都是无理取闹，这还能再滑稽点吗？<br>我感觉他们国务院发言人讲的这个段子不用加工直接就能上脱口秀了……</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/04/06/blog/mermaid-gannt1/" data-id="cmawg7ts7002sh3s6dego4no1" class="article-share-link" data-share="baidu" data-title="mermaid写甘特图的语法汇总">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/05/24/essay/excerpt9/" data-id="cmb6oa6gr0041dts6hwle2hjp" class="article-share-link" data-share="baidu" data-title="中国限制美光，美国国务院发言人马修·米勒的答记者问">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mermaid/" rel="tag">mermaid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-blog/hugo-learn-notebook4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/04/05/blog/hugo-learn-notebook4/" class="article-date">
-  <time datetime="2023-04-05T02:56:00.000Z" itemprop="datePublished">2023-04-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/05/blog/hugo-learn-notebook4/">Hugo学习笔记四，干特图初体验</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="在markdown下可以写出流程图，甘特图之类的，可采用mermaid这个插件，今天在hugo下试用"><a href="#在markdown下可以写出流程图，甘特图之类的，可采用mermaid这个插件，今天在hugo下试用" class="headerlink" title="在markdown下可以写出流程图，甘特图之类的，可采用mermaid这个插件，今天在hugo下试用"></a>在markdown下可以写出流程图，甘特图之类的，可采用mermaid这个插件，今天在hugo下试用</h4><p>  采用LoviIt皮肤，按网上配置肿是不行。后来发现themes&#x2F;LoveIt&#x2F;layouts&#x2F;shortcodes&#x2F;下有mermaid.html文件，说明这个主题己经配置好了mermaid，只是格式不同。正好在Doit主题说明书里看到了，是写的语法不对改为以下</p>
-<h5 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h5><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 甘特图</span><br><span class="line">&#123;&#123;&lt; mermaid &gt;&#125;&#125;gantt</span><br><span class="line">    dateFormat  YYYY-MM-DD</span><br><span class="line">    title 利用mermaid功能，增加一个甘特图</span><br><span class="line">    section 第一节</span><br><span class="line">    己完成任务           :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">    正在进行的任务               :active,  des2, 2014-01-09, 3d</span><br><span class="line">    未来任务1               :         des3, after des2, 5d</span><br><span class="line">    未来任务2               :         des4, after des3, 5d</span><br><span class="line">    section Critical tasks</span><br><span class="line">    Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">    Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">    Create tests for parser             :crit, active, 3d</span><br><span class="line">    Future task in critical line        :crit, 5d</span><br><span class="line">    Create tests for renderer           :2d</span><br><span class="line">    Add to mermaid                      :1d</span><br><span class="line">&#123;&#123;&lt; /mermaid &gt;&#125;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h5><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;&#123;&lt; mermaid &gt;&#125;&#125;classDiagram</span><br><span class="line">    Class01 &lt;|-- AveryLongClass : Cool</span><br><span class="line">    Class03 *-- Class04</span><br><span class="line">    Class05 o-- Class06</span><br><span class="line">    Class07 .. Class08</span><br><span class="line">    Class09 --&gt; C2 : Where am i?</span><br><span class="line">    Class09 --* C3</span><br><span class="line">    Class09 --|&gt; Class07</span><br><span class="line">    Class07 : equals()</span><br><span class="line">    Class07 : Object[] elementData</span><br><span class="line">    Class01 : size()</span><br><span class="line">    Class01 : int chimp</span><br><span class="line">    Class01 : int gorilla</span><br><span class="line">    Class08 &lt;--&gt; C2: Cool label</span><br><span class="line">&#123;&#123;&lt; /mermaid &gt;&#125;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="旅行图，但看起来比甘特图更好"><a href="#旅行图，但看起来比甘特图更好" class="headerlink" title="旅行图，但看起来比甘特图更好"></a>旅行图，但看起来比甘特图更好</h5><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&lt; mermaid &gt;&#125;&#125; journey</span><br><span class="line">    title My working day</span><br><span class="line">    section Go to work</span><br><span class="line">      Make tea: 5: Me</span><br><span class="line">      Go upstairs: 3: Me</span><br><span class="line">      Do work: 1: Me, Cat</span><br><span class="line">    section Go home</span><br><span class="line">      Go downstairs: 5: Me</span><br><span class="line">      Sit down: 5: Me</span><br><span class="line">&#123;&#123;&lt; /mermaid &gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&lt; mermaid &gt;&#125;&#125;graph LR;</span><br><span class="line">    A[Hard edge] --&gt;|Link text| B(Round edge)</span><br><span class="line">    B --&gt; C&#123;Decision&#125;</span><br><span class="line">    C --&gt;|One| D[Result one]</span><br><span class="line">    C --&gt;|Two| E[Result two]</span><br><span class="line">&#123;&#123;&lt; /mermaid &gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&lt; mermaid &gt;&#125;&#125;sequenceDiagram</span><br><span class="line">    participant Alice</span><br><span class="line">    participant Bob</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    loop Healthcheck</span><br><span class="line">        John-&gt;John: Fight against hypochondria</span><br><span class="line">    end</span><br><span class="line">    Note right of John: Rational thoughts &lt;br/&gt;prevail...</span><br><span class="line">    John--&gt;Alice: Great!</span><br><span class="line">    John-&gt;Bob: How about you?</span><br><span class="line">    Bob--&gt;John: Jolly good!</span><br><span class="line">&#123;&#123;&lt; /mermaid &gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2023/04/05/blog/hugo-learn-notebook4/" data-id="cmawg7ts20029h3s6d41l7w66" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记四，干特图初体验">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mermaid/" rel="tag">mermaid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B6%A3%E8%A8%80/" rel="tag">趣言</a></li></ul>
 
     </footer>
   </div>
@@ -523,7 +389,7 @@
     <article id="post-linux/ssh-remove-cp-file" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/02/18/linux/ssh-remove-cp-file/" class="article-date">
-  <time datetime="2023-02-18T11:30:24.000Z" itemprop="datePublished">2023-02-18</time>
+  <time datetime="2023-02-17T16:00:00.000Z" itemprop="datePublished">2023-02-18</time>
 </a>
     
   <div class="article-category">
@@ -552,7 +418,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/02/18/linux/ssh-remove-cp-file/" data-id="cmawg7ttq009ih3s62y90614a" class="article-share-link" data-share="baidu" data-title="linux ssh 协议下复制文件">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/02/18/linux/ssh-remove-cp-file/" data-id="cmb6oa6hf007ddts6fjzwg9va" class="article-share-link" data-share="baidu" data-title="linux ssh 协议下复制文件">分享到</a>
       
 
       
@@ -567,14 +433,14 @@
 
 
   
-    <article id="post-blog/markdwon-summary1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fun-item/资料收集202301b" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/01/27/blog/markdwon-summary1/" class="article-date">
-  <time datetime="2023-01-27T13:40:17.000Z" itemprop="datePublished">2023-01-27</time>
+    <a href="/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301b/" class="article-date">
+  <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">2023-01-01</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
+    <a class="article-category-link" href="/categories/%E6%9C%89%E8%B6%A3%E7%9A%84%E9%A1%B9%E7%9B%AE/">有趣的项目</a>
   </div>
 
   </div>
@@ -585,7 +451,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/27/blog/markdwon-summary1/">markdown中首行缩进、输出空格的方法</a>
+      <a class="article-title" href="/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301b/">2023年元旦第二文，github上有趣的项目一</a>
     </h1>
   
 
@@ -593,26 +459,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>英文字符大小的空白 <code>&amp;ensp;</code> 或 <code>&amp;#8194; </code></p>
-</li>
-<li><p>中文字符大小的空白 <code> &amp;emsp;</code>或 <code>&amp;#8195;</code></p>
-</li>
-<li><p>不断行的空白格<code>&amp;nbsp;</code>或 <code>&amp;#160; </code></p>
-</li>
+        <h3 id="Github上一些有趣的项目"><a href="#Github上一些有趣的项目" class="headerlink" title="Github上一些有趣的项目"></a>Github上一些有趣的项目</h3><h5 id="一-Magisk：Android-获取-Root-权限的工具。它可以快速、无痛地获得-Android-的超级用户权限，支持-Android-5-0-以上的设备。"><a href="#一-Magisk：Android-获取-Root-权限的工具。它可以快速、无痛地获得-Android-的超级用户权限，支持-Android-5-0-以上的设备。" class="headerlink" title="一 Magisk：Android 获取 Root 权限的工具。它可以快速、无痛地获得 Android 的超级用户权限，支持 Android 5.0 以上的设备。"></a>一 Magisk：Android 获取 Root 权限的工具。它可以快速、无痛地获得 Android 的超级用户权限，支持 Android 5.0 以上的设备。</h5><p>  地址：github.com&#x2F;topjohnwu&#x2F;Magisk</p>
+<h5 id="二-快速抹掉目标：lama-cleaner"><a href="#二-快速抹掉目标：lama-cleaner" class="headerlink" title="二 快速抹掉目标：lama-cleaner"></a>二 快速抹掉目标：lama-cleaner</h5><p>主语言：Python<br>图片处理工具，可快速删除你图片中任何不想要的物体、缺陷、人，也可以替换指定物体，比如：将蹲坐在长椅的小狗换成小狐狸。lama-cleaner 基于 cv2 经典图像嵌入算法，支持多种 SOTA AI 模型。</p>
+<p>  在线体验：<br>  <a target="_blank" rel="noopener" href="https://huggingface.co/spaces/Sanster/Lama-Cleaner-lama">https://huggingface.co/spaces/Sanster/Lama-Cleaner-lama</a></p>
+<p>  Github：<a target="_blank" rel="noopener" href="https://github.com/Sanster/lama-cleaner">https://github.com/Sanster/lama-cleaner</a></p>
+<p>Lama Cleaner，一款GitHub上免费开源的图像修复工具，由 SOTA AI 模型提供支持的图像修复工具，基于cv2的经典图像修复算法，支持中央处理器和图形处理器，多种策略修复图像，可以从照片中删除任何不需要的物体、缺陷、人物或擦除和替换（由稳定扩散驱动）你照片上的任何东西</p>
+<p>  GitHub 地址→github.com&#x2F;Sanster&#x2F;lama-cleaner</p>
+<h5 id="三-ThinkDSP：《Think-DSP》"><a href="#三-ThinkDSP：《Think-DSP》" class="headerlink" title="三 ThinkDSP：《Think DSP》"></a>三 ThinkDSP：《Think DSP》</h5><p>Python 数字信号处理。本书内容是将 Python 代码和数字信号处理结合，相较于干巴巴的文字，通过代码示例更容易理解相关概念，该书作者还著有《Think Python》等图书<br>  地址：github.com&#x2F;AllenDowney&#x2F;ThinkDSP<br><img src="/image/thinkdsp.png" alt="Think DSP"></p>
+<h5 id="四-min：一款最小化的浏览器。"><a href="#四-min：一款最小化的浏览器。" class="headerlink" title="四 min：一款最小化的浏览器。"></a>四 min：一款最小化的浏览器。</h5><p>它是仅包含搜索、书签、密码管理、广告屏蔽器等最基础功能的极简浏览器，适用于 Windows、Linux、macOS 操作系统。支持arm版的linux<br>  地址：github.com&#x2F;minbrowser&#x2F;min</p>
+<h5 id="五-hello-algo：一本动画图解数据结构与算法的入门书。"><a href="#五-hello-algo：一本动画图解数据结构与算法的入门书。" class="headerlink" title="五 hello-algo：一本动画图解数据结构与算法的入门书。"></a>五 hello-algo：一本动画图解数据结构与算法的入门书。</h5><p>《Hello，算法》一书通过动画和代码诠释数据结构和经典算法，学习曲线平滑，支持电脑、手机等多种终端在线阅读。<br>  地址：github.com&#x2F;krahets&#x2F;hello-algo</p>
+<h5 id="六-ddns-go：简单易用的-DDNS-工具。"><a href="#六-ddns-go：简单易用的-DDNS-工具。" class="headerlink" title="六 ddns-go：简单易用的 DDNS 工具。"></a>六 ddns-go：简单易用的 DDNS 工具。</h5><p>众所周知域名解析中域名对应的是固定 IP，但是本地机器的 IP 一般是动态的，所以无法完成域名解析实现公网访问。动态 DNS(DDNS) 技术就是用来解决动态 IP 的域名解析问题，该项目能够自动获取你本机的公网 IP，并自动更新到域名服务商，从而实现公网访问本地机器。<br>   地址：github.com&#x2F;jeessy2&#x2F;ddns-go</p>
+<h5 id="七-removebg-一个抠图神器类工具，消除图片背景-100-自动-–-只需-5-秒–-无需点击-–-免费。"><a href="#七-removebg-一个抠图神器类工具，消除图片背景-100-自动-–-只需-5-秒–-无需点击-–-免费。" class="headerlink" title="七 removebg - 一个抠图神器类工具，消除图片背景:100% 自动 – 只需 5 秒– 无需点击 – 免费。"></a>七 removebg - 一个抠图神器类工具，消除图片背景:100% 自动 – 只需 5 秒– 无需点击 – 免费。</h5><p>  GitHub地址：<a target="_blank" rel="noopener" href="https://github.com/brilam/remove-bg">https://github.com/brilam/remove-bg</a><br>  <a target="_blank" rel="noopener" href="https://github.com/manu12121999/RemoveBG-GIMP">https://github.com/manu12121999/RemoveBG-GIMP</a> 一个l GIMP 插件，在GIMP中扣图。在gimp中点plug in，安装就行f</p>
+<h5 id="八-Stirling-PDF-，它是一个强大的-PDF-文件处理工具，支持各种操作，采用dock安装更好"><a href="#八-Stirling-PDF-，它是一个强大的-PDF-文件处理工具，支持各种操作，采用dock安装更好" class="headerlink" title="八 Stirling PDF ，它是一个强大的 PDF 文件处理工具，支持各种操作，采用dock安装更好"></a>八 Stirling PDF ，它是一个强大的 PDF 文件处理工具，支持各种操作，采用dock安装更好</h5><h5 id="九-几个有意思的网站"><a href="#九-几个有意思的网站" class="headerlink" title="九 几个有意思的网站"></a>九 几个有意思的网站</h5><ol>
+<li><a target="_blank" rel="noopener" href="https://du.shadiao.pro/">https://du.shadiao.pro/</a> 毒鸡汤生成器</li>
+<li>ALL TO ALL <a target="_blank" rel="noopener" href="https://www.alltoall.net/%EF%BC%8C%E6%98%AF%E4%B8%80%E4%B8%AA%E5%9C%A8%E7%BA%BF%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E7%9A%84%E7%BD%91%E7%AB%99%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E5%A4%9A%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2%EF%BC%8C%E5%B9%B6%E4%B8%94%E8%BF%98%E5%85%8D%E8%B4%B9">https://www.alltoall.net/，是一个在线格式转换的网站，这个网站提供多种类型的转换，并且还免费</a></li>
+<li>鸩摩搜书 <a target="_blank" rel="noopener" href="https://www.jiumodiary.com/">https://www.jiumodiary.com/</a>  鸩摩搜书是一个文档搜索及下载的网站，并且有结果的一般都是可以下载的，完全免费。有找不到的书可以在上面碰碰运气。</li>
+<li>在线生成Logo <a target="_blank" rel="noopener" href="https://www.logosc.cn/start">https://www.logosc.cn/start</a>  这是一个在线生成Logo的网站。操作非常简便，只要输入你的Logo名字还有slogan等一些必要的信息，就能生成N个Logo</li>
+<li>彩虹屁生成器 <a target="_blank" rel="noopener" href="https://chp.shadiao.app/">https://chp.shadiao.app/</a></li>
+<li>一个教你如何去做某事的指南网站 <a target="_blank" rel="noopener" href="https://zh.wikihow.com/">https://zh.wikihow.com/</a></li>
 </ol>
+<h5 id="十-一个轻量级的企业知识软件"><a href="#十-一个轻量级的企业知识软件" class="headerlink" title="十 一个轻量级的企业知识软件"></a>十 一个轻量级的企业知识软件</h5><p>MM-Wiki是一个基于 Golang 的轻量级的企业知识分享与团队协同软件，可用于快速构建企业 Wiki 和团队知识分享平台。部署方便，使用简单，支持 markdown 语法写作，支持附件上传。帮助团队构建一个信息共享、文档管理的协作环境。 地址在：<a href="https://link.zhihu.com/?target=https://github.com/phachon/mm-wiki">https://link.zhihu.com/?target=https%3A//github.com/phachon/mm-wiki</a></p>
+<h5 id="十一-12306-抢票神器"><a href="#十一-12306-抢票神器" class="headerlink" title="十一 12306 抢票神器"></a>十一 12306 抢票神器</h5><p>这个项目名很干脆，不知道以为是 12306 网站的源码，其实不是这是全GitHub最德高望重的抢票小助手，功能一直在更新，且现已支持 Python 3.6 以上版本。</p>
+<p>地址：<a target="_blank" rel="noopener" href="https://github.com/testerSunshine/12306">https://github.com/testerSunshine/12306</a></p>
+<h5 id="十二-开源团队协作利器—Focalboard"><a href="#十二-开源团队协作利器—Focalboard" class="headerlink" title="十二. 开源团队协作利器—Focalboard"></a>十二. 开源团队协作利器—Focalboard</h5><p>Focalboard 是 Trello、Notion 和 Asana 的开源、自托管替代品。是一个开源的团队协作和项目管理工具、旨在提供直观、灵活、且强大的协作平台。它的设计目标是帮助团队更好地组织和管理任务、项目以及相关信息。<br>主要功能</p>
+<pre><code>直观的用户界面： Focalboard 提供了清晰、直观的用户界面，降低了用户学习曲线，使团队成员能够快速上手。
+多种视图模式： 工具支持多种视图，如看板、表格和日历等，以适应不同的项目和工作流程。
+强大的自定义功能： 用户可以根据团队的需求自定义面板、列、卡片类型，以及制定自定义规则，使工具更好地适应团队的工作方式。
+实时协作： 团队成员可以在 Focalboard 上实时协作，共享文件、评论和更新信息，提高团队的协同效率。
+跨平台支持： Focalboard 提供了桌面端和移动端应用程序，支持在不同设备上访问和管理团队的工作。
+集成和插件： Focalboard 支持与其他工具和服务的集成，通过插件系统可以与其他应用无缝连接。
+开源和自托管： Focalboard 是一个开源项目，用户可以自由访问和修改其源代码。此外，它还支持自托管，使团队可以更好地掌握数据的安全性和隐私。
+多语言支持：提供多语言界面，满足不同国家和地区用户的需求。
+</code></pre>
+<h5 id="十三-Brave（勇者浏览器）—–-用户体验肯定不如firefox-或-edge-但是"><a href="#十三-Brave（勇者浏览器）—–-用户体验肯定不如firefox-或-edge-但是" class="headerlink" title="十三  Brave（勇者浏览器）—– 用户体验肯定不如firefox 或 edge, 但是"></a>十三  Brave（勇者浏览器）—– 用户体验肯定不如firefox 或 edge, 但是</h5><p>Brave内置了广告拦截器，保密标签页，并且自带Tor连接，对于关心隐私的用户来说是个不错的选择。更好的是，Brave拥有自己注重隐私的搜索引擎，虽然搜索质量与Google相比有所欠缺，但它不会跟踪你的搜索或点击行为。重要的是也有安卓版本</p>
+<h5 id="十四-Kicad"><a href="#十四-Kicad" class="headerlink" title="十四 Kicad"></a>十四 Kicad</h5><p>KiCad 是一个免费且开源的电子设计自动化（EDA）软件套件，适用于 Windows、Linux 和 macOS 等操作系统，可帮助用户轻松创建原理图和印刷电路板（PCB）。</p>
+<h5 id="十五-github上的marker项目，可以把PDF转化为markdown文件，目前只支持英文"><a href="#十五-github上的marker项目，可以把PDF转化为markdown文件，目前只支持英文" class="headerlink" title="十五 github上的marker项目，可以把PDF转化为markdown文件，目前只支持英文"></a>十五 github上的marker项目，可以把PDF转化为markdown文件，目前只支持英文</h5><p><a target="_blank" rel="noopener" href="https://github.com/VikParuchuri/marker">https://github.com/VikParuchuri/marker</a>  </p>
+<h5 id="十六-AppFlowy-是一个开源任务管理工具-开发者声明可替代notion"><a href="#十六-AppFlowy-是一个开源任务管理工具-开发者声明可替代notion" class="headerlink" title="十六 AppFlowy 是一个开源任务管理工具,开发者声明可替代notion"></a>十六 AppFlowy 是一个开源任务管理工具,开发者声明可替代notion</h5><p>用户可以在这个平台上轻松管理任务、创建待办事项列表、设定截止日期、跟踪事件，并添加页面以及格式化文本。此外，AppFlowy 还提供了可视化数据库功能，让用户可以在不同阶段中移动项目，或根据属性进行分类。通过看板功能，用户可以清晰地定义项目范围，并以直观的方式展示和分析数据。同时，AppFlowy 还支持强大的 OpenAI 写作功能，用户可以从中获得写作支持，包括初稿编写、改进文字、修正拼写错误和生成摘要等功能。<br>  我上网站上看了一下，只支持X86的ubuntu18.04与ubuntu20.04</p>
+<h5 id="十七-https-github-com-immich-app-immich"><a href="#十七-https-github-com-immich-app-immich" class="headerlink" title="十七 https://github.com/immich-app/immich"></a>十七 <a target="_blank" rel="noopener" href="https://github.com/immich-app/immich">https://github.com/immich-app/immich</a></h5><p>一个自托管的照片和视频备份解决方案，可以直接从您的手机上传。它提供了一个安全、便捷的方式来备份您的个人照片和视频，并确保您的数据得到保护和隐私的维护。您可以轻松地将照片和视频上传到自己的服务器，并随时在需要时进行访问和恢复。</p>
+<h5 id="十八-pdf-to-podcast-https-github-com-knowsuchagency-pdf-to-podcast"><a href="#十八-pdf-to-podcast-https-github-com-knowsuchagency-pdf-to-podcast" class="headerlink" title="十八 pdf-to-podcast  https://github.com/knowsuchagency/pdf-to-podcast"></a>十八 pdf-to-podcast  <a target="_blank" rel="noopener" href="https://github.com/knowsuchagency/pdf-to-podcast">https://github.com/knowsuchagency/pdf-to-podcast</a></h5><p>该项目提供了一个将任何 PDF 文档转换为播客片段的工具！使用 OpenAI 的文本转语音模型和 Google Gemini，此工具可以处理 PDF 的内容，生成适合音频播客的自然对话，并将其输出为 MP3 文件。<br>特征</p>
+<pre><code>将 PDF 转换为播客：上传 PDF 并将其内容转换为播客对话。
+引人入胜的对话：生成的对话旨在提供信息并具有娱乐性。
+用户友好界面：使用 Gradio 的简单界面，易于交互。 
+</code></pre>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/01/27/blog/markdwon-summary1/" data-id="cmawg7ts6002ph3s6hvu2hdzw" class="article-share-link" data-share="baidu" data-title="markdown中首行缩进、输出空格的方法">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301b/" data-id="cmb6oa6gw004ndts60pwidped" class="article-share-link" data-share="baidu" data-title="2023年元旦第二文，github上有趣的项目一">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li></ul>
 
     </footer>
   </div>
@@ -621,10 +521,67 @@
 
 
   
-    <article id="post-essay/essay4" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fun-item/资料收集202301字体" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/01/24/essay/essay4/" class="article-date">
-  <time datetime="2023-01-24T04:30:00.000Z" itemprop="datePublished">2023-01-24</time>
+    <a href="/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301%E5%AD%97%E4%BD%93/" class="article-date">
+  <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">2023-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%89%E8%B6%A3%E7%9A%84%E9%A1%B9%E7%9B%AE/">有趣的项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301%E5%AD%97%E4%BD%93/">2023年元旦第一文，字体资料收集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Github上发现在字体……"><a href="#Github上发现在字体……" class="headerlink" title="Github上发现在字体……"></a>Github上发现在字体……</h4><h5 id="GitHub-官方发布了两款可变字体，分别名为：Mona-Sans-和-Hubot-Sans"><a href="#GitHub-官方发布了两款可变字体，分别名为：Mona-Sans-和-Hubot-Sans" class="headerlink" title="GitHub 官方发布了两款可变字体，分别名为：Mona Sans 和 Hubot Sans"></a>GitHub 官方发布了两款可变字体，分别名为：Mona Sans 和 Hubot Sans</h5><ol>
+<li>Mona Sans 字体地址在 <a target="_blank" rel="noopener" href="https://github.com/github/mona-sans">https://github.com/github/mona-sans</a><br><img src="/image/Mona-Sans.png" alt="MonaSans字体"></li>
+<li>Hubot Sans 字体地址在 <a target="_blank" rel="noopener" href="https://github.com/github/hubot-sans">https://github.com/github/hubot-sans</a><br><img src="/image/Hubot-Sans.png" alt="Hubot Sans字体"></li>
+</ol>
+<h5 id="现代窄斜体：smiley-sans"><a href="#现代窄斜体：smiley-sans" class="headerlink" title="现代窄斜体：smiley-sans"></a>现代窄斜体：smiley-sans</h5><p>New 得意黑是一款在人文观感和几何特征中寻找平衡的中文黑体。整体字身窄而斜，细节融入了取法手绘美术字的特殊造型。字体支持简体中文常用字（覆盖 GB2312 编码字符集）、拉丁字母、日文假名、阿拉伯数字和各类标点符号。</p>
+<p>目前 smiley-sans 除了支持常见数字和标点外，还支持汉字（6,767 个）、拉丁字母（覆盖欧洲、美洲、南亚各种语言所需的字符共 415 个）以及日文假名（174 个）<br>GitHub 地址→github.com&#x2F;atelier-anchor&#x2F;smiley-sans</p>
+<h5 id="中文字体：-霞鹜文楷-LxgwWenKai"><a href="#中文字体：-霞鹜文楷-LxgwWenKai" class="headerlink" title="中文字体： 霞鹜文楷 LxgwWenKai"></a>中文字体： 霞鹜文楷 LxgwWenKai</h5><p> 霞鹜文楷，LxgwWenKai 一款开源中文字体，基于 FONTWORKS 出品字体 Klee One 衍生。它有着日本教科书体风格的字体，兼有仿宋和楷体的特点，可读性高。BTW，它也是第 76 期 HG 月刊的收录项。</p>
+<p>  GitHub 地址→github.com&#x2F;lxgw&#x2F;LxgwWenKai</p>
+<p><img src="/image/%E9%9C%9E%E9%B9%9C%E6%96%87%E6%A5%B7.png" alt="霞鹜文楷字体"></p>
+<h5 id="china-school-badge：全国高校校徽字体图标库。"><a href="#china-school-badge：全国高校校徽字体图标库。" class="headerlink" title="china_school_badge：全国高校校徽字体图标库。"></a>china_school_badge：全国高校校徽字体图标库。</h5><p>该项目包含国内 200 多所高校校徽制作的字体图标。<br>  地址：github.com&#x2F;lovefc&#x2F;china_school_badge</p>
+<h5 id="cute-表情包：fluentui-emoji"><a href="#cute-表情包：fluentui-emoji" class="headerlink" title="cute 表情包：fluentui-emoji"></a>cute 表情包：fluentui-emoji</h5><p>New Fluent Emoji 微软推出的一组可爱的表情包。<br>  GitHub 地址→github.com&#x2F;microsoft&#x2F;fluentui-emoji<br><img src="/image/fluentui-emoji.png" alt="fluentui-emoji表情包"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301%E5%AD%97%E4%BD%93/" data-id="cmb6oa6gx004qdts6hilxdyg2" class="article-share-link" data-share="baidu" data-title="2023年元旦第一文，字体资料收集">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E4%BD%93/" rel="tag">字体</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-essay/sz海边栈道" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/10/30/essay/sz%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%93/" class="article-date">
+  <time datetime="2022-10-29T16:00:00.000Z" itemprop="datePublished">2022-10-30</time>
 </a>
     
   <div class="article-category">
@@ -639,7 +596,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/24/essay/essay4/">由公司员工想到家里的鸡娃</a>
+      <a class="article-title" href="/2022/10/30/essay/sz%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%93/">广东省内游之四，深圳六个海边栈道（摘抄自头条定格深圳）</a>
     </h1>
   
 
@@ -647,21 +604,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="难以挖走的员工"><a href="#难以挖走的员工" class="headerlink" title="难以挖走的员工"></a>难以挖走的员工</h5><p>&#8195;&#8195;我以前上班的公司“深圳博士微电子”的产品经理与销售经理团队们都很厉害，但是公司的薪水比同行来说，没有优势。曾经有许多同行来挖人，许诺的工资待遇，或职位都要高于博士微电子，但是几乎没有成功的。于时有人说很佩服博士微的马老板，以较少的钱招到了优秀的人才。</p>
-<p>&#8195;&#8195;后来我与朋友聊起这件事情。我说到，在博士微电子，公司有很多决策，比如候入进的产品线，新的产品线如何进行策划，推广等。都会与产品经理，销售经理反复讨论模拟，甚至普通业务员也参与进来。这样的话，每个项目，员工就好象参与了公司的经营一样。归属感很强。</p>
-<h5 id="想到家里的娃"><a href="#想到家里的娃" class="headerlink" title="想到家里的娃"></a>想到家里的娃</h5><p>&emsp;&emsp;这里，我又想到许多家长，觉得自家的娃不听话，不爱家，家里搞的乱七八糟的。其实成天只让家里的娃只管学习，家务事全部不用干，不参与家里的建设，他如何爱这个家呢？归属感不强烈啊。</p>
+        <h4 id="1-大小梅沙海滨栈道"><a href="#1-大小梅沙海滨栈道" class="headerlink" title="1.大小梅沙海滨栈道"></a>1.大小梅沙海滨栈道</h4><p><mark>环海⽽建，⼀眼望去皆是海景，栈道连接了⼤⼩梅沙，还可以去打卡</mark><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="大小梅沙海滨栈道1"><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="大小梅沙海滨栈道2"><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="大小梅沙海滨栈道3"><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%934.jpeg" alt="大小梅沙海滨栈道4"><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="大小梅沙海滨栈道5"></p>
+<h4 id="2-深圳湾海滨栈道"><a href="#2-深圳湾海滨栈道" class="headerlink" title="2.深圳湾海滨栈道"></a>2.深圳湾海滨栈道</h4><p><mark>蜿蜒在深圳湾畔，全长近17公里，沿途串连了二十余个主题公园</mark><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="深圳湾海滨栈道1"><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="深圳湾海滨栈道2"><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="深圳湾海滨栈道3"><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%934.jpeg" alt="深圳湾海滨栈道4"><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="深圳湾海滨栈道5"></p>
+<h4 id="3-深圳天文台海滨栈道"><a href="#3-深圳天文台海滨栈道" class="headerlink" title="3.深圳天文台海滨栈道"></a>3.深圳天文台海滨栈道</h4><p><mark>依山而建，蜿蜒曲折，直通大海，你可以边感受海风拂面，边欣赏山川大海</mark><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="深圳天文台海滨栈道1"><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="深圳天文台海滨栈道2"><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="深圳天文台海滨栈道3"><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%934.jpeg" alt="深圳天文台海滨栈道4"><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="深圳天文台海滨栈道5"></p>
+<h4 id="4-前海⽯公园海边栈道"><a href="#4-前海⽯公园海边栈道" class="headerlink" title="4.前海⽯公园海边栈道"></a>4.前海⽯公园海边栈道</h4><p><mark>漫步栈道，海对岸的跨海⼤桥、鳞次栉⽐的城市⾼楼，震撼⼜浪漫的巨型摩天轮…..</mark><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%931.jpeg" alt="前海石公园海边栈道1"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%932.jpeg" alt="前海石公园海边栈道2"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%933.jpeg" alt="前海石公园海边栈道3"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%934.jpeg" alt="前海石公园海边栈道4"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%935.jpeg" alt="前海石公园海边栈道5"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%936.jpeg" alt="前海石公园海边栈道6"></p>
+<h4 id="5-S型公路旁的海滨栈道"><a href="#5-S型公路旁的海滨栈道" class="headerlink" title="5.S型公路旁的海滨栈道"></a>5.S型公路旁的海滨栈道</h4><p>位于<mark>万科十七英里与玫瑰海岸中间</mark>，藏了一条长长的海边栈道。<br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="S型公路旁的海滨栈道1"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="S型公路旁的海滨栈道2"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="S型公路旁的海滨栈道3"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="S型公路旁的海滨栈道5"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%936.jpeg" alt="S型公路旁的海滨栈道6"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%937.jpeg" alt="S型公路旁的海滨栈道7"></p>
+<h4 id="6-背仔角海滨栈道"><a href="#6-背仔角海滨栈道" class="headerlink" title="6.背仔角海滨栈道"></a>6.背仔角海滨栈道</h4><p><mark>栈道的尽头还藏着一座灯塔</mark>，蓝天白云下，红白相间的灯塔极具视觉冲击。<br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="背仔角海滨栈道1"><br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="背仔角海滨栈道2"><br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="背仔角海滨栈道3"><br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%934.jpeg" alt="背仔角海滨栈道4"><br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="背仔角海滨栈道5"></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/01/24/essay/essay4/" data-id="cmawg7tsa0038h3s61iqt9nk6" class="article-share-link" data-share="baidu" data-title="由公司员工想到家里的鸡娃">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/30/essay/sz%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%93/" data-id="cmb6oa6gs0045dts65oc29mrd" class="article-share-link" data-share="baidu" data-title="广东省内游之四，深圳六个海边栈道（摘抄自头条定格深圳）">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" rel="tag">旅游攻略</a></li></ul>
 
     </footer>
   </div>
@@ -738,7 +698,7 @@
           </li>
         
           <li>
-            <a href="/2025/01/30/python/streamlit-9/">streamlit学习笔记九-----streamlit新版支持原生多页面二</a>
+            <a href="/2025/01/30/python/streamlit-8/">streamlit学习笔记八-----一些特别的插件</a>
           </li>
         
       </ul>

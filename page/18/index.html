@@ -84,148 +84,10 @@
     <div class="outer">
       <section id="main">
   
-    <article id="post-termux/termux-anlinux-vscode1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-website/lamp-server-install2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/07/termux/termux-anlinux-vscode1/" class="article-date">
-  <time datetime="2020-05-07T12:00:00.000Z" itemprop="datePublished">2020-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/termux/">termux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/07/termux/termux-anlinux-vscode1/">termux下的ubuntu安装vscode</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​</p>
-<h4 id="首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift-箭头选择，ctrl-v-ctrl-p之类的习惯还是改不了，方便啊。"><a href="#首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift-箭头选择，ctrl-v-ctrl-p之类的习惯还是改不了，方便啊。" class="headerlink" title="首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift+箭头选择，ctrl+v ctrl+p之类的习惯还是改不了，方便啊。"></a>首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift+箭头选择，ctrl+v ctrl+p之类的习惯还是改不了，方便啊。</h4><h4 id="2020年下半年，VSCODE官居网己更新，有ARM64版的了，直接安装。"><a href="#2020年下半年，VSCODE官居网己更新，有ARM64版的了，直接安装。" class="headerlink" title="2020年下半年，VSCODE官居网己更新，有ARM64版的了，直接安装。"></a>2020年下半年，VSCODE官居网己更新，有ARM64版的了，直接安装。</h4><hr>
-<h4 id="以下是老版本的方法"><a href="#以下是老版本的方法" class="headerlink" title="以下是老版本的方法"></a>以下是老版本的方法</h4><h5 id="开始是如何失败的"><a href="#开始是如何失败的" class="headerlink" title="开始是如何失败的"></a>开始是如何失败的</h5><pre><code>首先在贴吧有人说可以在github.com中搜索arm版的vscode，果然是搜索到了，下了两天没下载下来，后来狠心定个闹钟凌晨四点半叫醒我，一下子不下载下来了。可是一安装是armhf版的，为了能安装armhf，又折腾，直到把我的ubuntu弄了好多个补丁，然后装不了软件了。只好干掉重新装anlinux，不过重新装时，又发现了许多新经验，也算是有收获吧。
-</code></pre>
-<p>在vscode的主页上也有arm版的安装方法，悲惨的是试用了后也是armhf版的。</p>
-<h5 id="成功在现有手机的arm64版上安装"><a href="#成功在现有手机的arm64版上安装" class="headerlink" title="成功在现有手机的arm64版上安装"></a>成功在现有手机的arm64版上安装</h5><ol>
-<li><p>进入<a target="_blank" rel="noopener" href="https://packagecloud.io/headmelted/codebuilds">https://packagecloud.io/headmelted/codebuilds</a> 网站下载vscode arm64版的deb安装文件。</p>
-</li>
-<li></li>
-<li><p>执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0CCxxxxx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>继续安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i code***.deb，安装成功</span><br></pre></td></tr></table></figure>
-
-<p>当然只能在图形桌面上用了。进入startxfce4后，有个叫code-oss就是。我其实一直用的是sublimetext3的，对这个vscode并不熟，要用的网友们自己用吧。</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/05/07/termux/termux-anlinux-vscode1/" data-id="cmawg7tup00dzh3s615s00crj" class="article-share-link" data-share="baidu" data-title="termux下的ubuntu安装vscode">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/" rel="tag">vscode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-termux/termux-anlinux-vscode2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/07/termux/termux-anlinux-vscode2/" class="article-date">
-  <time datetime="2020-05-07T12:00:00.000Z" itemprop="datePublished">2020-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/termux/">termux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/07/termux/termux-anlinux-vscode2/">神器code-server,远程vscode功能</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​</p>
-<h5 id="前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲-不进入桌面，能不能用vscode呢。"><a href="#前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲-不进入桌面，能不能用vscode呢。" class="headerlink" title="前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲,不进入桌面，能不能用vscode呢。"></a>前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲,不进入桌面，能不能用vscode呢。</h5><h5 id="万能的github啊。竟然有code-server这个好东东"><a href="#万能的github啊。竟然有code-server这个好东东" class="headerlink" title="万能的github啊。竟然有code-server这个好东东"></a>万能的github啊。竟然有code-server这个好东东</h5><pre><code>首先进入https://github.com/cdr/code-server ，然后点击下载版本，再进入了https://github.com/cdr/code-server/releases，
-当然选择ARM64版本的，请注意，可别先成amd64了。
-</code></pre>
-<ol>
-<li>找到下载连接，直接下载 code-server-3.6.2-linux-arm64.deb文件，安装后。</li>
-<li>执行code-server，会在&#x2F;home&#x2F;username&#x2F;.config目录先生成code-server目录，并生成 config.yaml配置文件，停止code-server，更改~&#x2F;.config&#x2F;code-server&#x2F;config.yaml文件，在其中更改密码，IP地址与端口</li>
-<li>在你的程序目录下直接执行 $ code-server</li>
-<li>在另一台机子的浏览器输入 IP址址:端口，然后提示你输入密码就行了</li>
-<li>左上角的三条横杠实际上菜单按钮，可以调出来终端，相当于ssh了，真是太好用了。</li>
-</ol>
-<h4 id="后来发现在termux下能使用code-server了。"><a href="#后来发现在termux下能使用code-server了。" class="headerlink" title="后来发现在termux下能使用code-server了。"></a>后来发现在termux下能使用code-server了。</h4><h5 id="1-code-server4-8安装方法一，2022-10月更新"><a href="#1-code-server4-8安装方法一，2022-10月更新" class="headerlink" title="1. code-server4.8安装方法一，2022,10月更新"></a>1. code-server4.8安装方法一，2022,10月更新</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install tur-repo &amp;&amp; pkg install code-server</span><br></pre></td></tr></table></figure>
-<h5 id="2-vcode-server4-8安装方法二-2022-10月更新"><a href="#2-vcode-server4-8安装方法二-2022-10月更新" class="headerlink" title="2. vcode-server4.8安装方法二 2022,10月更新"></a>2. vcode-server4.8安装方法二 2022,10月更新</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install -y \</span><br><span class="line">  build-essential \</span><br><span class="line">  binutils \</span><br><span class="line">  pkg-config \</span><br><span class="line">  python3 \</span><br><span class="line">  nodejs-lts</span><br><span class="line">$ npm config <span class="built_in">set</span> python python3</span><br><span class="line">$ node -v</span><br><span class="line">$ npm install -g code-server --unsafe-perm 发现只支持node 16的版本。最近的不支持。失败了。</span><br><span class="line">$ npm update --global code-server --unsafe-perm</span><br></pre></td></tr></table></figure>
-<h5 id="3-以下为4-0以前的版本说明。"><a href="#3-以下为4-0以前的版本说明。" class="headerlink" title="3. 以下为4.0以前的版本说明。"></a>3. 以下为4.0以前的版本说明。</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装code-server,配置后执行</span></span><br><span class="line">$ npm install -g code-server <span class="comment">#安装</span></span><br><span class="line">$ code-server  <span class="comment"># 运行成功后，再退出,会生成配置文件</span></span><br><span class="line">$ <span class="built_in">cd</span> ~/.config/code-server <span class="comment">#进入配置目录</span></span><br><span class="line">$ vim config.yaml <span class="comment"># 更改端口与密码</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="以下为旧版本说明"><a href="#以下为旧版本说明" class="headerlink" title="以下为旧版本说明"></a>以下为旧版本说明</h5><h6 id="把下载的code-server-3-2-0-linux-arm64-tar-gz-想办法搬移到手机的-ubuntu-fs-home-目录下。并执行"><a href="#把下载的code-server-3-2-0-linux-arm64-tar-gz-想办法搬移到手机的-ubuntu-fs-home-目录下。并执行" class="headerlink" title="把下载的code-server-3.2.0-linux-arm64.tar.gz 想办法搬移到手机的~&#x2F;ubuntu-fs&#x2F;home&#x2F;目录下。并执行"></a>把下载的code-server-3.2.0-linux-arm64.tar.gz 想办法搬移到手机的~&#x2F;ubuntu-fs&#x2F;home&#x2F;目录下。并执行</h6><ol>
-<li><pre><code class="bash">tar -xvf  code-server-3.2.0-linux-arm64.tar.gz
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">   会生成code-server-3.2.0-linux-arm64目录，最好把目录名改为code-server，减少输入错误</span><br><span class="line">2. 进入code-server目录，并执行</span><br><span class="line">   </span><br><span class="line">   ```bash</span><br><span class="line">   $ export PASSWORD=123456  #先设置密码，不然下一步会随机生成密码</span><br><span class="line">   $ ./code-server --auth password --port 8080</span><br></pre></td></tr></table></figure>
-
-这里候在本机的浏览器输入 //127.0.0.1:8080就能进入vscode了。还能进入目录，并且也有终端。
-</code></pre>
-</li>
-<li><p>如果想用大屏的电脑也编辑本手机的文件，则</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ifconig  <span class="comment">#获取本机的IP地址，比如192.168.1.26</span></span><br><span class="line">$ ./code-server --auth password --port 8080 --host 0.0.0.0</span><br></pre></td></tr></table></figure>
-
-<p>在电脑上打开浏览器，输入192.168.1.26:9999 。利用内网穿透，远程调试也行啊。</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/05/07/termux/termux-anlinux-vscode2/" data-id="cmawg7tuq00e2h3s63ry670ta" class="article-share-link" data-share="baidu" data-title="神器code-server,远程vscode功能">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/code-server/" rel="tag">code-server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-website/caddy-php" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/24/website/caddy-php/" class="article-date">
-  <time datetime="2020-04-24T04:38:00.000Z" itemprop="datePublished">2020-04-24</time>
+    <a href="/2021/06/08/website/lamp-server-install2/" class="article-date">
+  <time datetime="2021-06-07T16:00:00.000Z" itemprop="datePublished">2021-06-08</time>
 </a>
     
   <div class="article-category">
@@ -240,7 +102,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/24/website/caddy-php/">caddy配置php的两种办法</a>
+      <a class="article-title" href="/2021/06/08/website/lamp-server-install2/">手工安装 LAMP-SERVER</a>
     </h1>
   
 
@@ -248,24 +110,156 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="一-php-fpm方法"><a href="#一-php-fpm方法" class="headerlink" title="一. php-fpm方法"></a>一. php-fpm方法</h4><h5 id="1-在linux下配置php-fpm"><a href="#1-在linux下配置php-fpm" class="headerlink" title="1. 在linux下配置php-fpm"></a>1. 在linux下配置php-fpm</h5><p>编辑Caddyfile，在中间加入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fastcgi / /var/run/php/php-fpm.sock &#123;   # 不同版本的linux，目录有可能不同</span><br><span class="line">    ext .php</span><br><span class="line">    split .php</span><br><span class="line">    index index.php</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="2-在termux下"><a href="#2-在termux下" class="headerlink" title="2. 在termux下"></a>2. 在termux下</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install php-fpm</span><br><span class="line">$ termux-chroot   <span class="comment">#注，必须在chroot下。测试termux0.84以前版本</span></span><br><span class="line">$ vim /etc/php-fpm.d/www.conf</span><br><span class="line">   把 listen=/data/data/com.termux/files/usr/var/run/php-fpm.sock修改为</span><br><span class="line">      listen=127.0.0.1:9000</span><br><span class="line">$ vim Caddyfile 增加</span><br><span class="line">   fastcgi / 127.0.0.1:9000 php</span><br><span class="line">$ php-fpm</span><br><span class="line">$ caddy</span><br></pre></td></tr></table></figure>
-<p>成功<br><strong>termux 0.99版测试发现，不用进入chroot下，也能成功了。</strong></p>
-<h5 id="3-windows10下，windows不支持sock-所以此法不可用"><a href="#3-windows10下，windows不支持sock-所以此法不可用" class="headerlink" title="3. windows10下，windows不支持sock, 所以此法不可用"></a>3. windows10下，windows不支持sock, 所以此法不可用</h5><h4 id="二-php-cgi方法"><a href="#二-php-cgi方法" class="headerlink" title="二. php-cgi方法"></a>二. php-cgi方法</h4><h5 id="1-linux与termux下用法相同，并且termux不用进入chroot"><a href="#1-linux与termux下用法相同，并且termux不用进入chroot" class="headerlink" title="1 linux与termux下用法相同，并且termux不用进入chroot"></a>1 linux与termux下用法相同，并且termux不用进入chroot</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ vim Caddyfile 增加</span><br><span class="line">   fastcgi / 127.0.0.1:9000 php</span><br><span class="line">$ php-cgi -b 9000 &amp;</span><br><span class="line">$ caddy</span><br></pre></td></tr></table></figure>
-<h5 id="2-win10下，我采用的是cygwin"><a href="#2-win10下，我采用的是cygwin" class="headerlink" title="2.win10下，我采用的是cygwin"></a>2.win10下，我采用的是cygwin</h5><p>下载php-7.<em>.</em>.zip，并解压到c:\mytools\php-7.*.*目录，进入cygwin终端</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /cygdrive/c/mytools/php-7.*.*</span><br><span class="line">$ ./php-cgi.exe -b 9000 &amp;</span><br><span class="line">后面相同</span><br></pre></td></tr></table></figure>
+        <h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install apache2</span><br><span class="line">$ <span class="built_in">sudo</span> apt install mysql-server mysql-client</span><br><span class="line">$ <span class="built_in">sudo</span> apt install php</span><br><span class="line">$ <span class="built_in">sudo</span> apt install libapache2-mcd-php7.x</span><br><span class="line">$ <span class="built_in">sudo</span> apt install php7.x-mysql</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">sudo</span> service apache2 restart</span><br><span class="line">$ <span class="built_in">sudo</span> service mysql restart</span><br></pre></td></tr></table></figure>
+<h5 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt --purge remove apache2*</span><br><span class="line">$ <span class="built_in">sudo</span> apt --purge remove php*</span><br><span class="line">.......</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/04/24/website/caddy-php/" data-id="cmawg7tuz00fbh3s66r0afk9w" class="article-share-link" data-share="baidu" data-title="caddy配置php的两种办法">分享到</a>
+        <a data-url="https://superigbt.github.io/2021/06/08/website/lamp-server-install2/" data-id="cmb6oa6io00dodts69p6i9yus" class="article-share-link" data-share="baidu" data-title="手工安装 LAMP-SERVER">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag"> 建站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/caddy-PHP/" rel="tag">caddy+PHP</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lamp-phpmyadmin/" rel="tag">lamp+phpmyadmin </a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux/termux-install-wcode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/28/termux/termux-install-wcode/" class="article-date">
+  <time datetime="2020-09-27T16:00:00.000Z" itemprop="datePublished">2020-09-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/28/termux/termux-install-wcode/">WCODE神器！----给termux增加vscode功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前面讲过给Anlinux安装vscode程序或code-server来实现vscode功能，那么不用进入linux，是否能在termux下直接使用呢？"><a href="#前面讲过给Anlinux安装vscode程序或code-server来实现vscode功能，那么不用进入linux，是否能在termux下直接使用呢？" class="headerlink" title="前面讲过给Anlinux安装vscode程序或code-server来实现vscode功能，那么不用进入linux，是否能在termux下直接使用呢？"></a>前面讲过给Anlinux安装vscode程序或code-server来实现vscode功能，那么不用进入linux，是否能在termux下直接使用呢？</h3><ol>
+<li><p>尝试把code-server在termux下直接执行，由于缺少依赖，失败了。</p>
+</li>
+<li><p>万能的github有人写了一个wcode软件，可实现类似code-server的功能。安装和使用如下，比如采用hexo写个人博客，需要用wcode来编辑</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g wcode</span><br><span class="line">$ wcode -p 8090 myblog/source/</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器输入 192.168.x.x:8090，就进入你的 myblog&#x2F;source&#x2F;目录了，可浏览些目录下的markdown文档了。</p>
+</li>
+</ol>
+<h3 id="2021年6月，无意中在-termux下执行"><a href="#2021年6月，无意中在-termux下执行" class="headerlink" title="2021年6月，无意中在 termux下执行"></a>2021年6月，无意中在 termux下执行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g code-server</span><br></pre></td></tr></table></figure>
+
+<p>竟然给安装成功了。然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ code-server  <span class="comment"># 运行成功后，再退出。</span></span><br><span class="line">$ <span class="built_in">cd</span> ~/.config/code-server</span><br><span class="line">$ vim config.yaml <span class="comment"># 更改端口与密码</span></span><br></pre></td></tr></table></figure>
+
+<p>wcode己经不更新了，作都也建议移步到code-server了，现在termux也能用code-server了，非常好。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/09/28/termux/termux-install-wcode/" data-id="cmb6oa6iz00fbdts69t0e03hq" class="article-share-link" data-share="baidu" data-title="WCODE神器！----给termux增加vscode功能">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wcode/" rel="tag">wcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux/termux-linux-VNC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/13/termux/termux-linux-VNC/" class="article-date">
+  <time datetime="2020-09-12T16:00:00.000Z" itemprop="datePublished">2020-09-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/13/termux/termux-linux-VNC/">termux下linux安装vnc</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="termux下的linux如果想运行图行界面的话，一种是本机运行XDSL，然而如果屏小又木有外部显示器时，利用VNC是个好办法。"><a href="#termux下的linux如果想运行图行界面的话，一种是本机运行XDSL，然而如果屏小又木有外部显示器时，利用VNC是个好办法。" class="headerlink" title="termux下的linux如果想运行图行界面的话，一种是本机运行XDSL，然而如果屏小又木有外部显示器时，利用VNC是个好办法。"></a>termux下的linux如果想运行图行界面的话，一种是本机运行XDSL，然而如果屏小又木有外部显示器时，利用VNC是个好办法。</h2><h4 id="一-安装VNC，以xfce4为利"><a href="#一-安装VNC，以xfce4为利" class="headerlink" title="一 安装VNC，以xfce4为利"></a>一 安装VNC，以xfce4为利</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br><span class="line">$ apt-get install xfce4 xfce4-terminal -y  <span class="comment"># 顺便安装下xfce4</span></span><br><span class="line">$ apt-get install tightvncserver -y </span><br><span class="line">$ apt-get install xfe -y  <span class="comment"># 一个优秀的文件管理器，带搜索文件功能</span></span><br><span class="line">$ apt-get clean</span><br></pre></td></tr></table></figure>
+
+<h4 id="二-创建一些文件"><a href="#二-创建一些文件" class="headerlink" title="二 创建一些文件"></a>二 创建一些文件</h4><ol>
+<li><p>vim &#x2F;etc&#x2F;profile 在文件结尾加上<br>export DISPLAY&#x3D;:1</p>
+</li>
+<li><p>~&#x2F;.vnc&#x2F;xstartup 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~</span><br><span class="line">$ <span class="built_in">mkdir</span> .vnc</span><br><span class="line">$ <span class="built_in">cd</span> vnc</span><br><span class="line">$ vim xstartup</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>#!&#x2F;bin&#x2F;bash<br>xrdb $HOME&#x2F;.Xresources  # 注意大小写，目录名是没有空格的哦！！！<br>startxfce4 &amp;</p>
+</blockquote>
+</li>
+<li><p>vim ~&#x2F;vncstart.sh</p>
+</li>
+</ol>
+<blockquote>
+<p>export USER&#x3D;root<br>export HOME&#x3D;&#x2F;root</p>
+<p>vncserver -geometry 1024x768 -depth 24 -name remote-desktop :1</p>
+</blockquote>
+<ol start="4">
+<li><p>vim ~&#x2F;vncstop.sh</p>
+<blockquote>
+<p>export USER&#x3D;root<br>export HOME&#x3D;&#x2F;root</p>
+<p>vncserver -kill :1<br>rm -rf &#x2F;tmp&#x2F;.X1-lock<br>rm -rf &#x2F;tmp&#x2F;.X11-unix&#x2F;X1 # 注意大小写，目录名是没有空格的哦！！！</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="三-启动VNC，进入图形桌面"><a href="#三-启动VNC，进入图形桌面" class="headerlink" title="三 启动VNC，进入图形桌面"></a>三 启动VNC，进入图形桌面</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash vncstart.sh</span><br></pre></td></tr></table></figure>
+
+<p>然后在别一个装有vncview的计算机上连接 “手机的ip地址：5901”</p>
+<h4 id="四-退出VNC，退出图形桌面"><a href="#四-退出VNC，退出图形桌面" class="headerlink" title="四 退出VNC，退出图形桌面"></a>四 退出VNC，退出图形桌面</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ bash vncstop.sh</span><br><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/09/13/termux/termux-linux-VNC/" data-id="cmb6oa6iz00fddts64so0dw89" class="article-share-link" data-share="baidu" data-title="termux下linux安装vnc">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li></ul>
 
     </footer>
   </div>
@@ -277,7 +271,7 @@
     <article id="post-win/win10ltsc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/04/01/win/win10ltsc/" class="article-date">
-  <time datetime="2020-04-01T02:57:24.000Z" itemprop="datePublished">2020-04-01</time>
+  <time datetime="2020-03-31T16:00:00.000Z" itemprop="datePublished">2020-04-01</time>
 </a>
     
   <div class="article-category">
@@ -324,7 +318,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/04/01/win/win10ltsc/" data-id="cmawg7tv300fxh3s6e8td8cr7" class="article-share-link" data-share="baidu" data-title="win10企业版LTSC激活方式">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/04/01/win/win10ltsc/" data-id="cmb6oa6ip00dudts63eal53eh" class="article-share-link" data-share="baidu" data-title="win10企业版LTSC激活方式">分享到</a>
       
 
       
@@ -339,79 +333,10 @@
 
 
   
-    <article id="post-blog/hexo-about-gitee" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/27/blog/hexo-about-gitee/" class="article-date">
-  <time datetime="2020-03-27T12:56:00.000Z" itemprop="datePublished">2020-03-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/27/blog/hexo-about-gitee/">Hexo布署到gitee</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="hexo己经部署到了github成功了，可是太慢啦！怎么办？"><a href="#hexo己经部署到了github成功了，可是太慢啦！怎么办？" class="headerlink" title="hexo己经部署到了github成功了，可是太慢啦！怎么办？"></a>hexo己经部署到了github成功了，可是太慢啦！怎么办？</h3><h4 id="国内有https-gitee-com-，号称码云。双称中国的github，速度快。先去注册账户吧"><a href="#国内有https-gitee-com-，号称码云。双称中国的github，速度快。先去注册账户吧" class="headerlink" title="国内有https://gitee.com/，号称码云。双称中国的github，速度快。先去注册账户吧"></a>国内有<a target="_blank" rel="noopener" href="https://gitee.com/%EF%BC%8C%E5%8F%B7%E7%A7%B0%E7%A0%81%E4%BA%91%E3%80%82%E5%8F%8C%E7%A7%B0%E4%B8%AD%E5%9B%BD%E7%9A%84github%EF%BC%8C%E9%80%9F%E5%BA%A6%E5%BF%AB%E3%80%82%E5%85%88%E5%8E%BB%E6%B3%A8%E5%86%8C%E8%B4%A6%E6%88%B7%E5%90%A7">https://gitee.com/，号称码云。双称中国的github，速度快。先去注册账户吧</a></h4><ol>
-<li>如同github一样，建立仓库。注意，仓库名必须与你的gitee用户名相同，不然全出错。</li>
-</ol>
-<p>修改myblog目录下的_config.yml文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url: https://gitee.com/你的用户名/你的仓库名/</span><br><span class="line">root: /</span><br><span class="line">----------</span><br><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: https://gitee.com/你的用户名/你的仓库名/.git</span><br><span class="line">	branch: master </span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>在gitee上一样，setting—&gt;SSH and GPG keys—-&gt;New SSH key中，然后把刚才id_rsa.pub文件中的内容copy放在此框中</p>
-</li>
-<li><p>动行hexo并用git上传</p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ <span class="built_in">sudo</span> hexo g</span><br><span class="line">$ <span class="built_in">sudo</span> hexo d</span><br></pre></td></tr></table></figure>
-<h2 id="然面出错啦！"><a href="#然面出错啦！" class="headerlink" title="然面出错啦！##"></a>然面出错啦！##</h2><ol start="4">
-<li>原来是以前建立github时的设置要重新设。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name 注册gitee的用户名</span><br><span class="line">$ git config --global user.email 注册gitee的邮箱名</span><br></pre></td></tr></table></figure>
-<p>再次执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>上传成功了，然而…..<br>#######  我的页面呢？为啥子显示不了呢？</p>
-<ol start="5">
-<li>进入到你的gitee页，然后选择（服务-gitee pages）。顺利话的你的个人站点就已经完成了</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/03/27/blog/hexo-about-gitee/" data-id="cmawg7trx001mh3s6gt3m3rnk" class="article-share-link" data-share="baidu" data-title="Hexo布署到gitee">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo%E9%83%A8%E7%BD%B2/" rel="tag">hexo部署</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-termux/termux-ftp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/15/termux/termux-ftp/" class="article-date">
-  <time datetime="2020-03-15T02:56:00.000Z" itemprop="datePublished">2020-03-15</time>
+  <time datetime="2020-03-14T16:00:00.000Z" itemprop="datePublished">2020-03-15</time>
 </a>
     
   <div class="article-category">
@@ -440,7 +365,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/03/15/termux/termux-ftp/" data-id="cmawg7tus00edh3s6d7g5d0ua" class="article-share-link" data-share="baidu" data-title="termux下的ftp">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/03/15/termux/termux-ftp/" data-id="cmb6oa6ix00eydts6fath68mj" class="article-share-link" data-share="baidu" data-title="termux下的ftp">分享到</a>
       
 
       
@@ -458,7 +383,7 @@
     <article id="post-termux/termux-editor-micro" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/07/termux/termux-editor-micro/" class="article-date">
-  <time datetime="2020-03-07T14:56:00.000Z" itemprop="datePublished">2020-03-07</time>
+  <time datetime="2020-03-06T16:00:00.000Z" itemprop="datePublished">2020-03-07</time>
 </a>
     
   <div class="article-category">
@@ -493,7 +418,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/03/07/termux/termux-editor-micro/" data-id="cmawg7tur00ebh3s6fifbdez3" class="article-share-link" data-share="baidu" data-title="termux下的最佳文本编辑器">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/03/07/termux/termux-editor-micro/" data-id="cmb6oa6iw00evdts6d609bbdc" class="article-share-link" data-share="baidu" data-title="termux下的最佳文本编辑器">分享到</a>
       
 
       
@@ -508,62 +433,10 @@
 
 
   
-    <article id="post-linux/ubuntu-add-sudo-user" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/07/linux/ubuntu-add-sudo-user/" class="article-date">
-  <time datetime="2020-03-07T13:18:00.000Z" itemprop="datePublished">2020-03-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/07/linux/ubuntu-add-sudo-user/">ubuntu增加sudo用户</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="为ubuntu增加一个sudo用户"><a href="#为ubuntu增加一个sudo用户" class="headerlink" title="为ubuntu增加一个sudo用户"></a>为ubuntu增加一个sudo用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ addgroup laoshiren <span class="comment"># 添加laoshiren的组名,20.04不用这一条。会自动增加组名</span></span><br><span class="line">$ adduser username groupname <span class="comment"># 添加用户名叫laoshiren到laoshiren组 20.04不用这一条。会自动增加组名</span></span><br><span class="line">$ adduser laoshiren   <span class="comment"># 添加用户名叫laoshiren</span></span><br><span class="line">   依次输入密码，全名等用户信息。</span><br><span class="line">$ usermod laoshiren -a -G <span class="built_in">sudo</span> <span class="comment">#把用户laoshiren加入sudo 用户组</span></span><br><span class="line">$ usermod loahshiren -a -G adm <span class="comment">#把用户laoshiren加入admin用户组</span></span><br><span class="line">$ apt install <span class="built_in">sudo</span> <span class="comment">#有的没有这个命令，要安装，如果有就跳过这一步</span></span><br><span class="line">$ <span class="built_in">sudo</span> vim /etc/sudoers</span><br><span class="line">   ~~添加 laoshiren ALL=(ALL:ALL) ALL~~</span><br><span class="line">   添加 **%<span class="built_in">sudo</span> ALL=(ALL:ALL) ALL~~**</span><br><span class="line">保存退出。   </span><br></pre></td></tr></table></figure>
-
-<p>要切换到laoshiren用户，执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su - laoshiren</span><br><span class="line">$ <span class="built_in">groups</span> <span class="comment">#查看当前用户所在的组</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="删除用户与组采用："><a href="#删除用户与组采用：" class="headerlink" title="删除用户与组采用："></a>删除用户与组采用：</h4><p>sudo userdel -r username<br>sudo groupdel username</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/03/07/linux/ubuntu-add-sudo-user/" data-id="cmawg7tts009rh3s6exfwe1ol" class="article-share-link" data-share="baidu" data-title="ubuntu增加sudo用户">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-termux/anlinux-sdcard" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/28/termux/anlinux-sdcard/" class="article-date">
-  <time datetime="2020-02-28T04:38:00.000Z" itemprop="datePublished">2020-02-28</time>
+  <time datetime="2020-02-27T16:00:00.000Z" itemprop="datePublished">2020-02-28</time>
 </a>
     
   <div class="article-category">
@@ -607,7 +480,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/anlinux-sdcard/" data-id="cmawg7tul00dih3s6fs6sbla7" class="article-share-link" data-share="baidu" data-title="Anlinux读取外部存储">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/anlinux-sdcard/" data-id="cmb6oa6ir00e4dts65n4c9a5l" class="article-share-link" data-share="baidu" data-title="Anlinux读取外部存储">分享到</a>
       
 
       
@@ -625,7 +498,7 @@
     <article id="post-termux/termux-anlinux-vnc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/28/termux/termux-anlinux-vnc/" class="article-date">
-  <time datetime="2020-02-28T02:00:00.000Z" itemprop="datePublished">2020-02-28</time>
+  <time datetime="2020-02-27T16:00:00.000Z" itemprop="datePublished">2020-02-28</time>
 </a>
     
   <div class="article-category">
@@ -710,13 +583,151 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-anlinux-vnc/" data-id="cmawg7tuo00dvh3s66k2faq0c" class="article-share-link" data-share="baidu" data-title="termux+AnLinux安装ubuntu+xfce或lxde图形桌面">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-anlinux-vnc/" data-id="cmb6oa6it00efdts6ebzec3s0" class="article-share-link" data-share="baidu" data-title="termux+AnLinux安装ubuntu+xfce或lxde图形桌面">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="tag">系统安装</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux/termux-anlinux-vscode1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/07/termux/termux-anlinux-vscode1/" class="article-date">
+  <time datetime="2020-05-06T16:00:00.000Z" itemprop="datePublished">2020-05-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/07/termux/termux-anlinux-vscode1/">termux下的ubuntu安装vscode</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​</p>
+<h4 id="首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift-箭头选择，ctrl-v-ctrl-p之类的习惯还是改不了，方便啊。"><a href="#首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift-箭头选择，ctrl-v-ctrl-p之类的习惯还是改不了，方便啊。" class="headerlink" title="首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift+箭头选择，ctrl+v ctrl+p之类的习惯还是改不了，方便啊。"></a>首先声明，vim不好用，实实在在是神器，命令行与桌面都能用。但是，让我习惯了shift+箭头选择，ctrl+v ctrl+p之类的习惯还是改不了，方便啊。</h4><h4 id="2020年下半年，VSCODE官居网己更新，有ARM64版的了，直接安装。"><a href="#2020年下半年，VSCODE官居网己更新，有ARM64版的了，直接安装。" class="headerlink" title="2020年下半年，VSCODE官居网己更新，有ARM64版的了，直接安装。"></a>2020年下半年，VSCODE官居网己更新，有ARM64版的了，直接安装。</h4><hr>
+<h4 id="以下是老版本的方法"><a href="#以下是老版本的方法" class="headerlink" title="以下是老版本的方法"></a>以下是老版本的方法</h4><h5 id="开始是如何失败的"><a href="#开始是如何失败的" class="headerlink" title="开始是如何失败的"></a>开始是如何失败的</h5><pre><code>首先在贴吧有人说可以在github.com中搜索arm版的vscode，果然是搜索到了，下了两天没下载下来，后来狠心定个闹钟凌晨四点半叫醒我，一下子不下载下来了。可是一安装是armhf版的，为了能安装armhf，又折腾，直到把我的ubuntu弄了好多个补丁，然后装不了软件了。只好干掉重新装anlinux，不过重新装时，又发现了许多新经验，也算是有收获吧。
+</code></pre>
+<p>在vscode的主页上也有arm版的安装方法，悲惨的是试用了后也是armhf版的。</p>
+<h5 id="成功在现有手机的arm64版上安装"><a href="#成功在现有手机的arm64版上安装" class="headerlink" title="成功在现有手机的arm64版上安装"></a>成功在现有手机的arm64版上安装</h5><ol>
+<li><p>进入<a target="_blank" rel="noopener" href="https://packagecloud.io/headmelted/codebuilds">https://packagecloud.io/headmelted/codebuilds</a> 网站下载vscode arm64版的deb安装文件。</p>
+</li>
+<li></li>
+<li><p>执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0CCxxxxx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继续安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i code***.deb，安装成功</span><br></pre></td></tr></table></figure>
+
+<p>当然只能在图形桌面上用了。进入startxfce4后，有个叫code-oss就是。我其实一直用的是sublimetext3的，对这个vscode并不熟，要用的网友们自己用吧。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/05/07/termux/termux-anlinux-vscode1/" data-id="cmb6oa6iu00eidts6bsogd1gs" class="article-share-link" data-share="baidu" data-title="termux下的ubuntu安装vscode">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/" rel="tag">vscode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-termux/termux-anlinux-vscode2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/07/termux/termux-anlinux-vscode2/" class="article-date">
+  <time datetime="2020-05-06T16:00:00.000Z" itemprop="datePublished">2020-05-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/07/termux/termux-anlinux-vscode2/">神器code-server,远程vscode功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​</p>
+<h5 id="前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲-不进入桌面，能不能用vscode呢。"><a href="#前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲-不进入桌面，能不能用vscode呢。" class="headerlink" title="前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲,不进入桌面，能不能用vscode呢。"></a>前面讲过在GUI桌面下如何安装vscode的，可是如果每次都VCN或xdsl好麻烦。这次讲,不进入桌面，能不能用vscode呢。</h5><h5 id="万能的github啊。竟然有code-server这个好东东"><a href="#万能的github啊。竟然有code-server这个好东东" class="headerlink" title="万能的github啊。竟然有code-server这个好东东"></a>万能的github啊。竟然有code-server这个好东东</h5><pre><code>首先进入https://github.com/cdr/code-server ，然后点击下载版本，再进入了https://github.com/cdr/code-server/releases，
+当然选择ARM64版本的，请注意，可别先成amd64了。
+</code></pre>
+<ol>
+<li>找到下载连接，直接下载 code-server-3.6.2-linux-arm64.deb文件，安装后。</li>
+<li>执行code-server，会在&#x2F;home&#x2F;username&#x2F;.config目录先生成code-server目录，并生成 config.yaml配置文件，停止code-server，更改~&#x2F;.config&#x2F;code-server&#x2F;config.yaml文件，在其中更改密码，IP地址与端口</li>
+<li>在你的程序目录下直接执行 $ code-server</li>
+<li>在另一台机子的浏览器输入 IP址址:端口，然后提示你输入密码就行了</li>
+<li>左上角的三条横杠实际上菜单按钮，可以调出来终端，相当于ssh了，真是太好用了。</li>
+</ol>
+<h4 id="后来发现在termux下能使用code-server了。"><a href="#后来发现在termux下能使用code-server了。" class="headerlink" title="后来发现在termux下能使用code-server了。"></a>后来发现在termux下能使用code-server了。</h4><h5 id="1-code-server4-8安装方法一，2022-10月更新"><a href="#1-code-server4-8安装方法一，2022-10月更新" class="headerlink" title="1. code-server4.8安装方法一，2022,10月更新"></a>1. code-server4.8安装方法一，2022,10月更新</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install tur-repo &amp;&amp; pkg install code-server</span><br></pre></td></tr></table></figure>
+<h5 id="2-vcode-server4-8安装方法二-2022-10月更新"><a href="#2-vcode-server4-8安装方法二-2022-10月更新" class="headerlink" title="2. vcode-server4.8安装方法二 2022,10月更新"></a>2. vcode-server4.8安装方法二 2022,10月更新</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install -y \</span><br><span class="line">  build-essential \</span><br><span class="line">  binutils \</span><br><span class="line">  pkg-config \</span><br><span class="line">  python3 \</span><br><span class="line">  nodejs-lts</span><br><span class="line">$ npm config <span class="built_in">set</span> python python3</span><br><span class="line">$ node -v</span><br><span class="line">$ npm install -g code-server --unsafe-perm 发现只支持node 16的版本。最近的不支持。失败了。</span><br><span class="line">$ npm update --global code-server --unsafe-perm</span><br></pre></td></tr></table></figure>
+<h5 id="3-以下为4-0以前的版本说明。"><a href="#3-以下为4-0以前的版本说明。" class="headerlink" title="3. 以下为4.0以前的版本说明。"></a>3. 以下为4.0以前的版本说明。</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装code-server,配置后执行</span></span><br><span class="line">$ npm install -g code-server <span class="comment">#安装</span></span><br><span class="line">$ code-server  <span class="comment"># 运行成功后，再退出,会生成配置文件</span></span><br><span class="line">$ <span class="built_in">cd</span> ~/.config/code-server <span class="comment">#进入配置目录</span></span><br><span class="line">$ vim config.yaml <span class="comment"># 更改端口与密码</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="以下为旧版本说明"><a href="#以下为旧版本说明" class="headerlink" title="以下为旧版本说明"></a>以下为旧版本说明</h5><h6 id="把下载的code-server-3-2-0-linux-arm64-tar-gz-想办法搬移到手机的-ubuntu-fs-home-目录下。并执行"><a href="#把下载的code-server-3-2-0-linux-arm64-tar-gz-想办法搬移到手机的-ubuntu-fs-home-目录下。并执行" class="headerlink" title="把下载的code-server-3.2.0-linux-arm64.tar.gz 想办法搬移到手机的~&#x2F;ubuntu-fs&#x2F;home&#x2F;目录下。并执行"></a>把下载的code-server-3.2.0-linux-arm64.tar.gz 想办法搬移到手机的~&#x2F;ubuntu-fs&#x2F;home&#x2F;目录下。并执行</h6><ol>
+<li><pre><code class="bash">tar -xvf  code-server-3.2.0-linux-arm64.tar.gz
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">   会生成code-server-3.2.0-linux-arm64目录，最好把目录名改为code-server，减少输入错误</span><br><span class="line">2. 进入code-server目录，并执行</span><br><span class="line">   </span><br><span class="line">   ```bash</span><br><span class="line">   $ export PASSWORD=123456  #先设置密码，不然下一步会随机生成密码</span><br><span class="line">   $ ./code-server --auth password --port 8080</span><br></pre></td></tr></table></figure>
+
+这里候在本机的浏览器输入 //127.0.0.1:8080就能进入vscode了。还能进入目录，并且也有终端。
+</code></pre>
+</li>
+<li><p>如果想用大屏的电脑也编辑本手机的文件，则</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ifconig  <span class="comment">#获取本机的IP地址，比如192.168.1.26</span></span><br><span class="line">$ ./code-server --auth password --port 8080 --host 0.0.0.0</span><br></pre></td></tr></table></figure>
+
+<p>在电脑上打开浏览器，输入192.168.1.26:9999 。利用内网穿透，远程调试也行啊。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/05/07/termux/termux-anlinux-vscode2/" data-id="cmb6oa6iu00eldts672r3c9wu" class="article-share-link" data-share="baidu" data-title="神器code-server,远程vscode功能">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/code-server/" rel="tag">code-server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
 
     </footer>
   </div>
@@ -793,7 +804,7 @@
           </li>
         
           <li>
-            <a href="/2025/01/30/python/streamlit-9/">streamlit学习笔记九-----streamlit新版支持原生多页面二</a>
+            <a href="/2025/01/30/python/streamlit-8/">streamlit学习笔记八-----一些特别的插件</a>
           </li>
         
       </ul>
