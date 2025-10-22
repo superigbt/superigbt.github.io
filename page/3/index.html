@@ -117,7 +117,7 @@
 <h4 id="本地安装试验"><a href="#本地安装试验" class="headerlink" title="本地安装试验"></a>本地安装试验</h4><h5 id="1-首先必须安装了-Node-js-18-、Yarn-1-22-x-以上版本"><a href="#1-首先必须安装了-Node-js-18-、Yarn-1-22-x-以上版本" class="headerlink" title="1. 首先必须安装了 Node.js 18+、Yarn 1.22.x 以上版本"></a>1. 首先必须安装了 Node.js 18+、Yarn 1.22.x 以上版本</h5><pre><code>配置并启动了所需数据库 SQLite 3.x、MySQL 8.0.17+、MariaDB 10.9+、PostgreSQL 10+ 任选其一
 </code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global yarn  <span class="comment"># 在ubnntu下，有可能要用到sudo</span></span><br><span class="line">$ yarn config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br><span class="line">$ yarn config <span class="built_in">set</span> sqlite3_binary_host_mirror https://npmmirror.com/mirrors/sqlite3/</span><br><span class="line"><span class="comment"># 配置SQLite,并生成目录</span></span><br><span class="line">$ yarn create nocobase-app my-nocobase-app -d sqlite <span class="comment">#会生成 my-nocobase-app目录</span></span><br><span class="line">$ <span class="built_in">cd</span> my-nocobase-app</span><br><span class="line">$ yarn install</span><br><span class="line">$ yarn install --production <span class="comment"># 生产环境部署时，为了减少体积，可以只安装必要的依赖</span></span><br><span class="line">$ yarn nocobase install --lang=zh-CN  <span class="comment"># 安装 NocoBase</span></span><br><span class="line">$ yarn dev <span class="comment"># 启动nocobase开发环境，或者 yarn start 启动生产环境</span></span><br><span class="line">$ yarn build <span class="comment"># 如果是生产环境时，代码有改变，要先执行这一步。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="2-登录-NocoBase"><a href="#2-登录-NocoBase" class="headerlink" title="2. 登录 NocoBase"></a>2. 登录 NocoBase</h5><p>使用浏览器打开 <a target="_blank" rel="noopener" href="http://localhost:13000/">http://localhost:13000/</a> 初始化账号和密码是 <a href="mailto:&#x61;&#100;&#109;&#105;&#110;&#x40;&#110;&#x6f;&#x63;&#111;&#x62;&#97;&#115;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x61;&#100;&#109;&#105;&#110;&#x40;&#110;&#x6f;&#x63;&#111;&#x62;&#97;&#115;&#x65;&#x2e;&#99;&#111;&#x6d;</a> 和 admin123</p>
+<h5 id="2-登录-NocoBase"><a href="#2-登录-NocoBase" class="headerlink" title="2. 登录 NocoBase"></a>2. 登录 NocoBase</h5><p>使用浏览器打开 <a target="_blank" rel="noopener" href="http://localhost:13000/">http://localhost:13000/</a> 初始化账号和密码是 <a href="mailto:&#x61;&#x64;&#109;&#x69;&#110;&#x40;&#x6e;&#111;&#x63;&#x6f;&#x62;&#97;&#x73;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x61;&#x64;&#109;&#x69;&#110;&#x40;&#x6e;&#111;&#x63;&#x6f;&#x62;&#97;&#x73;&#x65;&#x2e;&#x63;&#x6f;&#109;</a> 和 admin123</p>
 <hr>
 <h2 id="我的天，在anlinux下，-用npm安半yarn，-太难了。最终一个办法解决了。"><a href="#我的天，在anlinux下，-用npm安半yarn，-太难了。最终一个办法解决了。" class="headerlink" title="我的天，在anlinux下， 用npm安半yarn， 太难了。最终一个办法解决了。"></a>我的天，在anlinux下， 用npm安半yarn， 太难了。最终一个办法解决了。</h2><ol>
 <li>上 github 搜索yarn后，进入yarn</li>
@@ -138,7 +138,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/05/24/fun-item/nocobase%E5%AD%A6%E4%B9%A0%E4%B8%80/" data-id="cmh1oxzy1004q1ls6bs9m56sj" class="article-share-link" data-share="baidu" data-title="nocobase学习一，安装，并初步运行">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/05/24/fun-item/nocobase%E5%AD%A6%E4%B9%A0%E4%B8%80/" data-id="cmh1vayrg004qe7s6gnzpgey4" class="article-share-link" data-share="baidu" data-title="nocobase学习一，安装，并初步运行">分享到</a>
       
 
       
@@ -222,7 +222,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/05/07/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86python%E7%AF%87/" data-id="cmh1oxzy7005h1ls6331beut2" class="article-share-link" data-share="baidu" data-title="github上，有趣的python库">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/05/07/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86python%E7%AF%87/" data-id="cmh1vayrm005he7s69tb38f0z" class="article-share-link" data-share="baidu" data-title="github上，有趣的python库">分享到</a>
       
 
       
@@ -294,7 +294,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/04/21/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%8620240421/" data-id="cmh1oxzy6005a1ls68me046ti" class="article-share-link" data-share="baidu" data-title="github上，CMS,CRM,项目管理等对工作效率有关的项目">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/04/21/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%8620240421/" data-id="cmh1vayrk005ae7s6h6m3d9ml" class="article-share-link" data-share="baidu" data-title="github上，CMS,CRM,项目管理等对工作效率有关的项目">分享到</a>
       
 
       
@@ -354,7 +354,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/03/28/lyrics/%E5%AE%89%E5%92%8C%E6%A1%A5/" data-id="cmh1oxzye00691ls6gf8nfqpb" class="article-share-link" data-share="baidu" data-title="《安和桥》-歌词">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/03/28/lyrics/%E5%AE%89%E5%92%8C%E6%A1%A5/" data-id="cmh1vaysp00ape7s6b39d2qqn" class="article-share-link" data-share="baidu" data-title="《安和桥》-歌词">分享到</a>
       
 
       
@@ -405,7 +405,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/01/15/blog/hugo-learn-notebook9/" data-id="cmh1oxzxj002t1ls6dpcwc2fa" class="article-share-link" data-share="baidu" data-title="hugo 中的文章添加时间线2. hugo-shortcode-timeline的修改">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/01/15/blog/hugo-learn-notebook9/" data-id="cmh1vayqw002qe7s63k4o2df0" class="article-share-link" data-share="baidu" data-title="hugo 中的文章添加时间线2. hugo-shortcode-timeline的修改">分享到</a>
       
 
       
@@ -519,7 +519,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/01/13/lyrics/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80%E7%9A%84%E6%AD%8C/" data-id="cmh1oxzye006b1ls6atcg72bp" class="article-share-link" data-share="baidu" data-title="一些家国情怀的歌">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/01/13/lyrics/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80%E7%9A%84%E6%AD%8C/" data-id="cmh1vaysq00ate7s63f8pc8hj" class="article-share-link" data-share="baidu" data-title="一些家国情怀的歌">分享到</a>
       
 
       
@@ -590,7 +590,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/01/13/lyrics/%E7%BD%97%E5%A4%A7%E4%BD%91/" data-id="cmh1oxzyl00761ls6cf28ec27" class="article-share-link" data-share="baidu" data-title="罗大佑--随缘，光阴的故事">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/01/13/lyrics/%E7%BD%97%E5%A4%A7%E4%BD%91/" data-id="cmh1vaysv00bme7s6f98hecux" class="article-share-link" data-share="baidu" data-title="罗大佑--随缘，光阴的故事">分享到</a>
       
 
       
@@ -680,7 +680,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/12/31/lyrics/%E7%AA%A6%E5%94%AF/" data-id="cmh1oxzyk00721ls625j0buh3" class="article-share-link" data-share="baidu" data-title="窦唯--黑梦">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/12/31/lyrics/%E7%AA%A6%E5%94%AF/" data-id="cmh1vaysv00bke7s60qeaf8g4" class="article-share-link" data-share="baidu" data-title="窦唯--黑梦">分享到</a>
       
 
       
@@ -751,7 +751,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/12/18/lyrics/%E9%83%91%E6%99%BA%E5%8C%96%E6%AD%8C%E8%AF%8D/" data-id="cmh1oxzym007d1ls66hfk2474" class="article-share-link" data-share="baidu" data-title="郑智化的歌词">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/12/18/lyrics/%E9%83%91%E6%99%BA%E5%8C%96%E6%AD%8C%E8%AF%8D/" data-id="cmh1vaysx00bse7s62pcd2sgy" class="article-share-link" data-share="baidu" data-title="郑智化的歌词">分享到</a>
       
 
       
@@ -832,7 +832,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/11/21/linux/desktip-fluxbox2/" data-id="cmh1oxzzc00ao1ls67lnpeq85" class="article-share-link" data-share="baidu" data-title=" 安装fluxbox2 ">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/11/21/linux/desktip-fluxbox2/" data-id="cmh1vayrw006se7s6cxf8aqqt" class="article-share-link" data-share="baidu" data-title=" 安装fluxbox2 ">分享到</a>
       
 
       
