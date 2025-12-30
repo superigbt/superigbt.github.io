@@ -84,6 +84,54 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-website/reinstall-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/27/website/reinstall-mysql/" class="article-date">
+  <time datetime="2020-06-26T16:00:00.000Z" itemprop="datePublished">2020-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/27/website/reinstall-mysql/">彻底清除mysql</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一次不小心把root用户删除了，在mysql8-0下，用老办法没有恢复成功，于是就删掉重装吧，如何彻底删除呢？"><a href="#一次不小心把root用户删除了，在mysql8-0下，用老办法没有恢复成功，于是就删掉重装吧，如何彻底删除呢？" class="headerlink" title="一次不小心把root用户删除了，在mysql8.0下，用老办法没有恢复成功，于是就删掉重装吧，如何彻底删除呢？"></a>一次不小心把root用户删除了，在mysql8.0下，用老办法没有恢复成功，于是就删掉重装吧，如何彻底删除呢？</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get remove mysql-common <span class="comment">#很重要</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get autoremove --purge mysql-server</span><br><span class="line">$ dpkg -l|grep ^rc|awk <span class="string">&#x27;&#123;print$2&#125;&#x27;</span>|<span class="built_in">sudo</span> xargs dpkg -P <span class="comment">#清除残留数据</span></span><br><span class="line">$ dpkg --list|grep mysql <span class="comment"># 再次查看MySQL的剩余依赖项</span></span><br></pre></td></tr></table></figure>
+<p>继续删除剩余依赖项，如：sudo apt-get autoremove –purge mysql-apt-config</p>
+<h2 id="mysql的两个相关文件需要手动删除、一个是-var-lib-mysql、一个是-etc-mysql。当你删除之后再重新装、如果-var-lib-mysql文件没有删除、则会保留上一个数据库创建的实例、这个一般不是我们想要的、必须删除"><a href="#mysql的两个相关文件需要手动删除、一个是-var-lib-mysql、一个是-etc-mysql。当你删除之后再重新装、如果-var-lib-mysql文件没有删除、则会保留上一个数据库创建的实例、这个一般不是我们想要的、必须删除" class="headerlink" title="mysql的两个相关文件需要手动删除、一个是&#x2F;var&#x2F;lib&#x2F;mysql、一个是&#x2F;etc&#x2F;mysql。当你删除之后再重新装、如果&#x2F;var&#x2F;lib&#x2F;mysql文件没有删除、则会保留上一个数据库创建的实例、这个一般不是我们想要的、必须删除"></a>mysql的两个相关文件需要手动删除、一个是&#x2F;var&#x2F;lib&#x2F;mysql、一个是&#x2F;etc&#x2F;mysql。当你删除之后再重新装、如果&#x2F;var&#x2F;lib&#x2F;mysql文件没有删除、则会保留上一个数据库创建的实例、这个一般不是我们想要的、必须删除</h2>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/06/27/website/reinstall-mysql/" data-id="cmiikoru600gfyrs66isndbfq" class="article-share-link" data-share="baidu" data-title="彻底清除mysql">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux/vbox-console" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/18/linux/vbox-console/" class="article-date">
@@ -666,58 +714,6 @@ Ctrl+Alt+&quot;--&quot; 字体缩小
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/code-server/" rel="tag">code-server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-website/caddy-php" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/24/website/caddy-php/" class="article-date">
-  <time datetime="2020-04-23T16:00:00.000Z" itemprop="datePublished">2020-04-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/24/website/caddy-php/">caddy配置php的两种办法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一-php-fpm方法"><a href="#一-php-fpm方法" class="headerlink" title="一. php-fpm方法"></a>一. php-fpm方法</h4><h5 id="1-在linux下配置php-fpm"><a href="#1-在linux下配置php-fpm" class="headerlink" title="1. 在linux下配置php-fpm"></a>1. 在linux下配置php-fpm</h5><p>编辑Caddyfile，在中间加入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fastcgi / /var/run/php/php-fpm.sock &#123;   # 不同版本的linux，目录有可能不同</span><br><span class="line">    ext .php</span><br><span class="line">    split .php</span><br><span class="line">    index index.php</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="2-在termux下"><a href="#2-在termux下" class="headerlink" title="2. 在termux下"></a>2. 在termux下</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install php-fpm</span><br><span class="line">$ termux-chroot   <span class="comment">#注，必须在chroot下。测试termux0.84以前版本</span></span><br><span class="line">$ vim /etc/php-fpm.d/www.conf</span><br><span class="line">   把 listen=/data/data/com.termux/files/usr/var/run/php-fpm.sock修改为</span><br><span class="line">      listen=127.0.0.1:9000</span><br><span class="line">$ vim Caddyfile 增加</span><br><span class="line">   fastcgi / 127.0.0.1:9000 php</span><br><span class="line">$ php-fpm</span><br><span class="line">$ caddy</span><br></pre></td></tr></table></figure>
-<p>成功<br><strong>termux 0.99版测试发现，不用进入chroot下，也能成功了。</strong></p>
-<h5 id="3-windows10下，windows不支持sock-所以此法不可用"><a href="#3-windows10下，windows不支持sock-所以此法不可用" class="headerlink" title="3. windows10下，windows不支持sock, 所以此法不可用"></a>3. windows10下，windows不支持sock, 所以此法不可用</h5><h4 id="二-php-cgi方法"><a href="#二-php-cgi方法" class="headerlink" title="二. php-cgi方法"></a>二. php-cgi方法</h4><h5 id="1-linux与termux下用法相同，并且termux不用进入chroot"><a href="#1-linux与termux下用法相同，并且termux不用进入chroot" class="headerlink" title="1 linux与termux下用法相同，并且termux不用进入chroot"></a>1 linux与termux下用法相同，并且termux不用进入chroot</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ vim Caddyfile 增加</span><br><span class="line">   fastcgi / 127.0.0.1:9000 php</span><br><span class="line">$ php-cgi -b 9000 &amp;</span><br><span class="line">$ caddy</span><br></pre></td></tr></table></figure>
-<h5 id="2-win10下，我采用的是cygwin"><a href="#2-win10下，我采用的是cygwin" class="headerlink" title="2.win10下，我采用的是cygwin"></a>2.win10下，我采用的是cygwin</h5><p>下载php-7.<em>.</em>.zip，并解压到c:\mytools\php-7.*.*目录，进入cygwin终端</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /cygdrive/c/mytools/php-7.*.*</span><br><span class="line">$ ./php-cgi.exe -b 9000 &amp;</span><br><span class="line">后面相同</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/04/24/website/caddy-php/" data-id="cmiikoru300fxyrs65empab8y" class="article-share-link" data-share="baidu" data-title="caddy配置php的两种办法">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag"> 建站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/caddy-PHP/" rel="tag">caddy+PHP</a></li></ul>
 
     </footer>
   </div>

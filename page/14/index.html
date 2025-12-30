@@ -84,6 +84,59 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-linux/ubuntu-modify-dns" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/07/06/linux/ubuntu-modify-dns/" class="article-date">
+  <time datetime="2021-07-05T16:00:00.000Z" itemprop="datePublished">2021-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/06/linux/ubuntu-modify-dns/">ubuntu18.04后，修改DNS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>修改配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> install resolvconf <span class="comment"># 安装后会在生成/etc/resolvconf文件夹。</span></span><br><span class="line">$ <span class="built_in">cd</span> /etc/resolvconf/resolv.conf/</span><br><span class="line">$ vim base 增加以下语句</span><br><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 8.8.8.8</span><br><span class="line">$ <span class="comment"># 保存退出</span></span><br><span class="line">$ resolvconf -u</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启服务查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> systemctl restart systemd-resolved.service</span><br><span class="line"><span class="comment">#  更新修改后的设置</span></span><br><span class="line">$ resolvectl status </span><br><span class="line"> <span class="comment"># 查看更改后的设置</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2021/07/06/linux/ubuntu-modify-dns/" data-id="cmiikorsq0092yrs62r2w29yf" class="article-share-link" data-share="baidu" data-title="ubuntu18.04后，修改DNS">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E4%BF%AE%E6%94%B9DNS/" rel="tag">ubuntu修改DNS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-python/streamlit-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/07/01/python/streamlit-2/" class="article-date">
@@ -699,60 +752,6 @@
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LAMP/" rel="tag">LAMP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask%E6%A1%86%E6%9E%B6/" rel="tag">flask框架</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-website/lamp-server-install1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/06/08/website/lamp-server-install1/" class="article-date">
-  <time datetime="2021-06-07T16:00:00.000Z" itemprop="datePublished">2021-06-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/08/website/lamp-server-install1/">LAMP安装后，phpmyadmin无法空密码登录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="LAMP刚安装完后，mysql的用户root密码是空的，导致phpmyadmin无法登录，该如何解决呢？"><a href="#LAMP刚安装完后，mysql的用户root密码是空的，导致phpmyadmin无法登录，该如何解决呢？" class="headerlink" title="LAMP刚安装完后，mysql的用户root密码是空的，导致phpmyadmin无法登录，该如何解决呢？"></a>LAMP刚安装完后，mysql的用户root密码是空的，导致phpmyadmin无法登录，该如何解决呢？</h3><h5 id="一-安装-lamp-server-与-phpmyamdin"><a href="#一-安装-lamp-server-与-phpmyamdin" class="headerlink" title="一 安装 lamp-server 与 phpmyamdin"></a>一 安装 lamp-server 与 phpmyamdin</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt install lamp-server^ -y</span><br><span class="line">$ <span class="built_in">sudo</span> apt install phpmyadmin -y</span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">ln</span> -s /usr/share/phpmyadmin  /home/me/mywww</span><br></pre></td></tr></table></figure>
-
-<h5 id="二-修改-phpmyadmin配置"><a href="#二-修改-phpmyadmin配置" class="headerlink" title="二 修改 phpmyadmin配置"></a>二 修改 phpmyadmin配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /usr/share/phpmyadmin/libraries</span><br><span class="line">$ vim config.default.php</span><br><span class="line"><span class="comment"># 305行 $cfg[&#x27;Servers&#x27;][$i][&#x27;nopassword&#x27;]=false;</span></span><br><span class="line"><span class="comment"># 538行 $cfg[&#x27;Servers&#x27;][$i][&#x27;AllowNopassword&#x27;]=false;</span></span><br><span class="line"><span class="comment"># 把以上的false 改为 true</span></span><br><span class="line"><span class="comment"># 大约270行 $cfg[&#x27;Servers][$i][&#x27;password&#x27;]=&#x27;&#x27;;</span></span><br></pre></td></tr></table></figure>
-<p>保存后，则phpmyadmin允许空密码登录了。然而用root用户名依然不能登录！！！</p>
-<h4 id="四-查原因"><a href="#四-查原因" class="headerlink" title="四 查原因"></a>四 查原因</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> mysql</span><br><span class="line">mysql&gt; use mysql</span><br><span class="line">mysql&gt; <span class="keyword">select</span> user,plugin from user;</span><br><span class="line">+--------------------+-------------------------+</span><br><span class="line">| user               | plugin                  |</span><br><span class="line">+--------------------+-------------------------+</span><br><span class="line">| debian-sys-maint   | mysql_native_password   |</span><br><span class="line">| mysql.infoschema   | mysql_native_password   |</span><br><span class="line">| mysql.session      | mysql_native_password   |</span><br><span class="line">| mysql.sys          | mysql_native_password   |</span><br><span class="line">| phpmyadmin         | mysql_native_password   |</span><br><span class="line">| root               | auth_socket             |</span><br><span class="line">+--------------------+-------------------------+</span><br><span class="line"><span class="comment"># plugin=auth_socket则表示不允许ph登录, 所认必须把 root的plugin属性改为mysql_native_password</span></span><br></pre></td></tr></table></figure>
-<p>但是可以用phpmyadmin的用户名来登录</p>
-<h4 id="修改-root的plugin属性"><a href="#修改-root的plugin属性" class="headerlink" title="修改 root的plugin属性"></a>修改 root的plugin属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; updated user SET plugin=<span class="string">&#x27;mysql_native_password&#x27;</span> WHERE user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">mysql&gt; quit;</span><br></pre></td></tr></table></figure>
-
-<h4 id="修改-root的密码"><a href="#修改-root的密码" class="headerlink" title="修改 root的密码"></a>修改 root的密码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="built_in">set</span> password <span class="keyword">for</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> = password(<span class="string">&#x27;你设置的密码&#x27;</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2021/06/08/website/lamp-server-install1/" data-id="cmiikoru500g8yrs66czk76s8" class="article-share-link" data-share="baidu" data-title="LAMP安装后，phpmyadmin无法空密码登录">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lamp-phpmyadmin/" rel="tag">lamp+phpmyadmin </a></li></ul>
 
     </footer>
   </div>

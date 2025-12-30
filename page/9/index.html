@@ -84,6 +84,99 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-SMPS/mcu_iic" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/01/13/SMPS/mcu_iic/" class="article-date">
+  <time datetime="2023-01-12T16:00:00.000Z" itemprop="datePublished">2023-01-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/01/13/SMPS/mcu_iic/">IIC 协议原理和模拟IIC的实现步骤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="IIC协议的由来"><a href="#IIC协议的由来" class="headerlink" title="IIC协议的由来"></a>IIC协议的由来</h3><p>IIC协议最早是在1982年由飞利浦公司设计开发的，它是一种两线制（SDL + SCL）的串行通行方式，它也是主从机之间通信的方式，在今天也是被广泛的应用在很多的产品设备上。<br>使用IIC协议进行数据通信的设备，它既可以作为主机又可以作为从机（支持多主多从），并且它是一种半双工的通信方式。<br>另外，IIC协议还是带有总线仲裁功能的一种通信协议！</p>
+<h3 id="IIC-协议的一些参数"><a href="#IIC-协议的一些参数" class="headerlink" title="IIC 协议的一些参数"></a>IIC 协议的一些参数</h3><p>IIC 作为一种通信的协议，它是包含了几个相关的特征参数的，如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>述语</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发送器</td>
+<td>发送数据到总经的设备</td>
+</tr>
+<tr>
+<td>接收器</td>
+<td>从总线接收数据的设备</td>
+</tr>
+<tr>
+<td>主机</td>
+<td>初始化数据传输，产生时钟信号与结速数据传输的设备</td>
+</tr>
+<tr>
+<td>从机</td>
+<td>由主机寻址的设备</td>
+</tr>
+<tr>
+<td>多主</td>
+<td>不破坏数据与信息的情况下，多主机同时控制总线</td>
+</tr>
+<tr>
+<td>同步</td>
+<td>同步两个以上设备的时钟信号</td>
+</tr>
+<tr>
+<td>仲裁</td>
+<td>如果两个以上的主机同时想要控制总线，只能有一个主机被 允许。并且这个主机的信息不能被破坏</td>
+</tr>
+</tbody></table>
+<h3 id="IIC-协议的通信速率"><a href="#IIC-协议的通信速率" class="headerlink" title="# IIC 协议的通信速率"></a># IIC 协议的通信速率</h3><p>IIC可以支持的通信速率范围较大，可以很好的满足多种设备对于不同的通信速度的要求，常见的IIC支持的速率有以下几个：</p>
+<blockquote>
+<p>1）普通模式（100kHz即100kbps）</p>
+<p>2）快速模式(Fm）（400kHz）</p>
+<p>3）快速模式+(Fs+)（1MHz）</p>
+<p>4）高速模式(Hs）（3.4MHz）</p>
+<p>5）超高速模式(UFm)（5MHz）</p>
+</blockquote>
+<p>当然，以上标明的速率一般指的是硬件IIC的速率，对于通过软件模拟实现的IIC，它的速率是受到所使用的CPU的处理速度和性能影响的，不可以一概而论！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2023/01/13/SMPS/mcu_iic/" data-id="cmiikorr2000xyrs6ew4kb8o6" class="article-share-link" data-share="baidu" data-title="IIC 协议原理和模拟IIC的实现步骤">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">单片机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/" rel="tag">总线协议</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-termux/termux-service" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/01/13/termux/termux-service/" class="article-date">
@@ -739,58 +832,6 @@
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90%E5%9F%BA%E7%A1%80/" rel="tag">开关电源基础</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-essay/sz海边栈道" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/10/30/essay/sz%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%93/" class="article-date">
-  <time datetime="2022-10-29T16:00:00.000Z" itemprop="datePublished">2022-10-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%91%98%E6%8A%84%E4%B8%8E%E9%9A%8F%E7%AC%94/">摘抄与随笔</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/10/30/essay/sz%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%93/">广东省内游之四，深圳六个海边栈道（摘抄自头条定格深圳）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-大小梅沙海滨栈道"><a href="#1-大小梅沙海滨栈道" class="headerlink" title="1.大小梅沙海滨栈道"></a>1.大小梅沙海滨栈道</h4><p><mark>环海⽽建，⼀眼望去皆是海景，栈道连接了⼤⼩梅沙，还可以去打卡</mark><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="大小梅沙海滨栈道1"><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="大小梅沙海滨栈道2"><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="大小梅沙海滨栈道3"><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%934.jpeg" alt="大小梅沙海滨栈道4"><br><img src="/image/SZdingge/%E5%A4%A7%E5%B0%8F%E6%A2%85%E6%B2%99%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="大小梅沙海滨栈道5"></p>
-<h4 id="2-深圳湾海滨栈道"><a href="#2-深圳湾海滨栈道" class="headerlink" title="2.深圳湾海滨栈道"></a>2.深圳湾海滨栈道</h4><p><mark>蜿蜒在深圳湾畔，全长近17公里，沿途串连了二十余个主题公园</mark><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="深圳湾海滨栈道1"><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="深圳湾海滨栈道2"><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="深圳湾海滨栈道3"><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%934.jpeg" alt="深圳湾海滨栈道4"><br><img src="/image/SZdingge/%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="深圳湾海滨栈道5"></p>
-<h4 id="3-深圳天文台海滨栈道"><a href="#3-深圳天文台海滨栈道" class="headerlink" title="3.深圳天文台海滨栈道"></a>3.深圳天文台海滨栈道</h4><p><mark>依山而建，蜿蜒曲折，直通大海，你可以边感受海风拂面，边欣赏山川大海</mark><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="深圳天文台海滨栈道1"><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="深圳天文台海滨栈道2"><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="深圳天文台海滨栈道3"><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%934.jpeg" alt="深圳天文台海滨栈道4"><br><img src="/image/SZdingge/%E5%A4%A9%E6%96%87%E5%8F%B0%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="深圳天文台海滨栈道5"></p>
-<h4 id="4-前海⽯公园海边栈道"><a href="#4-前海⽯公园海边栈道" class="headerlink" title="4.前海⽯公园海边栈道"></a>4.前海⽯公园海边栈道</h4><p><mark>漫步栈道，海对岸的跨海⼤桥、鳞次栉⽐的城市⾼楼，震撼⼜浪漫的巨型摩天轮…..</mark><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%931.jpeg" alt="前海石公园海边栈道1"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%932.jpeg" alt="前海石公园海边栈道2"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%933.jpeg" alt="前海石公园海边栈道3"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%934.jpeg" alt="前海石公园海边栈道4"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%935.jpeg" alt="前海石公园海边栈道5"><br><img src="/image/SZdingge/%E5%89%8D%E6%B5%B7%E7%9F%B3%E5%85%AC%E5%9B%AD%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%936.jpeg" alt="前海石公园海边栈道6"></p>
-<h4 id="5-S型公路旁的海滨栈道"><a href="#5-S型公路旁的海滨栈道" class="headerlink" title="5.S型公路旁的海滨栈道"></a>5.S型公路旁的海滨栈道</h4><p>位于<mark>万科十七英里与玫瑰海岸中间</mark>，藏了一条长长的海边栈道。<br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="S型公路旁的海滨栈道1"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="S型公路旁的海滨栈道2"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="S型公路旁的海滨栈道3"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="S型公路旁的海滨栈道5"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%936.jpeg" alt="S型公路旁的海滨栈道6"><br><img src="/image/SZdingge/S%E5%9E%8B%E5%85%AC%E8%B7%AF%E6%97%81%E7%9A%84%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%937.jpeg" alt="S型公路旁的海滨栈道7"></p>
-<h4 id="6-背仔角海滨栈道"><a href="#6-背仔角海滨栈道" class="headerlink" title="6.背仔角海滨栈道"></a>6.背仔角海滨栈道</h4><p><mark>栈道的尽头还藏着一座灯塔</mark>，蓝天白云下，红白相间的灯塔极具视觉冲击。<br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%931.jpeg" alt="背仔角海滨栈道1"><br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%932.jpeg" alt="背仔角海滨栈道2"><br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%933.jpeg" alt="背仔角海滨栈道3"><br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%934.jpeg" alt="背仔角海滨栈道4"><br><img src="/image/SZdingge/%E8%83%8C%E4%BB%94%E8%A7%92%E6%B5%B7%E6%BB%A8%E6%A0%88%E9%81%935.jpeg" alt="背仔角海滨栈道5"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2022/10/30/essay/sz%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%93/" data-id="cmiikorrv004eyrs6ci7d3v6q" class="article-share-link" data-share="baidu" data-title="广东省内游之四，深圳六个海边栈道（摘抄自头条定格深圳）">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" rel="tag">旅游攻略</a></li></ul>
 
     </footer>
   </div>

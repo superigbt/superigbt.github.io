@@ -84,6 +84,72 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-SMPS/LDO-VS-buckDCDC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/04/27/SMPS/LDO-VS-buckDCDC/" class="article-date">
+  <time datetime="2023-04-26T16:00:00.000Z" itemprop="datePublished">2023-04-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/27/SMPS/LDO-VS-buckDCDC/">LDO 与 降压DCDC的区别(转发自微信朋友圈的文章)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="LDO和降压DCDC都是常见的电源管理器件，用于提供稳定的直流电压输出。LDO是线性稳压器，而降压DCDC是开关稳压器，它们的工作原理、应用场景、优缺点等方面有很大的不同，下面是LDO和降压DCDC的对比："><a href="#LDO和降压DCDC都是常见的电源管理器件，用于提供稳定的直流电压输出。LDO是线性稳压器，而降压DCDC是开关稳压器，它们的工作原理、应用场景、优缺点等方面有很大的不同，下面是LDO和降压DCDC的对比：" class="headerlink" title="LDO和降压DCDC都是常见的电源管理器件，用于提供稳定的直流电压输出。LDO是线性稳压器，而降压DCDC是开关稳压器，它们的工作原理、应用场景、优缺点等方面有很大的不同，下面是LDO和降压DCDC的对比："></a>LDO和降压DCDC都是常见的电源管理器件，用于提供稳定的直流电压输出。LDO是线性稳压器，而降压DCDC是开关稳压器，它们的工作原理、应用场景、优缺点等方面有很大的不同，下面是LDO和降压DCDC的对比：</h3><h5 id="一-工作原理"><a href="#一-工作原理" class="headerlink" title="一. 工作原理"></a>一. 工作原理</h5><ol>
+<li>LDO：基于电阻调节，通过调节管的输出电阻，将输入电压降压到所需的输出电压。</li>
+<li>降压DCDC：基于电感和开关管，通过周期性地切断电感上的电流，将输入电压降压到所需的输出电压。</li>
+</ol>
+<h5 id="二-效率"><a href="#二-效率" class="headerlink" title="二. 效率"></a>二. 效率</h5><ol>
+<li>LDO：由于是线性调节，会有一定的电流损耗，效率一般不高，通常在20%-60%之间。</li>
+<li>降压DCDC：由于是开关调节，可以实现高效率，效率可以达到80%以上。</li>
+</ol>
+<h5 id="三-输出噪声"><a href="#三-输出噪声" class="headerlink" title="三. 输出噪声"></a>三. 输出噪声</h5><ol>
+<li>LDO：由于线性调节的特性，输出噪声较低，适合对输出电压稳定性要求较高的应用场景。</li>
+<li>降压DCDC：由于开关调节的特性，输出噪声较高，适合对输出电压稳定性要求不高的应用场景。</li>
+</ol>
+<h5 id="四-成本"><a href="#四-成本" class="headerlink" title="四. 成本"></a>四. 成本</h5><ol>
+<li>LDO：由于线性调节的简单性，LDO芯片较为简单，成本相对较低。</li>
+<li>降压DCDC：由于开关调节需要较多的元件和控制电路，降压DCDC芯片较为复杂，成本相对较高。</li>
+</ol>
+<h5 id="五-应用场景"><a href="#五-应用场景" class="headerlink" title="五. 应用场景"></a>五. 应用场景</h5><ol>
+<li>LDO：适用于对输出电压稳定性要求较高，输出电流较小（几百毫安以下）的应用场景，如精密仪器、传感器、低功耗设备等。</li>
+<li>降压DCDC：适用于对输出电压稳定性要求不高，但输出电流较大（几安及以上）的应用场景，如计算机、通讯设备、消费电子等。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2023/04/27/SMPS/LDO-VS-buckDCDC/" data-id="cmiikorqs0005yrs6dzm7h8nu" class="article-share-link" data-share="baidu" data-title="LDO 与 降压DCDC的区别(转发自微信朋友圈的文章)">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DC-DC/" rel="tag">DC-DC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LDO/" rel="tag">LDO</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-SMPS/SMPS-control-mode1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/04/27/SMPS/SMPS-control-mode1/" class="article-date">
@@ -590,99 +656,6 @@
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SMPS/mcu_iic" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/13/SMPS/mcu_iic/" class="article-date">
-  <time datetime="2023-01-12T16:00:00.000Z" itemprop="datePublished">2023-01-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/13/SMPS/mcu_iic/">IIC 协议原理和模拟IIC的实现步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="IIC协议的由来"><a href="#IIC协议的由来" class="headerlink" title="IIC协议的由来"></a>IIC协议的由来</h3><p>IIC协议最早是在1982年由飞利浦公司设计开发的，它是一种两线制（SDL + SCL）的串行通行方式，它也是主从机之间通信的方式，在今天也是被广泛的应用在很多的产品设备上。<br>使用IIC协议进行数据通信的设备，它既可以作为主机又可以作为从机（支持多主多从），并且它是一种半双工的通信方式。<br>另外，IIC协议还是带有总线仲裁功能的一种通信协议！</p>
-<h3 id="IIC-协议的一些参数"><a href="#IIC-协议的一些参数" class="headerlink" title="IIC 协议的一些参数"></a>IIC 协议的一些参数</h3><p>IIC 作为一种通信的协议，它是包含了几个相关的特征参数的，如下所示：</p>
-<table>
-<thead>
-<tr>
-<th>述语</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>发送器</td>
-<td>发送数据到总经的设备</td>
-</tr>
-<tr>
-<td>接收器</td>
-<td>从总线接收数据的设备</td>
-</tr>
-<tr>
-<td>主机</td>
-<td>初始化数据传输，产生时钟信号与结速数据传输的设备</td>
-</tr>
-<tr>
-<td>从机</td>
-<td>由主机寻址的设备</td>
-</tr>
-<tr>
-<td>多主</td>
-<td>不破坏数据与信息的情况下，多主机同时控制总线</td>
-</tr>
-<tr>
-<td>同步</td>
-<td>同步两个以上设备的时钟信号</td>
-</tr>
-<tr>
-<td>仲裁</td>
-<td>如果两个以上的主机同时想要控制总线，只能有一个主机被 允许。并且这个主机的信息不能被破坏</td>
-</tr>
-</tbody></table>
-<h3 id="IIC-协议的通信速率"><a href="#IIC-协议的通信速率" class="headerlink" title="# IIC 协议的通信速率"></a># IIC 协议的通信速率</h3><p>IIC可以支持的通信速率范围较大，可以很好的满足多种设备对于不同的通信速度的要求，常见的IIC支持的速率有以下几个：</p>
-<blockquote>
-<p>1）普通模式（100kHz即100kbps）</p>
-<p>2）快速模式(Fm）（400kHz）</p>
-<p>3）快速模式+(Fs+)（1MHz）</p>
-<p>4）高速模式(Hs）（3.4MHz）</p>
-<p>5）超高速模式(UFm)（5MHz）</p>
-</blockquote>
-<p>当然，以上标明的速率一般指的是硬件IIC的速率，对于通过软件模拟实现的IIC，它的速率是受到所使用的CPU的处理速度和性能影响的，不可以一概而论！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2023/01/13/SMPS/mcu_iic/" data-id="cmiikorr2000xyrs6ew4kb8o6" class="article-share-link" data-share="baidu" data-title="IIC 协议原理和模拟IIC的实现步骤">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">单片机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/" rel="tag">总线协议</a></li></ul>
 
     </footer>
   </div>

@@ -84,6 +84,61 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-termux/termux-gui-x11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/26/termux/termux-gui-x11/" class="article-date">
+  <time datetime="2022-01-25T16:00:00.000Z" itemprop="datePublished">2022-01-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/26/termux/termux-gui-x11/">termux图形界面，采用termux-x11,waylnad驱动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="以前在手机上显示temux桌面，采用vnc-与xdsl大法。而xdsl大法非常方便。无论是外接键盘还是鼠标什么，就与电脑一样的操作，但是xserver-xdsl采用的图形驱动是xserver的，现在有大神写了termux-x11，采用的是wayland驱动。于是网上找到别人写的教程，我也试试。"><a href="#以前在手机上显示temux桌面，采用vnc-与xdsl大法。而xdsl大法非常方便。无论是外接键盘还是鼠标什么，就与电脑一样的操作，但是xserver-xdsl采用的图形驱动是xserver的，现在有大神写了termux-x11，采用的是wayland驱动。于是网上找到别人写的教程，我也试试。" class="headerlink" title="以前在手机上显示temux桌面，采用vnc, 与xdsl大法。而xdsl大法非常方便。无论是外接键盘还是鼠标什么，就与电脑一样的操作，但是xserver-xdsl采用的图形驱动是xserver的，现在有大神写了termux-x11，采用的是wayland驱动。于是网上找到别人写的教程，我也试试。"></a>以前在手机上显示temux桌面，采用vnc, 与xdsl大法。而xdsl大法非常方便。无论是外接键盘还是鼠标什么，就与电脑一样的操作，但是xserver-xdsl采用的图形驱动是xserver的，现在有大神写了termux-x11，采用的是wayland驱动。于是网上找到别人写的教程，我也试试。</h4><h5 id="一-安装一些东东-假设termux安装完成。x11的那几个东东也安装完成了。去github上的termux-x11下载termux-x11-deb或有个apk文件到手机上，安装之。apk文件安装不用说了，如果要安装termux-x11-deb可能会出错。"><a href="#一-安装一些东东-假设termux安装完成。x11的那几个东东也安装完成了。去github上的termux-x11下载termux-x11-deb或有个apk文件到手机上，安装之。apk文件安装不用说了，如果要安装termux-x11-deb可能会出错。" class="headerlink" title="一 安装一些东东, 假设termux安装完成。x11的那几个东东也安装完成了。去github上的termux-x11下载termux-x11.deb或有个apk文件到手机上，安装之。apk文件安装不用说了，如果要安装termux-x11.deb可能会出错。"></a>一 安装一些东东, 假设termux安装完成。x11的那几个东东也安装完成了。去github上的termux-x11下载termux-x11.deb或有个apk文件到手机上，安装之。apk文件安装不用说了，如果要安装termux-x11.deb可能会出错。</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ pkg updated &amp; upgrade</span><br><span class="line">$ pkg install x11-repo -y <span class="comment"># 这一步可不用，因为在安装termux时己经装了。</span></span><br><span class="line">$ pkg install termux-x11 xwayland -y</span><br><span class="line">$ dpkg -i termux-x11.deb <span class="comment"># 如果出错，是因为有些关联没有安装则</span></span><br><span class="line">$ apt install -f </span><br><span class="line">$ pkg updated &amp; upgrade </span><br><span class="line"><span class="comment"># 然后再次执行 dpkg -i termux-x11.deb</span></span><br><span class="line">$ pkg install xfce4 </span><br></pre></td></tr></table></figure>
+
+<h5 id="二-在termux-x11下启动桌面"><a href="#二-在termux-x11下启动桌面" class="headerlink" title="二 在termux-x11下启动桌面"></a>二 在termux-x11下启动桌面</h5><ol>
+<li><p>刚才安装的apt，会在安卓下生产Termux:X11的app图标，执行之。或</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ termux-x11  <span class="comment">#会出现一个termux-X11的窗口   </span></span><br><span class="line">$ <span class="built_in">export</span> DISPLAY=:0</span><br><span class="line">$ dbus-launch --exit-with-session startxfce4</span><br></pre></td></tr></table></figure>
+
+<p>会在termux-x11的窗口出现xfce4的桌面。<br><img src="/image/termux-x11-xfc4.jpg" alt="termux-x11下显示本地桌面"></p>
+</li>
+</ol>
+<h6 id="外接蓝牙键盘与鼠标可用，但是国为手机太小，又老花眼了，手指鼠标没有试"><a href="#外接蓝牙键盘与鼠标可用，但是国为手机太小，又老花眼了，手指鼠标没有试" class="headerlink" title="外接蓝牙键盘与鼠标可用，但是国为手机太小，又老花眼了，手指鼠标没有试"></a>外接蓝牙键盘与鼠标可用，但是国为手机太小，又老花眼了，手指鼠标没有试</h6>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2022/01/26/termux/termux-gui-x11/" data-id="cmiikortx00ezyrs69ezlby4x" class="article-share-link" data-share="baidu" data-title="termux图形界面，采用termux-x11,waylnad驱动">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux%E6%A1%8C%E9%9D%A2/" rel="tag">termux桌面</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux/scrcpy1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/01/21/linux/scrcpy1/" class="article-date">
@@ -660,56 +715,6 @@ MOD+f ：   把scrcpy这个窗口在电脑上全屏<br>MOD+左箭头 ： 向左�
     <footer class="article-footer">
       
         <a data-url="https://superigbt.github.io/2021/10/05/python/flask-form2/" data-id="cmiikortf00c8yrs605859az1" class="article-share-link" data-share="baidu" data-title="flask 的form学习之二，Flask-WTF">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag"> 建站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask%E6%A1%86%E6%9E%B6/" rel="tag">flask框架</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python/flask-global-var1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/10/05/python/flask-global-var1/" class="article-date">
-  <time datetime="2021-10-04T16:00:00.000Z" itemprop="datePublished">2021-10-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python%E5%AD%A6%E4%B9%A0/">python学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/05/python/flask-global-var1/">flask全局变量一，视图间的参数传递</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="提出的问题："><a href="#提出的问题：" class="headerlink" title="提出的问题："></a>提出的问题：</h2><h4 id="flask视图间如何传递变量呢？开始我用的全局变量，如下"><a href="#flask视图间如何传递变量呢？开始我用的全局变量，如下" class="headerlink" title="flask视图间如何传递变量呢？开始我用的全局变量，如下"></a>flask视图间如何传递变量呢？开始我用的全局变量，如下</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,request,render_template</span><br><span class="line"></span><br><span class="line">app=Flask(__name__)</span><br><span class="line"></span><br><span class="line">app.secret_key = <span class="string">&#x27;就得是要一个key&#x27;</span>   <span class="comment"># 必须有</span></span><br><span class="line">app.config[<span class="string">&#x27;SESSION_TYPE&#x27;</span>] = <span class="string">&#x27;filesystem&#x27;</span> <span class="comment"># 必须有</span></span><br><span class="line"></span><br><span class="line">start_num=<span class="number">0</span></span><br><span class="line">span_num=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/fun1&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun1</span>():</span><br><span class="line">    start_num=<span class="number">9</span></span><br><span class="line">    span_num=<span class="number">16</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/fun2&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;start_num=&quot;</span>,start_num) <span class="comment">#此处start_num又变为0</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;span_num=&quot;</span>,span_num]) <span class="comment">#此处start_num又变为5</span></span><br></pre></td></tr></table></figure>
-<p>在执行视图fun2时, session[“start_num”]与session[“span_num”]的值又变为初始值了。<br>咋整呢？</p>
-<h4 id="网上找到一种办法是-session法。修改代码如下："><a href="#网上找到一种办法是-session法。修改代码如下：" class="headerlink" title="网上找到一种办法是 session法。修改代码如下："></a>网上找到一种办法是 session法。修改代码如下：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,request,render_template</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> session</span><br><span class="line"></span><br><span class="line">app=Flask(__name__)</span><br><span class="line"></span><br><span class="line">app.secret_key = <span class="string">&#x27;我的key&#x27;</span></span><br><span class="line">app.config[<span class="string">&#x27;SESSION_TYPE&#x27;</span>] = <span class="string">&#x27;filesystem&#x27;</span></span><br><span class="line"></span><br><span class="line">session[<span class="string">&quot;start_num&quot;</span>]=<span class="number">0</span></span><br><span class="line">session[<span class="string">&quot;span_num&quot;</span>]=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/fun1&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun1</span>():</span><br><span class="line">    session[<span class="string">&quot;start_num&quot;</span>]=<span class="number">9</span></span><br><span class="line">    session[<span class="string">&quot;span_num&quot;</span>]=<span class="number">16</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/fun2&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;session[&quot;</span>start_num<span class="string">&quot;]&quot;</span>,session[<span class="string">&quot;start_num&quot;</span>]) <span class="comment">#此处session[&quot;start_num&quot;]又变为9</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;session[&quot;</span>span_num<span class="string">&quot;]&quot;</span>,session[<span class="string">&quot;span_num&quot;</span>]) <span class="comment">#此处session[&quot;start_num&quot;]又变为16</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="还有一种办法就是把两个临时值传到数据库，或保存为json数据，存入文件中，程序不难，但是如果参数频繁改变的话，要反复读写文件就不好玩了。"><a href="#还有一种办法就是把两个临时值传到数据库，或保存为json数据，存入文件中，程序不难，但是如果参数频繁改变的话，要反复读写文件就不好玩了。" class="headerlink" title="还有一种办法就是把两个临时值传到数据库，或保存为json数据，存入文件中，程序不难，但是如果参数频繁改变的话，要反复读写文件就不好玩了。"></a>还有一种办法就是把两个临时值传到数据库，或保存为json数据，存入文件中，程序不难，但是如果参数频繁改变的话，要反复读写文件就不好玩了。</h5>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2021/10/05/python/flask-global-var1/" data-id="cmiikortg00ceyrs67oic8qy4" class="article-share-link" data-share="baidu" data-title="flask全局变量一，视图间的参数传递">分享到</a>
       
 
       

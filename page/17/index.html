@@ -84,6 +84,94 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-termux/termux-proot-distro" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/28/termux/termux-proot-distro/" class="article-date">
+  <time datetime="2020-09-27T16:00:00.000Z" itemprop="datePublished">2020-09-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/28/termux/termux-proot-distro/">termux利用工作proot-distro安装linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="termux神器新的工具proot-distro，是一个Bash脚本，用于在Termux中管理与安装proot下Linux发行版。"><a href="#termux神器新的工具proot-distro，是一个Bash脚本，用于在Termux中管理与安装proot下Linux发行版。" class="headerlink" title="termux神器新的工具proot-distro，是一个Bash脚本，用于在Termux中管理与安装proot下Linux发行版。"></a>termux神器新的工具proot-distro，是一个Bash脚本，用于在Termux中管理与安装proot下Linux发行版。</h4><h5 id="目前，它支持安装以下发行版："><a href="#目前，它支持安装以下发行版：" class="headerlink" title="目前，它支持安装以下发行版："></a>目前，它支持安装以下发行版：</h5><ol>
+<li>Alpine Linux</li>
+<li>Arch Linux</li>
+<li>Kali Nethunter (rootless)</li>
+<li>Ubuntu (18.04 &#x2F; 20.04)</li>
+</ol>
+<h5 id="一-安装如下："><a href="#一-安装如下：" class="headerlink" title="一. 安装如下："></a>一. 安装如下：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install proot-distro</span><br></pre></td></tr></table></figure>
+<h5 id="二-然后利和其安装与运行ubuntu的例子如下："><a href="#二-然后利和其安装与运行ubuntu的例子如下：" class="headerlink" title="二. 然后利和其安装与运行ubuntu的例子如下："></a>二. 然后利和其安装与运行ubuntu的例子如下：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proot-distro install ubuntu-20.04  <span class="comment"># 安装ubuntu20.04或ubuntu-18.04</span></span><br><span class="line">proot-distro login ubuntu-20.04   <span class="comment"># 运行ubnuntu</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="本人新测安装动行ubtuntu-net-tools-vim己安装，-storage目录下是外置sdcard的文件，-sdcard下的目录是内置存储器的文件。"><a href="#本人新测安装动行ubtuntu-net-tools-vim己安装，-storage目录下是外置sdcard的文件，-sdcard下的目录是内置存储器的文件。" class="headerlink" title="本人新测安装动行ubtuntu, net-tools vim己安装，&#x2F;storage目录下是外置sdcard的文件，&#x2F;sdcard下的目录是内置存储器的文件。"></a>本人新测安装动行ubtuntu, net-tools vim己安装，&#x2F;storage目录下是外置sdcard的文件，&#x2F;sdcard下的目录是内置存储器的文件。</h6><h6 id="安装位置在-data-data-com-termux-files-usr-var-lib-proot-distro"><a href="#安装位置在-data-data-com-termux-files-usr-var-lib-proot-distro" class="headerlink" title="安装位置在 &#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;var&#x2F;lib&#x2F;proot-distro"></a>安装位置在 &#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;var&#x2F;lib&#x2F;proot-distro</h6><h5 id="三-进入本ubuntu20-04后，安装软件报错，比如上面的xfe，出错信怎如下："><a href="#三-进入本ubuntu20-04后，安装软件报错，比如上面的xfe，出错信怎如下：" class="headerlink" title="三. 进入本ubuntu20.04后，安装软件报错，比如上面的xfe，出错信怎如下："></a>三. 进入本ubuntu20.04后，安装软件报错，比如上面的xfe，出错信怎如下：</h5><pre><code>dpkg: error processing package xxx (--configure)
+</code></pre>
+<p>并且也无法升级 apt updated出错。<br>    如何解决呢？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> /var/lib/dpkg/info/ /var/lib/dpkg/info_old/</span><br><span class="line"><span class="built_in">mkdir</span> /var/lib/dpkg/info/</span><br><span class="line">apt-get updated</span><br><span class="line">apt-get -f install</span><br><span class="line"><span class="built_in">cp</span> /var/lib/dpkg/info_old/* /var/lib/dpkg/info/</span><br><span class="line"><span class="built_in">rm</span> -rf /var/lib/dpkg/info_old</span><br></pre></td></tr></table></figure>
+<p>然后就能正常安装了。<br><del>以上在升级为termux0.99版后，不会出错，所以不用以上(第三)步骤了。</del></p>
+<h3 id="最好先建立sudo客户，并以sudo客户登录后，再执行以下步骤"><a href="#最好先建立sudo客户，并以sudo客户登录后，再执行以下步骤" class="headerlink" title="最好先建立sudo客户，并以sudo客户登录后，再执行以下步骤"></a>最好先建立sudo客户，并以sudo客户登录后，再执行以下步骤</h3><h5 id="四-中文语言设置"><a href="#四-中文语言设置" class="headerlink" title="四.中文语言设置"></a>四.中文语言设置</h5> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ apt install language-pack-zh-hans* 安装中文包</span><br><span class="line">$ apt install language-pack-gnome-zh-hans* 安装中文包</span><br><span class="line">$ apt install fonts-wqy-*</span><br><span class="line">    <span class="comment"># $ apt install fonts-wqy-microhei 安装中文字体</span></span><br><span class="line">    <span class="comment"># $ apt install fronts-wqy-zenhei 另一个中文字体</span></span><br><span class="line">$ vim /etc/default/locale</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>更改内容如下：<br>LANG&#x3D;”zh_CN.UTF-8”<br>LANGUAGE&#x3D;”zh_CN:en_US:en”<br>LC_NUMERIC&#x3D;”zh_CN.UTF-8”<br>LC_TIME&#x3D;”zh_CN.UTF-8”<br>LC_MONETARY&#x3D;”zh_CN.UTF-8”<br>LC_PAPER&#x3D;”zh_CN.UTF-8”<br>LC_IDENTIFICATION&#x3D;”zh_CN.UTF-8”<br>LC_NAME&#x3D;”zh_CN.UTF-8”<br>LC_ADDRESS&#x3D;”zh_CN.UTF-8”<br>LC_TELEPHONE&#x3D;”zh_CN.UTF-8”<br>LC_MEASUREMENT&#x3D;”zh_CN.UTF-8”</p>
+</blockquote>
+<p>保存后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fc-cache -fv  <span class="comment">#最好进行这一步后再安装fcitx，否则有可能输入法不起做用。</span></span><br></pre></td></tr></table></figure>
+<p>则控制台终端己经会出现中文了</p>
+<h5 id="五-然后可安装xfce4桌面"><a href="#五-然后可安装xfce4桌面" class="headerlink" title="五. 然后可安装xfce4桌面"></a>五. 然后可安装xfce4桌面</h5><p>&#x3D;&#x3D;记得更改阿里源再安装，不然真的是时间太长了。&#x3D;&#x3D;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ apt install dbus</span><br><span class="line">$ apt install python3</span><br><span class="line">$ apt install xfce4 xfce4-terminal  <span class="comment"># 真是花了好长时间</span></span><br><span class="line">$ apt install tightvncserver <span class="comment"># vncserver软件</span></span><br><span class="line">$ apt install xfe  <span class="comment"># 一个优秀的文件管理器，带文件查找功能</span></span><br><span class="line">$ <span class="built_in">export</span> DISPLAY=127.0.0.1:0</span><br><span class="line">$ <span class="built_in">export</span> PULSE_SERVER=tcp:127.0.0.1:4713</span><br><span class="line">打开xdsl的APP，然后回到termux下的linux</span><br><span class="line">$ startxfce4</span><br></pre></td></tr></table></figure>
+<h5 id="六-安装过程中发现一些缺失的东东"><a href="#六-安装过程中发现一些缺失的东东" class="headerlink" title="六. 安装过程中发现一些缺失的东东"></a>六. 安装过程中发现一些缺失的东东</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt install dialog</span><br><span class="line">$ apt install apt-utils</span><br></pre></td></tr></table></figure>
+<h5 id="七-关于中文输入法"><a href="#七-关于中文输入法" class="headerlink" title="七. 关于中文输入法"></a>七. 关于中文输入法</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt install fcitx</span><br><span class="line">$ apt install fcitx-config-*</span><br><span class="line">$ apt install fcitx-table-wbpy <span class="comment"># 五笔拼音</span></span><br></pre></td></tr></table></figure>
+<p>*** 然面通过VNC或别的XDSL进入XFCE，有fcitx图标，也能看到拼音，五笔输入法，但是却输入不了中文 ***<br>vim ~&#x2F;.profile，在结尾加入</p>
+<blockquote>
+<p>#fcitx<br>export GTK_IM_MODULE&#x3D;fcitx<br>export QT_IM_MODULE&#x3D;fcitx<br>export XMODIFIERS&#x3D;”@im&#x3D;fcitx”<br>然后退出图形界面后，重启动。中文输入法可用了。</p>
+</blockquote>
+<h6 id="如果要一进入桌面就有fcitx，则可"><a href="#如果要一进入桌面就有fcitx，则可" class="headerlink" title="如果要一进入桌面就有fcitx，则可"></a>如果要一进入桌面就有fcitx，则可</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cp</span> /usr/share/applications/fcitx.desktop /etc/xdg/autostart/</span><br></pre></td></tr></table></figure>
+<p><strong>采用VNC时，五笔可以用，可是采用xdsl却无法切换中文输入。后来发现是xdsl把Ctrl&#x2F;Alt&#x2F;Shift三个键占用了。进系统把中文输入法切换键换为F12可解决</strong></p>
+<h6 id="进入桌面后，浏览器浏览国内网站好慢，一直不知道神马原因，开始还以为是手机CPU太差了，后来无意中想到可能是DNS的问题"><a href="#进入桌面后，浏览器浏览国内网站好慢，一直不知道神马原因，开始还以为是手机CPU太差了，后来无意中想到可能是DNS的问题" class="headerlink" title="进入桌面后，浏览器浏览国内网站好慢，一直不知道神马原因，开始还以为是手机CPU太差了，后来无意中想到可能是DNS的问题"></a>进入桌面后，浏览器浏览国内网站好慢，一直不知道神马原因，开始还以为是手机CPU太差了，后来无意中想到可能是DNS的问题</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/resolv.conf </span><br><span class="line">增加一行 nameserver=114.114.114.114</span><br></pre></td></tr></table></figure>
+
+<h4 id="Arm64-版的ubuntu-镜像下载地址"><a href="#Arm64-版的ubuntu-镜像下载地址" class="headerlink" title="Arm64 版的ubuntu 镜像下载地址"></a>Arm64 版的ubuntu 镜像下载地址</h4><p><a target="_blank" rel="noopener" href="https://partner-images.canonical.com/core/">https://partner-images.canonical.com/core/</a><br>注意这个地址是有许多版本的linux的，比如ubuntu20.10没有，可是我们想装咋办呢？因为proot-distro当前是装不了的。</p>
+<ol>
+<li>先下载 ubuntu20.10的镜像，<a target="_blank" rel="noopener" href="https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-arm64-root.tar.gz">https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-arm64-root.tar.gz</a></li>
+<li>进入termux的 &#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;etc&#x2F;proot-distro目录。</li>
+<li>cp ubuntu-20.04.sh ubuntu-20.10.sh</li>
+<li>vim ubuntu-20.10.sh，把对应的 bonic改为groovy就行了。</li>
+<li>执行 proot-distro install ubuntu-20.10来安装</li>
+<li>ubuntu-20.10.sh的内容如下：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## Plug-in for installing Ubuntu groovy.</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"></span><br><span class="line">DISTRO_NAME=<span class="string">&quot;Ubuntu 20.10&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns download URL.</span></span><br><span class="line"><span class="function"><span class="title">get_download_url</span></span>() &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="string">&quot;<span class="subst">$(uname -m)</span>&quot;</span> <span class="keyword">in</span></span><br><span class="line">		aarch64)</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">&quot;https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-arm64-root.tar.gz&quot;</span></span><br><span class="line">			;;</span><br><span class="line">		armv7l|armv8l)</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">&quot;https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-armhf-root.tar.gz&quot;</span></span><br><span class="line">			;;</span><br><span class="line">		i686)</span><br><span class="line">			<span class="comment"># Ubuntu groovy does not provide tarballs for x86 32bit.</span></span><br><span class="line">			;;</span><br><span class="line">		x86_64)</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">&quot;https://partner-images.canonical.com/core/groovy/current/ubuntu-groovy-core-cloudimg-amd64-root.tar.gz&quot;</span></span><br><span class="line">			;;</span><br><span class="line">	<span class="keyword">esac</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define here additional steps which should be executed</span></span><br><span class="line"><span class="comment"># for configuration.</span></span><br><span class="line"><span class="function"><span class="title">distro_setup</span></span>() &#123;</span><br><span class="line">	<span class="comment"># Hint: $PWD is the distribution rootfs directory.</span></span><br><span class="line">	<span class="comment">#echo &quot;hello world&quot; &gt; ./etc/motd</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># Run command within proot&#x27;ed environment with</span></span><br><span class="line">	<span class="comment"># run_proot_cmd function.</span></span><br><span class="line">	<span class="comment"># Uncomment this to do system upgrade during installation.</span></span><br><span class="line">	<span class="comment">#run_proot_cmd apt updated</span></span><br><span class="line">	<span class="comment">#run_proot_cmd apt upgrade -yq</span></span><br><span class="line">	:</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/09/28/termux/termux-proot-distro/" data-id="cmiikortz00feyrs616hxfnv9" class="article-share-link" data-share="baidu" data-title="termux利用工作proot-distro安装linux">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux-proot-distro/" rel="tag">termux-proot-distro</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="tag">系统安装</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-termux/termux-anlinux-sourcelist" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/27/termux/termux-anlinux-sourcelist/" class="article-date">
@@ -630,54 +718,6 @@
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag"> 建站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/caddy-Vtiger/" rel="tag">caddy+Vtiger </a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-website/reinstall-mysql" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/27/website/reinstall-mysql/" class="article-date">
-  <time datetime="2020-06-26T16:00:00.000Z" itemprop="datePublished">2020-06-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/27/website/reinstall-mysql/">彻底清除mysql</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一次不小心把root用户删除了，在mysql8-0下，用老办法没有恢复成功，于是就删掉重装吧，如何彻底删除呢？"><a href="#一次不小心把root用户删除了，在mysql8-0下，用老办法没有恢复成功，于是就删掉重装吧，如何彻底删除呢？" class="headerlink" title="一次不小心把root用户删除了，在mysql8.0下，用老办法没有恢复成功，于是就删掉重装吧，如何彻底删除呢？"></a>一次不小心把root用户删除了，在mysql8.0下，用老办法没有恢复成功，于是就删掉重装吧，如何彻底删除呢？</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get remove mysql-common <span class="comment">#很重要</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get autoremove --purge mysql-server</span><br><span class="line">$ dpkg -l|grep ^rc|awk <span class="string">&#x27;&#123;print$2&#125;&#x27;</span>|<span class="built_in">sudo</span> xargs dpkg -P <span class="comment">#清除残留数据</span></span><br><span class="line">$ dpkg --list|grep mysql <span class="comment"># 再次查看MySQL的剩余依赖项</span></span><br></pre></td></tr></table></figure>
-<p>继续删除剩余依赖项，如：sudo apt-get autoremove –purge mysql-apt-config</p>
-<h2 id="mysql的两个相关文件需要手动删除、一个是-var-lib-mysql、一个是-etc-mysql。当你删除之后再重新装、如果-var-lib-mysql文件没有删除、则会保留上一个数据库创建的实例、这个一般不是我们想要的、必须删除"><a href="#mysql的两个相关文件需要手动删除、一个是-var-lib-mysql、一个是-etc-mysql。当你删除之后再重新装、如果-var-lib-mysql文件没有删除、则会保留上一个数据库创建的实例、这个一般不是我们想要的、必须删除" class="headerlink" title="mysql的两个相关文件需要手动删除、一个是&#x2F;var&#x2F;lib&#x2F;mysql、一个是&#x2F;etc&#x2F;mysql。当你删除之后再重新装、如果&#x2F;var&#x2F;lib&#x2F;mysql文件没有删除、则会保留上一个数据库创建的实例、这个一般不是我们想要的、必须删除"></a>mysql的两个相关文件需要手动删除、一个是&#x2F;var&#x2F;lib&#x2F;mysql、一个是&#x2F;etc&#x2F;mysql。当你删除之后再重新装、如果&#x2F;var&#x2F;lib&#x2F;mysql文件没有删除、则会保留上一个数据库创建的实例、这个一般不是我们想要的、必须删除</h2>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/06/27/website/reinstall-mysql/" data-id="cmiikoru600gfyrs66isndbfq" class="article-share-link" data-share="baidu" data-title="彻底清除mysql">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
 
     </footer>
   </div>

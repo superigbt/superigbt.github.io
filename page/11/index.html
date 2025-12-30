@@ -84,6 +84,64 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-python/streamlit-6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/05/python/streamlit-6/" class="article-date">
+  <time datetime="2022-06-04T16:00:00.000Z" itemprop="datePublished">2022-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/05/python/streamlit-6/">streamlit学习笔记六-----streamlit新版支持原生多页面一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="streamlit以前只支持单页面，要想多页面，也不是不行，但是需要点技巧。但是新版streamlit己经原生支持多页面了-方法有三种："><a href="#streamlit以前只支持单页面，要想多页面，也不是不行，但是需要点技巧。但是新版streamlit己经原生支持多页面了-方法有三种：" class="headerlink" title="streamlit以前只支持单页面，要想多页面，也不是不行，但是需要点技巧。但是新版streamlit己经原生支持多页面了,方法有三种："></a>streamlit以前只支持单页面，要想多页面，也不是不行，但是需要点技巧。但是新版streamlit己经原生支持多页面了,方法有三种：</h3><h5 id="1-pages目录加文件的方法，这个方法最简单，本文会介绍"><a href="#1-pages目录加文件的方法，这个方法最简单，本文会介绍" class="headerlink" title="1. pages目录加文件的方法，这个方法最简单，本文会介绍"></a>1. pages目录加文件的方法，这个方法最简单，本文会介绍</h5><h5 id="2-st-Page-与-st-navigation方法结合，这个方法复杂但灵活，首先推荐"><a href="#2-st-Page-与-st-navigation方法结合，这个方法复杂但灵活，首先推荐" class="headerlink" title="2. st.Page 与 st.navigation方法结合，这个方法复杂但灵活，首先推荐"></a>2. st.Page 与 st.navigation方法结合，这个方法复杂但灵活，首先推荐</h5><h5 id="3-小组件的方法，简单灵活但混乱，适合临时多页面"><a href="#3-小组件的方法，简单灵活但混乱，适合临时多页面" class="headerlink" title="3. 小组件的方法，简单灵活但混乱，适合临时多页面"></a>3. 小组件的方法，简单灵活但混乱，适合临时多页面</h5><h4 id="本文先介绍最简的方法，pages目录法如下："><a href="#本文先介绍最简的方法，pages目录法如下：" class="headerlink" title="本文先介绍最简的方法，pages目录法如下："></a>本文先介绍最简的方法，pages目录法如下：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip install streamlit --upgrade <span class="comment">#先升级到最新版 streamlit</span></span><br><span class="line">$ mkidr pages <span class="comment">#建立子页面目录</span></span><br></pre></td></tr></table></figure>
+
+<p>假设主页面的文档main_page.py如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> streamlit <span class="keyword">as</span> st</span><br><span class="line"></span><br><span class="line">st.markdown(<span class="string">&quot;# Main page 🎈&quot;</span>)</span><br><span class="line">st.sidebar.markdown(<span class="string">&quot;# Main page 🎈&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>_</p>
+<p>在 pages目录下，建立pages2.py pages3.py ….，示便代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> streamlit <span class="keyword">as</span> st</span><br><span class="line"></span><br><span class="line">st.markdown(<span class="string">&quot;# Page 2 ❄️&quot;</span>)</span><br><span class="line">st.sidebar.markdown(<span class="string">&quot;# Page 2 ❄️&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> streamlit <span class="keyword">as</span> st</span><br><span class="line"></span><br><span class="line">st.markdown(<span class="string">&quot;# Page 3 🎉&quot;</span>)</span><br><span class="line">st.sidebar.markdown(<span class="string">&quot;# Page 3 🎉&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>只要执行 strreamlit run main_page.py，则自动在左侧栏出现page2与page3的链接，注意排序竟然是<font color="#FF0000"><strong>按文件</strong></font>名来排序的。_</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2022/06/05/python/streamlit-6/" data-id="cmiikortn00dkyrs60qd9gvl8" class="article-share-link" data-share="baidu" data-title="streamlit学习笔记六-----streamlit新版支持原生多页面一">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/streamlit-%E6%A1%86%E6%9E%B6/" rel="tag">streamlit 框架</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-python/streamlit-7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/05/python/streamlit-7/" class="article-date">
@@ -647,61 +705,6 @@
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" rel="tag">旅游攻略</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-termux/termux-gui-x11" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/01/26/termux/termux-gui-x11/" class="article-date">
-  <time datetime="2022-01-25T16:00:00.000Z" itemprop="datePublished">2022-01-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/termux/">termux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/01/26/termux/termux-gui-x11/">termux图形界面，采用termux-x11,waylnad驱动</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="以前在手机上显示temux桌面，采用vnc-与xdsl大法。而xdsl大法非常方便。无论是外接键盘还是鼠标什么，就与电脑一样的操作，但是xserver-xdsl采用的图形驱动是xserver的，现在有大神写了termux-x11，采用的是wayland驱动。于是网上找到别人写的教程，我也试试。"><a href="#以前在手机上显示temux桌面，采用vnc-与xdsl大法。而xdsl大法非常方便。无论是外接键盘还是鼠标什么，就与电脑一样的操作，但是xserver-xdsl采用的图形驱动是xserver的，现在有大神写了termux-x11，采用的是wayland驱动。于是网上找到别人写的教程，我也试试。" class="headerlink" title="以前在手机上显示temux桌面，采用vnc, 与xdsl大法。而xdsl大法非常方便。无论是外接键盘还是鼠标什么，就与电脑一样的操作，但是xserver-xdsl采用的图形驱动是xserver的，现在有大神写了termux-x11，采用的是wayland驱动。于是网上找到别人写的教程，我也试试。"></a>以前在手机上显示temux桌面，采用vnc, 与xdsl大法。而xdsl大法非常方便。无论是外接键盘还是鼠标什么，就与电脑一样的操作，但是xserver-xdsl采用的图形驱动是xserver的，现在有大神写了termux-x11，采用的是wayland驱动。于是网上找到别人写的教程，我也试试。</h4><h5 id="一-安装一些东东-假设termux安装完成。x11的那几个东东也安装完成了。去github上的termux-x11下载termux-x11-deb或有个apk文件到手机上，安装之。apk文件安装不用说了，如果要安装termux-x11-deb可能会出错。"><a href="#一-安装一些东东-假设termux安装完成。x11的那几个东东也安装完成了。去github上的termux-x11下载termux-x11-deb或有个apk文件到手机上，安装之。apk文件安装不用说了，如果要安装termux-x11-deb可能会出错。" class="headerlink" title="一 安装一些东东, 假设termux安装完成。x11的那几个东东也安装完成了。去github上的termux-x11下载termux-x11.deb或有个apk文件到手机上，安装之。apk文件安装不用说了，如果要安装termux-x11.deb可能会出错。"></a>一 安装一些东东, 假设termux安装完成。x11的那几个东东也安装完成了。去github上的termux-x11下载termux-x11.deb或有个apk文件到手机上，安装之。apk文件安装不用说了，如果要安装termux-x11.deb可能会出错。</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ pkg updated &amp; upgrade</span><br><span class="line">$ pkg install x11-repo -y <span class="comment"># 这一步可不用，因为在安装termux时己经装了。</span></span><br><span class="line">$ pkg install termux-x11 xwayland -y</span><br><span class="line">$ dpkg -i termux-x11.deb <span class="comment"># 如果出错，是因为有些关联没有安装则</span></span><br><span class="line">$ apt install -f </span><br><span class="line">$ pkg updated &amp; upgrade </span><br><span class="line"><span class="comment"># 然后再次执行 dpkg -i termux-x11.deb</span></span><br><span class="line">$ pkg install xfce4 </span><br></pre></td></tr></table></figure>
-
-<h5 id="二-在termux-x11下启动桌面"><a href="#二-在termux-x11下启动桌面" class="headerlink" title="二 在termux-x11下启动桌面"></a>二 在termux-x11下启动桌面</h5><ol>
-<li><p>刚才安装的apt，会在安卓下生产Termux:X11的app图标，执行之。或</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ termux-x11  <span class="comment">#会出现一个termux-X11的窗口   </span></span><br><span class="line">$ <span class="built_in">export</span> DISPLAY=:0</span><br><span class="line">$ dbus-launch --exit-with-session startxfce4</span><br></pre></td></tr></table></figure>
-
-<p>会在termux-x11的窗口出现xfce4的桌面。<br><img src="/image/termux-x11-xfc4.jpg" alt="termux-x11下显示本地桌面"></p>
-</li>
-</ol>
-<h6 id="外接蓝牙键盘与鼠标可用，但是国为手机太小，又老花眼了，手指鼠标没有试"><a href="#外接蓝牙键盘与鼠标可用，但是国为手机太小，又老花眼了，手指鼠标没有试" class="headerlink" title="外接蓝牙键盘与鼠标可用，但是国为手机太小，又老花眼了，手指鼠标没有试"></a>外接蓝牙键盘与鼠标可用，但是国为手机太小，又老花眼了，手指鼠标没有试</h6>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2022/01/26/termux/termux-gui-x11/" data-id="cmiikortx00ezyrs69ezlby4x" class="article-share-link" data-share="baidu" data-title="termux图形界面，采用termux-x11,waylnad驱动">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux%E6%A1%8C%E9%9D%A2/" rel="tag">termux桌面</a></li></ul>
 
     </footer>
   </div>
