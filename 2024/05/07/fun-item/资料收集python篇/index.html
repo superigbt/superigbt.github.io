@@ -14,7 +14,7 @@
 <meta property="og:description" content="一 great-tables： github.com&#x2F;posit-dev&#x2F;great-tables用 Python 制作漂亮的表格。这个 Python 库可以用来制作实用且美观的表格。它提供了一套表格组件，通过组合不同的表格部分，如表头、表尾、行标签（stub）以及跨列标签（spanner labels）等，帮助 Python 开发者轻松制作漂亮的数据表格。 二 Fabric：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-05-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-18T16:00:00.000Z">
 <meta property="article:author" content="Frank.Li">
 <meta property="article:tag" content="github">
 <meta property="article:tag" content="有趣的项目">
@@ -150,12 +150,16 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
 </code></pre>
 <p>您在 中创建的任何文件pages或 文件夹中pages（不包括_layouts和_data）都将呈现在您的网站上。例如，如果您创建一个pages&#x2F;interests&#x2F;coffee.html文件，这将生成一个名为 的页面_site&#x2F;pages&#x2F;interests&#x2F;coffee&#x2F;index.html。</p>
 <h4 id="五-https-github-com-pyscript-pyscript"><a href="#五-https-github-com-pyscript-pyscript" class="headerlink" title="五 https://github.com/pyscript/pyscript"></a>五 <a target="_blank" rel="noopener" href="https://github.com/pyscript/pyscript">https://github.com/pyscript/pyscript</a></h4><p>该项目可以让开发者在 HTML 文件中直接使用 Python 编程语言，像 JavaScript 文件一样引入和执行 Python 代码，支持更小的 MicroPython、常见第三方库和操作页面元素等功能，适用于快速创建交互的数据可视化、网站原型和在线教育等 Web 应用场景。</p>
+<h4 id="六-DuckDB"><a href="#六-DuckDB" class="headerlink" title="六 DuckDB"></a>六 DuckDB</h4><p>这个其实是采用C语方编写的一个库，但是python有了它的接口，它的神奇之处就是对cvs或excel表格的查询，可以像对sqllite一样的处理。比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> duckdb</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment"># 2. 直接查询 CSV（无需预处理）</span></span><br><span class="line">df = duckdb.sql(<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    SELECT * FROM &#x27;sales_data.xlsx&#x27;</span></span><br><span class="line"><span class="string">    WHERE revenue &gt; 10000</span></span><br><span class="line"><span class="string">    ORDER BY revenue DESC</span></span><br><span class="line"><span class="string">    LIMIT 10</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span>).df()  <span class="comment"># 直接转为 DataFrame</span></span><br><span class="line"><span class="built_in">print</span>(df.head())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/05/07/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86python%E7%AF%87/" data-id="cmiikors4005lyrs6ex2r3k35" class="article-share-link" data-share="baidu" data-title="github上，有趣的python库">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/05/07/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86python%E7%AF%87/" data-id="cmktdip6b005l6qs60qvja0zb" class="article-share-link" data-share="baidu" data-title="github上，有趣的python库">分享到</a>
       
 
       
@@ -294,7 +298,7 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2025 Frank.Li<br>
+      &copy; 2026 Frank.Li<br>
       Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>

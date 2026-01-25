@@ -121,7 +121,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/04/24/website/caddy-php/" data-id="cmiikoru300fxyrs65empab8y" class="article-share-link" data-share="baidu" data-title="caddy配置php的两种办法">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/04/24/website/caddy-php/" data-id="cmktdip7o00bs6qs6fggj2a7m" class="article-share-link" data-share="baidu" data-title="caddy配置php的两种办法">分享到</a>
       
 
       
@@ -190,7 +190,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/03/27/blog/hexo-about-gitee/" data-id="cmiikorr8001qyrs638yi4v5l" class="article-share-link" data-share="baidu" data-title="Hexo布署到gitee">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/03/27/blog/hexo-about-gitee/" data-id="cmktdip5c001q6qs6gtczdibd" class="article-share-link" data-share="baidu" data-title="Hexo布署到gitee">分享到</a>
       
 
       
@@ -237,65 +237,13 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/03/15/termux/termux-ftp/" data-id="cmiikortw00ewyrs61ccpam8h" class="article-share-link" data-share="baidu" data-title="termux下的ftp">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/03/15/termux/termux-ftp/" data-id="cmktdip7g00ar6qs65mq2fu19" class="article-share-link" data-share="baidu" data-title="termux下的ftp">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sftp/" rel="tag">sftp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux/ubuntu-add-sudo-user" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/07/linux/ubuntu-add-sudo-user/" class="article-date">
-  <time datetime="2020-03-06T16:00:00.000Z" itemprop="datePublished">2020-03-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/07/linux/ubuntu-add-sudo-user/">ubuntu增加sudo用户</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="为ubuntu增加一个sudo用户"><a href="#为ubuntu增加一个sudo用户" class="headerlink" title="为ubuntu增加一个sudo用户"></a>为ubuntu增加一个sudo用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ addgroup laoshiren <span class="comment"># 添加laoshiren的组名,20.04不用这一条。会自动增加组名</span></span><br><span class="line">$ adduser username groupname <span class="comment"># 添加用户名叫laoshiren到laoshiren组 20.04不用这一条。会自动增加组名</span></span><br><span class="line">$ adduser laoshiren   <span class="comment"># 添加用户名叫laoshiren</span></span><br><span class="line">   依次输入密码，全名等用户信息。</span><br><span class="line">$ usermod laoshiren -a -G <span class="built_in">sudo</span> <span class="comment">#把用户laoshiren加入sudo 用户组</span></span><br><span class="line">$ usermod loahshiren -a -G adm <span class="comment">#把用户laoshiren加入admin用户组</span></span><br><span class="line">$ apt install <span class="built_in">sudo</span> <span class="comment">#有的没有这个命令，要安装，如果有就跳过这一步</span></span><br><span class="line">$ <span class="built_in">sudo</span> vim /etc/sudoers</span><br><span class="line">   ~~添加 laoshiren ALL=(ALL:ALL) ALL~~</span><br><span class="line">   添加 **%<span class="built_in">sudo</span> ALL=(ALL:ALL) ALL~~**</span><br><span class="line">保存退出。   </span><br></pre></td></tr></table></figure>
-
-<p>要切换到laoshiren用户，执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su - laoshiren</span><br><span class="line">$ <span class="built_in">groups</span> <span class="comment">#查看当前用户所在的组</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="删除用户与组采用："><a href="#删除用户与组采用：" class="headerlink" title="删除用户与组采用："></a>删除用户与组采用：</h4><p>sudo userdel -r username<br>sudo groupdel username</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2020/03/07/linux/ubuntu-add-sudo-user/" data-id="cmiikorsl0088yrs6bi2l7b3f" class="article-share-link" data-share="baidu" data-title="ubuntu增加sudo用户">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a></li></ul>
 
     </footer>
   </div>
@@ -342,13 +290,65 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/03/07/termux/termux-editor-micro/" data-id="cmiikortw00euyrs60nh849p1" class="article-share-link" data-share="baidu" data-title="termux下的最佳文本编辑器">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/03/07/termux/termux-editor-micro/" data-id="cmktdip7g00ao6qs63wkdhcct" class="article-share-link" data-share="baidu" data-title="termux下的最佳文本编辑器">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux/ubuntu-add-sudo-user" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/07/linux/ubuntu-add-sudo-user/" class="article-date">
+  <time datetime="2020-03-06T16:00:00.000Z" itemprop="datePublished">2020-03-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/07/linux/ubuntu-add-sudo-user/">ubuntu增加sudo用户</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="为ubuntu增加一个sudo用户"><a href="#为ubuntu增加一个sudo用户" class="headerlink" title="为ubuntu增加一个sudo用户"></a>为ubuntu增加一个sudo用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ addgroup laoshiren <span class="comment"># 添加laoshiren的组名,20.04不用这一条。会自动增加组名</span></span><br><span class="line">$ adduser username groupname <span class="comment"># 添加用户名叫laoshiren到laoshiren组 20.04不用这一条。会自动增加组名</span></span><br><span class="line">$ adduser laoshiren   <span class="comment"># 添加用户名叫laoshiren</span></span><br><span class="line">   依次输入密码，全名等用户信息。</span><br><span class="line">$ usermod laoshiren -a -G <span class="built_in">sudo</span> <span class="comment">#把用户laoshiren加入sudo 用户组</span></span><br><span class="line">$ usermod loahshiren -a -G adm <span class="comment">#把用户laoshiren加入admin用户组</span></span><br><span class="line">$ apt install <span class="built_in">sudo</span> <span class="comment">#有的没有这个命令，要安装，如果有就跳过这一步</span></span><br><span class="line">$ <span class="built_in">sudo</span> vim /etc/sudoers</span><br><span class="line">   ~~添加 laoshiren ALL=(ALL:ALL) ALL~~</span><br><span class="line">   添加 **%<span class="built_in">sudo</span> ALL=(ALL:ALL) ALL~~**</span><br><span class="line">保存退出。   </span><br></pre></td></tr></table></figure>
+
+<p>要切换到laoshiren用户，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su - laoshiren</span><br><span class="line">$ <span class="built_in">groups</span> <span class="comment">#查看当前用户所在的组</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除用户与组采用："><a href="#删除用户与组采用：" class="headerlink" title="删除用户与组采用："></a>删除用户与组采用：</h4><p>sudo userdel -r username<br>sudo groupdel username</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2020/03/07/linux/ubuntu-add-sudo-user/" data-id="cmktdip8b00eu6qs6241m2rue" class="article-share-link" data-share="baidu" data-title="ubuntu增加sudo用户">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu%E7%BB%8F%E9%AA%8C/" rel="tag">ubuntu经验</a></li></ul>
 
     </footer>
   </div>
@@ -404,7 +404,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/anlinux-sdcard/" data-id="cmiikortr00e3yrs63jfkdryx" class="article-share-link" data-share="baidu" data-title="Anlinux读取外部存储">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/anlinux-sdcard/" data-id="cmktdip78009u6qs6hjfbcn13" class="article-share-link" data-share="baidu" data-title="Anlinux读取外部存储">分享到</a>
       
 
       
@@ -507,7 +507,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-anlinux-vnc/" data-id="cmiikortt00egyrs62mqyhro2" class="article-share-link" data-share="baidu" data-title="termux+AnLinux安装ubuntu+xfce或lxde图形桌面">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-anlinux-vnc/" data-id="cmktdip7a00a86qs611rc3rbd" class="article-share-link" data-share="baidu" data-title="termux+AnLinux安装ubuntu+xfce或lxde图形桌面">分享到</a>
       
 
       
@@ -568,7 +568,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-anlinux-xdsl/" data-id="cmiikortv00epyrs60bmj25ah" class="article-share-link" data-share="baidu" data-title="termux+anlinux安装linux图形界面，采用XDSL大法">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-anlinux-xdsl/" data-id="cmktdip7f00ah6qs63hww50mw" class="article-share-link" data-share="baidu" data-title="termux+anlinux安装linux图形界面，采用XDSL大法">分享到</a>
       
 
       
@@ -638,7 +638,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-qemu-winXP/" data-id="cmiikoru000fhyrs69mxccy97" class="article-share-link" data-share="baidu" data-title="termux+qemu+winXP实验">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-qemu-winXP/" data-id="cmktdip7l00bc6qs6f5vphmxe" class="article-share-link" data-share="baidu" data-title="termux+qemu+winXP实验">分享到</a>
       
 
       
@@ -719,7 +719,7 @@ pkg install otter-browser -y # 另一个图形浏览器
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-xfce4/" data-id="cmiikoru200fryrs6f957encn" class="article-share-link" data-share="baidu" data-title="termux的图形界面以及窗口的启动总结">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/02/28/termux/termux-xfce4/" data-id="cmktdip7m00bm6qs6dxhg5sm2" class="article-share-link" data-share="baidu" data-title="termux的图形界面以及窗口的启动总结">分享到</a>
       
 
       
@@ -844,7 +844,7 @@ pkg install otter-browser -y # 另一个图形浏览器
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2025 Frank.Li<br>
+      &copy; 2026 Frank.Li<br>
       Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
