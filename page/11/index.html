@@ -84,6 +84,166 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-SMPS/SMPS-11-TOP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/01/07/SMPS/SMPS-11-TOP/" class="article-date">
+  <time datetime="2023-01-06T16:00:00.000Z" itemprop="datePublished">2023-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/01/07/SMPS/SMPS-11-TOP/">常见开关电源11种拓扑简述(转自微信朋友圈)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文主要讲述常见的开关电源拓扑结构简述与特点。"><a href="#本文主要讲述常见的开关电源拓扑结构简述与特点。" class="headerlink" title="本文主要讲述常见的开关电源拓扑结构简述与特点。"></a>本文主要讲述常见的开关电源拓扑结构简述与特点。</h2><h3 id="常见的拓扑结构，包括Buck降压、Boost升压、Buck-Boost降压-升压、Flyback反激、Forward正激、Two-Transistor-Forward双晶体管正激等。见下图"><a href="#常见的拓扑结构，包括Buck降压、Boost升压、Buck-Boost降压-升压、Flyback反激、Forward正激、Two-Transistor-Forward双晶体管正激等。见下图" class="headerlink" title="常见的拓扑结构，包括Buck降压、Boost升压、Buck-Boost降压-升压、Flyback反激、Forward正激、Two-Transistor Forward双晶体管正激等。见下图:"></a>常见的拓扑结构，包括Buck降压、Boost升压、Buck-Boost降压-升压、Flyback反激、Forward正激、Two-Transistor Forward双晶体管正激等。见下图:</h3><p><img src="/image/sp/sp-11-top.png" alt="开关电源的11个拓普"></p>
+<h3 id="这些拓扑结构都与开关式电路有关。基本的脉冲宽度调制波形定义如下："><a href="#这些拓扑结构都与开关式电路有关。基本的脉冲宽度调制波形定义如下：" class="headerlink" title="这些拓扑结构都与开关式电路有关。基本的脉冲宽度调制波形定义如下："></a>这些拓扑结构都与开关式电路有关。基本的脉冲宽度调制波形定义如下：</h3><p><img src="/image/sp/sp-pwm-waveform.png" alt="基本的脉宽调制波形"></p>
+<h4 id="一-buck-降压"><a href="#一-buck-降压" class="headerlink" title="一. buck 降压"></a>一. buck 降压</h4><p><img src="/image/sp/buck-top.jpg" alt="buck降压"></p>
+<ul>
+<li>把输入降至一个较低的电压。</li>
+<li>可能是最简单的电路。</li>
+<li>电感&#x2F;电容滤波器滤平开关后的方波。</li>
+<li>输出总是小于或等于输入。</li>
+<li>输入电流不连续(斩波)。</li>
+<li>输出电流平滑。</li>
+</ul>
+<h4 id="二-Boost-升压"><a href="#二-Boost-升压" class="headerlink" title="二. Boost 升压"></a>二. Boost 升压</h4><p><img src="/image/sp/boost-top.png" alt="Boost升压"></p>
+<ul>
+<li>把输入升至一个较高的电压。</li>
+<li>与降压一样，但重新安排了电感、开关和二极管。</li>
+<li>输出总是比大于或等于输入(忽略二极管的正向压降)。</li>
+<li>输入电流平滑。</li>
+<li>输出电流不连续(斩波)。</li>
+</ul>
+<h4 id="三-Buck-Boost-降压-升压"><a href="#三-Buck-Boost-降压-升压" class="headerlink" title="三. Buck-Boost 降压-升压"></a>三. Buck-Boost 降压-升压</h4><p><img src="/image/sp/buck-boost-top.png" alt="Buck-Boost 降压-升压"></p>
+<ul>
+<li>电感、开关和二极管的另一种安排方法。</li>
+<li>结合了降压和升压电路的缺点。</li>
+<li>输入电流不连续(斩波)。</li>
+<li>输出电流也不连续(斩波)。</li>
+<li>输出总是与输入反向(注意电容的极性)，但是幅度可以小于或大于输入。</li>
+<li>“反激”变换器实际是降压-升压电路隔离(变压器耦合)形式。</li>
+</ul>
+<h4 id="四-Flyback反激"><a href="#四-Flyback反激" class="headerlink" title="四. Flyback反激"></a>四. Flyback反激</h4><p><img src="/image/sp/flyback-top.png" alt="Flyback反激"><br>如降压-升压电路一样工作，但是电感有两个绕组，而且同时作为变压器和电感。<br>输出可以为正或为负，由线圈和二极管的极性决定。<br>输出电压可以大于或小于输入电压，由变压器的匝数比决定。<br>这是隔离拓扑结构中最简单的。<br>增加次级绕组和电路可以得到多个输出。</p>
+<h4 id="五-Forward-正激"><a href="#五-Forward-正激" class="headerlink" title="五. Forward 正激"></a>五. Forward 正激</h4><p><img src="/image/sp/forward-top.jpg" alt="Forward正激"></p>
+<ul>
+<li>降压电路的变压器耦合形式。</li>
+<li>不连续的输入电流，平滑的输出电流。</li>
+<li>因为采用变压器，输出可以大于或小于输入，可以是任何极性。</li>
+<li>增加次级绕组和电路可以获得多个输出。</li>
+<li>在每个开关周期中必须对变压器磁芯去磁。常用的做法是增加一个与初级绕组匝数相同的绕组。</li>
+<li>在开关接通阶段存储在初级电感中的能量，在开关断开阶段通过另外的绕组和二极管释放。</li>
+</ul>
+<h4 id="六-Two-Transistor-Forward双晶体管正激"><a href="#六-Two-Transistor-Forward双晶体管正激" class="headerlink" title="六. Two-Transistor Forward双晶体管正激"></a>六. Two-Transistor Forward双晶体管正激</h4><p><img src="/image/sp/two-transistor-forward-top.jpg" alt="Two-Transistor Forward双晶体管正激"></p>
+<ul>
+<li>两个开关同时工作。</li>
+<li>开关断开时，存储在变压器中的能量使初级的极性反向，使二极管导通。</li>
+<li>主要优点：每个开关上的电压永远不会超过输入电压；无需对绕组磁道复位</li>
+</ul>
+<h4 id="七-Push-Pull-推挽"><a href="#七-Push-Pull-推挽" class="headerlink" title="七. Push-Pull 推挽"></a>七. Push-Pull 推挽</h4><p><img src="/image/sp/push-pull-top.jpg" alt="Push-Pull推挽"></p>
+<ul>
+<li>开关(FET)的驱动不同相，进行脉冲宽度调制(PWM)以调节输出电压。</li>
+<li>良好的变压器磁芯利用率——在两个半周期中都传输功率。</li>
+<li>全波拓扑结构,所以输出纹波频率是变压器频率的两倍。</li>
+<li>施加在FET上的电压是输入电压的两倍。</li>
+</ul>
+<h4 id="八-Half-Bridge-半桥"><a href="#八-Half-Bridge-半桥" class="headerlink" title="八. Half-Bridge 半桥"></a>八. Half-Bridge 半桥</h4><p><img src="/image/sp/half-bridge-top.jpg" alt="Half-Bridge半桥"></p>
+<ul>
+<li>较高功率变换器极为常用的拓扑结构。</li>
+<li>开关的驱动不同相，进行脉冲宽度调制以调节输出电压。</li>
+<li>良好的变压器磁芯利用率——在两个半周期中都传输功率。而且初级绕组的利用率优于推挽电路。</li>
+<li>全波拓扑结构,所以输出纹波频率是变压器频率的两倍。</li>
+<li>施加在FET上的电压与输入电压相等。</li>
+</ul>
+<h4 id="九-Full-Bridge-全桥"><a href="#九-Full-Bridge-全桥" class="headerlink" title="九. Full-Bridge 全桥"></a>九. Full-Bridge 全桥</h4><p><img src="/image/sp/full-bridge-top.jpg" alt="Full-Bridge全桥"></p>
+<ul>
+<li>较高功率变换器最为常用的拓扑结构。</li>
+<li>开关以对角对的形式驱动，进行脉冲宽度调制以调节输出电压。</li>
+<li>良好的变压器磁芯利用率——在两个半周期中都传输功率。</li>
+<li>全波拓扑结构，所以输出纹波频率是变压器频率的两倍。</li>
+<li>施加在 FETs上的电压与输入电压相等。</li>
+<li>在给定的功率下，初级电流是半桥的一半。</li>
+</ul>
+<h4 id="十-SEPIC-单端初级电感变换器-Single-Ended-Primary-Inductance-Converter"><a href="#十-SEPIC-单端初级电感变换器-Single-Ended-Primary-Inductance-Converter" class="headerlink" title="十. SEPIC 单端初级电感变换器 (Single-Ended Primary Inductance Converter)"></a>十. SEPIC 单端初级电感变换器 (Single-Ended Primary Inductance Converter)</h4><p><img src="/image/sp/sepic-top.png" alt="SEPIC单端初级电感变换器"></p>
+<ul>
+<li>输出电压可以大于或小于输入电压。</li>
+<li>与升压电路一样，输入电流平滑，但是输出电流不连续。</li>
+<li>能量通过电容从输入传输至输出。</li>
+<li>需要两个电感。</li>
+</ul>
+<h4 id="十一-C’uk-Slobodan-C’uk的专利"><a href="#十一-C’uk-Slobodan-C’uk的专利" class="headerlink" title="十一. C’uk(Slobodan C’uk的专利)"></a>十一. C’uk(Slobodan C’uk的专利)</h4><p><img src="/image/sp/slobodan-cuk-top.png" alt="Slobodan C’uk的专利"></p>
+<ul>
+<li>输出反相。</li>
+<li>输出电压的幅度可以大于或小于输入。</li>
+<li>输入电流和输出电流都是平滑的。</li>
+<li>能量通过电容从输入传输至输出。</li>
+<li>需要两个电感。</li>
+<li>电感可以耦合获得零纹波电感电流。</li>
+</ul>
+<h3 id="Buck电路的工作细节"><a href="#Buck电路的工作细节" class="headerlink" title="Buck电路的工作细节"></a>Buck电路的工作细节</h3><h4 id="1-Buck-降压调整器-连续导电"><a href="#1-Buck-降压调整器-连续导电" class="headerlink" title="1. Buck-降压调整器-连续导电"></a>1. Buck-降压调整器-连续导电</h4><p><img src="/image/sp/buck-ccm-top.jpg" alt="Buck 连续导通"></p>
+<ul>
+<li>电感电流连续。</li>
+<li>Vout是其输入电压(V1)的均值。</li>
+<li>输出电压为输入电压乘以开关的负荷比(D)。</li>
+<li>接通时，电感电流从电池流出。</li>
+<li>开关断开时电流流过二极管。</li>
+<li>忽略开关和电感中的损耗，D与负载电流无关。</li>
+<li>降压调整器和其派生电路的特征是：输入电流不连续(斩波)，输出电流连续(平滑)。</li>
+</ul>
+<h4 id="2-Buck-降压调整器-临界导电"><a href="#2-Buck-降压调整器-临界导电" class="headerlink" title="2. Buck-降压调整器-临界导电"></a>2. Buck-降压调整器-临界导电</h4><p><img src="/image/sp/buck-critical-top.jpg" alt="Buck 临界导通"><br>电感电流仍然是连续的，只是当开关再次接通时“达到”零。这被称为“临界导电”。输出电压仍等于输入电压乘以D。</p>
+<h4 id="3-Buck-降压调整器-非连续导电"><a href="#3-Buck-降压调整器-非连续导电" class="headerlink" title="3. Buck-降压调整器-非连续导电"></a>3. Buck-降压调整器-非连续导电</h4><p><img src="/image/sp/buck-dcm-top.jpg" alt="Buck 断续导通"></p>
+<ul>
+<li>在这种情况下，电感中的电流在每个周期的一段时间中为零。</li>
+<li>输出电压仍然(始终)是v1的平均值。</li>
+<li>输出电压不是输入电压乘以开关的负荷比(D)。</li>
+<li>当负载电流低于临界值时，D随着负载电流而变化(而Vout保持不变)。</li>
+</ul>
+<h3 id="Boost升压调整器"><a href="#Boost升压调整器" class="headerlink" title="Boost升压调整器"></a>Boost升压调整器</h3><p><img src="/image/sp/boost-regulator-top.jpg" alt="Boost升压调整器"></p>
+<ul>
+<li>输出电压始终大于(或等于)输入电压。输入电流连续，输出电流不连续(与降压调整器相反)。</li>
+<li>输出电压与负荷比(D)之间的关系不如在降压调整器中那么简单。在连续导电的情况下：<br><img src="/image/sp/boost-ccm-vo-vin.png" alt="Boost升压调整器输出电压与输入电压公式"><br>在本例中，Vin &#x3D; 5 , Vout &#x3D; 15D &#x3D; 2&#x2F;3；Vout &#x3D; 15 , D &#x3D; 2&#x2F;3。</li>
+</ul>
+<h3 id="变压器工作"><a href="#变压器工作" class="headerlink" title="变压器工作"></a>变压器工作</h3><h4 id="1-变压器工作-包括初级电感的作用"><a href="#1-变压器工作-包括初级电感的作用" class="headerlink" title="1. 变压器工作(包括初级电感的作用)"></a>1. 变压器工作(包括初级电感的作用)</h4><p><img src="/image/sp/transformer-inductance.jpg" alt="变压器的初级电感作用"><br>变压器看作理想变压器，它的初级(磁化)电感与初级并联。</p>
+<h4 id="2-反激变压器"><a href="#2-反激变压器" class="headerlink" title="2. 反激变压器"></a>2. 反激变压器</h4><p><img src="/image/sp/flyback-transformer-indu.jpg" alt="反激变压器初级电感"><br>此处初级电感很低，用于确定峰值电流和存储的能量。当初级开关断开时，能量传送到次级。</p>
+<h4 id="3-Forward-正激变换变压器"><a href="#3-Forward-正激变换变压器" class="headerlink" title="3. Forward 正激变换变压器"></a>3. Forward 正激变换变压器</h4><p><img src="/image/sp/forward-transformer-indu.jpg" alt="正激变压器初级电感"></p>
+<ul>
+<li>初级电感很高，因为无需存储能量。</li>
+<li>磁化电流(i1)流入 “磁化电感”，使磁芯在初级开关断开后去磁(电压反向)</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2023/01/07/SMPS/SMPS-11-TOP/" data-id="cuid_oXZTPOY4Fkn6WlCT9bN8" class="article-share-link" data-share="baidu" data-title="常见开关电源11种拓扑简述(转自微信朋友圈)">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90%E5%9F%BA%E7%A1%80/" rel="tag">开关电源基础</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-fun-item/资料收集202301字体" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301%E5%AD%97%E4%BD%93/" class="article-date">
@@ -126,7 +286,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301%E5%AD%97%E4%BD%93/" data-id="cuid-TXWNxF3KGTsyprFXSdCy" class="article-share-link" data-share="baidu" data-title="2023年元旦第一文，字体资料收集">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/01/01/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86202301%E5%AD%97%E4%BD%93/" data-id="cuidtuvXXmSZdPUIu1IHfiOf9" class="article-share-link" data-share="baidu" data-title="2023年元旦第一文，字体资料收集">分享到</a>
       
 
       
@@ -176,7 +336,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/12/08/SMPS/SMPS-float-ground/" data-id="cuidinVBLQjb2iLsk9DqGNUWu" class="article-share-link" data-share="baidu" data-title="什么是电源的浮地架构">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/12/08/SMPS/SMPS-float-ground/" data-id="cuid7nkGqfI4muZrypcWt7wxV" class="article-share-link" data-share="baidu" data-title="什么是电源的浮地架构">分享到</a>
       
 
       
@@ -236,7 +396,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/11/23/blog/hugo-learn-notebook3/" data-id="cuid86v8MODEcxGYSSn2ea-Av" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记三，命令行">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/11/23/blog/hugo-learn-notebook3/" data-id="cuidr8kwMX6e3OktXZIiSV0ur" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记三，命令行">分享到</a>
       
 
       
@@ -322,7 +482,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/11/19/blog/hugo-learn-notebook1/" data-id="cuidDKyCARcwOUr0X-EAGTz-C" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记一，初步运行一遍">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/11/19/blog/hugo-learn-notebook1/" data-id="cuid3ygomvlpI6a4UKZcaiDy3" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记一，初步运行一遍">分享到</a>
       
 
       
@@ -375,7 +535,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/11/19/blog/hugo-learn-notebook2/" data-id="cuid2guZnqgaV6RMAOps61mDK" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记二，配置文件">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/11/19/blog/hugo-learn-notebook2/" data-id="cuidnSUcfgzrJGVJ-WsD-Bz2f" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记二，配置文件">分享到</a>
       
 
       
@@ -450,7 +610,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/11/14/essay/excerpt7/" data-id="cuidibySZXx4BhbLXb4b_NFFd" class="article-share-link" data-share="baidu" data-title="听抖音听到的金句">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/11/14/essay/excerpt7/" data-id="cuidEGkaEQmastjQ1tnuo1sa_" class="article-share-link" data-share="baidu" data-title="听抖音听到的金句">分享到</a>
       
 
       
@@ -511,7 +671,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/11/03/SMPS/SMPS-highside-lowside/" data-id="cuidlh0KiMfrs-r6TQX_Yv8VN" class="article-share-link" data-share="baidu" data-title="关于高边(high side)与低边(low side)">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/11/03/SMPS/SMPS-highside-lowside/" data-id="cuidyjqBigF-pULRYB36BVmGH" class="article-share-link" data-share="baidu" data-title="关于高边(high side)与低边(low side)">分享到</a>
       
 
       
@@ -563,7 +723,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/30/essay/sz%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%93/" data-id="cuidNKVqVWn9IGaE1v46Kf7ST" class="article-share-link" data-share="baidu" data-title="广东省内游之四，深圳六个海边栈道（摘抄自头条定格深圳）">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/30/essay/sz%E6%B5%B7%E8%BE%B9%E6%A0%88%E9%81%93/" data-id="cuiduDjc7bSx5VARP56NhZ3-V" class="article-share-link" data-share="baidu" data-title="广东省内游之四，深圳六个海边栈道（摘抄自头条定格深圳）">分享到</a>
       
 
       
@@ -621,89 +781,13 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/10/30/essay/sz%E7%BD%91%E7%BA%A2%E6%89%93%E5%8D%A1%E7%82%B91/" data-id="cuidj3Ov8xXtQ5XTzu7WWwM7R" class="article-share-link" data-share="baidu" data-title="广东省内游之三，深圳网红打卡点（摘抄自头条定格深圳）">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/10/30/essay/sz%E7%BD%91%E7%BA%A2%E6%89%93%E5%8D%A1%E7%82%B91/" data-id="cuid5AGHl8biHaXgVRrDNvPj5" class="article-share-link" data-share="baidu" data-title="广东省内游之三，深圳网红打卡点（摘抄自头条定格深圳）">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" rel="tag">旅游攻略</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-blog/hexo-redeployment-github" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/10/25/blog/hexo-redeployment-github/" class="article-date">
-  <time datetime="2022-10-24T16:00:00.000Z" itemprop="datePublished">2022-10-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/10/25/blog/hexo-redeployment-github/">Hexo重新布置到github出错</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="本来在github上部署的，可是因为速度慢，转战到gitee上了。然而两年中一直写技术文章没有问题。可是因为看了网络小说，想写出一些糟点，因为有点儿关键字，总是不给更新。一气之下，决定转回github，然而竟然部署失败了……"><a href="#本来在github上部署的，可是因为速度慢，转战到gitee上了。然而两年中一直写技术文章没有问题。可是因为看了网络小说，想写出一些糟点，因为有点儿关键字，总是不给更新。一气之下，决定转回github，然而竟然部署失败了……" class="headerlink" title="本来在github上部署的，可是因为速度慢，转战到gitee上了。然而两年中一直写技术文章没有问题。可是因为看了网络小说，想写出一些糟点，因为有点儿关键字，总是不给更新。一气之下，决定转回github，然而竟然部署失败了……"></a>本来在github上部署的，可是因为速度慢，转战到gitee上了。然而两年中一直写技术文章没有问题。可是因为看了网络小说，想写出一些糟点，因为有点儿关键字，总是不给更新。一气之下，决定转回github，<mark>然而竟然部署失败了……</mark></h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fatal: &#x27;https://github.com/你的用户名/你的用户名.github.io.git/&#x27; 鉴权失败</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (/home/主目录名/myblog/node_modules/hexo-util/lib/spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (node:internal/child_process:293:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>反复登录用户名，与密码，木有错误。然而<mark>还是失败</mark>。</p>
-</li>
-<li><p>ssh的密钥重新生成，并重新更新在github上，确认没有错。然而<mark>还是失败</mark>。</p>
-<h5 id="然后百度搜索了“鉴权失败”那一行，给出的解决办法"><a href="#然后百度搜索了“鉴权失败”那一行，给出的解决办法" class="headerlink" title="然后百度搜索了“鉴权失败”那一行，给出的解决办法"></a>然后百度搜索了“鉴权失败”那一行，给出的解决办法</h5></li>
-<li><p>进入github.com我的主页里，</p>
-<blockquote>
-<p>setting</p>
-<blockquote>
-<p>Developer settings</p>
-<blockquote>
-<p>Personal access tokens</p>
-<blockquote>
-<p>new access tokens</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ol>
-<p>的时候有个时间选择，可以选择某个时间长度(一个月、三个月什么的，因为我个人用的就选择的永不过期)，然后创建成功后会有个token，把它当作密码，在你重新推送你项目的时候，命令行提示你输入邮箱和密码的时候，把这个token当密码输入(复制即可)。满决欢喜的试，<mark>然而还是失败了</mark>。当时陷入误区，还反复试了三遍！！！</p>
-<h5 id="以为没有半法了，过了三天，才想起来百度-hexo的错误代码。给出试错"><a href="#以为没有半法了，过了三天，才想起来百度-hexo的错误代码。给出试错" class="headerlink" title="以为没有半法了，过了三天，才想起来百度 hexo的错误代码。给出试错"></a>以为没有半法了，过了三天，才想起来百度 hexo的错误代码。给出试错</h5><ol start="4">
-<li><p>以下方法。<mark>还是失败了</mark></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> myblog</span><br><span class="line">$ <span class="built_in">rm</span> -rf .deploy_git</span><br><span class="line">$ git config --global core.autocrlf <span class="literal">false</span>  <span class="comment">#把git加入系统环境变量</span></span><br><span class="line">$ hexo clean &amp; hexo g &amp; hexo d</span><br></pre></td></tr></table></figure></li>
-<li><p>再查，<mark><strong>以下方法成功了</strong></mark>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> myblog</span><br><span class="line">$ vim _config.yml <span class="comment">#到最后几行</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: https://github.com/YourName/YourName.github.io.git(不要使用这个)</span><br><span class="line">         git@github.com:YourName/YourName.github.io.git(用这个)</span><br><span class="line">   branch: master</span><br><span class="line">$ hexo clean &amp; hexo g &amp; hexo d</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2022/10/25/blog/hexo-redeployment-github/" data-id="cuid8qFR04zlg8d2_HbY8hBca" class="article-share-link" data-share="baidu" data-title="Hexo重新布置到github出错">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
 
     </footer>
   </div>

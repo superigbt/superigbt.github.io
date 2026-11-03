@@ -84,6 +84,94 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-blog/hugo-learn-notebook5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/04/27/blog/hugo-learn-notebook5/" class="article-date">
+  <time datetime="2023-04-26T16:00:00.000Z" itemprop="datePublished">2023-04-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%8E%E5%BB%BA%E7%AB%99/">博客与建站</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/27/blog/hugo-learn-notebook5/">Hugo学习笔记五，文章头部(meta)，以DoIt为例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 文章标题.</p>
+<p>subtitle: DoIt 新增 | 0.2.0 文章副标题.</p>
+<p>date: 这篇文章创建的日期时间. 它通常是从文章的前置参数中的 date 字段获取的, 但是也可以在 网站配置 中设置.</p>
+<p>lastmod: 上次修改内容的日期时间.</p>
+<p>draft: 如果设为 true, 除非 hugo 命令使用了 –buildDrafts&#x2F;-D 参数, 这篇文章不会被渲染.</p>
+<p>authors: DoIt 更改 | 0.2.12 文章作者.</p>
+<p>description: 文章内容的描述.</p>
+<p>license: 这篇文章特殊的许可.</p>
+<p>images: 页面图片, 用于 Open Graph 和 Twitter Cards.</p>
+<p>tags: 文章的标签.</p>
+<p>categories: 文章所属的类别.</p>
+<p>series: DoIt 新增 | 0.2.12 文章所属的系列.</p>
+<p>series_weight: DoIt 新增 | 0.2.13 自定义文章在系列中的位置.</p>
+<p>seriesNavigation: DoIt 新增 | 0.2.13 是否使用系列导航.</p>
+<p>featuredImage: 文章的特色图片.</p>
+<p>featuredImagePreview: 用在主页预览的文章特色图片.</p>
+<p>hiddenFromHomePage: 如果设为 true, 这篇文章将不会显示在主页上.</p>
+<p>hiddenFromSearch: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章将不会显示在搜索结果中.</p>
+<p>twemoji: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章会使用 twemoji.</p>
+<p>lightgallery: 如果设为 true, 文章中的图片将可以按照画廊形式呈现.</p>
+<p>ruby: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章会使用 上标注释扩展语法.</p>
+<p>fraction: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章会使用 分数扩展语法.</p>
+<p>fontawesome: DoIt 新增 | 0.2.0 如果设为 true, 这篇文章会使用 Font Awesome 扩展语法.</p>
+<p>linkToMarkdown: 如果设为 true, 内容的页脚将显示指向原始 Markdown 文件的链接.</p>
+<p>linkToSource: DoIt 新增 | 0.2.14 如果设为 false, 则关闭页脚 view source 的链接. 你可以将其设置为一个指向文章原始文件的链接. 使用魔法变量 {path} 来获取文章的相对路径, 这篇文章的 {path} 是 posts&#x2F;theme-documentation-content&#x2F;index.en.md.</p>
+<p>linkToEdit:DoIt 新增 | 0.2.13 如果设为 false, 则关闭页脚 编辑此页 的链接. 你可以将其设置为一个用于编辑这个页面的链接. 使用魔法变量 {path} 来获取这篇文章的相对路径, 这篇文章的 {path} 是 posts&#x2F;theme-documentation-content&#x2F;index.zh-cn.md.</p>
+<p>linkToReport: DoIt 新增 | 0.2.14 如果设为 false, 则关闭页脚 报告问题 的链接. 你可以将其设置为一个用于报告此页面中错误的链接. 使用魔法变量 {path} 来获取文章的相对路径, 这篇文章的 {path} 是 posts&#x2F;theme-documentation-content&#x2F;index.en.md, 使用 {title} 来获取文章的标题, 这篇文章的 {title} 为 Theme Documentation - Content, 使用 {url} 来获取文章的链接, 这篇文章的 {url} 为 <a target="_blank" rel="noopener" href="https://hugodoit.pages.dev/theme-documentation-content/">https://hugodoit.pages.dev/theme-documentation-content/</a>.</p>
+<p>rssFullText: DoIt 新增 | 0.2.4 如果设为 true, 在 RSS 中将会显示全文内容.</p>
+<p>pageStyle: DoIt 新增 | 0.2.11 调整页面样式, 可选择”normal”或”wide”.</p>
+<p>license: DoIt 新增 | 0.2.14 许可协议信息 (支持 HTML 格式).</p>
+<p>toc: DoIt 更改 | 0.2.9 和 网站配置 中的 params.page.toc 部分相同.</p>
+<p>code: DoIt 新增 | 0.2.0 和 网站配置 中的 params.page.code 部分相同.</p>
+<p>table: DoIt 新增 | 0.2.14 和 网站配置 中的 params.page.table 部分相同.</p>
+<p>math: DoIt 更改 | 0.2.0 和 网站配置 中的 params.page.math 部分相同.</p>
+<p>mapbox: DoIt 新增 | 0.2.0 和 网站配置 中的 params.page.mapbox 部分相同.</p>
+<p>share: 和 网站配置 中的 params.page.share 部分相同.</p>
+<p>comment: DoIt 更改 | 0.2.0 和 网站配置 中的 params.page.comment 部分相同.</p>
+<p>library: DoIt 新增 | 0.2.7 和 网站配置 中的 params.page.library 部分相同.</p>
+<p>seo: DoIt 新增 | 0.2.10 和 网站配置 中的 params.page.seo 部分相同.</p>
+<p>outdatedArticleReminder: DoIt 新增 | 0.2.13 和 网站配置 中的 params.page.outdatedArticleReminder 部分相同.</p>
+<p>sponsor: DoIt 新增 | 0.2.13 和 网站配置 中的 params.sponsor 部分相同.</p>
+<p>related: DoIt 新增 | 0.2.14 和 网站配置 中的 params.page.related 部分相同.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2023/04/27/blog/hugo-learn-notebook5/" data-id="cuidNq8tONFa0rQYj0jK_CSHD" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记五，文章头部(meta)，以DoIt为例">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hugo-meta/" rel="tag">hugo-meta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-blog/hexo-add-mermaid" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/04/10/blog/hexo-add-mermaid/" class="article-date">
@@ -128,7 +216,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/04/10/blog/hexo-add-mermaid/" data-id="cuidV8nQDfE8OWaJwcoRyfa9X" class="article-share-link" data-share="baidu" data-title="Hexo结合mermaid增加甘特图功能，在lanscape-plus主题现实现">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/04/10/blog/hexo-add-mermaid/" data-id="cuidyPWfKNvQrlckGHun5KDqs" class="article-share-link" data-share="baidu" data-title="Hexo结合mermaid增加甘特图功能，在lanscape-plus主题现实现">分享到</a>
       
 
       
@@ -189,7 +277,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/04/06/blog/mermaid-gannt1/" data-id="cuidP3elJC1-yGS0z06ceyMRr" class="article-share-link" data-share="baidu" data-title="mermaid写甘特图的语法汇总">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/04/06/blog/mermaid-gannt1/" data-id="cuid5_Pd4sjgmOaJ1_2KjQxPY" class="article-share-link" data-share="baidu" data-title="mermaid写甘特图的语法汇总">分享到</a>
       
 
       
@@ -240,7 +328,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/04/05/blog/hugo-learn-notebook4/" data-id="cuidsJCdBzP-jN2dK0l_gG8Ww" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记四，干特图初体验">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/04/05/blog/hugo-learn-notebook4/" data-id="cuid9TdiGldFYIawWWzW-Y_Et" class="article-share-link" data-share="baidu" data-title="Hugo学习笔记四，干特图初体验">分享到</a>
       
 
       
@@ -287,7 +375,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/02/18/linux/ssh-remove-cp-file/" data-id="cuidzghJzVD6y3YMwGX0-gp49" class="article-share-link" data-share="baidu" data-title="linux ssh 协议下复制文件">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/02/18/linux/ssh-remove-cp-file/" data-id="cuidO_WxKQ_4sGa1-ZHpD6OOF" class="article-share-link" data-share="baidu" data-title="linux ssh 协议下复制文件">分享到</a>
       
 
       
@@ -341,7 +429,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/01/27/blog/markdwon-summary1/" data-id="cuidzzIisg8-PLU2G2UiaDmWZ" class="article-share-link" data-share="baidu" data-title="markdown中首行缩进、输出空格的方法">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/01/27/blog/markdwon-summary1/" data-id="cuid0d9ATurMgfIROM86Ff70n" class="article-share-link" data-share="baidu" data-title="markdown中首行缩进、输出空格的方法">分享到</a>
       
 
       
@@ -390,7 +478,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/01/24/essay/essay4/" data-id="cuidjF-_tymJPdWNciqsiooJh" class="article-share-link" data-share="baidu" data-title="由公司员工想到家里的鸡娃">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/01/24/essay/essay4/" data-id="cuidcjguVoAL47wWr9DS96503" class="article-share-link" data-share="baidu" data-title="由公司员工想到家里的鸡娃">分享到</a>
       
 
       
@@ -437,7 +525,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/01/19/essay/essay3/" data-id="cuidC4mYQQxoxNkHodduAdscV" class="article-share-link" data-share="baidu" data-title="由大年初一的“陋习”想到的">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/01/19/essay/essay3/" data-id="cuidjAbzeI80rojKRIvxfxP1S" class="article-share-link" data-share="baidu" data-title="由大年初一的“陋习”想到的">分享到</a>
       
 
       
@@ -530,7 +618,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/01/13/SMPS/mcu_iic/" data-id="cuidWwMHE1wSnUH5wAoA1XeIn" class="article-share-link" data-share="baidu" data-title="IIC 协议原理和模拟IIC的实现步骤">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/01/13/SMPS/mcu_iic/" data-id="cuidpw4CG03SBLxXiv6NQ7PCw" class="article-share-link" data-share="baidu" data-title="IIC 协议原理和模拟IIC的实现步骤">分享到</a>
       
 
       
@@ -609,173 +697,13 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/01/13/termux/termux-service/" data-id="cuidecrDZd6dEV6FSxN-bv3L6" class="article-share-link" data-share="baidu" data-title="Termux设置——服务自启动">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/01/13/termux/termux-service/" data-id="cuidGk6gKtjBrQkE2GH2ep2WY" class="article-share-link" data-share="baidu" data-title="Termux设置——服务自启动">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%90%AF%E5%8A%A8/" rel="tag">termux程序自启动</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SMPS/SMPS-11-TOP" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/07/SMPS/SMPS-11-TOP/" class="article-date">
-  <time datetime="2023-01-06T16:00:00.000Z" itemprop="datePublished">2023-01-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/07/SMPS/SMPS-11-TOP/">常见开关电源11种拓扑简述(转自微信朋友圈)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="本文主要讲述常见的开关电源拓扑结构简述与特点。"><a href="#本文主要讲述常见的开关电源拓扑结构简述与特点。" class="headerlink" title="本文主要讲述常见的开关电源拓扑结构简述与特点。"></a>本文主要讲述常见的开关电源拓扑结构简述与特点。</h2><h3 id="常见的拓扑结构，包括Buck降压、Boost升压、Buck-Boost降压-升压、Flyback反激、Forward正激、Two-Transistor-Forward双晶体管正激等。见下图"><a href="#常见的拓扑结构，包括Buck降压、Boost升压、Buck-Boost降压-升压、Flyback反激、Forward正激、Two-Transistor-Forward双晶体管正激等。见下图" class="headerlink" title="常见的拓扑结构，包括Buck降压、Boost升压、Buck-Boost降压-升压、Flyback反激、Forward正激、Two-Transistor Forward双晶体管正激等。见下图:"></a>常见的拓扑结构，包括Buck降压、Boost升压、Buck-Boost降压-升压、Flyback反激、Forward正激、Two-Transistor Forward双晶体管正激等。见下图:</h3><p><img src="/image/sp/sp-11-top.png" alt="开关电源的11个拓普"></p>
-<h3 id="这些拓扑结构都与开关式电路有关。基本的脉冲宽度调制波形定义如下："><a href="#这些拓扑结构都与开关式电路有关。基本的脉冲宽度调制波形定义如下：" class="headerlink" title="这些拓扑结构都与开关式电路有关。基本的脉冲宽度调制波形定义如下："></a>这些拓扑结构都与开关式电路有关。基本的脉冲宽度调制波形定义如下：</h3><p><img src="/image/sp/sp-pwm-waveform.png" alt="基本的脉宽调制波形"></p>
-<h4 id="一-buck-降压"><a href="#一-buck-降压" class="headerlink" title="一. buck 降压"></a>一. buck 降压</h4><p><img src="/image/sp/buck-top.jpg" alt="buck降压"></p>
-<ul>
-<li>把输入降至一个较低的电压。</li>
-<li>可能是最简单的电路。</li>
-<li>电感&#x2F;电容滤波器滤平开关后的方波。</li>
-<li>输出总是小于或等于输入。</li>
-<li>输入电流不连续(斩波)。</li>
-<li>输出电流平滑。</li>
-</ul>
-<h4 id="二-Boost-升压"><a href="#二-Boost-升压" class="headerlink" title="二. Boost 升压"></a>二. Boost 升压</h4><p><img src="/image/sp/boost-top.png" alt="Boost升压"></p>
-<ul>
-<li>把输入升至一个较高的电压。</li>
-<li>与降压一样，但重新安排了电感、开关和二极管。</li>
-<li>输出总是比大于或等于输入(忽略二极管的正向压降)。</li>
-<li>输入电流平滑。</li>
-<li>输出电流不连续(斩波)。</li>
-</ul>
-<h4 id="三-Buck-Boost-降压-升压"><a href="#三-Buck-Boost-降压-升压" class="headerlink" title="三. Buck-Boost 降压-升压"></a>三. Buck-Boost 降压-升压</h4><p><img src="/image/sp/buck-boost-top.png" alt="Buck-Boost 降压-升压"></p>
-<ul>
-<li>电感、开关和二极管的另一种安排方法。</li>
-<li>结合了降压和升压电路的缺点。</li>
-<li>输入电流不连续(斩波)。</li>
-<li>输出电流也不连续(斩波)。</li>
-<li>输出总是与输入反向(注意电容的极性)，但是幅度可以小于或大于输入。</li>
-<li>“反激”变换器实际是降压-升压电路隔离(变压器耦合)形式。</li>
-</ul>
-<h4 id="四-Flyback反激"><a href="#四-Flyback反激" class="headerlink" title="四. Flyback反激"></a>四. Flyback反激</h4><p><img src="/image/sp/flyback-top.png" alt="Flyback反激"><br>如降压-升压电路一样工作，但是电感有两个绕组，而且同时作为变压器和电感。<br>输出可以为正或为负，由线圈和二极管的极性决定。<br>输出电压可以大于或小于输入电压，由变压器的匝数比决定。<br>这是隔离拓扑结构中最简单的。<br>增加次级绕组和电路可以得到多个输出。</p>
-<h4 id="五-Forward-正激"><a href="#五-Forward-正激" class="headerlink" title="五. Forward 正激"></a>五. Forward 正激</h4><p><img src="/image/sp/forward-top.jpg" alt="Forward正激"></p>
-<ul>
-<li>降压电路的变压器耦合形式。</li>
-<li>不连续的输入电流，平滑的输出电流。</li>
-<li>因为采用变压器，输出可以大于或小于输入，可以是任何极性。</li>
-<li>增加次级绕组和电路可以获得多个输出。</li>
-<li>在每个开关周期中必须对变压器磁芯去磁。常用的做法是增加一个与初级绕组匝数相同的绕组。</li>
-<li>在开关接通阶段存储在初级电感中的能量，在开关断开阶段通过另外的绕组和二极管释放。</li>
-</ul>
-<h4 id="六-Two-Transistor-Forward双晶体管正激"><a href="#六-Two-Transistor-Forward双晶体管正激" class="headerlink" title="六. Two-Transistor Forward双晶体管正激"></a>六. Two-Transistor Forward双晶体管正激</h4><p><img src="/image/sp/two-transistor-forward-top.jpg" alt="Two-Transistor Forward双晶体管正激"></p>
-<ul>
-<li>两个开关同时工作。</li>
-<li>开关断开时，存储在变压器中的能量使初级的极性反向，使二极管导通。</li>
-<li>主要优点：每个开关上的电压永远不会超过输入电压；无需对绕组磁道复位</li>
-</ul>
-<h4 id="七-Push-Pull-推挽"><a href="#七-Push-Pull-推挽" class="headerlink" title="七. Push-Pull 推挽"></a>七. Push-Pull 推挽</h4><p><img src="/image/sp/push-pull-top.jpg" alt="Push-Pull推挽"></p>
-<ul>
-<li>开关(FET)的驱动不同相，进行脉冲宽度调制(PWM)以调节输出电压。</li>
-<li>良好的变压器磁芯利用率——在两个半周期中都传输功率。</li>
-<li>全波拓扑结构,所以输出纹波频率是变压器频率的两倍。</li>
-<li>施加在FET上的电压是输入电压的两倍。</li>
-</ul>
-<h4 id="八-Half-Bridge-半桥"><a href="#八-Half-Bridge-半桥" class="headerlink" title="八. Half-Bridge 半桥"></a>八. Half-Bridge 半桥</h4><p><img src="/image/sp/half-bridge-top.jpg" alt="Half-Bridge半桥"></p>
-<ul>
-<li>较高功率变换器极为常用的拓扑结构。</li>
-<li>开关的驱动不同相，进行脉冲宽度调制以调节输出电压。</li>
-<li>良好的变压器磁芯利用率——在两个半周期中都传输功率。而且初级绕组的利用率优于推挽电路。</li>
-<li>全波拓扑结构,所以输出纹波频率是变压器频率的两倍。</li>
-<li>施加在FET上的电压与输入电压相等。</li>
-</ul>
-<h4 id="九-Full-Bridge-全桥"><a href="#九-Full-Bridge-全桥" class="headerlink" title="九. Full-Bridge 全桥"></a>九. Full-Bridge 全桥</h4><p><img src="/image/sp/full-bridge-top.jpg" alt="Full-Bridge全桥"></p>
-<ul>
-<li>较高功率变换器最为常用的拓扑结构。</li>
-<li>开关以对角对的形式驱动，进行脉冲宽度调制以调节输出电压。</li>
-<li>良好的变压器磁芯利用率——在两个半周期中都传输功率。</li>
-<li>全波拓扑结构，所以输出纹波频率是变压器频率的两倍。</li>
-<li>施加在 FETs上的电压与输入电压相等。</li>
-<li>在给定的功率下，初级电流是半桥的一半。</li>
-</ul>
-<h4 id="十-SEPIC-单端初级电感变换器-Single-Ended-Primary-Inductance-Converter"><a href="#十-SEPIC-单端初级电感变换器-Single-Ended-Primary-Inductance-Converter" class="headerlink" title="十. SEPIC 单端初级电感变换器 (Single-Ended Primary Inductance Converter)"></a>十. SEPIC 单端初级电感变换器 (Single-Ended Primary Inductance Converter)</h4><p><img src="/image/sp/sepic-top.png" alt="SEPIC单端初级电感变换器"></p>
-<ul>
-<li>输出电压可以大于或小于输入电压。</li>
-<li>与升压电路一样，输入电流平滑，但是输出电流不连续。</li>
-<li>能量通过电容从输入传输至输出。</li>
-<li>需要两个电感。</li>
-</ul>
-<h4 id="十一-C’uk-Slobodan-C’uk的专利"><a href="#十一-C’uk-Slobodan-C’uk的专利" class="headerlink" title="十一. C’uk(Slobodan C’uk的专利)"></a>十一. C’uk(Slobodan C’uk的专利)</h4><p><img src="/image/sp/slobodan-cuk-top.png" alt="Slobodan C’uk的专利"></p>
-<ul>
-<li>输出反相。</li>
-<li>输出电压的幅度可以大于或小于输入。</li>
-<li>输入电流和输出电流都是平滑的。</li>
-<li>能量通过电容从输入传输至输出。</li>
-<li>需要两个电感。</li>
-<li>电感可以耦合获得零纹波电感电流。</li>
-</ul>
-<h3 id="Buck电路的工作细节"><a href="#Buck电路的工作细节" class="headerlink" title="Buck电路的工作细节"></a>Buck电路的工作细节</h3><h4 id="1-Buck-降压调整器-连续导电"><a href="#1-Buck-降压调整器-连续导电" class="headerlink" title="1. Buck-降压调整器-连续导电"></a>1. Buck-降压调整器-连续导电</h4><p><img src="/image/sp/buck-ccm-top.jpg" alt="Buck 连续导通"></p>
-<ul>
-<li>电感电流连续。</li>
-<li>Vout是其输入电压(V1)的均值。</li>
-<li>输出电压为输入电压乘以开关的负荷比(D)。</li>
-<li>接通时，电感电流从电池流出。</li>
-<li>开关断开时电流流过二极管。</li>
-<li>忽略开关和电感中的损耗，D与负载电流无关。</li>
-<li>降压调整器和其派生电路的特征是：输入电流不连续(斩波)，输出电流连续(平滑)。</li>
-</ul>
-<h4 id="2-Buck-降压调整器-临界导电"><a href="#2-Buck-降压调整器-临界导电" class="headerlink" title="2. Buck-降压调整器-临界导电"></a>2. Buck-降压调整器-临界导电</h4><p><img src="/image/sp/buck-critical-top.jpg" alt="Buck 临界导通"><br>电感电流仍然是连续的，只是当开关再次接通时“达到”零。这被称为“临界导电”。输出电压仍等于输入电压乘以D。</p>
-<h4 id="3-Buck-降压调整器-非连续导电"><a href="#3-Buck-降压调整器-非连续导电" class="headerlink" title="3. Buck-降压调整器-非连续导电"></a>3. Buck-降压调整器-非连续导电</h4><p><img src="/image/sp/buck-dcm-top.jpg" alt="Buck 断续导通"></p>
-<ul>
-<li>在这种情况下，电感中的电流在每个周期的一段时间中为零。</li>
-<li>输出电压仍然(始终)是v1的平均值。</li>
-<li>输出电压不是输入电压乘以开关的负荷比(D)。</li>
-<li>当负载电流低于临界值时，D随着负载电流而变化(而Vout保持不变)。</li>
-</ul>
-<h3 id="Boost升压调整器"><a href="#Boost升压调整器" class="headerlink" title="Boost升压调整器"></a>Boost升压调整器</h3><p><img src="/image/sp/boost-regulator-top.jpg" alt="Boost升压调整器"></p>
-<ul>
-<li>输出电压始终大于(或等于)输入电压。输入电流连续，输出电流不连续(与降压调整器相反)。</li>
-<li>输出电压与负荷比(D)之间的关系不如在降压调整器中那么简单。在连续导电的情况下：<br><img src="/image/sp/boost-ccm-vo-vin.png" alt="Boost升压调整器输出电压与输入电压公式"><br>在本例中，Vin &#x3D; 5 , Vout &#x3D; 15D &#x3D; 2&#x2F;3；Vout &#x3D; 15 , D &#x3D; 2&#x2F;3。</li>
-</ul>
-<h3 id="变压器工作"><a href="#变压器工作" class="headerlink" title="变压器工作"></a>变压器工作</h3><h4 id="1-变压器工作-包括初级电感的作用"><a href="#1-变压器工作-包括初级电感的作用" class="headerlink" title="1. 变压器工作(包括初级电感的作用)"></a>1. 变压器工作(包括初级电感的作用)</h4><p><img src="/image/sp/transformer-inductance.jpg" alt="变压器的初级电感作用"><br>变压器看作理想变压器，它的初级(磁化)电感与初级并联。</p>
-<h4 id="2-反激变压器"><a href="#2-反激变压器" class="headerlink" title="2. 反激变压器"></a>2. 反激变压器</h4><p><img src="/image/sp/flyback-transformer-indu.jpg" alt="反激变压器初级电感"><br>此处初级电感很低，用于确定峰值电流和存储的能量。当初级开关断开时，能量传送到次级。</p>
-<h4 id="3-Forward-正激变换变压器"><a href="#3-Forward-正激变换变压器" class="headerlink" title="3. Forward 正激变换变压器"></a>3. Forward 正激变换变压器</h4><p><img src="/image/sp/forward-transformer-indu.jpg" alt="正激变压器初级电感"></p>
-<ul>
-<li>初级电感很高，因为无需存储能量。</li>
-<li>磁化电流(i1)流入 “磁化电感”，使磁芯在初级开关断开后去磁(电压反向)</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2023/01/07/SMPS/SMPS-11-TOP/" data-id="cuidgT73eXQrWQq0HwFnHfT7z" class="article-share-link" data-share="baidu" data-title="常见开关电源11种拓扑简述(转自微信朋友圈)">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90%E5%9F%BA%E7%A1%80/" rel="tag">开关电源基础</a></li></ul>
 
     </footer>
   </div>

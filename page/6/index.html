@@ -84,6 +84,61 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-linux/vbox-install-addition1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/10/24/linux/vbox-install-addition1/" class="article-date">
+  <time datetime="2023-10-23T16:00:00.000Z" itemprop="datePublished">2023-10-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/win11/">win11</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/10/24/linux/vbox-install-addition1/">windows宿主机下的Vbox 虚拟linux机安装增强</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="自家的2023版笔记本电脑时间长了，电池只有顶半个小时，公司就给我配了台联想E15，可是装的是win11。很不习惯用啊，不是自己的，轻易不会改linux，于是先用wsl安装Debian，却发现其实不好用，于是借助vbox初装Debian试试。"><a href="#自家的2023版笔记本电脑时间长了，电池只有顶半个小时，公司就给我配了台联想E15，可是装的是win11。很不习惯用啊，不是自己的，轻易不会改linux，于是先用wsl安装Debian，却发现其实不好用，于是借助vbox初装Debian试试。" class="headerlink" title="自家的2023版笔记本电脑时间长了，电池只有顶半个小时，公司就给我配了台联想E15，可是装的是win11。很不习惯用啊，不是自己的，轻易不会改linux，于是先用wsl安装Debian，却发现其实不好用，于是借助vbox初装Debian试试。"></a>自家的2023版笔记本电脑时间长了，电池只有顶半个小时，公司就给我配了台联想E15，可是装的是win11。很不习惯用啊，不是自己的，轻易不会改linux，于是先用wsl安装Debian，却发现其实不好用，于是借助vbox初装Debian试试。</h3><ol>
+<li>安装vbox扩展时出现问题</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./VBoxLinuxAdditions.run</span><br><span class="line">bash: ./VBoxLinuxAdditions.run: /bin/sh: bad interpreter: Permission denied</span><br><span class="line">还以为是没有用<span class="built_in">sudo</span>,于是</span><br><span class="line"><span class="built_in">sudo</span> ./VBoxLinuxAdditions.run  <span class="comment">#还是不行</span></span><br></pre></td></tr></table></figure>
+<p>查看文件的执行权限是555,可以执行.</p>
+<p>改为:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> sh ./VBoxLinuxAdditions.run</span><br></pre></td></tr></table></figure>
+
+<p>运行正常.<br>问题的原因是挂载分区时，没有指定参数exec的缘故。可以把装载参数改为defaults或者在执行脚本前添加sh即：sh .&#x2F;+脚本名称。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2023/10/24/linux/vbox-install-addition1/" data-id="cuidNVr5S32gHu_nxAUIwaKIh" class="article-share-link" data-share="baidu" data-title="windows宿主机下的Vbox 虚拟linux机安装增强">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VirtualBox/" rel="tag">VirtualBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8-%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">模拟器&#x2F;虚拟机</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-blog/hugo-learn-notebook8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/10/15/blog/hugo-learn-notebook8/" class="article-date">
@@ -121,7 +176,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/10/15/blog/hugo-learn-notebook8/" data-id="cuidY7hAl1soCxBkW7NoRi42w" class="article-share-link" data-share="baidu" data-title="hugo 中的文章添加时间线1. hugo-shortcode-timeline">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/10/15/blog/hugo-learn-notebook8/" data-id="cuidMJtXN4KLH_3ilh-DE4YQ5" class="article-share-link" data-share="baidu" data-title="hugo 中的文章添加时间线1. hugo-shortcode-timeline">分享到</a>
       
 
       
@@ -172,7 +227,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/10/13/linux/scrcpy2/" data-id="cuidXTmGLHDw419nfr8iGNpkk" class="article-share-link" data-share="baidu" data-title="scrcpy 快捷键">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/10/13/linux/scrcpy2/" data-id="cuid4axBVH1Y2Ye3ShwyKmxb7" class="article-share-link" data-share="baidu" data-title="scrcpy 快捷键">分享到</a>
       
 
       
@@ -230,7 +285,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/10/11/electronic/moto-driver-waveform/" data-id="cuid3dqpBAg2FYew9TG7kqABw" class="article-share-link" data-share="baidu" data-title="电机驱动的两种波形">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/10/11/electronic/moto-driver-waveform/" data-id="cuid1h_6UhbhVhg1AW1jbJ7sx" class="article-share-link" data-share="baidu" data-title="电机驱动的两种波形">分享到</a>
       
 
       
@@ -277,7 +332,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/10/03/lyrics/that-girl/" data-id="cuidvMBx9aFANnLfBdnqEkbJf" class="article-share-link" data-share="baidu" data-title="被初中男孩子唱红的that girl">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/10/03/lyrics/that-girl/" data-id="cuidAtBuBbsJyh_qW8ZmXgbns" class="article-share-link" data-share="baidu" data-title="被初中男孩子唱红的that girl">分享到</a>
       
 
       
@@ -325,7 +380,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/10/03/lyrics/%E6%98%A5%E6%9A%96%E8%8A%B1%E5%BC%80/" data-id="cuid5sNUP9p6jQ7Bh3gELPFaG" class="article-share-link" data-share="baidu" data-title="春暖花开，不要问我过得好不好">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/10/03/lyrics/%E6%98%A5%E6%9A%96%E8%8A%B1%E5%BC%80/" data-id="cuiduEKJg7N0miMFYaOAG_AhW" class="article-share-link" data-share="baidu" data-title="春暖花开，不要问我过得好不好">分享到</a>
       
 
       
@@ -406,7 +461,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/10/02/lyrics/%E5%B8%83%E8%8E%B1%E6%81%A9%E4%BA%9A%E5%BD%93%E6%96%AF%E7%BB%8F%E5%85%B8/" data-id="cuid1okeuUevr_OHVNy0toZI5" class="article-share-link" data-share="baidu" data-title="加拿大歌手布莱恩.亚当斯的经典歌曲">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/10/02/lyrics/%E5%B8%83%E8%8E%B1%E6%81%A9%E4%BA%9A%E5%BD%93%E6%96%AF%E7%BB%8F%E5%85%B8/" data-id="cuidW2KW-DXCAt3cuY2aaQjpk" class="article-share-link" data-share="baidu" data-title="加拿大歌手布莱恩.亚当斯的经典歌曲">分享到</a>
       
 
       
@@ -453,7 +508,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/10/01/lyrics/%E9%BD%90%E7%A7%A6%E8%8A%B1%E7%A5%AD/" data-id="cuidrWab5ejDH2QP1NeDwHtux" class="article-share-link" data-share="baidu" data-title="齐秦-花祭">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/10/01/lyrics/%E9%BD%90%E7%A7%A6%E8%8A%B1%E7%A5%AD/" data-id="cuidOmpz9hXwhnIqruN5GewVG" class="article-share-link" data-share="baidu" data-title="齐秦-花祭">分享到</a>
       
 
       
@@ -510,7 +565,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/09/30/SMPS/thyristors-adj-lamp-lighting/" data-id="cuidP5w9Asp-UL8v10dIfsSt-" class="article-share-link" data-share="baidu" data-title="晶闸管(可控硅)是怎么调节灯泡亮度的？">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/09/30/SMPS/thyristors-adj-lamp-lighting/" data-id="cuidOkYGbtNscDx6gGQ5WSVIS" class="article-share-link" data-share="baidu" data-title="晶闸管(可控硅)是怎么调节灯泡亮度的？">分享到</a>
       
 
       
@@ -584,60 +639,13 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2023/09/30/lyrics/%E5%8F%AA%E8%A6%81%E5%B9%B3%E5%87%A1/" data-id="cuidqd2xYkYf6_u5Cu54t-3YJ" class="article-share-link" data-share="baidu" data-title="只要平凡 (《我不是药神》电影主题曲)">分享到</a>
+        <a data-url="https://superigbt.github.io/2023/09/30/lyrics/%E5%8F%AA%E8%A6%81%E5%B9%B3%E5%87%A1/" data-id="cuidK-P4ADQUdThIQQgwQBaC_" class="article-share-link" data-share="baidu" data-title="只要平凡 (《我不是药神》电影主题曲)">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8F%AA%E8%A6%81%E5%B9%B3%E5%87%A1%E6%AD%8C%E8%AF%8D/" rel="tag">只要平凡歌词</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%BD%E8%AF%AD%E7%BB%8F%E5%85%B8/" rel="tag">国语经典</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-lyrics/平凡之路" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/09/30/lyrics/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" class="article-date">
-  <time datetime="2023-09-29T16:00:00.000Z" itemprop="datePublished">2023-09-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%AD%8C%E8%AF%8D/">歌词</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/09/30/lyrics/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/">朴树--平凡之路</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-平凡之路"><a href="#1-平凡之路" class="headerlink" title="1. 平凡之路"></a>1. 平凡之路</h4><h5 id="作词：韩寒-朴树-作曲：朴树-演唱：朴树"><a href="#作词：韩寒-朴树-作曲：朴树-演唱：朴树" class="headerlink" title="作词：韩寒,朴树  作曲：朴树 演唱：朴树"></a>作词：韩寒,朴树  作曲：朴树 演唱：朴树</h5><p>徘徊着的 在路上的<br>你要走吗 via via<br>易碎的 骄傲着<br>那也曾是我的模样<br>沸腾着的 不安着的<br>你要去哪 via via<br>谜一样的 沉默着的<br>故事你真的在听吗<br>我曾经跨过山和大海<br>也穿过人山人海<br>我曾经拥有着的一切<br>转眼都飘散如烟<br>我曾经失落失望失掉所有方向<br>直到看见平凡才是唯一的答案<br>当你仍然 还在幻想<br>你的明天 via via<br>她会好吗 还是更烂<br>对我而言是另一天<br>我曾经毁了我的一切<br>只想永远地离开<br>我曾经堕入无边黑暗<br>想挣扎无法自拔<br>我曾经像你像他像那野草野花<br>绝望着 也渴望着<br>也哭也笑平凡着<br>向前走 就这么走<br>就算你被给过什么<br>向前走 就这么走<br>就算你被夺走什么<br>向前走 就这么走<br>就算你会错过什么<br>向前走 就这么走<br>就算你会<br>我曾经跨过山和大海<br>也穿过人山人海<br>我曾经拥有着的一切<br>转眼都飘散如烟<br>我曾经失落失望失掉所有方向<br>直到看见平凡才是唯一的答案<br>我曾经毁了我的一切<br>只想永远地离开<br>我曾经堕入无边黑暗<br>想挣扎无法自拔<br>我曾经像你像他像那野草野花<br>绝望着 也渴望着<br>也哭也笑平凡着<br>我曾经跨过山和大海<br>也穿过人山人海<br>我曾经问遍整个世界<br>从来没得到答案<br>我不过像你像他像那野草野花<br>冥冥中这是我 唯一要走的路啊<br>时间无言 如此这般<br>明天已在 hia hia<br>风吹过的 路依然远<br>你的故事讲到了哪</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2023/09/30/lyrics/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" data-id="cuidFGewvvee4WhRbAPRQH4fB" class="article-share-link" data-share="baidu" data-title="朴树--平凡之路">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" rel="tag">平凡之路</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%B4%E6%A0%91/" rel="tag">朴树</a></li></ul>
 
     </footer>
   </div>
