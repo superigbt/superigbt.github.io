@@ -84,6 +84,84 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-termux/reuse-anlinux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2026/07/20/termux/reuse-anlinux/" class="article-date">
+  <time datetime="2026-07-19T16:00:00.000Z" itemprop="datePublished">2026-07-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/termux/">termux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/07/20/termux/reuse-anlinux/">2026年7月，时隔五年重新启动Anlinux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="自从termux支持debootstrap后，我发现我可以随时生产最新版的debian-arm系统，都弃用繁琐的anlinux-可是直到2026年7月，发现新版的termux竟改了一些权限，导致在termux下使用debootstrap生成的debian竟然不能生成sudo-用户，-systemcrtl也有问题，豆包与deebseek都劝我用proot-distro安装，然而，新版的proot-distro竟然是从docker来拉取linux的rootfs的，我的个天啊，国内这网络环境，对docker天然不友好。于是悲催了，我的手机无法安装linux了。肿么办？翻开老笔记，再结合阿里的通义千问3-7的建议，于是重新拾取了Anlinux"><a href="#自从termux支持debootstrap后，我发现我可以随时生产最新版的debian-arm系统，都弃用繁琐的anlinux-可是直到2026年7月，发现新版的termux竟改了一些权限，导致在termux下使用debootstrap生成的debian竟然不能生成sudo-用户，-systemcrtl也有问题，豆包与deebseek都劝我用proot-distro安装，然而，新版的proot-distro竟然是从docker来拉取linux的rootfs的，我的个天啊，国内这网络环境，对docker天然不友好。于是悲催了，我的手机无法安装linux了。肿么办？翻开老笔记，再结合阿里的通义千问3-7的建议，于是重新拾取了Anlinux" class="headerlink" title="自从termux支持debootstrap后，我发现我可以随时生产最新版的debian arm系统，都弃用繁琐的anlinux, 可是直到2026年7月，发现新版的termux竟改了一些权限，导致在termux下使用debootstrap生成的debian竟然不能生成sudo 用户， systemcrtl也有问题，豆包与deebseek都劝我用proot-distro安装，然而，新版的proot-distro竟然是从docker来拉取linux的rootfs的，我的个天啊，国内这网络环境，对docker天然不友好。于是悲催了，我的手机无法安装linux了。肿么办？翻开老笔记，再结合阿里的通义千问3.7的建议，于是重新拾取了Anlinux"></a>自从termux支持debootstrap后，我发现我可以随时生产最新版的debian arm系统，都弃用繁琐的anlinux, 可是直到2026年7月，发现新版的termux竟改了一些权限，导致在termux下使用debootstrap生成的debian竟然不能生成sudo 用户， systemcrtl也有问题，豆包与deebseek都劝我用proot-distro安装，然而，新版的proot-distro竟然是从docker来拉取linux的rootfs的，我的个天啊，国内这网络环境，对docker天然不友好。于是悲催了，我的手机无法安装linux了。肿么办？翻开老笔记，再结合阿里的通义千问3.7的建议，于是重新拾取了Anlinux</h2><h3 id="一-安装ubuntu26-04"><a href="#一-安装ubuntu26-04" class="headerlink" title="一 安装ubuntu26.04"></a>一 安装ubuntu26.04</h3><ol>
+<li>到<a target="_blank" rel="noopener" href="https://cdimage.ubuntu.com/ubuntu-base/releases/">https://cdimage.ubuntu.com/ubuntu-base/releases/</a> 下载26.04版的 rootfs ubuntu-base-26.04-base-arm64.tar.gz</li>
+<li>把 ubuntu-base-26.04-base-arm64.tar.gz 放到termux的 ～\目录下</li>
+<li>修改ubuntu2604.sh脚本如下：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/data/data/com.termux/files/usr/bin/bash</span></span><br><span class="line">folder=ubuntu-2604</span><br><span class="line"><span class="keyword">if</span> [ -d <span class="string">&quot;<span class="variable">$folder</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    first=1</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;skipping downloading&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment"># 定义ubutnu26.04 的 rootfs</span></span><br><span class="line"></span><br><span class="line">tarball=<span class="string">&quot;ubuntu-base-26.04-base-arm64.tar.gz&quot;</span></span><br><span class="line">cur=`<span class="built_in">pwd</span>`</span><br><span class="line"><span class="built_in">mkdir</span> -p <span class="string">&quot;<span class="variable">$folder</span>&quot;</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$folder</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Decompressing Rootfs, please be patient.&quot;</span></span><br><span class="line">proot --link2symlink tar -zxvf <span class="variable">$&#123;cur&#125;</span>/<span class="variable">$&#123;tarball&#125;</span>||:</span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$cur</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p ubuntu-binds</span><br><span class="line">bin=start-ubuntu.sh</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;writing launch script&quot;</span></span><br><span class="line"><span class="built_in">cat</span> &gt; <span class="variable">$bin</span> &lt;&lt;- <span class="string">EOM</span></span><br><span class="line"><span class="string">#!/bin/bash</span></span><br><span class="line"><span class="string">cd \$(dirname \$0)</span></span><br><span class="line"><span class="string">## unset LD_PRELOAD in case termux-exec is installed</span></span><br><span class="line"><span class="string">unset LD_PRELOAD</span></span><br><span class="line"><span class="string">command=&quot;proot&quot;</span></span><br><span class="line"><span class="string">command+=&quot; --link2symlink&quot;</span></span><br><span class="line"><span class="string">command+=&quot; -0&quot;</span></span><br><span class="line"><span class="string">command+=&quot; -r $folder&quot;</span></span><br><span class="line"><span class="string">if [ -n &quot;\$(ls -A ubuntu-binds)&quot; ]; then</span></span><br><span class="line"><span class="string">    for f in ubuntu-binds/* ;do</span></span><br><span class="line"><span class="string">      . \$f</span></span><br><span class="line"><span class="string">    done</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"><span class="string">command+=&quot; -b /dev&quot;</span></span><br><span class="line"><span class="string">command+=&quot; -b /proc&quot;</span></span><br><span class="line"><span class="string">command+=&quot; -b ubuntu-2604/root:/dev/shm&quot;</span></span><br><span class="line"><span class="string">## uncomment the following line to have access to the home directory of termux</span></span><br><span class="line"><span class="string">#command+=&quot; -b /data/data/com.termux/files/home:/root&quot;</span></span><br><span class="line"><span class="string">## uncomment the following line to mount /sdcard directly to / </span></span><br><span class="line"><span class="string">command+=&quot; -b /sdcard&quot;</span></span><br><span class="line"><span class="string">command+=&quot; -b /storage&quot;</span></span><br><span class="line"><span class="string">command+=&quot; -w /root&quot;</span></span><br><span class="line"><span class="string">command+=&quot; /usr/bin/env -i&quot;</span></span><br><span class="line"><span class="string">command+=&quot; HOME=/root&quot;</span></span><br><span class="line"><span class="string">command+=&quot; PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games&quot;</span></span><br><span class="line"><span class="string">command+=&quot; TERM=\$TERM&quot;</span></span><br><span class="line"><span class="string">command+=&quot; LANG=C.UTF-8&quot;</span></span><br><span class="line"><span class="string">command+=&quot; /bin/bash --login&quot;</span></span><br><span class="line"><span class="string">com=&quot;\$@&quot;</span></span><br><span class="line"><span class="string">if [ -z &quot;\$1&quot; ];then</span></span><br><span class="line"><span class="string">    exec \$command</span></span><br><span class="line"><span class="string">else</span></span><br><span class="line"><span class="string">    \$command -c &quot;\$com&quot;</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"><span class="string">EOM</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;fixing shebang of <span class="variable">$bin</span>&quot;</span></span><br><span class="line">termux-fix-shebang <span class="variable">$bin</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;making <span class="variable">$bin</span> executable&quot;</span></span><br><span class="line"><span class="built_in">chmod</span> +x <span class="variable">$bin</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;removing image for some space&quot;</span></span><br><span class="line"><span class="built_in">rm</span> <span class="variable">$tarball</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;You can now launch Ubuntu with the ./<span class="variable">$&#123;bin&#125;</span> script&quot;</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>执行 bash ubuntu2604.sh 脚本，对刚才下载的 ubuntu-base-26.04-base-arm64.tar.gz进行解压，并生成启动脚本 start-ubuntu.sh</li>
+<li>执行 bash start-ubuntu.sh,进入刚才安装的ubuntu26.04</li>
+<li>在root用户名与目录下进行如下操作</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写入公共 DNS 服务器地址</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;nameserver 8.8.8.8&quot;</span> &gt; /etc/resolv.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;nameserver 223.5.5.5&quot;</span> &gt;&gt; /etc/resolv.conf</span><br><span class="line">apt update</span><br><span class="line">apt upgrade -y</span><br><span class="line"><span class="comment"># 安装最常用的基础工具：sudo、文本编辑器、网络工具、压缩工具等</span></span><br><span class="line">apt install -y <span class="built_in">sudo</span> vim wget curl net-tools  locales</span><br><span class="line">adduser frank </span><br><span class="line"><span class="comment"># 修改 /etc/sudoer文件，增加 frank ALL....</span></span><br><span class="line">我采用解压，并成功启动ubunt26.04, apt update ,并apt install <span class="built_in">sudo</span> 然后添加<span class="built_in">sudo</span>用户frank成功后，采用<span class="built_in">groups</span>查询，有以下信息，请问需要处理吗？</span><br><span class="line">frank@localhost:~$ <span class="built_in">groups</span></span><br><span class="line"><span class="built_in">groups</span>: cannot find name <span class="keyword">for</span> group ID 3003</span><br><span class="line"><span class="built_in">groups</span>: cannot find name <span class="keyword">for</span> group ID 9997</span><br><span class="line"><span class="built_in">groups</span>: cannot find name <span class="keyword">for</span> group ID 20292</span><br><span class="line"><span class="built_in">groups</span>: cannot find name <span class="keyword">for</span> group ID 50292</span><br><span class="line">frankli 3003 9997 20292 50292</span><br><span class="line"><span class="comment"># 通义千问回答： 结论：完全不需要处理，这不会影响您的任何正常使用。您可以放心地继续使用 frankli 用户，您的 sudo 权限和系统功能都是完全正常的。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二-安装debian13-trixie"><a href="#二-安装debian13-trixie" class="headerlink" title="二 安装debian13 trixie"></a>二 安装debian13 trixie</h3><p>在debian官网上没有找到debian的rootfs, 不过可以在电脑上通过我讨厌的docker来拉取，还好有podman这个比docker好用的工具</p>
+<ol>
+<li>在PC电脑上拉取debian的rootfs</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> trixie</span><br><span class="line"><span class="built_in">cd</span> trixie</span><br><span class="line">podman pull --platform linux/arm64 debian:trixie-slim</span><br><span class="line">podman create --name temp-debian debian:trixie-slim</span><br><span class="line">podman <span class="built_in">export</span> temp-debian &gt; debian13-trixie-arm64.tar</span><br><span class="line"><span class="built_in">ls</span> <span class="comment"># 会在本目录下有debian13-trixie-arm64.tar这个文件</span></span><br><span class="line">podman <span class="built_in">rm</span> temp-debian <span class="comment"># 删除刚才操作所生成的其它文件，但不会删除 debian13-trixie-arm64.tar</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>把 debian13-trixie-arm64.tar 放到termux的 ～\目录下</li>
+<li>在手机的termux下执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 创建专属目录</span></span><br><span class="line"><span class="built_in">mkdir</span> ~/debian13</span><br><span class="line"><span class="comment"># 2. 进入该目录</span></span><br><span class="line"><span class="built_in">cd</span> ~/debian13</span><br><span class="line"><span class="comment"># 3. 执行解压（加上 --preserve-permissions 保留原始权限）</span></span><br><span class="line">tar -xvf ~/debian13-trixie-arm64.tar --preserve-permissions</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在手机的termux下编写 start-trixie.sh脚本如下：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/data/data/com.termux/files/usr/bin/bash</span></span><br><span class="line"><span class="built_in">cd</span> $(<span class="built_in">dirname</span> <span class="variable">$0</span>)</span><br><span class="line"><span class="comment">## unset LD_PRELOAD in case termux-exec is installed</span></span><br><span class="line"><span class="built_in">unset</span> LD_PRELOAD</span><br><span class="line"><span class="built_in">command</span>=<span class="string">&quot;proot&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; --link2symlink&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; -0&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; -r debian13&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="string">&quot;<span class="subst">$(ls -A ubuntu-binds)</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> ubuntu-binds/* ;<span class="keyword">do</span></span><br><span class="line">      . <span class="variable">$f</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; -b /dev&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; -b /proc&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; -b debian13/root:/dev/shm&quot;</span></span><br><span class="line"><span class="comment">## uncomment the following line to have access to the home directory of termux</span></span><br><span class="line"><span class="comment">#command+=&quot; -b /data/data/com.termux/files/home:/root&quot;</span></span><br><span class="line"><span class="comment">## uncomment the following line to mount /sdcard directly to / </span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; -b /sdcard&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; -b /storage&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; -w /root&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; /usr/bin/env -i&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; HOME=/root&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; TERM=<span class="variable">$TERM</span>&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; LANG=C.UTF-8&quot;</span></span><br><span class="line"><span class="built_in">command</span>+=<span class="string">&quot; /bin/bash --login&quot;</span></span><br><span class="line">com=<span class="string">&quot;<span class="variable">$@</span>&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">&quot;<span class="variable">$1</span>&quot;</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">exec</span> <span class="variable">$command</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="variable">$command</span> -c <span class="string">&quot;<span class="variable">$com</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>在termux下执行 bash start-trixe.sh 进入了debian, 发现拉取的debian是最新版的,并且这个是完整版，己经有了&#x2F;etc&#x2F;resolv.conf文件了，所以可以直接 apt update;  apt install vim sudo -y就行了。但是修改resolv.conf可以提速，于是还可以如下：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 修复 DNS（解决无法 ping 通域名的问题）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;nameserver 223.5.5.5&quot;</span> &gt; /etc/resolv.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;nameserver 8.8.8.8&quot;</span> &gt;&gt; /etc/resolv.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 更新软件源并安装您之前需要的 sudo 和用户管理工具</span></span><br><span class="line">apt update</span><br><span class="line">apt install -y <span class="built_in">sudo</span> adduser vim-tiny curl wget</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 创建您的普通用户并赋予 sudo 权限</span></span><br><span class="line">adduser frank</span><br><span class="line">usermod -aG <span class="built_in">sudo</span> frank</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 切换到 frank用户测试</span></span><br><span class="line">su - frank</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">whoami</span>  如果显示为root则为正常</span><br></pre></td></tr></table></figure>
+
+<h3 id="三-proot-distro安装下载的rootfs"><a href="#三-proot-distro安装下载的rootfs" class="headerlink" title="三 proot-distro安装下载的rootfs"></a>三 proot-distro安装下载的rootfs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proot-distro install debian13 --tarball ~/debian13-trixie-arm64.tar</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://superigbt.github.io/2026/07/20/termux/reuse-anlinux/" data-id="cuid25gSWgPWwwlfFkDKxfEsw" class="article-share-link" data-share="baidu" data-title="2026年7月，时隔五年重新启动Anlinux">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anlinux/" rel="tag">Anlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/termux/" rel="tag">termux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-fun-item/winpodx" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2026/07/05/fun-item/winpodx/" class="article-date">
@@ -144,7 +222,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2026/07/05/fun-item/winpodx/" data-id="cuid7G8HYrQVx2Sw3DR7HUD2-" class="article-share-link" data-share="baidu" data-title="winpodx笔记">分享到</a>
+        <a data-url="https://superigbt.github.io/2026/07/05/fun-item/winpodx/" data-id="cuid5rsqCWRwuO1RlC8_Ag0t9" class="article-share-link" data-share="baidu" data-title="winpodx笔记">分享到</a>
       
 
       
@@ -234,7 +312,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2020/09/28/termux/termux-proot-distro/" data-id="cuidWpS0O7kJHH_eO6eNlhwq1" class="article-share-link" data-share="baidu" data-title="termux利用工作proot-distro安装linux">分享到</a>
+        <a data-url="https://superigbt.github.io/2020/09/28/termux/termux-proot-distro/" data-id="cuidpeyO4pStQ1N4NptX45RFf" class="article-share-link" data-share="baidu" data-title="termux利用工作proot-distro安装linux">分享到</a>
       
 
       
@@ -281,7 +359,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2026/06/14/linux/plain-app/" data-id="cuidOUQZnt7k5H5jOt_XSirkK" class="article-share-link" data-share="baidu" data-title="手机投屏电脑的软件之一，plain-app">分享到</a>
+        <a data-url="https://superigbt.github.io/2026/06/14/linux/plain-app/" data-id="cuidAuMfZ5zh4IyWo7pbv8VuK" class="article-share-link" data-share="baidu" data-title="手机投屏电脑的软件之一，plain-app">分享到</a>
       
 
       
@@ -359,7 +437,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/01/26/termux/termux-gui-x11/" data-id="cuid56Yz75Y8NK5EedUwdtwD_" class="article-share-link" data-share="baidu" data-title="termux图形界面，采用termux-x11,waylnad驱动">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/01/26/termux/termux-gui-x11/" data-id="cuidbA0xa6BjbkJI6GODTtwyr" class="article-share-link" data-share="baidu" data-title="termux图形界面，采用termux-x11,waylnad驱动">分享到</a>
       
 
       
@@ -431,7 +509,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2022/01/21/linux/scrycpy/" data-id="cuidOg19CR6eU7sVd9mQyf9bO" class="article-share-link" data-share="baidu" data-title="手机投屏电脑的软件之Scrcpy4.0用法">分享到</a>
+        <a data-url="https://superigbt.github.io/2022/01/21/linux/scrycpy/" data-id="cuid6n_Q1ieyjdiHUtDP1FKtO" class="article-share-link" data-share="baidu" data-title="手机投屏电脑的软件之Scrcpy4.0用法">分享到</a>
       
 
       
@@ -478,7 +556,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2026/05/25/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86-%E6%95%B0%E5%AD%A6%E7%A7%91%E6%9C%AC/" data-id="cuid2_QTiDCK9SBvBpnRyJnQq" class="article-share-link" data-share="baidu" data-title="github上，数学课本教材">分享到</a>
+        <a data-url="https://superigbt.github.io/2026/05/25/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86-%E6%95%B0%E5%AD%A6%E7%A7%91%E6%9C%AC/" data-id="cuid0a7GuRjngva21HG0K-dk6" class="article-share-link" data-share="baidu" data-title="github上，数学课本教材">分享到</a>
       
 
       
@@ -526,7 +604,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2025/11/28/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86-ai%E7%AF%87/" data-id="cuidwhRLXRFMdEZUz6y0ev39_" class="article-share-link" data-share="baidu" data-title="github上，关于人工智能的收集">分享到</a>
+        <a data-url="https://superigbt.github.io/2025/11/28/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86-ai%E7%AF%87/" data-id="cuid_656zZaI3KPBFz2dCef_6" class="article-share-link" data-share="baidu" data-title="github上，关于人工智能的收集">分享到</a>
       
 
       
@@ -573,7 +651,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2026/05/26/termux/%E9%B8%BF%E8%92%99%E4%B8%8B%E7%9A%84%E7%BB%88%E7%AB%AF/" data-id="cuidKplUOB-y2N1h_qHGRxATy" class="article-share-link" data-share="baidu" data-title=" HiSH：鸿蒙上运行 Linux Shell">分享到</a>
+        <a data-url="https://superigbt.github.io/2026/05/26/termux/%E9%B8%BF%E8%92%99%E4%B8%8B%E7%9A%84%E7%BB%88%E7%AB%AF/" data-id="cuidoGERxwyF-4MyMz0p0BwBR" class="article-share-link" data-share="baidu" data-title=" HiSH：鸿蒙上运行 Linux Shell">分享到</a>
       
 
       
@@ -661,72 +739,13 @@ pages/posts：如果您将网站用作博客，则可以在此存储所有博客
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://superigbt.github.io/2024/05/07/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86python%E7%AF%87/" data-id="cuidngam-j-q1lJNVAFSUg8hq" class="article-share-link" data-share="baidu" data-title="github上，有趣的python库">分享到</a>
+        <a data-url="https://superigbt.github.io/2024/05/07/fun-item/%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86python%E7%AF%87/" data-id="cuidzsAWo8UpilxCnccF0AYV2" class="article-share-link" data-share="baidu" data-title="github上，有趣的python库">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E9%A1%B9%E7%9B%AE/" rel="tag">有趣的项目</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-essay/excerpt10" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2025/06/20/essay/excerpt10/" class="article-date">
-  <time datetime="2025-06-19T16:00:00.000Z" itemprop="datePublished">2025-06-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%91%98%E6%8A%84%E4%B8%8E%E9%9A%8F%E7%AC%94/">摘抄与随笔</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/06/20/essay/excerpt10/">被阉割过的名言警句后，半句才是真正的至理名言</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>可怜之人，必有可恨之处 完整版是： 可怜之人，必有可恨之处；可恨之人，必有可悲之苦。 </li>
-<li>富贵险中求 完整版是： 欲从心头起，贪向胆边生，富贵险中求，也在险中丢， 求时十之一，丢时十之九。 </li>
-<li>以德报怨 完整版是： 以德报怨，何以报德？ 以直报怨，以德报德。 </li>
-<li>未经他人苦，莫劝他人善 完整版是： 未经他人苦，莫劝他人善，你若经我苦，未必有我善。 </li>
-<li>百善孝为先，万恶淫为首 完整版是： 百善孝为先，论心不论迹，论迹寒门无孝子。万恶淫为首，论迹不论心，论心世上无完人。 </li>
-<li>岁月不饶人 完整版是： 盛年不再来，岁月不待人，节气不饶苗，岁月不饶人。 </li>
-<li>初生牛犊不怕虎 完整版是： 初生牛犊不怕虎，长出角来反怕狼。 </li>
-<li>家和万事兴 完整版是： 父爱则母静，母静则子安，子安则家和，家和万事兴。 父懶则母苦，母苦则子惧，子惧则家衰，家衰败三代。 </li>
-<li>读万卷书，不如行万里路 完整版是： 读万卷书，不如行万里路。行万里路，不如阅人无数。 阅人无数，不如名师指路。 名师指路，不如自己去悟。</li>
-<li>IBM前CEO郭士纳把 三条铁律写入基因：①对客户到底意味着什么？②能不能落地？③失败代价谁背？，大公司会陷“技术自嗨”。老郭早已给出答案：技术从来不是主角，客户才是; 郭士纳留下了三句话：<br>“直接谈谈。”<br>“客户不关心你多复杂，只关心问题解没解决。”<br>“我随时在。”书</li>
-<li>王兴成功的秘诀：<br>认真的打败初心的<br>努力的打败懒散的<br>不要脸的打败要脸的<br>野蛮的打败文明的<br>小人打败正人<br>无耻打败底线</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://superigbt.github.io/2025/06/20/essay/excerpt10/" data-id="cuidj_nEoYDBlNOJzICklv5ID" class="article-share-link" data-share="baidu" data-title="被阉割过的名言警句后，半句才是真正的至理名言">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B6%A3%E8%A8%80/" rel="tag">趣言</a></li></ul>
 
     </footer>
   </div>
